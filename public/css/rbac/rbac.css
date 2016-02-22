@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+
+th{
+	text-align:left;
+}
+.create{
+
+	position:relative;
+	float:left;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.footer_button{
+	margin-left:17%;
+	margin-right:25%;
+}
+.role-form,.permission-form,.rule-form,.assignment-form,.assignment-update{
+	position: relative;
+	margin-top: 20px;
+}
+.btn-group{
+	position:relative;
+	margin-top:20px;
+	margin-bottom: 20px;
+	float:right
+}
+.tableleft{
+            vertical-align:middle;
+        }
+/* .form-control{
+	       width:600px;
+        }; */
+.permission_list,.user-search{
+      display: block;
+      float: left;
+      width: 600px;
+      padding-left: 0;
+}
+ul,ol{
+	padding-left:none;
+}
+.help-block{
+	text-align:left;
+}
+.errors{float:right;}
+.table-class{
+	margin-left: 24px;
+    text-align: left;
+    width: 97%;
+	
+}
+.need{
+	color:#E74C3C;
+}
+thread {
+	background-color:#e7e8eb;
+}

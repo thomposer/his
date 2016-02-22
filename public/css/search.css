@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+
+.form-horizontal .form-group{
+	margin-left: -65px;
+    margin-bottom: 15px;
+    float: left;
+    width: 40%;
+}
+ .applySearch-button{
+ 	
+	margin-bottom:15px;
+}
+ 
+.search{
+	margin-left: -14px;
+	float:left;
+	margin-bottom:15px;
+}
+.user-search .form-inline {
+	margin-bottom: 15px;
+}
+
+.form-horizontal .search_button{
+	width : 125px;
+}

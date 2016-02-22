@@ -1,0 +1,34 @@
+
+.grid-view{
+	background: #FFFFFF;
+}
+.search-form {
+    margin-top: 15px;
+    margin-left: 65px;
+    /*width: 720px;*/
+    position: relative;
+}
+.search-labels {
+	position: relative;
+    min-height: 1px;
+    float: left;
+    width: 65px;
+    /*padding-left: 15px;*/
+}
+thead {
+    background-color: #F8F9FA;
+}
+
+.table .op-header {
+	width: 100px;
+ }
+ 
+ .table .op-group {
+	text-align: center;
+ }
+ 
+ .op-group .glyphicon {
+	margin: 3px;
+ }
+
+

@@ -1,0 +1,72 @@
+<?php
+
+namespace app\modules\rbac\models;
+
+use Yii;
+use app\common\base\BaseActiveRecord;
+/**
+ * This is the model class for table "{{%auth_item}}".
+ *
+ * @property string $name
+ * @property integer $type
+ * @property string $description
+ * @property string $rule_name
+ * @property string $data
+ * @property integer $created_at
+ * @property integer $updated_at
+ *
+ * @property AuthAssignment[] $authAssignments
+ * @property AuthRule $ruleName
+ * @property AuthItemChild[] $authItemChildren
+ * @property AuthItemChild[] $authItemChildren0
+ */
+class ItemForm extends BaseActiveRecord
+{
+
+    public $name;
+    public $type;
+    public $description;
+    public $rule_name;
+    public $data;
+    public $created_at;
+    public $updated_at;
+    public $child;
+    public $category;
+    public $parentName;
+    public $isNewRecord = TRUE;
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['name', 'type','description','category'], 'required'],
+            [['name', 'type','parentName','category','description'], 'trim'],
+            [['type', 'created_at', 'updated_at'], 'integer'],
+            [['description', 'data','category','parentName'], 'string'],
+            [['name', 'rule_name'], 'string', 'max' => 35,'min' => 4, 'tooLong' => '请输入长度为4-35个字符','tooShort' => '请输入长度为4-35个字符'],
+            [['name'],'match','pattern' => '/^[a-zA-Z][a-zA-Z0-9_\/]{3,34}$/','message' => '必须以字母开头，不能输入中文'],//字母开头，允许4-35字节，允许字母数字下划线
+            [['child'],'safe']
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'name' => '角色名称',
+            'type' => '类型',
+            'description' => '描述',
+            'rule_name' => '权限规则',
+            'data' => '内容',
+            'created_at' => '创建时间',
+            'updated_at' => '更新时间',
+            'child' => '权限管理',
+            
+        ];
+    }
+    
+
+}
