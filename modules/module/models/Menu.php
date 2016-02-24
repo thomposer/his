@@ -70,7 +70,14 @@ class Menu extends \app\common\base\BaseActiveRecord
             'sort' => '排序',
         ];
     }
-    
+    /**
+     * @property 检测当前uri是否启用，若启用，则可访问，否则返回404
+     * @param 当前访问ur $requestUrl
+     */
+    public static function checkMenu($requestUrl){
+        $result = self::find()->select(['status'])->where(['menu_url' => $requestUrl])->asArray()->one();    
+        return $result['status'];
+    }
     /**
      * @return \yii\db\ActiveQuery
      */
