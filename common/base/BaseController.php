@@ -14,6 +14,7 @@ use yii\helpers\Url;
 use app\modules\behavior\models\BehaviorRecord;
 use yii\helpers\Json;
 use app\common\Common;
+use yii\web\NotFoundHttpException;
 
 class BaseController extends Controller
 {
@@ -78,11 +79,12 @@ class BaseController extends Controller
 	    $view = Yii::$app->view;
 	    $view->params['request_module_controller'] = '/'.$moduleId . '/' . $controllerId;
 	    $view->params['requestUrl'] = $requestUrl;
-	    //允许直接访问的url,无权限不需要进入站点
+	   	//允许直接访问的url,无权限不需要进入站点
 	    $allowUrl = [
 		    Yii::getAlias('@spotSitesCreate'),
 		    Yii::getAlias('@spotSitesList'),
 		    Yii::getAlias('@manageSites'), // 选择站点
+		    Yii::getAlias('@moduleMenuSearch'),
 	    ];
 	    
 	    // 无权限可以访问的url
@@ -102,7 +104,7 @@ class BaseController extends Controller
             $this->getUserRole($systemPermission);
             return parent::beforeAction($action);
         }
-       
+        
         //若用户没有该站点权限，则显示权限不足        
 	    if (!$this->manager->checkAccess($this->userInfo->user_id, $this->wxcode)) {
 	       return Common::showMessage();
@@ -118,7 +120,11 @@ class BaseController extends Controller
 		if (!$this->manager->checkAccess($this->userInfo->user_id, $this->wxcode . $requestUrl)) {
 	        return Common::showMessage();
 	    }
-	    
+	    //检测当前url是否已启用
+	    if(!Menu::checkMenu($requestUrl)){
+	        throw new NotFoundHttpException('你所请求的页面不存在',404);
+	    }
+	     
 	    $this->getUserRole();
 	    return parent::beforeAction($action);
 	}
