@@ -79,7 +79,7 @@ class Menu extends \app\common\base\BaseActiveRecord
         $query = (new Query())->from('gzh_menu as m')->select(['t.id as title_id','t.module_description','t.module_name','m.menu_url','m.description'])
         ->join('LEFT JOIN','gzh_title as t','m.parent_id = t.id')
         ->andwhere(['m.menu_url' => $menu_url_array,'t.status' => 1,'m.type' => 1,'m.status' => 1,'m.role_type' => 0])
-        ->orderBy(['t.sort'=>SORT_DESC,'m.id' => SORT_ASC])
+        ->orderBy(['t.sort'=>SORT_DESC])
         ->all();     
         return $query;
         //return $this->hasOne(Title::className(), ['id' => 'parent_id']);

@@ -22,6 +22,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php $this->endBlock();?>
 <?php $this->beginBlock('content')?>
 	<div class="menu-index col-xs-12">
+	<p>
+        <?= Html::a('初始化模块', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
 	<div class = "box">
     <div class = "box-body">
 	

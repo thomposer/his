@@ -37,7 +37,8 @@ $baseUrl = Yii::$app->request->baseUrl;
             'nextPageLabel'=>'下一页',
             'lastPageLabel'=>'尾页',
         ],
-        'columns' => [            
+        'columns' => [    
+            'id',
             'description',
             'menu_url',
             [
@@ -68,7 +69,7 @@ $baseUrl = Yii::$app->request->baseUrl;
                 'header' => '操作',
                 'contentOptions' => ['class' => 'op-group'],
                 'headerOptions'=>['class'=>'op-header'],
-        ],
+            ],
     ]
     ]); ?>
         </div>

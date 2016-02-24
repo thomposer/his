@@ -153,7 +153,7 @@ $baseUrl = Yii::$app->request->baseUrl;
       <form action="<?= Url::to(['@moduleMenuSearch']) ?>" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="hidden" value="<?= Yii::$app->request->csrfToken ?>" name="_csrf" />
-          <input type="text" name="description" class="form-control" placeholder="Search...">
+          <input type="text" name="description" class="form-control" placeholder="菜单名称">
           
               <span class="input-group-btn">
                 <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
