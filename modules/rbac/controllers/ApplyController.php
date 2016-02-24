@@ -193,7 +193,6 @@ class ApplyController extends BaseController
             $model->item_name_description = rtrim($item_name_description, ',');
             $model->apply_persons = $this->userInfo->username;
             $spot_role = Yii::getAlias('@spotPrefix') . $model->spot;
-            // 批准－－用户第一次申请该站点权限时，当审批完时，自动存取该用户信息
             $model->updated_time = time();
             $rows = $model->save();
             if ($rows && $model->status == 1) {
