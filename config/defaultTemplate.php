@@ -37,19 +37,19 @@ return [
 			],
 			[
 				'description' => '用户管理',
-				'name' => '/rbac/assignment/index',
+				'name' => '/rbac/apply/index',
 			],
 			[
-				'description' => '分配用户角色',
-				'name' => '/rbac/assignment/create',
+				'description' => '添加用户',
+				'name' => '/rbac/apply/create',
 			],
 			[
 				'description' => '更新用户',
-				'name' => '/rbac/assignment/update',
+				'name' => '/rbac/apply/update',
 			],
 			[
 				'description' => '删除用户',
-				'name' => '/rbac/assignment/delete',
+				'name' => '/rbac/apply/delete',
 			],
 			[
 				'description' => '角色管理',
@@ -67,22 +67,6 @@ return [
 				'description' => '删除角色',
 				'name' => '/rbac/role/delete',
 			],
-// 			[
-// 				'description' => '权限管理',
-// 				'name' => '/rbac/permission/index',
-// 			],
-// 			[
-// 				'description' => '创建权限',
-// 				'name' => '/rbac/permission/create',
-// 			],
-// 			[
-// 				'description' => '更新权限',
-// 				'name' => '/rbac/permission/update',
-// 			],
-// 			[
-// 				'description' => '删除权限',
-// 				'name' => '/rbac/permission/delete',
-// 			],
 		]
 	],
 ];
