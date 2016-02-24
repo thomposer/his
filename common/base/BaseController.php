@@ -145,7 +145,7 @@ class BaseController extends Controller
 	    	if ($userPermissions){
 	    		foreach ($userPermissions as $v){
 	    			foreach ($v as $k){
-	    				$list[] = trim(str_replace($this->wxcode, '', $k->name));//获取有权限菜单的详细信息以及所属模块
+	    				$list[] = ltrim($k->name,$this->wxcode);//获取有权限菜单的详细信息以及所属模块
 	    			}
 	    		}
 	    		$result = Menu::getParent($list);
