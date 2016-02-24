@@ -33,6 +33,10 @@ class Menu extends \app\common\base\BaseActiveRecord
          '1' => 'text-success',
         
     );
+    public static $role_type = array(
+        '0' => '否',
+        '1' => '是'
+    );
     /**
      * @inheritdoc
      */
@@ -66,7 +70,7 @@ class Menu extends \app\common\base\BaseActiveRecord
             'description' => '菜单名称',
             'parent_id' => '所属模块',
             'status' => '状态',
-            'role_type' => '所属类型',
+            'role_type' => '所属类型(系统管理员)',
             'sort' => '排序',
         ];
     }

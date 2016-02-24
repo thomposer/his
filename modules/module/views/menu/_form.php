@@ -21,7 +21,9 @@ use app\modules\module\models\Menu;
 
     <?= $form->field($model, 'parent_id')->dropDownList(ArrayHelper::map($titleList, 'id','module_description')) ?>
 
-    <?= $form->field($model, 'status')->textInput()->dropDownList(Menu::$menu_status) ?>
+    <?= $form->field($model, 'status')->dropDownList(Menu::$menu_status) ?>
+    
+    <?= $form->field($model, 'role_type')->dropDownList(Menu::$role_type) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? '添加' : '修改', ['class' => 'btn btn-success']) ?>
