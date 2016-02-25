@@ -1,0 +1,4 @@
+#过滤文件夹
+runtime/
+public/assets/
+config/db.php
