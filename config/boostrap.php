@@ -91,7 +91,6 @@ Yii::setAlias('@defaultSpotName', '_defaut_module_');
 Yii::setAlias('@defaultTemplate', '@RootPath/config/defaultTemplate.php');
 
 // 行为记录
-Yii::setAlias('@behaviorActionList', '/api/title-menu/menu');
 Yii::setAlias('@behaviorActionDelete', '/behavior/record/delete');
 
 //user模块
