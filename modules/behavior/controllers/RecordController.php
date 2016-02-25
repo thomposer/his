@@ -24,7 +24,8 @@ class RecordController extends BaseController
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['post'],
+                   'delete' => ['post'],
+                   'deletemonth' => ['get']
                 ],
             ],
         ];
@@ -106,12 +107,18 @@ class RecordController extends BaseController
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-    
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['index']);
+    }   
     /**
      * 批量删除一个月前的记录
      */
-    public function actionDelete()
+    public function actionDeletemonth()
     {
+        
     	$lastMonth = date('Y-m-j H:i:s', mktime(0, 0, 0, date('m')-1, date('d'), date('Y')));
     	BehaviorRecord::deleteAll('operation_time < :lastMonth', [':lastMonth' => $lastMonth]);
     	$this->redirect(['index']);

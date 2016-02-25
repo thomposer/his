@@ -14,9 +14,9 @@ use yii\widgets\ActiveForm;
         'action' => ['index'],
         'method' => 'get',
     	'options' =>  ['class' => 'form-horizontal search-form'],
-    	'fieldConfig' => [
-    		'template' => "<div class='search-labels text-right'>{label}</div><div class='col-xs-9 col-sm-7'>{input}</div>",
-    	]
+        'fieldConfig' => [
+            'template' => "<div class='search-labels text-right'>{label}</div><div class='col-xs-9 col-sm-7'>{input}</div>",
+        ]
     ]); ?>
 
     <?= $form->field($model, 'user_id') ?>
@@ -26,12 +26,17 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'module')->dropDownList($moduleList, ['prompt'=>'请选择']) ?>
 
     <?= $form->field($model, 'action')->label('动作')->dropDownList($actionList, ['prompt'=>'请选择']) ?>
-
-    <?= Html::submitButton('搜索', ['class' => 'btn btn-primary btn-submit']) ?>
-    <?= Html::a('重置', ['index'], ['class' => 'btn btn-default']) ?>
+    <div class ="form-group">
+        <?= Html::submitButton('搜索', ['class' => 'btn btn-primary btn-submit']) ?>
+        <?= Html::a('重置', ['index'], ['class' => 'btn btn-default']) ?>
+        <?= Html::a('删除一个月前记录',['deletemonth'],[
+                    'class' => 'btn btn-danger',
+                    'data' => [
+                        'confirm' => '你确定要删除一个月前记录吗?',
+                        'method' => 'get',
+                    ],
+                ]) ?>
+    </div>
     <?php ActiveForm::end(); ?>
 
-    <div class="cl tr prg">
-    	<?= Html::button('删除1个月前记录', ['class' => 'btn btn-danger js-del']) ?>
-    </div>
-</div>
+  </div>

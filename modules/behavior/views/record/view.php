@@ -13,17 +13,19 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php AutoLayout::begin(['viewFile'=>'@app/views/layouts/layout.php'])?>
 <?php $this->beginBlock('renderCss')?>
-    <?php $this->registerCssFile('@web/public/css/bootstrap/bootstrap.css') ?>
-    <?php $this->registerJsFile('@web/public/js/jquery/jquery.min.js',['position'=>\yii\web\View::POS_HEAD])?>
-    <?php $this->registerJsFile('@web/public/js/bootstrap/bootstrap.min.js',['position'=>\yii\web\View::POS_HEAD])?>
     
 <?php $this->endBlock();?>
 <?php $this->beginBlock('content')?>
-<div class="main_bd main_bootstrap">
-	<div class="anchor-view">
+<div class="col-xs-12">
+	<div class = "box">
+       <div class = "box-body">
 	    <p class="button-group">
 	        <?= Html::a('删除', ['delete', 'id' => $model->id], [
-	            'class' => 'btn btn-danger js-del',
+	            'class' => 'btn btn-danger',
+	            'data' => [
+	                'confirm' => '你确定要删除此项吗?',
+	                'method' => 'post'
+	           ]
 	        ]) ?>
 	        <?= Html::a('返回列表', ['index'], ['class' => 'btn btn-primary']) ?>
 	    </p>
@@ -41,11 +43,11 @@ $this->params['breadcrumbs'][] = $this->title;
 	        ],
 			'template' => '<tr><th style="width: 200px;">{label}</th><td>{value}</td></tr>',
 	    ]) ?>
-	
+	   </div>
 	</div>
 </div>
 <?php $this->endBlock();?>
-<?php $this->beginBlock('artemplate')?>
+<?php $this->beginBlock('renderJs')?>
 <?php $this->endBlock();?>
 <?php AutoLayout::end();?>
 
