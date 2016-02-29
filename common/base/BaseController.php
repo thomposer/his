@@ -35,7 +35,7 @@ class BaseController extends Controller
     public function init(){
         parent::init();
         $this->wxcode = Yii::$app->session->get('spot');
-        $this->manager = \yii::$app->authManager;
+        $this->manager = Yii::$app->authManager;
         $this->userInfo = Yii::$app->user->identity;
     }
     
@@ -176,7 +176,6 @@ class BaseController extends Controller
 		$moduleId = Yii::$app->controller->module->id;
 		$controllerId = Yii::$app->controller->id;
 		$requestUrl = '/' . $moduleId . '/' . $controllerId . '/' . $action->id;
-		
 		$menu = Menu::findOne(['menu_url' => $requestUrl]);
 		$module = null;
 		
@@ -187,14 +186,13 @@ class BaseController extends Controller
 		$request = Yii::$app->request;
 		$getData = $request->get();
 		$bodyData = $request->getBodyParams();
-		
 		if ($module && (count($getData) > 0 || count($bodyData) > 0)) {
 			$data = Json::encode(array(
 				'GET' => $getData,
-				'BODY' => $bodyData
+				'BODY' => $bodyData,
 			));
 			BehaviorRecord::log(
-				//Yii::$app->user->identity->userInfo->getUserId(),
+
 				$this->userInfo->user_id,
 				$request->userIP,
 				Yii::$app->session->get('spot'),

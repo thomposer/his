@@ -48,17 +48,31 @@ $config = [
             'useFileTransport' => true,
         ],
         'log' => [
-            //'traceLevel' => YII_DEBUG ? 3 : 0,
+            'traceLevel' => YII_DEBUG ? 3 : 0,
             'flushInterval' => 1000,
             'targets' => [
                 'file' => [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning','trace','info'],
-                    'exportInterval' => 1000,//导出数量，默认1000
-                    'logFile' => '@runtime/logs/'.date("Ymd", time()) .'/app.log',//定义日志路径
-                    'logVars' => ['_SERVER']//这些变量值将被追加至日志中
+                    'levels' => ['error', 'warning','trace','info','profile'],
+                    'exportInterval' => 1,//导出数量，默认1000
+                    'except'=>['yii\db\*','app\models\*'],
+                    'logFile' => '@runtime/logs/other/'.date("Y-m-d", time()).'.log',//定义日志路径
+                    'logVars' => [],//这些变量值将被追加至日志中
+               
+                 ],
+                'sql' => [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning','info','trace','profile'],
+                    'logVars'=>[],
+                    'exportInterval' => 1,//导出数量，默认1000
+                    //表示以yii\db\或者app\models\开头的分类都会写入这个文件
+                    'categories'=>['yii\db\*','app\models\*'],
+                    //表示写入到文件sql文件夹下的log中
+                    'logFile'=>'@runtime/logs/sql/'.date('Y-m-d',time()).'.log',                    
+                ],
+//                 'httpException' => [
                     
-                    ],
+//                 ]
             ],
             
         ],
