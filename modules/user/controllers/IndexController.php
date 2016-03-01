@@ -30,7 +30,9 @@ class IndexController extends Controller
         ];
         return ArrayHelper::merge($current, $parent);
     }
-    
+    /**
+     * 登录
+     */
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {
@@ -46,119 +48,49 @@ class IndexController extends Controller
             ]);
         }
     }
-
+    /**
+     * 注销
+     */
     public function actionLogout()
     {
         Yii::$app->user->logout();
 
         return $this->goHome();
     }
-    
+    /**
+     * 注册
+     */
     public function actionRegister(){
         
         $model = new User();
         $model->scenario = 'register';
         if($model->load(Yii::$app->request->post())){
+            $model->status = 0;
             $model->create_time = time();
             $model->type = 1;
             if($model->validate() && $model->save()){
                 
-                Common::showInfo('注册成功',Url::to(['@userIndexLogin']));
+                $result = $this->sendMail($model);
+                if($result){
+                    Common::showInfo('注册成功',Url::to(['@userIndexLogin']));
+                }
             }
-            var_dump($model->errors);exit();
         }
         return $this->render('register',['model' => $model]);
     }
     /**
-     * Lists all User models.
-     * @return mixed
+     * 发送邮件验证
      */
-    public function actionIndex()
-    {
-        $searchModel = new UserSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+    public function sendMail($model){
+        $mail= Yii::$app->mailer->compose(Yii::getAlias('@userIndexEmail'),['model' => $model]);
+        $mail->setTo($model->email);
+        $mail->setSubject("欢迎加入HIS平台，请验证登录邮箱");
+        //$mail->setTextBody('zheshisha ');   //发布纯文字文本
+//         $mail->setHtmlBody("<br>问我我我我我");    //发布可以带html标签的文本
+        if($mail->send())
+            return true;
+        else
+            return false;
     }
-
-    /**
-     * Displays a single User model.
-     * @param string $id
-     * @return mixed
-     */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
-    /**
-     * Creates a new User model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public function actionCreate()
-    {
-        $model = new User();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    /**
-     * Updates an existing User model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $id
-     * @return mixed
-     */
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    /**
-     * Deletes an existing User model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $id
-     * @return mixed
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
-    }
-
-    /**
-     * Finds the User model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $id
-     * @return User the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($id)
-    {
-        if (($model = User::findOne($id)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-    }
+    
 }

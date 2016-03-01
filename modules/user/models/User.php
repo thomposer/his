@@ -19,7 +19,7 @@ use yii\web\IdentityInterface;
  * @property integer $status
  * @property integer $create_time
  * @property integer $update_time
- *
+ * @property string  $code
  * @property AuthAssignment[] $authAssignments
  */
 class User extends BaseActiveRecord implements IdentityInterface
@@ -47,7 +47,7 @@ class User extends BaseActiveRecord implements IdentityInterface
             ['email','email'],
             [['id','type', 'status', 'create_time', 'update_time'], 'integer'],
             [['user_id', 'username', 'auth_key'], 'string', 'max' => 64],
-            [['password_hash', 'password_reset_token'], 'string', 'max' => 255],
+            [['password_hash', 'password_reset_token','code'], 'string', 'max' => 255],
             [['id','user_id','username'], 'unique'],
         ];
     }
@@ -174,6 +174,14 @@ class User extends BaseActiveRecord implements IdentityInterface
     }
     
     /**
+     * Generates new code
+     */
+    public function generateCode()
+    {
+        $this->code = Yii::$app->getSecurity()->generateRandomString(16).$this->email.'_' . time();
+    }
+    
+    /**
      * Removes password reset token
      */
     public function removePasswordResetToken()
@@ -210,6 +218,7 @@ class User extends BaseActiveRecord implements IdentityInterface
                 $this->generateUserId($this->email);
                 $this->generateAuthKey();
                 $this->generatePasswordResetToken();
+                $this->generateCode();
             }           
             $this->generatePasswordHash();            
         }

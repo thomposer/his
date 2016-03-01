@@ -100,3 +100,6 @@ Yii::setAlias('@userIndexRegister', '/user/index/register');
 
 //超级站点
 Yii::setAlias('@superSpot', 'superSpot');
+
+//验证邮箱
+Yii::setAlias('@userIndexEmail', 'user/index/email');

@@ -17,5 +17,10 @@ class DefaultController extends Controller
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],           
         ];
-    }    
+    }
+    
+    public function actionIndex(){
+        
+        return $this->render('index');
+    }
 }

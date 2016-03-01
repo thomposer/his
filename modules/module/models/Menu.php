@@ -54,7 +54,7 @@ class Menu extends \app\common\base\BaseActiveRecord
             [['menu_url', 'description', 'parent_id'], 'required'],
             [['type', 'parent_id', 'status','role_type','sort'], 'integer'],
             [['menu_url', 'description'], 'string', 'max' => 255],
-            [['menu_url'],'match','pattern' => '/^[\/][a-zA-Z0-9_\/]{3,34}$/','message' => '格式错误，正确格式应为：/m/c/a'],// 斜线/开头，允许4-35字节，允许字母数字下划线
+            [['menu_url'],'match','pattern' => '/^[\/][a-zA-Z0-9\/-]{3,34}$/','message' => '格式错误，正确格式应为：/m/c/a'],// 斜线/开头，允许4-35字节，允许字母数字下划线
         ];
     }
 
