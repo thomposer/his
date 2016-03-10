@@ -33,7 +33,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <h2><?= "<?= " ?>Html::encode($this->title) ?></h2>
         
             <p>
+            <?= "<?php "?>if(in_array($this->params['requestModuleController'].'/update', $this->params['permList'])):?>
                 <?= "<?= " ?>Html::a(<?= $generator->generateString('修改') ?>, ['update', <?= $urlParams ?>], ['class' => 'btn btn-success']) ?>
+            <?= "<?php "?>endif; ?>
+            <?= "<?php "?>if(in_array($this->params['requestModuleController'].'/delete', $this->params['permList'])):?>
                 <?= "<?= " ?>Html::a(<?= $generator->generateString('删除') ?>, ['delete', <?= $urlParams ?>], [
                     'class' => 'btn btn-danger',
                     'data' => [
@@ -41,6 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'method' => 'post',
                     ],
                 ]) ?>
+            <?= "<?php "?>endif; ?>
                 <?= "<?= " ?>Html::a(<?= $generator->generateString('返回列表') ?>,['index'],['class' => 'btn btn-primary'])?>
             </p>
 

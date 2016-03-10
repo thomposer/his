@@ -31,10 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
 <?= "<?php "?>$this->beginBlock('content');?>
 
 <div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-index col-xs-12">
-
+   <?=  "<?php "?> if(in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>
     <p>
         <?= "<?= " ?>Html::a(<?= $generator->generateString('添加 {modelClass}', ['modelClass' => Inflector::camel2words(StringHelper::basename($generator->modelClass))]) ?>, ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+   <?= "<?php "?>endif?>
    <div class = "box">
        <div class = "box-body"> 
 <?php if(!empty($generator->searchModelClass)): ?>
@@ -79,10 +80,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
 ?>
 
             [
-                'class' => 'yii\grid\ActionColumn',
-                'header' => '操作',
-                'contentOptions' => ['class' => 'op-group'],
-                'headerOptions'=>['class'=>'op-header'],
+                'class' => 'app\common\component\ActionColumn'
             ],
         ],
     ]); ?>
