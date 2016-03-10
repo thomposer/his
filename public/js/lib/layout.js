@@ -10,6 +10,7 @@ define(function(require){
 				this.bindEvent();
 			},
 			bindEvent : function(){
+				
 				$('li.dropdown-submenu ul').addClass('menu');
 				$('.active').closest('li.treeview').addClass('active');
 			}

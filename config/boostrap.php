@@ -76,6 +76,11 @@ Yii::setAlias('@TemplateIndexCreate', '/template/index/create');
 //模板管理模块
 Yii::setAlias('@moduleAdminCreate', '/module/admin/create');
 Yii::setAlias('@moduleAdminIndex', '/module/admin/index');
+Yii::setAlias('@moduleAdminAdd', '/module/admin/add');
+Yii::setAlias('@moduleAdminList', '/module/admin/list');
+Yii::setAlias('@moduleAdminView', '/module/admin/view');
+Yii::setAlias('@moduleAdminUpdate', '/module/admin/update');
+
 Yii::setAlias('@moduleMenuIndex', '/module/menu/index');
 Yii::setAlias('@moduleMenuUpdate', '/module/menu/update');
 Yii::setAlias('@moduleMenuDelete', '/module/menu/delete');
@@ -88,7 +93,11 @@ Yii::setAlias('@errorAbsoluteUrl',"/modules/site/views/default/error");
 
 // 默认模块命名
 Yii::setAlias('@defaultSpotName', '_defaut_module_');
-Yii::setAlias('@defaultTemplate', '@RootPath/config/defaultTemplate.php');
+//超级站点
+Yii::setAlias('@superSpotName', '_super_module_');
+
+Yii::setAlias('@defaultTemplateUrl', '@RootPath/config/defaultTemplate.php');
+Yii::setAlias('@superTemplateUrl', '@RootPath/config/initSuperPermission.php');
 
 // 行为记录
 Yii::setAlias('@behaviorActionDelete', '/behavior/record/delete');
@@ -98,8 +107,9 @@ Yii::setAlias('@userIndexLogin', '/user/index/login');
 Yii::setAlias('@userIndexLogout', '/user/index/logout');
 Yii::setAlias('@userIndexRegister', '/user/index/register');
 
-//超级站点
-Yii::setAlias('@superSpot', 'superSpot');
 
 //验证邮箱
 Yii::setAlias('@userIndexEmail', 'user/index/email');
+
+//alert页面
+// Yii::setAlias('@', $path)
