@@ -16,35 +16,53 @@ class ActionColumn extends \yii\grid\ActionColumn
      */
 
     public $auth=[];
-
-
+    public $requestModuleController;
+    public $permList;
     /**
      * @inheritdoc
     */
     public function init()
     {
         parent::init();
+        $view = Yii::$app->view;
+        $this->requestModuleController = $view->params['requestModuleController'];
+        $this->permList = $view->params['permList'];
         $this->initDefaultAuth();
         $this->initDefaultButtons();
+        $this->headerOptions = empty($this->headerOptions)?['class' => 'op-header']:$this->headerOptions;
+        $this->contentOptions = empty($this->contentOptions)?['class' => 'op-group']:$this->contentOptions;
     }
 
     /**
+     * 
+     * 判断用户是否有权限，若没权限，返回false,否则返回true
      * Initializes the default button rendering callbacks.
      */
     protected function initDefaultAuth()
     {
+        
         if (!isset($this->auth['view'])) {
             $this->auth['view'] = function ($url, $model, $key) {
+                
+            if(!in_array($this->requestModuleController.'/view', $this->permList)){
+                return false;
+            }  
                 return true;
             };
         }
         if (!isset($this->auth['update'])) {
             $this->auth['update'] = function ($url, $model, $key) {
+            if(!in_array($this->requestModuleController.'/update', $this->permList)){
+                return false;
+            }
                 return true;
             };
         }
         if (!isset($this->auth['delete'])) {
             $this->auth['delete'] = function ($url, $model, $key) {
+            if(!in_array($this->requestModuleController.'/delete', $this->permList)){
+                return false;
+            }
                 return true;
             };
         }
@@ -93,7 +111,7 @@ class ActionColumn extends \yii\grid\ActionColumn
                 if(call_user_func($this->auth['delete'], $url, $model, $key)!==true)
                 {
                     $url='javascript:void(0)';
-                    $auth_class='text-muted';
+                    $auth_class='disable';
                 }
                 $options = array_merge([
                     'title' => Yii::t('yii', 'Delete'),
@@ -106,4 +124,12 @@ class ActionColumn extends \yii\grid\ActionColumn
             };
         }
     }
+    protected function renderHeaderCellContent()
+    {
+        return trim($this->header) !== '' ? $this->header : '操作';
+    }
+    
+    
+   
+    
 }

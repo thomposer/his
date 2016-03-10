@@ -25,8 +25,6 @@ class BaseController extends Controller
     public $rootPermission;//用户管理模块－当前站点的权限根分类
     public $layoutData;//用户菜单列表
     public $pageSize = 20;//分页大小
-    public $templateUrl;//站点模板路径
-    public $templateList;//默认的模板清单列表文件名
     public $userInfo;//用户的user_id;
     public $manager;
     
@@ -77,7 +75,7 @@ class BaseController extends Controller
 	    
 	    $this->layout = false;
 	    $view = Yii::$app->view;
-	    $view->params['request_module_controller'] = '/'.$moduleId . '/' . $controllerId;
+	    $view->params['requestModuleController'] = '/'.$moduleId . '/' . $controllerId;
 	    $view->params['requestUrl'] = $requestUrl;
 	   	//允许直接访问的url,无权限不需要进入站点
 	    $allowUrl = [
@@ -104,12 +102,7 @@ class BaseController extends Controller
             $this->getUserRole($systemPermission);
             return parent::beforeAction($action);
         }
-        
-        //若用户没有该站点权限，则显示权限不足        
-	    if (!$this->manager->checkAccess($this->userInfo->user_id, $this->wxcode)) {
-	       return Common::showMessage();
-	    }
-	    
+       	    
 	    //若有站点权限，则站点首页免验证 	   
 	    if ($requestUrl === Yii::getAlias('@manageIndex')) {
 	    
@@ -121,9 +114,9 @@ class BaseController extends Controller
 	        return Common::showMessage();
 	    }
 	    //检测当前url是否已启用
-	    if(!Menu::checkMenu($requestUrl)){
-	        throw new NotFoundHttpException('你所请求的页面不存在',404);
-	    }
+// 	    if(!Menu::checkMenu($requestUrl)){
+// 	        throw new NotFoundHttpException('你所请求的页面不存在',404);
+// 	    }
 	     
 	    $this->getUserRole();
 	    return parent::beforeAction($action);
@@ -132,10 +125,11 @@ class BaseController extends Controller
 	//获取用户当前站点所有的权限，并渲染进layout
 	private function getUserRole($role = null) {
 	    $datas = '';
-	    $view = Yii::$app->view;	    	    
+	    $list = '';
+	    $view = Yii::$app->view;
  	    if($role != null) {
-	    	$spot = $this->wxcode == Yii::getAlias('@superSpot')?1:0;
-	    	$datas = Title::getMenus($spot);
+ 	        $spotSystem = $this->rolePrefix.'system';
+	    	$userPermissions[$spotSystem] = $this->manager->getPermissionsByRole($spotSystem);	
 	    } else {
 	    	$userPermissions = '';
 	    	$localRoleType = $this->manager->getChildren($this->rootRole);//查找当前站点的所有角色
@@ -147,23 +141,24 @@ class BaseController extends Controller
 	    			}
 	    		}
 	    	}
-	    	//过滤字段
-	    	if ($userPermissions){
-	    		foreach ($userPermissions as $v){
-	    			foreach ($v as $k){
-	    				$list[] = ltrim($k->name,$this->wxcode);//获取有权限菜单的详细信息以及所属模块
-	    			}
-	    		}
-	    		$result = Menu::getParent($list);
-	    		foreach ($result as $v){
-	    		    $datas[$v['title_id']]['module_description'] = $v['module_description'];
-	    		    $datas[$v['title_id']]['module_name'] = $v['module_name'];
-	    		    unset($v['module_description']);
-	    		    $datas[$v['title_id']]['children'][] = $v;
-	    		}
-	    	}
-	    }
+	   }
+	       //过滤字段
+	       foreach ($userPermissions as $v){
+	           foreach ($v as $k){
+	               $list[] = ltrim($k->name,$this->wxcode);//获取有权限菜单的详细信息以及所属模块
+	           }
+	       }
+	        
+	       $result = Menu::getParent($list);
+	       foreach ($result as $v){
+	           $datas[$v['title_id']]['module_description'] = $v['module_description'];
+	           $datas[$v['title_id']]['module_name'] = $v['module_name'];
+	           unset($v['module_description']);
+	           $datas[$v['title_id']]['children'][] = $v;
+	       }
+	    $view->params['permList'] = $list;
 	    $view->params['layoutData'] = $datas;
+	   
 	}
 	
 	public function afterAction($action, $result)
