@@ -5,13 +5,30 @@ use yii\helpers\Html;
 /* @var $name string */
 /* @var $message string */
 /* @var $exception Exception */
-
-$this->title = $title;
+$baseUrl = Yii::$app->request->baseUrl;
+use app\common\AutoLayout;
+var_dump(111);exit();
 ?>
-<div id="da-error-wrapper">
-                	                   
-	<h1 class="da-error-heading"><?= $message ?></h1>
-	<p><a href="<?php echo \Yii::$app->request->getReferrer()?>">返回上一页</a></p>
-	
-</div>
+<?php AutoLayout::begin(['viewFile' => '@app/views/layouts/layout.php'])?>
+
+<?php $this->beginBlock('renderCss');?>
+<?php $this->endBlock();?>
+
+<?php $this->beginBlock('content');?>
+
+<?php $this->endBlock();?>
+
+<?php $this->beginBlock('renderJs');?>
+<script type="text/javascript">
+
+	var title = "<?= Yii::$app->request->get('title') ?>";
+	var message = "<?= Yii::$app->request->get('message'); ?>";
+	var url = "<?= Yii::$app->request->get('url') ?>";
+	require(["<?= $baseUrl ?>"+"/public/js/lib/alert.js"],function(main){
+ 		main.init();
+	});	
+</script>
+<?php $this->endBlock();?>
+<?php AutoLayout::end()?>
+
                 

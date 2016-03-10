@@ -31,6 +31,10 @@ $baseUrl = Yii::$app->request->baseUrl;
     <?php AppAsset::addCss($this,'@web/public/dist/css/skins/all-skins.css');?>
     <!-- iCheck -->
     <?php AppAsset::addCss($this,'@web/public/plugins/iCheck/flat/blue.css');?>
+    <!-- alertifyJs -->
+    <?php $this->registerCssFile('@web/public/alertifyJs/build/css/alertify.min.css')?>
+    <?php $this->registerCssFile('@web/public/alertifyJs/build/css/themes/bootstrap.css')?>
+    
     <!-- Morris chart -->
     <?php //AppAsset::addCss($this,'@web/public/plugins/morris/morris.css');?>
     <!-- jvectormap -->
@@ -173,7 +177,7 @@ $baseUrl = Yii::$app->request->baseUrl;
                    </a>
                    <ul class="treeview-menu">
                    <?php foreach ($v['children'] as $k):?>
-                        <li class = "<?php if(stripos($k['menu_url'],$this->params['request_module_controller']) === 0){echo "active";}?>">
+                        <li class = "<?php if(stripos($k['menu_url'],$this->params['requestModuleController']) === 0){echo "active";}?>">
                             <?= Html::a('<i class="fa fa-circle-o"></i>'.$k['description'],[$k['menu_url']]) ?>
                         </li>
                    <?php endforeach;?>
@@ -206,7 +210,8 @@ $baseUrl = Yii::$app->request->baseUrl;
             'jquery' : 'public/js/lib/jquery.min',
             'dist' : 'public/dist/js',
             'js' : 'public/js',
-            'plugins' : 'public/plugins'
+            'plugins' : 'public/plugins',
+            'alertifyJs' : 'public/alertifyJs',
         }
     });
     require(["<?php echo $baseUrl ?>"+"/public/js/lib/layout.js"],function(main){
