@@ -8,6 +8,8 @@ use yii\data\ActiveDataProvider;
 use app\modules\module\models\Menu;
 use app\modules\module\models\Title;
 use yii\base\Object;
+use app\common\Common;
+use yii\db\ActiveQuery;
 
 /**
  * MenuSearch represents the model behind the search form about `app\modules\module\models\Menu`.
@@ -43,7 +45,9 @@ class MenuSearch extends Menu
      */
     public function search($params,$pageSize = 10,$where = NULL)
     {
-        $query = Menu::find()->select(['gzh_menu.menu_url','gzh_menu.parent_id','gzh_menu.description','gzh_menu.type','gzh_menu.status','gzh_menu.id','gzh_title.module_description'])->leftJoin('gzh_title','gzh_menu.parent_id = gzh_title.id');
+        $query = new ActiveQuery(Menu::className());
+        $query->from(['m' => Menu::tableName()]);
+        $query->select(['m.menu_url','m.parent_id','m.description','m.type','m.status','m.id','t.module_description'])->leftJoin(['t'=>Title::tableName()],'{{m}}.parent_id = {{t}}.id');
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
@@ -60,14 +64,14 @@ class MenuSearch extends Menu
         }
 
         $query->andFilterWhere([
-            'gzh_menu.id' => $this->id,
-            'gzh_menu.type' => $this->type,
-            'gzh_menu.parent_id' => $this->parent_id,
-            'gzh_menu.status' => $this->status,
+            'm.id' => $this->id,
+            'm.type' => $this->type,
+            'm.parent_id' => $this->parent_id,
+            'm.status' => $this->status,
         ]);
 
-        $query->andFilterWhere(['like', 'gzh_menu.menu_url', $this->menu_url])
-            ->andFilterWhere(['like', 'gzh_menu.description', $this->description]);
+        $query->andFilterWhere(['like', 'm.menu_url', $this->menu_url])
+            ->andFilterWhere(['like', 'm.description', $this->description]);
 
         return $dataProvider;
     }

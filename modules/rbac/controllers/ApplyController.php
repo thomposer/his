@@ -14,6 +14,7 @@ use yii\helpers\ArrayHelper;
 use app\modules\spot\models\Spot;
 use yii\base\Object;
 use app\common\Common;
+use yii\helpers\Url;
 
 class ApplyController extends BaseController
 {
@@ -109,7 +110,7 @@ class ApplyController extends BaseController
         if($model->load(Yii::$app->request->post()) && $model->validate()){
             $checkRecord = ApplyPermissionList::find()->select(['id'])->where(['user_id' => $model->user_id,'spot' => $this->wxcode])->asArray()->one();
             if($checkRecord){
-                Common::showInfo('该记录已经存在','index.html');
+                Common::showInfo('该记录已经存在',Url::to(['@rbacApplyIndex']));
             }
             $permsCheck = array();
             foreach ($model->item_data as $v) {
@@ -117,14 +118,6 @@ class ApplyController extends BaseController
                 $item_name_description .= $this->manager->getRole($v)->description.',';
             }
             if($model->status == 1){
-                $spot_role = Yii::getAlias('@spotPrefix') . $this->wxcode;
-                $col = $this->manager->getAssignment($spot_role, $model->user_id);
-                if (! $col) {
-                    // 分配站点角色权限
-                    $roleSpotModel = new \yii\rbac\Role();
-                    $roleSpotModel->name = $spot_role;
-                    $this->manager->assign($roleSpotModel, $model->user_id);
-                }
                 foreach ($childrens as $perm) {
                         $permName = $perm->name;
                         
@@ -192,19 +185,9 @@ class ApplyController extends BaseController
             $model->item_name = implode(',', $model->item_data);
             $model->item_name_description = rtrim($item_name_description, ',');
             $model->apply_persons = $this->userInfo->username;
-            $spot_role = Yii::getAlias('@spotPrefix') . $model->spot;
             $model->updated_time = time();
             $rows = $model->save();
             if ($rows && $model->status == 1) {
-                               
-                $col = $this->manager->getAssignment($spot_role, $model->user_id);
-                if (! $col) {
-                    // 分配站点角色权限
-                    $roleSpotModel = new \yii\rbac\Role();
-                    $roleSpotModel->name = $spot_role;
-                    $this->manager->assign($roleSpotModel, $model->user_id);
-                }
-                
                 foreach ($childrens as $perm) {
                     $permName = $perm->name;
                     
@@ -221,7 +204,7 @@ class ApplyController extends BaseController
                     }
                 }
             }
-            return Common::showInfo('修改成功', 'index.html');
+            return Common::showInfo('修改成功', Url::to(['@rbacApplyIndex']));
         }
         
         
@@ -266,8 +249,6 @@ class ApplyController extends BaseController
                         $this->manager->revoke($roleModel, $result->user_id); // 逐个删除对应角色
                     }
                 }
-                $spotModel = $this->manager->getRole(Yii::getAlias('@spotPrefix') . $result->spot); // 删除该用户的站点角色
-                $this->manager->revoke($spotModel, $result->user_id);
             }
             $result->delete();
             

@@ -16,13 +16,14 @@ $baseUrl = Yii::$app->request->baseUrl;
 <?php AutoLayout::begin(['viewFile' => '@app/views/layouts/layout.php'])?>
 <?php $this->beginBlock('renderCss')?>
     <?php AppAsset::addCss($this,'@web/public/css/search.css')?>
-    
 <?php $this->endBlock();?>
 <?php $this->beginBlock('content')?>
 <div class="menu-index col-xs-12">
+    <?php  if(in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>
     <p class = "applySearch-button">
         <?php echo  Html::a('添加菜单', ['@moduleMenuCreate'], ['class' => 'btn btn-success']) ?>
     </p>
+    <?php endif;?>
     <div class = "box">
     <div class = "box-body">
     <?php  echo $this->render('_search', ['model' => $searchModel,'titleList' => $titleList]); ?>
@@ -65,10 +66,7 @@ $baseUrl = Yii::$app->request->baseUrl;
                 }
             ],
             [
-                'class' => 'yii\grid\ActionColumn',
-                'header' => '操作',
-                'contentOptions' => ['class' => 'op-group'],
-                'headerOptions'=>['class'=>'op-header'],
+                'class' => 'app\common\component\ActionColumn',
             ],
     ]
     ]); ?>
@@ -77,13 +75,6 @@ $baseUrl = Yii::$app->request->baseUrl;
 </div>
 <?php $this->endBlock();?>
 <?php $this->beginBlock('renderJs')?>
-	<script type="text/javascript">
-		var deleteUrl = "<?php echo Url::to(['@moduleMenuDelete']) ?>";
-		var updateUrl = "<?php echo Url::to(['@moduleMenuUpdate']) ?>";
-		var indexUrl =  "<?php echo Url::to(['@moduleMenuIndex']) ?>";
-    	require(["<?php echo $baseUrl ?>"+"/public/js/module/menu.js"],function(main){
-        	main.init();
-    	});
-	</script>
+
 <?php $this->endBlock();?>
 <?php AutoLayout::end();?>

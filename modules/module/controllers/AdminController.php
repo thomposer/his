@@ -84,7 +84,7 @@ class AdminController extends BaseController
 	        		// 批量添加目录
 	        		if (count($needMenus) > 0) {
 	        			$db->createCommand()
-	        				->batchInsert('gzh_menu', ['menu_url', 'description', 'type', 'role_type', 'parent_id'], $needMenus)
+	        				->batchInsert(Menu::tableName(), ['menu_url', 'description', 'type', 'role_type', 'parent_id'], $needMenus)
 	        				->execute();
 	        		}
 					

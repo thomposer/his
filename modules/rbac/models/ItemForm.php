@@ -45,7 +45,6 @@ class ItemForm extends BaseActiveRecord
             [['type', 'created_at', 'updated_at'], 'integer'],
             [['description', 'data','category','parentName'], 'string'],
             [['name', 'rule_name'], 'string', 'max' => 35,'min' => 4, 'tooLong' => '请输入长度为4-35个字符','tooShort' => '请输入长度为4-35个字符'],
-            [['name'],'match','pattern' => '/^[a-zA-Z][a-zA-Z0-9_\/]{3,34}$/','message' => '必须以字母开头，不能输入中文'],//字母开头，允许4-35字节，允许字母数字下划线
             [['child'],'safe']
         ];
     }

@@ -33,7 +33,9 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'role_type') ?>
 
-    <div class="form-group">
+    <?php // echo $form->field($model, 'sort') ?>
+
+    <div class="form-group search_button">
         <?= Html::submitButton('搜索', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('重置', ['class' => 'btn btn-default']) ?>
     </div>

@@ -5,7 +5,7 @@ namespace app\modules\behavior\models;
 use Yii;
 
 /**
- * This is the model class for table "gzh_behavior_record".
+ * This is the model class for table "{{%behavior_record}}".
  *
  * @property string $id
  * @property string $user_id
@@ -23,7 +23,7 @@ class BehaviorRecord extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'gzh_behavior_record';
+        return '{{%behavior_record}}';
     }
 
     /**

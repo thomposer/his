@@ -82,19 +82,7 @@ class SitesController extends BaseController
 		}
 		return $this->render('index', $data);
 	}
-	
-	/**
-	 * Displays a single Spot model.
-	 * 
-	 * @param integer $id        	
-	 * @return mixed
-	 */
-	public function actionUpdateview($id)
-	{
-		return $this->render('updateview', [ 
-			'model' => $this->findModel($id)
-		]);
-	}
+
 	
 	/**
 	 * 查看已申请的站点列表
@@ -196,12 +184,16 @@ class SitesController extends BaseController
 			}
 		}
 		// 添加一个空白站点模板
-		$defaultList = array (
+		$defaultList = [
 		    [
 		        'spot' => Yii::getAlias('@defaultSpotName'),
 		        'spot_name' => '空白模板'
+		    ],
+		    [
+		        'spot' => Yii::getAlias('@superSpotName'),
+		        'spot_name' => '系统模板',
 		    ]
-		);
+		];
 		$spotList = ArrayHelper::merge($defaultList, $spotList);
 		return $this->render('update', [ 
 				'model' => $model,
@@ -213,25 +205,16 @@ class SitesController extends BaseController
 	{
 		$model = new ApplyPermissionList();
 						
-// 		$applyPersons = null;
-// 		$datas = AssignmentForm::getUser_id($spot->spot . '_roles_system', []);
-// 		if ($datas) {
-// 			foreach ($datas as $v) {
-// 				$applyPersons .= $v['user_id'] . ',';
-// 			}
-// 		}
-		
 		$applyUser = User::find()->select(['username'])->where(['user_id' => $spot->user_id])->asArray()->one();
 		
 		$model->user_id = $spot->user_id;
 		$model->username = $applyUser['username'];
 		$model->item_name = $role->name;
 		$model->item_name_description = $role->description;
-		$model->spot = $spot->spot_name;
+		$model->spot_name = $spot->spot_name;
 		$model->spot = $spot->spot;
 		$model->reason = '系统默认生成';
 		$model->apply_persons = $this->userInfo->username;
-// 		$model->apply_persons = rtrim($applyPersons, ','); // 默认当前处理人
 		$model->status = ApplyPermissionList::VERIFIED;
 		$model->created_time = time();
 		$model->updated_time = time();
@@ -241,31 +224,14 @@ class SitesController extends BaseController
 	
 	public function initDefaultTemplate($targetSpot)
 	{
-		$rootPath = Yii::getAlias('@defaultTemplate');
+		$rootPath = $targetSpot->template === Yii::getAlias('@defaultSpotName')?Yii::getAlias('@defaultTemplateUrl'):Yii::getAlias('@superTemplateUrl');
 		$defaultPerms = include($rootPath);
-		
 		$dbTrans = Yii::$app->db->beginTransaction();
 		try {
-			$spotPrefix = Yii::getAlias('@spotPrefix');
 			$categoryRoleSuffix = '_roles';
 			$categoryPermSuffix = '_permissions';
 			//$roleType = '_roles_';
 			//$permType = '_permissions_';
-			
-			// 初始化站点访问的权限
-			$spotRole = new Role();
-			$spotRole->name = $spotPrefix . $targetSpot->spot;
-			$spotRole->description = $targetSpot->spot_name;
-			$this->manager->add($spotRole);
-			
-			$spotPerm = new Permission();
-			$spotPerm->name = $targetSpot->spot;
-			$spotPerm->description = $targetSpot->spot_name;
-			$this->manager->add($spotPerm);
-			
-			$this->manager->addChild($spotRole, $spotPerm);
-			// 分配当前站点角色给申请的用户
-			$this->manager->assign($spotRole, $targetSpot->user_id);
 			
 			// 初始化权限分类总目录和角色分类总目录
 			$categoryRole = new Role();
@@ -342,47 +308,31 @@ class SitesController extends BaseController
 			throw new NotFoundHttpException('你所请求的站点不存在', 404);
 		}
 		
-		// 已经初始化
-		$haspermission = $this->manager->getPermission($targetSpot['spot']);
-		if ($haspermission) {
-			$targetSpot->render = Spot::HAS_RENDER;
-			$targetSpot->save();
-			
-			Common::showInfo('该站点权限已经初始化');
-		}
 		$this->wxcode = $targetSpot->spot;
 		$this->rolePrefix = $this->wxcode . '_roles_';
 		$this->permissionPrefix = $this->wxcode . '_permissions_';		 
 		$this->rootRole = $this->wxcode . '_roles';
 		$this->rootPermission = $this->wxcode . '_permissions';
+		// 已经初始化
+		$haspermission = $this->manager->getPermission($this->rootPermission);
+		if ($haspermission) {
+		    $targetSpot->render = Spot::HAS_RENDER;
+		    $targetSpot->save();
+		    	
+		    Common::showInfo('该站点权限已经初始化');
+		}
 		// 使用默认模板初始化,如果有同名的模板，则使用自定义的那个模板
 		$isDefaultTemplate = Spot::find()->select([ 'id' ])->where(['spot' => $targetSpot->template])->one() !== null;
-		if (!$isDefaultTemplate && $targetSpot->template === Yii::getAlias('@defaultSpotName')) {
+		if (!$isDefaultTemplate && ($targetSpot->template === Yii::getAlias('@defaultSpotName') || $targetSpot->template === Yii::getAlias('@superSpotName'))) {
 			return $this->initDefaultTemplate($targetSpot);
 		}
 		
 		$dbTrans = Yii::$app->db->beginTransaction();
 		try {
-			$spotPrefix = Yii::getAlias('@spotPrefix');
 			
 			$categoryRoleSuffix = '_roles';
 			$categoryPermSuffix = '_permissions';			
-			// 初始化站点权限
-			// 初始化站点访问的权限
-			$spotRole = new Role();
-			$spotRole->name = $spotPrefix . $this->wxcode;
-			$spotRole->description = $targetSpot->spot_name;
-			$this->manager->add($spotRole);
-				
-			$spotPerm = new Permission();
-			$spotPerm->name = $targetSpot->spot;
-			$spotPerm->description = $targetSpot->spot_name;
-			$this->manager->add($spotPerm);
-				
-			$this->manager->addChild($spotRole, $spotPerm);
-			// 分配当前站点角色给申请的用户
-			$this->manager->assign($spotRole, $targetSpot->user_id);
-			
+	
 			// 初始化权限分类总目录和角色分类总目录
 			$categoryRole = new Role();
 			$categoryRole->name = $this->rootRole;

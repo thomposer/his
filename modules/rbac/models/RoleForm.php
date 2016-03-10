@@ -4,6 +4,7 @@ namespace app\modules\rbac\models;
 
 use Yii;
 use app\modules\rbac\models\ItemForm;
+use yii\helpers\ArrayHelper;
 /**
  * This is the model class for table "{{%auth_item}}".
  *
@@ -26,7 +27,14 @@ class RoleForm extends ItemForm
        parent::init();
        $this->type = \yii\rbac\Item::TYPE_ROLE;
     }
-    
+    public function rules(){
+        
+        $parentRule = parent::rules();
+        $roleRule =  [
+            [['name'],'match','pattern' => '/^[a-zA-Z][a-zA-Z0-9_\/]{3,34}$/','message' => '必须以字母开头，不能输入中文'],//字母开头，允许4-35字节，允许字母数字下划线
+        ];
+        return ArrayHelper::merge($parentRule, $roleRule);
+    }
     /**
      * @inheritdoc
      */

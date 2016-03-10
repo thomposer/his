@@ -4,6 +4,7 @@ namespace app\modules\module\models;
 
 use Yii;
 use yii\db\Query;
+use app\common\Common;
 /**
  * This is the model class for table "{{%menu}}".
  *
@@ -83,17 +84,19 @@ class Menu extends \app\common\base\BaseActiveRecord
         return $result['status'];
     }
     /**
+     * @param $menu_url_array  角色所拥有的url
+     * @param $role_type 角色类型－1:系统管理员,0:其他角色
      * @return \yii\db\ActiveQuery
      */
     public static function getParent($menu_url_array)
     {
-        $query = (new Query())->from('gzh_menu as m')->select(['t.id as title_id','t.module_description','t.module_name','m.menu_url','m.description'])
-        ->join('LEFT JOIN','gzh_title as t','m.parent_id = t.id')
-        ->andwhere(['m.menu_url' => $menu_url_array,'t.status' => 1,'m.type' => 1,'m.status' => 1,'m.role_type' => 0])
-        ->orderBy(['t.sort'=>SORT_DESC])
-        ->all();     
-        return $query;
-        //return $this->hasOne(Title::className(), ['id' => 'parent_id']);
+        $query = new Query();
+        $query->from(['m' => self::tableName()])->select(['t.id as title_id','t.module_description','t.module_name','m.menu_url','m.description']);
+        $query->leftJoin(['t' => Title::tableName()],'{{m}}.parent_id = {{t}}.id');
+        $query->where(['m.menu_url' => $menu_url_array,'t.status' => 1,'m.type' => 1,'m.status' => 1]);
+        $query->orderBy(['t.sort'=>SORT_DESC]);
+        $result = $query->all();   
+        return $result;
     }
     public static function searchMenu($description){
         return self::find()->select(['menu_url'])->where(['description' => $description])->asArray()->one();

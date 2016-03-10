@@ -18,7 +18,7 @@ class MenuSearch extends Menu
     public function rules()
     {
         return [
-            [['id', 'type', 'parent_id', 'status', 'role_type'], 'integer'],
+            [['id', 'type', 'parent_id', 'status', 'role_type', 'sort'], 'integer'],
             [['menu_url', 'description'], 'safe'],
         ];
     }
@@ -59,6 +59,7 @@ class MenuSearch extends Menu
             'parent_id' => $this->parent_id,
             'status' => $this->status,
             'role_type' => $this->role_type,
+            'sort' => $this->sort,
         ]);
 
         $query->andFilterWhere(['like', 'menu_url', $this->menu_url])

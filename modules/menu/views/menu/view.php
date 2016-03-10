@@ -43,6 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'parent_id',
             'status',
             'role_type',
+            'sort',
         ],
     ]) ?>
         </div>

@@ -22,9 +22,11 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php $this->endBlock();?>
 <?php $this->beginBlock('content')?>
 	<div class="menu-index col-xs-12">
+	<?php if(in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>            
 	<p>
         <?= Html::a('初始化模块', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+    <?php endif;?>
 	<div class = "box">
     <div class = "box-body">
 	
@@ -67,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					'attribute' => '操作',
 					'format' => 'raw',
 					'value' => function ($searchModel){
-						return Html::a('更新', ['update', 'id' => $searchModel->id]);
+						return Html::a('更新', ['update', 'id' => $searchModel->id],['class' => 'btn btn-info']);
 					}
 				],				
 	            

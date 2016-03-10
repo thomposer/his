@@ -38,21 +38,28 @@ $this->params['breadcrumbs'][] = $this->title;
 	        'columns' => [
 				['label' => '模块名称', 'value' => 'module_description'],
 	            [
-					'class' => 'yii\grid\ActionColumn',
+					'class' => 'app\common\component\ActionColumn',
 					'header' => '操作',
 				 	'template' => '{add}',
+	                'headerOptions' => ['class' => ''],
+	                'contentOptions' => ['class' => ''],
 					'buttons' => [
 					'add' => function($url, $model, $key) {
                             $manager = \yii::$app->authManager;
                             $hasModule = $manager->getPermission(Yii::$app->session->get('spot').'_permissions_'.$model->module_name);
                             if($hasModule){
-                                return '已添加';
+                                return Html::tag('button','已添加',['class' => 'btn btn-success disabled']);
+                            }
+                            if(!$manager->checkAccess(Yii::$app->user->identity->user_id, Yii::$app->session->get('spot').Yii::getAlias('@moduleAdminAdd'))){
+                                $url='javascript:void(0)';
+                                $auth_class='disabled';
                             }
 							$options = array(
-								'title' => Yii::t('yii', 'Delete'),
-								'aria-label' => Yii::t('yii', 'Delete'),
+								'title' => Yii::t('yii', 'add'),
+								'aria-label' => Yii::t('yii', 'add'),
 								'data-confirm' => Yii::t('yii', '你确定要添加该模块?'),
 								'data-method' => 'post',
+							    'class' => 'btn btn-info '.$auth_class,
 							);
 							return Html::a('添加', $url, $options);
 						

@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use app\common\base\AutoLoginFilter;
 use yii\web\Controller;
 use app\modules\spot\models\Spot;
+use yii\helpers\VarDumper;
 /**
  * 公众号管理平台入口，提供站点选择
  * @author zesonliu
@@ -54,16 +55,19 @@ class DefaultController extends Controller
         $userId = Yii::$app->user->identity->user_id;
         $allowSpot = $this->manager->getAssignments($userId);
         $systemRole = Yii::getAlias('@systemRole');
-        $spotPrefix = Yii::getAlias('@spotPrefix');
         if($allowSpot){
             foreach ($allowSpot as $v){
                switch (true){
                    case $v->roleName === $systemRole : 
                        $where = 1;
                        break;
-                   case strstr($v->roleName, $spotPrefix) != false :
-                       $data['spot'][] = trim(str_replace($spotPrefix, '', $v->roleName));
-                       break;                               
+//                    case strstr($v->roleName, $spotPrefix) != false :
+//                        $data['spot'][] = trim(str_replace($spotPrefix, '', $v->roleName));
+//                        break;     
+                   default:
+                       $spotName = explode('_', $v->roleName)[0];
+                       $data['spot'][$spotName] = $spotName;
+                       break;
                        
                }
             }
@@ -82,5 +86,8 @@ class DefaultController extends Controller
 		$session->set('spot_name','');//站点名称
 		return $this->render('index', [ 'list' => $list ]);
     }
-
+    public function actionMessage(){
+        
+       return $this->render('message');
+    }
 }

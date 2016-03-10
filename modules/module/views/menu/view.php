@@ -20,15 +20,18 @@ $baseUrl = Yii::$app->request->baseUrl;
     <div class = "box">
        <div class = "box-body">
        <p class="button-group">
-        <?= Html::a('修改', ['update', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-                'class' => 'btn btn-danger',
-                'data' => [
-                    'confirm' => '你确定要删除此项吗?',
-                    'method' => 'post',
-                ],
-            ]) ?>
-        
+        <?php  if(in_array($this->params['requestModuleController'].'/update', $this->params['permList'])):?>
+            <?= Html::a('修改', ['update', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
+        <?php endif;?>
+        <?php  if(in_array($this->params['requestModuleController'].'/delete', $this->params['permList'])):?>
+            <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+                    'class' => 'btn btn-danger',
+                    'data' => [
+                        'confirm' => '你确定要删除此项吗?',
+                        'method' => 'post',
+                    ],
+                ]) ?>
+        <?php endif;?>
         <?= Html::a('返回列表', ['index'], ['class' => 'btn btn-primary']) ?>
        </p>
 
@@ -61,16 +64,6 @@ $baseUrl = Yii::$app->request->baseUrl;
 </div>
 <?php $this->endBlock();?>
 <?php $this->beginBlock('renderJs')?>
-	<script type="text/javascript">
-		
-		var deleteUrl = "<?php echo Url::to(['@moduleMenuDelete']) ?>";
-		var updateUrl = "<?php echo Url::to(['@moduleMenuUpdate']) ?>";
-		var indexUrl =  "<?php echo Url::to(['@moduleMenuIndex']) ?>";
-		
-		//var permission_data = <?php //echo $permission?$permission:''?>;
-    	require(["<?php echo $baseUrl ?>"+"/public/js/module/menu.js"],function(main){
-        	main.init();
-    	});
-	</script>
+
 <?php $this->endBlock();?>
 <?php AutoLayout::end()?>

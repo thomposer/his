@@ -4,6 +4,7 @@ namespace app\modules\rbac\models;
 
 use Yii;
 use app\modules\rbac\models\ItemForm;
+use yii\helpers\ArrayHelper;
 /**
  * This is the model class for table "{{%auth_item}}".
  *
@@ -26,6 +27,15 @@ class PermissionForm extends ItemForm
     public function init() {
        parent::init();
        $this->type = \yii\rbac\Item::TYPE_PERMISSION;
+    }
+    public function rules(){
+        
+        $parentRule = parent::rules();
+        $permRule =  [
+            [['name'],'match','pattern' => '/^[\/][a-zA-Z0-9\/-]{3,34}$/','message' => '格式错误，正确格式应为：/m/c/a'],// 斜线/开头，允许4-35字节，允许字母数字下划线
+                
+        ];
+        return ArrayHelper::merge($parentRule, $permRule);
     }
     /**
      * @inheritdoc

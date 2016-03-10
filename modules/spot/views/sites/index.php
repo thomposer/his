@@ -47,11 +47,9 @@ $baseUrl = Yii::$app->request->baseUrl;
 						[
 							//动作列yii\grid\ActionColumn
 							//用于显示一些动作按钮，如每一行的更新、删除操作。
-							'class' => 'yii\grid\ActionColumn',
-							'header' => '操作',
+							'class' => 'app\common\component\ActionColumn',
 							'template' => '{update}</td><td>{template}',//只需要展示更新
 							'headerOptions' => ['width' => '120','colspan' => 2],
-	
 							'buttons' => [
 								'update' => function($url, $model, $key) {
 								        return Html::a('<span class="glyphicon glyphicon-pencil"></span>', ['update', 'id' => $key]);

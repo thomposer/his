@@ -51,22 +51,22 @@ $baseUrl = Yii::$app->request->baseUrl;
         		         <?php endif;?>
                        </ul>
     </div>
- <div class="btn-group">
-            
-             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                   <?php echo $currentSpotInfo?$currentSpotInfo[1]:'切换站点权限'?>
-                   <span class="caret"></span>          
-              </button>
-                       <ul class="dropdown-menu" role="menu">
-                          <li><?= Html::a('当前站点', ['index']) ?></li>
-                        <?php if($allspot):?>
-        				<?php foreach ($allspot as $v):?>
-                          <li><?= Html::a($v->spot_name, ['index','currentSpot'=>$v->spot]) ?></li>
-              
-                         <?php endforeach;?>
-        		         <?php endif;?>
-                       </ul>
-    </div>                 
+     <div class="btn-group">
+                
+                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                       <?php echo $currentSpotInfo?$currentSpotInfo[1]:'切换站点权限'?>
+                       <span class="caret"></span>          
+                  </button>
+                           <ul class="dropdown-menu" role="menu">
+                              <li><?= Html::a('当前站点', ['index']) ?></li>
+                            <?php if($allspot):?>
+            				<?php foreach ($allspot as $v):?>
+                              <li><?= Html::a($v->spot_name, ['index','currentSpot'=>$v->spot]) ?></li>
+                  
+                             <?php endforeach;?>
+            		         <?php endif;?>
+                           </ul>
+        </div>                 
 
  <table class="table table-hover table-bordered">
 	<tr class="tb_header">

@@ -67,8 +67,8 @@ class Title extends \app\common\base\BaseActiveRecord
     {
         $data = '';
         $query = new Query();
-        $query->from('gzh_title as t')->select(['t.id as title_id', 't.module_name', 't.module_description','m.menu_url','m.description']);
-        $query->join('LEFT JOIN','gzh_menu as m','m.parent_id = t.id');
+        $query->from(['t' => self::tableName()])->select(['t.id as title_id', 't.module_name', 't.module_description','m.menu_url','m.description']);
+        $query->leftJoin(['m' => Menu::tableName()],'{{m}}.parent_id = {{t}}.id');
         $query->where(['t.status' => 1,'m.type' => 1,'m.status' => 1]);
         $query->orderBy(['t.sort'=>SORT_DESC]);
         $result = $query->all();

@@ -25,9 +25,7 @@ $baseUrl = Yii::$app->request->baseUrl;
           ]); ?> 
        
         <?= $form->field($model, 'category')->textInput(['maxlength' => true,'placeholder'=>'必须：英文缩写']) ?>
-        <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
-        <?= $form->field($model, 'parentName')->dropDownList($category,['class' => 'form-control select2','style' => 'width:100%'])?>
-    
+        <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>    
         <div class="form-group" >
             <?= Html::submitButton('添加', ['class' => 'btn btn-success']) ?>
             <?= Html::a('返回列表', ['@rbacPermission'], ['class' => 'btn btn-primary'])?>
