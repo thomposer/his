@@ -13,13 +13,13 @@
 				alertify.defaults.theme.ok = "btn btn-primary";
 				alertify.defaults.theme.cancel = "btn btn-danger";
 				alertify.defaults.theme.input = "form-control";	
-				alertify.confirm()
+				alertify.alert()
         		.set({
         			title: title,
         			message: message
         		})
         		.set('onok', function() {
-        			url ? window.history.back() : window.location.href=url;
+        			url ?  window.location.href=url : window.history.back();
         		}).show();			
 			}
 		};
