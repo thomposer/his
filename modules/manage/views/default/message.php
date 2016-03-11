@@ -7,6 +7,7 @@ use app\assets\AppAsset;
 AppAsset::register($this);
 $baseUrl = Yii::$app->request->baseUrl;
 ?>
+
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
