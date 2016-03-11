@@ -21,6 +21,7 @@ use yii\helpers\Url;
     	//提示信息
     	public static function showInfo($msg='操作成功',$url=NULL,$title='提示'){
     	    
+    	    
     	    header('Content-Type: text/html; charset=UTF-8');
 //         	$url = is_null($url) ? 'window.history.back()' : "window.location.href='$url'";
         	$alertUrl = Url::to(['/manage/default/message','title' => $title,'message' => $msg,'url' => $url]);
