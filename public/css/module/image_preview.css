@@ -1,0 +1,28 @@
+/*  #imghead {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);} */
+
+.image_format{
+	width:180px;
+}
+.img-upload-btn{
+	position: relative; 
+	direction: ltr;
+	margin: 10px 0 10px 0;
+}
+.icon_img{
+	position: absolute; 
+	right: 0px; 
+	top: 0px; 
+	margin: 0px; 
+	padding: 0px; 
+	cursor: pointer; 
+	opacity: 0;
+}
+.img-upload-btn .form-group{
+	margin-bottom:0px;
+}
+.img-upload-btn label{
+	margin-bottom:0px;
+}
+.img-upload-btn .has-error .control-label,
+.img-upload-btn .has-success .control-label {color:#fff;}
+.img-upload-btn .help-block {position:absolute; top:-6px; left:135px;}
