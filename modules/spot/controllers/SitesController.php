@@ -216,8 +216,8 @@ class SitesController extends BaseController
 		$model->reason = '系统默认生成';
 		$model->apply_persons = $this->userInfo->username;
 		$model->status = ApplyPermissionList::VERIFIED;
-		$model->created_time = time();
-		$model->updated_time = time();
+		$model->create_time = time();
+		$model->update_time = time();
 		
 		$model->save();
 	}

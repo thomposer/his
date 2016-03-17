@@ -3,9 +3,9 @@
 namespace app\modules\module\models;
 
 use Yii;
-use yii\base\Object;
 use yii\db\Query;
 use app\modules\module\models\Menu;
+use app\common\Common;
 /**
  * This is the model class for table "{{%title}}".
  *
@@ -14,10 +14,12 @@ use app\modules\module\models\Menu;
  * @property string $parent_id
  * @property integer $status
  * @property integer $sort
+ * @property string icon_url
  * @property Menu[] $menus
  */
 class Title extends \app\common\base\BaseActiveRecord
 {
+    public $baseUploadPath;
     /**
      * @inheritdoc
      */
@@ -32,9 +34,11 @@ class Title extends \app\common\base\BaseActiveRecord
     public function rules()
     {
         return [
+            [['module_name','module_description','status'],'required'],
             [['parent_id', 'status','sort'], 'integer'],
             [['module_name'], 'string', 'max' => 64],
-            [['module_description'],'string','max' => 255]
+            [['module_description','icon_url'],'string','max' => 255],
+            ['icon_url','file','extensions' => 'jpg,png,jpeg,gif']
         ];
     }
 
@@ -44,14 +48,19 @@ class Title extends \app\common\base\BaseActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'module_name' => 'module_name',
-            'module_description' => 'module_description',
-            'parent_id' => 'Parent ID',
-            'status' => 'Status',
+            'module_description' => '模块名称',
+			'module_name' => '模块简称',
+			'menus' => '菜单列表',
+		    'status' => '状态(渲染)',
+		    'icon_url' => '上传模块图标',
             'sort' => '排序'
         ];
     }
+    public static $getStatus = [
+          '1' => '是',
+          '0' => '否'  
+        ];
+    
     /**
      * 查找所属模块的列表
      */
@@ -88,4 +97,19 @@ class Title extends \app\common\base\BaseActiveRecord
     public function getAllMenus() {
     	return $this->hasMany(Menu::className(), ['parent_id' => 'id']);
     }
+    public function upload()
+    {
+         
+        if ($this->validate()) {
+            $this->baseUploadPath = 'uploads/'.date('Y-m-d',time());
+            Common::mkdir($this->baseUploadPath);
+            $imgName = md5_file($this->icon_url->tempName) . '.' . $this->icon_url->extension;
+            $fullUrl = $this->baseUploadPath.'/'.$imgName;
+            $this->icon_url->saveAs($fullUrl);
+            return $fullUrl;
+        }else {
+            return false;
+        }
+    }
+    
 }

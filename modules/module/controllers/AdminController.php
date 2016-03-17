@@ -10,9 +10,11 @@ use yii\web\NotFoundHttpException;
 use app\modules\module\models\TitleMenu;
 use app\modules\module\models\search\TitleSearch;
 use yii\rbac\Permission;
-use yii\base\Object;
+use yii\base\InvalidParamException;
 use app\modules\spot\models\Spot;
 use app\common\Common;
+use yii\web\UploadedFile;
+use yii\helpers\Url;
 
 /**
  * AdminController implements the CRUD actions for Menu model and Title model.
@@ -53,8 +55,8 @@ class AdminController extends BaseController
     public function actionCreate()
     {
     	$model = new TitleMenu();
-
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+    	$model->isNewRecord = true;
+        if ($model->load(Yii::$app->request->post())) {
         	
         	$db = Yii::$app->db;
         	$dbTrans = $db->beginTransaction();
@@ -63,11 +65,18 @@ class AdminController extends BaseController
         		$title = Title::find()->where(['module_name' => $model->module_name])->one();        		
         		if ($title === null) {
         			$title = new Title();
-        		}
-        		
+        		}      		
         		$title->module_description = $model->module_description;
         		$title->module_name = $model->module_name;
         		$title->sort = time();
+        		$title->status = $model->status;
+        		$model->icon_url = UploadedFile::getInstance($model, 'icon_url');
+        		$title->icon_url = $model->upload();
+        		if(!$title->icon_url){
+        		    return $this->render('create', [
+        		        'model' => $model,
+        		    ]);
+        		}       		
 	        	if ($title->save()) {
 	        		
 	        		// neededMenu
@@ -86,19 +95,18 @@ class AdminController extends BaseController
 	        			$db->createCommand()
 	        				->batchInsert(Menu::tableName(), ['menu_url', 'description', 'type', 'role_type', 'parent_id'], $needMenus)
 	        				->execute();
-	        		}
-					
+	        		}					
 	        		$dbTrans->commit();
+	        		
 	            } else {
 	            	$dbTrans->rollBack();
 	            }
-	            
+	            return $this->redirect(['view', 'id' => $title->id]);
         	} catch (\Exception $e) {
         		$dbTrans->rollback();
         		throw $e;
-        	}
-        	
-            return $this->redirect(['view', 'id' => $title->id]);
+        	}       	
+            
         } else {
         	
             return $this->render('create', [
@@ -131,7 +139,7 @@ class AdminController extends BaseController
     	if (($model = Title::findOne($id)) !== null) {
     		return $model;
     	} else {
-    		throw new NotFoundHttpException('The requested page does not exist.');
+    		throw new NotFoundHttpException('该模块不存在!');
     	}
     }
     
@@ -222,11 +230,8 @@ class AdminController extends BaseController
      * @throws \Exception
      */
     public function actionUpdate($id) {
-    	$title = Title::findOne($id);
-    	
-    	if ($title === null) {
-    		throw new \Exception('该模块不存在');
-    	}
+
+        $title = $this->findModel($id);
     	// 更新的模块名称
     	$moduleName = $title->module_name;
     	$menus = $title->getAllMenus()->where(['role_type' => 0])->all();
@@ -325,6 +330,28 @@ class AdminController extends BaseController
     	
     	Common::showInfo('更新成功');
     }
-    
+    /**
+     * 更新模块的详细信息
+     * @param 模块id $id
+     */
+    public function actionEdit($id){
+        
+        $model = $this->findModel($id);
+        $oldImg = $model->icon_url;
+        if($model->load(Yii::$app->request->post())){
+            $model->icon_url = UploadedFile::getInstance($model, 'icon_url');
+            if($model->icon_url){
+                $model->icon_url = $model->upload();              
+            }else{
+                $model->icon_url = $oldImg;
+            }
+            if($model->icon_url && $model->save()){
+                Common::showInfo('保存成功',Url::to(['@moduleAdminIndex']));
+            }else {
+                Common::showInfo('保存失败');
+            }
+        }
+        return $this->render('edit',['model' => $model]);
+    }
     
 }

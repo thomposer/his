@@ -44,7 +44,7 @@ class ActionColumn extends \yii\grid\ActionColumn
         if (!isset($this->auth['view'])) {
             $this->auth['view'] = function ($url, $model, $key) {
                 
-            if(!in_array($this->requestModuleController.'/view', $this->permList)){
+            if(!isset($this->permList['role']) && !in_array($this->requestModuleController.'/view', $this->permList)){
                 return false;
             }  
                 return true;
@@ -52,7 +52,7 @@ class ActionColumn extends \yii\grid\ActionColumn
         }
         if (!isset($this->auth['update'])) {
             $this->auth['update'] = function ($url, $model, $key) {
-            if(!in_array($this->requestModuleController.'/update', $this->permList)){
+            if(!isset($this->permList['role']) && !in_array($this->requestModuleController.'/update', $this->permList)){
                 return false;
             }
                 return true;
@@ -60,7 +60,7 @@ class ActionColumn extends \yii\grid\ActionColumn
         }
         if (!isset($this->auth['delete'])) {
             $this->auth['delete'] = function ($url, $model, $key) {
-            if(!in_array($this->requestModuleController.'/delete', $this->permList)){
+            if(!isset($this->permList['role']) && !in_array($this->requestModuleController.'/delete', $this->permList)){
                 return false;
             }
                 return true;
@@ -78,15 +78,14 @@ class ActionColumn extends \yii\grid\ActionColumn
                 $auth_class='';
                 if(call_user_func($this->auth['view'], $url, $model, $key)!==true)
                 {
-                    $url='javascript:void(0)';
-                    $auth_class='text-muted';
+                    return false;
                 }
                 $options = array_merge([
                     'title' => Yii::t('yii', 'View'),
                     'aria-label' => Yii::t('yii', 'View'),
                     'data-pjax' => '0',
                 ], $this->buttonOptions);
-                return Html::a('<span class="glyphicon glyphicon-eye-open '.$auth_class.'"></span>', $url, $options);
+                return Html::a('<span class="glyphicon glyphicon-eye-open "></span>', $url, $options);
             };
         }
         if (!isset($this->buttons['update'])) {
@@ -94,15 +93,14 @@ class ActionColumn extends \yii\grid\ActionColumn
                 $auth_class='';
                 if(call_user_func($this->auth['update'], $url, $model, $key)!==true)
                 {
-                    $url='javascript:void(0)';
-                    $auth_class='text-muted';
+                    return false;
                 }
                 $options = array_merge([
                     'title' => Yii::t('yii', 'Update'),
                     'aria-label' => Yii::t('yii', 'Update'),
                     'data-pjax' => '0',
                 ], $this->buttonOptions);
-                return Html::a('<span class="glyphicon glyphicon-pencil gray-dark '.$auth_class.'"></span>', $url, $options);
+                return Html::a('<span class="glyphicon glyphicon-pencil gray-dark "></span>', $url, $options);
             };
         }
         if (!isset($this->buttons['delete'])) {
@@ -110,8 +108,7 @@ class ActionColumn extends \yii\grid\ActionColumn
                 $auth_class='';
                 if(call_user_func($this->auth['delete'], $url, $model, $key)!==true)
                 {
-                    $url='javascript:void(0)';
-                    $auth_class='disable';
+                    return false;    
                 }
                 $options = array_merge([
                     'title' => Yii::t('yii', 'Delete'),
@@ -120,7 +117,7 @@ class ActionColumn extends \yii\grid\ActionColumn
                     'data-method' => 'post',
                     'data-pjax' => '0',
                 ], $this->buttonOptions);
-                return Html::a('<span class="glyphicon glyphicon-trash '.$auth_class.'"></span>', $url, $options);
+                return Html::a('<span class="glyphicon glyphicon-trash "></span>', $url, $options);
             };
         }
     }

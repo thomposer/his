@@ -19,8 +19,8 @@ use app\modules\wxinfo\models\Wxinfo;
  * @property string $reason 审批理由
  * @property string $apply_persons 审批人
  * @property string $item_name_description 角色名称
- * @property string $created_time 创建时间
- * @property string $updated_time 更新时间
+ * @property string $create_time 创建时间
+ * @property string $update_time 更新时间
  */
 class ApplyPermissionList extends \app\common\base\BaseActiveRecord
 {
@@ -56,7 +56,7 @@ class ApplyPermissionList extends \app\common\base\BaseActiveRecord
             [['user_id','reason','item_data','status'], 'required','on' => 'create'],
             [['user_id','reason','item_data','status'],'required','on' => 'update'],
             [[ 'reason', 'item_name','item_data','item_name_description', 'spot','spot_name','username','apply_persons'], 'trim'],
-            [['status', 'created_time', 'updated_time'], 'integer'],
+            [['status', 'create_time', 'update_time'], 'integer'],
             [['reason','item_name_description','spot_name','user_id','username','apply_persons'], 'string'],
             [['spot','user_id','username'], 'string', 'max' => 64]
            
@@ -81,8 +81,8 @@ class ApplyPermissionList extends \app\common\base\BaseActiveRecord
             'reason' => '审批理由',
             'item_data' => '角色名称',
             'apply_persons' => '当前处理人',
-            'created_time' => '申请时间',
-            'updated_time' => '审批时间',
+            'create_time' => '申请时间',
+            'update_time' => '审批时间',
             
         ];
     }

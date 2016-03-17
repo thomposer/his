@@ -20,10 +20,10 @@ $baseUrl = Yii::$app->request->baseUrl;
     <div class = "box">
        <div class = "box-body">
        <p class="button-group">
-        <?php  if(in_array($this->params['requestModuleController'].'/update', $this->params['permList'])):?>
+        <?php  if(isset($this->params['permList']['role']) || in_array($this->params['requestModuleController'].'/update', $this->params['permList'])):?>
             <?= Html::a('修改', ['update', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
         <?php endif;?>
-        <?php  if(in_array($this->params['requestModuleController'].'/delete', $this->params['permList'])):?>
+        <?php  if(isset($this->params['permList']['role']) || in_array($this->params['requestModuleController'].'/delete', $this->params['permList'])):?>
             <?= Html::a('Delete', ['delete', 'id' => $model->id], [
                     'class' => 'btn btn-danger',
                     'data' => [

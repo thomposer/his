@@ -50,16 +50,15 @@ $this->params['breadcrumbs'][] = $this->title;
                             if($hasModule){
                                 return Html::tag('button','已添加',['class' => 'btn btn-success disabled']);
                             }
-                            if(!$manager->checkAccess(Yii::$app->user->identity->user_id, Yii::$app->session->get('spot').Yii::getAlias('@moduleAdminAdd'))){
-                                $url='javascript:void(0)';
-                                $auth_class='disabled';
+                            if(!isset($this->params['permList']['role']) && !in_array($this->params['requestModuleController'].'/add', $this->params['permList'])){
+                                return false;
                             }
 							$options = array(
 								'title' => Yii::t('yii', 'add'),
 								'aria-label' => Yii::t('yii', 'add'),
 								'data-confirm' => Yii::t('yii', '你确定要添加该模块?'),
 								'data-method' => 'post',
-							    'class' => 'btn btn-info '.$auth_class,
+							    'class' => 'btn btn-info ',
 							);
 							return Html::a('添加', $url, $options);
 						

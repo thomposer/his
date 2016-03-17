@@ -125,11 +125,11 @@ class BaseController extends Controller
 	//获取用户当前站点所有的权限，并渲染进layout
 	private function getUserRole($role = null) {
 	    $datas = '';
-	    $list = '';
+	    $list = [];
 	    $view = Yii::$app->view;
  	    if($role != null) {
- 	        $spotSystem = $this->rolePrefix.'system';
-	    	$userPermissions[$spotSystem] = $this->manager->getPermissionsByRole($spotSystem);	
+ 	        $datas = Title::getMenus();
+ 	        $list = ['role' => true];
 	    } else {
 	    	$userPermissions = '';
 	    	$localRoleType = $this->manager->getChildren($this->rootRole);//查找当前站点的所有角色
@@ -141,21 +141,22 @@ class BaseController extends Controller
 	    			}
 	    		}
 	    	}
+	    	//过滤字段
+	    	foreach ($userPermissions as $v){
+	    	    foreach ($v as $k){
+	    	        $list[] = ltrim($k->name,$this->wxcode);//获取有权限菜单的详细信息以及所属模块
+	    	    }
+	    	}
+	    	 
+	    	$result = Menu::getParent($list);
+	    	foreach ($result as $v){
+	    	    $datas[$v['title_id']]['module_description'] = $v['module_description'];
+	    	    $datas[$v['title_id']]['module_name'] = $v['module_name'];
+	    	    unset($v['module_description']);
+	    	    $datas[$v['title_id']]['children'][] = $v;
+	    	}
+	    	
 	   }
-	       //过滤字段
-	       foreach ($userPermissions as $v){
-	           foreach ($v as $k){
-	               $list[] = ltrim($k->name,$this->wxcode);//获取有权限菜单的详细信息以及所属模块
-	           }
-	       }
-	        
-	       $result = Menu::getParent($list);
-	       foreach ($result as $v){
-	           $datas[$v['title_id']]['module_description'] = $v['module_description'];
-	           $datas[$v['title_id']]['module_name'] = $v['module_name'];
-	           unset($v['module_description']);
-	           $datas[$v['title_id']]['children'][] = $v;
-	       }
 	    $view->params['permList'] = $list;
 	    $view->params['layoutData'] = $datas;
 	   

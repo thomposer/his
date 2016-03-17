@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php $this->endBlock();?>
 <?php $this->beginBlock('content')?>
 	<div class="menu-index col-xs-12">
-	<?php if(in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>            
+	<?php if(isset($this->params['permList']['role'])||in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>            
 	<p>
         <?= Html::a('初始化模块', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
@@ -66,13 +66,27 @@ $this->params['breadcrumbs'][] = $this->title;
            
 				['label' => '模块名称', 'value' => 'module_description'],
 				[
-					'attribute' => '操作',
-					'format' => 'raw',
-					'value' => function ($searchModel){
-						return Html::a('更新', ['update', 'id' => $searchModel->id],['class' => 'btn btn-info']);
-					}
-				],				
-	            
+				    'class' => 'app\common\component\ActionColumn',
+				    'template' => '{update}&nbsp;&nbsp;{edit}',
+				    'headerOptions' => ['class' => ''],
+				    'contentOptions' => ['class' => ''],
+				    'buttons' => [
+				        'update' => function ($url,$model,$key){
+				            if(!isset($this->params['permList']['role']) && !in_array($this->params['requestModuleController'].'/update', $this->params['permList'])){
+				                return false;
+				            }
+				            return Html::a('更新', ['update', 'id' => $model->id],['class' => 'btn btn-info']);
+				        	
+            	        },
+            	        'edit' => function ($url,$model,$key){
+            	           if(!isset($this->params['permList']['role']) && !in_array($this->params['requestModuleController'].'/update', $this->params['permList'])){
+            	               return false;
+            	           }
+				            return Html::a('修改', ['edit', 'id' => $model->id],['class' => 'btn btn-info']);
+            	           
+            	        }
+            	   ]
+            	],
 			],
 	       
 	    ]);
@@ -85,12 +99,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <?php $this->endBlock();?>
 <?php $this->beginBlock('renderJs')?>
-<script type="text/javascript">
-	var indexUrl = "<?php Url::to(['@moduleAdminIndex'])?>";    
-	require(["<?php echo $baseUrl ?>"+"/public/js/module/index.js"],function(main){
-		main.init();
-	});
-</script>
+
 <?php $this->endBlock();?>
 <?php AutoLayout::end();?>
 

@@ -5,15 +5,24 @@ namespace app\modules\module\models;
 use Yii;
 use app\common\base\BaseActiveRecord;
 use app\modules\module\models\Title;
+use yii\web\UploadedFile;
+use app\common\Common;
 
 class TitleMenu extends BaseActiveRecord {
 	
 	public $module_description;
 	public $module_name;
 	public $menus;
-	
+	public $status;
+	public $icon_url;
 	public $menusList;
+	public $isNewRecord = 0;
+	public $baseUploadPath;
 	
+	public static function tableName()
+	{
+	    return '{{%title}}';
+	}
 	/* (non-PHPdoc)
 	 * @see \yii\base\Model::getAttributeLabel($attribute)
 	 */
@@ -21,7 +30,9 @@ class TitleMenu extends BaseActiveRecord {
 		return [
 			'module_description' => '模块名称',
 			'module_name' => '模块简称',
-			'menus' => '菜单列表'
+			'menus' => '菜单列表',
+		    'status' => '状态(渲染)',
+		    'icon_url' => '上传模块图标',
 		];
 	}
 
@@ -30,9 +41,13 @@ class TitleMenu extends BaseActiveRecord {
 	 */
 	public function rules() {
 		return [
-			[['module_name', 'module_description', 'menus'], 'required'],
+		    [['parent_id', 'status','sort'], 'integer'],
+		    [['module_name'], 'string', 'max' => 64],
+			[['module_name', 'module_description', 'menus','icon_url'], 'required'],
+		    [['module_description'],'string','max' => 255],
 		    ['module_name','checkCode'],
 			['menus', 'checkMenus'],
+		    ['icon_url','file','extensions' => 'jpg,png,jpeg,gif']
 		];		
 	}
 	
@@ -82,6 +97,21 @@ class TitleMenu extends BaseActiveRecord {
 			$this->addError($attribute, '模块英文简称已存在');
 		}
 	}
+	public function upload()
+	{
+	    
+	    if ($this->validate()) {
+	        $this->baseUploadPath = 'uploads/'.date('Y-m-d',time());
+	        Common::mkdir($this->baseUploadPath);
+	        $imgName = md5_file($this->icon_url->tempName) . '.' . $this->icon_url->extension;
+	        $fullUrl = $this->baseUploadPath.'/'.$imgName;
+	        $this->icon_url->saveAs($fullUrl);
+	        return $fullUrl;
+	    }else {
+	        return false;
+	    }
+	}
+	
 	
 }
 

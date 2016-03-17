@@ -46,6 +46,7 @@ Yii::setAlias('@rbacApplyUpdate', '/rbac/apply/update');
 Yii::setAlias('@applyApplyCreate', '/apply/apply/create');
 Yii::setAlias('@applyApplyIndex', '/apply/apply/index');
 Yii::setAlias('@applyApplyWxcreate', '/apply/apply/wxcreate');
+Yii::setAlias('@applyApplyRegister', '/apply/apply/register');
 
 Yii::setAlias('@rbacRule', '/rbac/rule/index');
 
@@ -79,7 +80,8 @@ Yii::setAlias('@moduleAdminIndex', '/module/admin/index');
 Yii::setAlias('@moduleAdminAdd', '/module/admin/add');
 Yii::setAlias('@moduleAdminList', '/module/admin/list');
 Yii::setAlias('@moduleAdminView', '/module/admin/view');
-Yii::setAlias('@moduleAdminUpdate', '/module/admin/update');
+Yii::setAlias('@moduleAdminUpdate', '/module/admin/update');//更新各站点的模块菜单权限
+Yii::setAlias('@moduleAdminEdit', '/module/admin/edit');//修改该模块的基本信息
 
 Yii::setAlias('@moduleMenuIndex', '/module/menu/index');
 Yii::setAlias('@moduleMenuUpdate', '/module/menu/update');
@@ -108,8 +110,14 @@ Yii::setAlias('@userIndexLogout', '/user/index/logout');
 Yii::setAlias('@userIndexRegister', '/user/index/register');
 
 
-//验证邮箱
-Yii::setAlias('@userIndexEmail', 'user/index/email');
-
+//验证注册邮件模版地址
+Yii::setAlias('@checkEmail', 'checkEmail');
+//重置密码url
+Yii::setAlias('@userIndexReset', '/user/index/reset');
+//重置密码邮件模版地址
+Yii::setAlias('@resetEmail', 'resetEmail');
+Yii::setAlias('@userIndexResetPassword', '/user/index/reset-password');
+//链接失效页面
+Yii::setAlias('@userIndexOverdue', '/user/index/overdue');
 //alert页面
 // Yii::setAlias('@', $path)

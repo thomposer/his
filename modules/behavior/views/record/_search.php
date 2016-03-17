@@ -29,6 +29,7 @@ use yii\widgets\ActiveForm;
     <div class ="form-group">
         <?= Html::submitButton('搜索', ['class' => 'btn btn-primary btn-submit']) ?>
         <?= Html::a('重置', ['index'], ['class' => 'btn btn-default']) ?>
+        <?php  if(isset($this->params['permList']['role'])||in_array($this->params['requestModuleController'].'/deletemonth', $this->params['permList'])):?>
         <?= Html::a('删除一个月前记录',['deletemonth'],[
                     'class' => 'btn btn-danger',
                     'data' => [
@@ -36,6 +37,7 @@ use yii\widgets\ActiveForm;
                         'method' => 'get',
                     ],
                 ]) ?>
+         <?php endif;?>
     </div>
     <?php ActiveForm::end(); ?>
 

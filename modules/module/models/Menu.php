@@ -26,8 +26,8 @@ class Menu extends \app\common\base\BaseActiveRecord
         '1' => '渲染'
     );
     public static  $menu_status =  array(
-        '0' => '禁用',
-        '1' => '启用'
+        '1' => '启用',
+        '0' => '禁用'
     );
     public static $color = array(
          '0' => 'text-muted',

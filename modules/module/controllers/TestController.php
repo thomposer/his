@@ -1,18 +1,18 @@
 <?php
 
-namespace app\modules\menu\controllers;
+namespace app\modules\module\controllers;
 
 use Yii;
-use app\modules\menu\models\Menu;
-use app\modules\menu\models\search\MenuSearch;
+use app\modules\module\models\Menu;
+use app\modules\module\models\search\MenuSearch;
 use app\common\base\BaseController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * MenuController implements the CRUD actions for Menu model.
+ * TestController implements the CRUD actions for Menu model.
  */
-class MenuController extends BaseController
+class TestController extends BaseController
 {
     public function behaviors()
     {

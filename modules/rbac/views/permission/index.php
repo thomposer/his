@@ -22,11 +22,7 @@ $baseUrl = Yii::$app->request->baseUrl;
 <?php $this->endBlock();?>
 <?php $this->beginBlock('content')?>
 <div class="permission-index col-xs-12">
-
     
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-
 <div class = "box">
 <div class = "box-body">    
 <div class="auth-item-index grid-view">

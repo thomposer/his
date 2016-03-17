@@ -19,7 +19,7 @@ $baseUrl = Yii::$app->request->baseUrl;
 <?php $this->endBlock();?>
 <?php $this->beginBlock('content')?>
 <div class="menu-index col-xs-12">
-    <?php  if(in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>
+    <?php  if(isset($this->params['permList']['role'])||in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>
     <p class = "applySearch-button">
         <?php echo  Html::a('添加菜单', ['@moduleMenuCreate'], ['class' => 'btn btn-success']) ?>
     </p>

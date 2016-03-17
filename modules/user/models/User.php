@@ -19,7 +19,7 @@ use yii\web\IdentityInterface;
  * @property integer $status
  * @property integer $create_time
  * @property integer $update_time
- * @property string  $code
+ * @property string  $expire_time
  * @property AuthAssignment[] $authAssignments
  */
 class User extends BaseActiveRecord implements IdentityInterface
@@ -47,8 +47,9 @@ class User extends BaseActiveRecord implements IdentityInterface
             ['email','email'],
             [['id','type', 'status', 'create_time', 'update_time'], 'integer'],
             [['user_id', 'username', 'auth_key'], 'string', 'max' => 64],
-            [['password_hash', 'password_reset_token','code'], 'string', 'max' => 255],
+            [['password_hash', 'password_reset_token'], 'string', 'max' => 255],
             [['id','user_id','username'], 'unique'],
+            ['expire_time','safe']
         ];
     }
     public function scenarios(){
@@ -57,6 +58,7 @@ class User extends BaseActiveRecord implements IdentityInterface
         $parent['login'] = ['username','password'];
         $parent['register'] = ['username','password','reType_password', 'email'];
         $parent['update'] = ['username','password', 'email','status','update_time'];
+        $parent['resetPassword'] = ['password_reset_token','password','reType_password'];
         return $parent;
         
     }
@@ -210,7 +212,6 @@ class User extends BaseActiveRecord implements IdentityInterface
     
     public function beforeSave($insert)
     {
-        
         if($insert)
         {
             if($this->isNewRecord){

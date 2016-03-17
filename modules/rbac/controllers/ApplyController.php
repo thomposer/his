@@ -139,7 +139,7 @@ class ApplyController extends BaseController
             $model->username = $username['username'];
             $model->item_name = implode(',', $model->item_data);
             $model->item_name_description = rtrim($item_name_description,',');
-            $model->created_time = time();
+            $model->create_time = time();
             $model->spot_name = Yii::$app->session->get('spot_name');
             $model->apply_persons = $this->userInfo->username;
             $model->spot = $this->wxcode;
@@ -185,7 +185,7 @@ class ApplyController extends BaseController
             $model->item_name = implode(',', $model->item_data);
             $model->item_name_description = rtrim($item_name_description, ',');
             $model->apply_persons = $this->userInfo->username;
-            $model->updated_time = time();
+            $model->update_time = time();
             $rows = $model->save();
             if ($rows && $model->status == 1) {
                 foreach ($childrens as $perm) {
@@ -256,7 +256,27 @@ class ApplyController extends BaseController
         }
         Common::showInfo("删除失败，请确认该权限申请记录是否存在");
     }
-
+    /**
+     * 注册新用户
+     */
+    public function actionRegister(){
+        
+       $model = new User();
+        $model->scenario = 'register';
+        if($model->load(Yii::$app->request->post())){
+            $model->status = 0;
+            $model->create_time = time();
+            $model->type = 1;
+            if($model->validate() && $model->save()){
+                
+                $result = $this->sendCheckMail($model);
+                if($result){
+                    Common::showInfo('注册成功',Url::to(['@userIndexLogin']));
+                }
+            }
+        }
+        return $this->render('register',['model' => $model]);
+    }
     /**
      * Finds the ApplyPermissionList model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

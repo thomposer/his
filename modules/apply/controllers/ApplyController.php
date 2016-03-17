@@ -13,6 +13,8 @@ use yii\helpers\Json;
 use yii\data\ActiveDataProvider;
 use yii\web\ForbiddenHttpException;
 use app\modules\rbac\models\AssignmentForm;
+use yii\helpers\Url;
+use app\common\Common;
 
 /**
  * ApplyController implements the CRUD actions for ApplyPermissionList model.
@@ -103,7 +105,7 @@ class ApplyController extends BaseController
             $result = $model::find()->select('id')->where(['user_id' => Yii::$app->user->identity->userInfo->getUserId(),'spot' => $spot[0]])->all();//判断用户是否重复申请相同角色
            
             if($result){
-                $this->showInfo('你已经申请过该站点权限了哦','index.html');
+                Common::showInfo('你已经申请过该站点权限了哦',Url::to(['@applyApplyIndex']));
                 
             }
            
@@ -138,7 +140,7 @@ class ApplyController extends BaseController
             
             if($model->validate() && $model->save()){
                 
-                $this->showInfo('权限申请成功，请等待批准','index.html');
+                Common::showInfo('权限申请成功，请等待批准',Url::to(['@applyApplyIndex']));
             }
            
         }

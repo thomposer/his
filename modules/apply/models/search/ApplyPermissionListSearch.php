@@ -18,7 +18,7 @@ class ApplyPermissionListSearch extends ApplyPermissionList
     public function rules()
     {
         return [
-            [['id', 'status', 'created_time', 'updated_time'], 'integer'],
+            [['id', 'status', 'create_time', 'update_time'], 'integer'],
             [['user_id','spot', 'item_name','item_name_description','spot_name','reason'], 'safe'],
         ];
     }
@@ -65,8 +65,8 @@ class ApplyPermissionListSearch extends ApplyPermissionList
             'id' => $this->id,
             'user_id' => $this->user_id,
             'status' => $this->status,
-            'created_time' => $this->created_time,
-            'updated_time' => $this->updated_time,
+            'create_time' => $this->create_time,
+            'update_time' => $this->update_time,
         ]);
 
         $query->andFilterWhere(['like', 'spot', $this->spot])
