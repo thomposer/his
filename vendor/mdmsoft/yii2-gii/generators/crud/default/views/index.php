@@ -31,11 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
 <?= "<?php "?>$this->beginBlock('content');?>
 
 <div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-index col-xs-12">
-   <?=  "<?php "?> if(in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>
     <p>
-        <?= "<?= " ?>Html::a(<?= $generator->generateString('添加 {modelClass}', ['modelClass' => Inflector::camel2words(StringHelper::basename($generator->modelClass))]) ?>, ['create'], ['class' => 'btn btn-success']) ?>
+       <?=  "<?php "?> if(isset($this->params['permList']['role'])||in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>
+       <?= "<?= " ?>Html::a(<?= $generator->generateString('添加 {modelClass}', ['modelClass' => Inflector::camel2words(StringHelper::basename($generator->modelClass))]) ?>, ['create'], ['class' => 'btn btn-success']) ?>
+       <?= "<?php "?>endif?>
     </p>
-   <?= "<?php "?>endif?>
    <div class = "box">
        <div class = "box-body"> 
 <?php if(!empty($generator->searchModelClass)): ?>
