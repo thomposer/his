@@ -98,10 +98,7 @@ $config = [
     'defaultRoute' => 'manage',
     'params' => $params,
     'modules' => [
-        
-        'menu' => [
-            'class' => 'app\modules\menu\MenuModule',
-        ],
+              
         'user' => [
             'class' => 'app\modules\user\UserModule',
         ],
@@ -122,7 +119,11 @@ $config = [
         ],
         'manage' => [
             'class' => 'app\modules\manage\manageModule'
-        ]
+        ],
+        'make_appointment' => [
+            'class' => 'app\modules\make_appointment\makeAppointmentModule',
+        ],
+        
         
     ],
        

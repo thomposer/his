@@ -272,6 +272,10 @@ class Generator extends \yii\gii\Generator
                     $quote = '"';
                 }
             }
+            if($column->comment !== null){
+                $extra .= " COMMENT '{$column->comment}' ";
+                $quote = '"';                
+            }
 
             if (!empty($extra)) {
                 $type = "$type . {$quote}$extra{$quote}";
