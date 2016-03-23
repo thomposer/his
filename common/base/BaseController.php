@@ -60,7 +60,7 @@ class BaseController extends Controller
 	
 	
 	public function beforeAction($action) {
-	    parent::beforeAction($action);
+// 	    parent::beforeAction($action);
 	    date_default_timezone_set('Asia/Shanghai');
 	    $this->rolePrefix = $this->wxcode . '_roles_';
 	    $this->permissionPrefix = $this->wxcode . '_permissions_';
@@ -89,11 +89,10 @@ class BaseController extends Controller
 	    if (in_array($requestUrl, $allowUrl)) {
     		return parent::beforeAction($action);
     	}
-
      	//若站点信息失效，则直接返回站点选择界面
-    	if ($this->wxcode === null || $this->wxcode === '') {
-    		$url = Url::to(['@manageDefaultIndex']);
-    		return $this->redirect($url);
+    	if ($this->wxcode == null || $this->wxcode == '') {
+    	    $this->redirect(Url::to(['@manageDefaultIndex']));
+    		return;
     	}
     	    	
 	    $systemPermission = Yii::getAlias('@systemPermission');
