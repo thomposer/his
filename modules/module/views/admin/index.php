@@ -33,7 +33,8 @@ $this->params['breadcrumbs'][] = $this->title;
 		<?= $this->render('_search', ['model' => $searchModel]); ?>
 		<?php $form = ActiveForm::begin ([
 			'options' => [ 
-					'class' => 'form-horizontal' 
+					'class' => 'form-horizontal',
+			        'method' => 'post',
 			],
 			'fieldConfig' => [ 
 					'template' => "<div class='col-xs-3 col-sm-2 text-right'>{label}</div><div class='col-xs-9 col-sm-7'>{input}</div><div class='col-xs-12 col-xs-offset-3 col-sm-3 col-sm-offset-0'>{error}</div>" 

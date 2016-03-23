@@ -29,6 +29,7 @@ class IndexController extends Controller
                 'actions' => [
                     'delete' => ['post'],
                     'reset' => ['post'],
+                    'logout' => ['post']
                 ],
             ],
         ];
@@ -49,7 +50,8 @@ class IndexController extends Controller
         
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            $defaultUrl = Url::to(['@manage']);
+            return $this->goBack($defaultUrl);
         } else {
             return $this->render('login', [
                 'model' => $model,
@@ -63,7 +65,8 @@ class IndexController extends Controller
     {
         Yii::$app->user->logout();
 
-        return $this->goHome();
+        $this->redirect(Url::to(['@userIndexLogin']));
+        return;
     }
     /**
      * 注册

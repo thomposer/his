@@ -30,16 +30,15 @@ class AdminController extends BaseController
     $searchModel = new TitleSearch();
         
         $titleModel = new Title();
-        
+        $titleModel->scenario = 'sort';
         if(Yii::$app->request->isPost && $titleModel->validate()){
-            $data = Yii::$app->request->post();           
+            $data = Yii::$app->request->post();  
             foreach ($data['title_id'] as $key => $v){
                 $title = Title::findOne($v);
                 $title->sort = $data['sort'][$key]?$data['sort'][$key]:0;
                 $title->save();
             }
-            
-        }   
+        }
     	$dataProvider = $searchModel->search(Yii::$app->request->queryParams, $this->pageSize);    	
      	return $this->render('index', [
     		'dataProvider' => $dataProvider,
@@ -68,7 +67,7 @@ class AdminController extends BaseController
         		}      		
         		$title->module_description = $model->module_description;
         		$title->module_name = $model->module_name;
-        		$title->sort = time();
+//         		$title->sort = 0;
         		$title->status = $model->status;
         		$model->icon_url = UploadedFile::getInstance($model, 'icon_url');
         		$title->icon_url = $model->upload();

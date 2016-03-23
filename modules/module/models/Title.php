@@ -35,13 +35,17 @@ class Title extends \app\common\base\BaseActiveRecord
     {
         return [
             [['module_name','module_description','status'],'required'],
-            [['parent_id', 'status','sort'], 'integer'],
+            [['id','parent_id', 'status','sort'], 'integer'],
             [['module_name'], 'string', 'max' => 64],
             [['module_description','icon_url'],'string','max' => 255],
             ['icon_url','file','extensions' => 'jpg,png,jpeg,gif']
         ];
     }
-
+    public function scenarios(){
+        $parent = parent::scenarios();
+        $parent['sort'] = ['id','sort'];
+        return $parent;
+    }
     /**
      * @inheritdoc
      */
