@@ -21,7 +21,7 @@ class AppAsset extends AssetBundle
 //         'css/site.css',
     ];
     public $jsOptions = [
-        'position' => 1,
+        
     ];
     public $cssOptions = [
         'position' => \yii\web\View::POS_HEAD
@@ -29,8 +29,9 @@ class AppAsset extends AssetBundle
     public $js = [
     ];
     public $depends = [
-        'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\web\YiiAsset',
+        
     ];
     //定义按需加载JS方法，注意加载顺序在最后
     public static function addScript($view, $jsfile) {

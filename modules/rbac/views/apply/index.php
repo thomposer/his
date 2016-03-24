@@ -17,7 +17,7 @@ $baseUrl = Yii::$app->request->baseUrl;
 <?php AutoLayout::begin(['viewFile' => '@app/views/layouts/layout.php'])?>
 
 <?php $this->beginBlock('renderCss')?>
-    <?php AppAsset::addCss($this,'@web/public/css/search.css')?>
+    <?php AppAsset::addCss($this,'@web/public/css/lib/search.css')?>
 <?php $this->endBlock()?>
 <?php $this->beginBlock('content')?>
 

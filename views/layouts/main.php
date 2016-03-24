@@ -27,7 +27,7 @@ $baseUrl = Yii::$app->request->baseUrl;
     <?php AppAsset::addCss($this,'@web/public/dist/css/skins/all-skins.css');?>
     <!-- iCheck -->
     <?php AppAsset::addCss($this,'@web/public/plugins/iCheck/flat/blue.css');?>
-    <?php AppAsset::addCss($this, '@web/public/css/main_layout.css')?>
+    <?php AppAsset::addCss($this, '@web/public/css/lib/main_layout.css')?>
     
     <?= $renderCss;?>
 </head>

@@ -45,7 +45,7 @@ $baseUrl = Yii::$app->request->baseUrl;
     <?php //AppAsset::addCss($this,'@web/public/plugins/daterangepicker/daterangepicker-bs3.css');?>
     <!-- bootstrap wysihtml5 - text editor -->
     <?php //AppAsset::addCss($this,'@web/public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css');?>
-    <?php AppAsset::addCss($this,'@web/public/css/base.css');?>
+    <?php AppAsset::addCss($this,'@web/public/css/lib/base.css');?>
     <?= $renderCss; ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -123,9 +123,9 @@ $baseUrl = Yii::$app->request->baseUrl;
                           
                         ]
                     ],
-                    ['label' => Yii::$app->session->get('spot_name'), 'url' => ['@manageDefaultIndex']],                   
                     Yii::$app->user->isGuest ?
                         ['label' => '登录', 'url' => ['@userIndexLogin']] :
+                        ['label' => Yii::$app->session->get('spot_name'), 'url' => ['@manageDefaultIndex']],
                         ['label' => Yii::$app->user->identity->username],
                         ['label' => '注销',
                             'url' => ['@userIndexLogout'],

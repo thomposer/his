@@ -19,7 +19,7 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <?php AppAsset::addCss($this, '@web/public/css/main_layout.css')?>
+    <?php AppAsset::addCss($this, '@web/public/css/lib/main_layout.css')?>
     <?= $renderCss;?>
 </head>
 <body>

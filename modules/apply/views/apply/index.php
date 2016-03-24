@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?php $this->beginBlock('renderCss')?>
     <?php $this->registerCssFile('@web/public/css/bootstrap/bootstrap.css')?>
-    <?php $this->registerCssFile('@web/public/css/apply/search.css')?>
+    <?php $this->registerCssFile('@web/public/css/lib/search.css')?>
 <?php $this->endBlock()?>
 <?php $this->beginBlock('content')?>
 <div class="apply-permission-list-index main_bd main_bootstrap">

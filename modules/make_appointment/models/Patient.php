@@ -18,9 +18,11 @@ use Yii;
  * @property string $city
  * @property string $area
  * @property string $detail_address
+ * @property string $address 省/市/区
  */
 class Patient extends \app\common\base\BaseActiveRecord
 {
+    public $address;
     /**
      * @inheritdoc
      */
@@ -38,7 +40,7 @@ class Patient extends \app\common\base\BaseActiveRecord
             [['sex'], 'required'],
             [['sex', 'marriage'], 'integer'],
             [['birthday'], 'safe'],
-            [['user_name', 'occupation', 'detail_address'], 'string', 'max' => 64],
+            [['user_name','address', 'occupation', 'detail_address'], 'string', 'max' => 64],
             [['nation', 'province', 'city', 'area'], 'string', 'max' => 32]
         ];
     }
@@ -56,10 +58,18 @@ class Patient extends \app\common\base\BaseActiveRecord
             'nation' => '民族',
             'marriage' => '婚姻状况',
             'occupation' => '职业',
-            'province' => '省份',
+            'address' => '省/城市/区',
             'city' => '城市',
             'area' => '区县',
             'detail_address' => '详细地址',
         ];
     }
+    /**
+     * @property 婚姻状况(1-未婚,2-已婚)
+     * @var unknown
+     */
+    public static $marriage = [
+        1 => '未婚',
+        2 => '已婚'
+    ];
 }
