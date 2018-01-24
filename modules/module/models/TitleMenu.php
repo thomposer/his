@@ -3,10 +3,11 @@
 namespace app\modules\module\models;
 
 use Yii;
-use app\common\base\BaseActiveRecord;
+use yii\db\ActiveRecord;
 use app\modules\module\models\Title;
 use yii\web\UploadedFile;
 use app\common\Common;
+use app\common\base\BaseActiveRecord;
 
 class TitleMenu extends BaseActiveRecord {
 	
@@ -16,6 +17,7 @@ class TitleMenu extends BaseActiveRecord {
 	public $status;
 	public $icon_url;
 	public $menusList;
+	public $type;
 	public $isNewRecord = 0;
 	public $baseUploadPath;
 	
@@ -33,6 +35,7 @@ class TitleMenu extends BaseActiveRecord {
 			'menus' => '菜单列表',
 		    'status' => '状态(渲染)',
 		    'icon_url' => '上传模块图标',
+		    'type' => '类型',
 		];
 	}
 
@@ -41,13 +44,12 @@ class TitleMenu extends BaseActiveRecord {
 	 */
 	public function rules() {
 		return [
-		    [['parent_id', 'status','sort'], 'integer'],
+		    [['parent_id', 'status','sort','type','create_time','update_time'], 'integer'],
 		    [['module_name'], 'string', 'max' => 64],
 			[['module_name', 'module_description', 'menus','icon_url'], 'required'],
 		    [['module_description'],'string','max' => 255],
 		    ['module_name','checkCode'],
 			['menus', 'checkMenus'],
-		    ['icon_url','file','extensions' => 'jpg,png,jpeg,gif']
 		];		
 	}
 	

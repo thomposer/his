@@ -1,0 +1,40 @@
+.time-config{
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 40px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.time-config .btn-form{
+    margin-bottom: 0px!important;
+    margin-top: 10px;
+}
+.time-config  .form-group{
+    margin-bottom: 20px;
+}
+.notice-message{
+    color: #ff4b00;
+    margin-top: -12px;
+}
+
+/*
+预约服务类型允许开放平台并列显示
+*/
+#spottype-thirdplatform >label{
+    width: 100%;
+}
+/*
+预约服务类型允许开放平台上下距离位置
+*/
+.custom-appointment-third-platform{
+    margin-top:4px;
+    margin-bottom: -15px;
+}
+/*
+预约服务类型允许开放平台勾选框与右边文字对齐
+*/
+.custom-appointment-third-platform input{
+   vertical-align:middle;
+    margin-top: -2px;
+
+}

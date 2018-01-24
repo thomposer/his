@@ -5,24 +5,23 @@ namespace app\modules\user\models\search;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use yii\db\ActiveQuery;
 use app\modules\user\models\User;
-
+use app\modules\user\models\UserSpot;
+use app\modules\spot\models\Spot;
 /**
  * UserSearch represents the model behind the search form about `app\modules\user\models\User`.
  */
 class UserSearch extends User
 {
-	
-	public $spot;
-	
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'type', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['user_id', 'username'], 'safe'],
+            [['id', 'iphone', 'sex', 'occupation', 'occupation_type', 'position_title', 'expire_time', 'spot_id', 'status', 'create_time', 'update_time'], 'integer'],
+            [[ 'username', 'email', 'card', 'head_img', 'birthday', 'introduce', 'auth_key', 'password_hash', 'password_reset_token','clinic_id'], 'safe'],
         ];
     }
 
@@ -34,23 +33,6 @@ class UserSearch extends User
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
-    
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-    	$parentLabels = parent::attributeLabels();
-    	$parentLabels['spot'] = '站点';
-    	return $parentLabels;
-    }
-    
-    public function load($data, $formName = null) {
-    	if (isset($data[$this->formName()]['spot'])) {
-    		$this->spot = $data[$this->formName()]['spot'];
-    	}
-    	parent::load($data, $formName);
-    }
 
     /**
      * Creates data provider instance with search query applied
@@ -59,34 +41,59 @@ class UserSearch extends User
      *
      * @return ActiveDataProvider
      */
-    public function search($params,$pageSize = 10)
+    public function search($params,$pageSize = 20)
     {
-        $query = User::find()->orderBy(['updated_at' => SORT_DESC]);
+        $query = new ActiveQuery(User::className());
+        $query->from(['a' => User::tableName()]);
+        
+        $query->select(['a.id','a.username','a.email','a.iphone','a.sex','a.occupation','a.occupation_type','a.position_title','a.status','group_concat(distinct c.spot_name) as clinic_name','group_concat(distinct c.id) as clinic_id'])->where(['a.spot_id' => $this->parentSpotId,])->andWhere('a.status != 3');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
                 'pageSize' => $pageSize,
-                
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_ASC
+                ],
+                'attributes' => ['id']
             ]
         ]);
-
+        $query->leftJoin(['b' => UserSpot::tableName()],'{{a}}.id = {{b}}.user_id');
+        $query->leftJoin(['c' => Spot::tableName()],'{{b}}.spot_id = {{c}}.id');
+        $query->groupBy('a.id');
         $this->load($params);
-
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+            $query->where('1=0');
             return $dataProvider;
         }
-
+        
         $query->andFilterWhere([
             'id' => $this->id,
-            'type' => $this->type,
-            
+            //'iphone' => $this->iphone,
+            'sex' => $this->sex,
+            'birthday' => $this->birthday,
+            'occupation' => $this->occupation,
+            'occupation_type' => $this->occupation_type,
+            'position_title' => $this->position_title,
+            'expire_time' => $this->expire_time,
+            'spot_id' => $this->spot_id,
+            'status' => $this->status,
+            'create_time' => $this->create_time,
+            'update_time' => $this->update_time,
         ]);
-
-        $query->andFilterWhere(['like', 'user_id', $this->user_id])
-            ->andFilterWhere(['like', 'username', $this->username]);
+        
+        $query->andFilterWhere(['like', 'username', trim($this->username)])
+            ->andFilterWhere(['like', 'email', trim($this->email)])
+            ->andFilterWhere(['like', 'iphone', trim($this->iphone)])
+            ->andFilterWhere(['like', 'card', $this->card])
+            ->andFilterWhere(['like', 'head_img', $this->head_img])
+            ->andFilterWhere(['like', 'introduce', $this->introduce])
+            ->andFilterWhere(['like', 'auth_key', $this->auth_key])
+            ->andFilterWhere(['like', 'password_hash', $this->password_hash])
+            ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
+            ->andFilterWhere(['like', 'c.id', $this->clinic_id]);
 
         return $dataProvider;
     }

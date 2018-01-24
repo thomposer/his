@@ -2,29 +2,28 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use app\common\AutoLayout;
 /* @var $this yii\web\View */
-/* @var $model app\modules\rbac\models\Permission */
+/* @var $model app\modules\rbac\models\PermissionForm */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Permissions', 'url' => ['index']];
+$this->title = '权限详情';
+$this->params['breadcrumbs'][] = ['label' => '权限管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$baseUrl = Yii::$app->request->baseUrl;
 ?>
-<div class="permission-view">
+<?php  AutoLayout::begin(['viewFile' => '@app/views/layouts/layout.php'])?>
+<?php  $this->beginBlock('renderCss')?>
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<?php  $this->endBlock();?>
+<?php  $this->beginBlock('content')?>
 
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->name], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->name], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
+<div class="permission-form-view col-xs-12">
+    <div class = "box">
+      <div class="box-header with-border">
+      <span class = 'left-title'> <?=  Html::encode($this->title) ?></span>
+       <?= Html::a(Html::img($baseUrl.'/public/img/common/icon_back.png').'返回',Yii::$app->request->referrer,['class' => 'right-cancel']) ?>
+     </div>
+        <div class = "box-body">  
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -37,5 +36,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'updated_at',
         ],
     ]) ?>
-
+        </div>
+    </div>
 </div>
+<?php  $this->endBlock()?>
+<?php  $this->beginBlock('renderJs')?>
+
+<?php  $this->endBlock()?>
+<?php  AutoLayout::end()?>

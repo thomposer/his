@@ -8,6 +8,7 @@ use yii\grid\GridView;
 use yii\grid\DataColumn;
 use yii\helpers\Url;
 use app\assets\AppAsset;
+use leandrogehlen\treegrid\TreeGrid;
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\rbac\models\search\PermissionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -21,16 +22,22 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php AppAsset::addCss($this,'@web/public/css/lib/search.css')?>
 <?php $this->endBlock();?>
 <?php $this->beginBlock('content')?>
-	<div class="menu-index col-xs-12">
-	<?php if(isset($this->params['permList']['role'])||in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>            
-	<p>
-        <?= Html::a('初始化模块', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-    <?php endif;?>
+<div class="menu-index col-xs-12">
 	<div class = "box">
-    <div class = "box-body">
-	
-		<?= $this->render('_search', ['model' => $searchModel]); ?>
+        <div class = 'row search-margin'>
+            <div class = 'col-sm-6 col-md-6'>
+              <?php if(isset($this->params['permList']['role'])||in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>            
+        
+                <?= Html::a('初始化模块', ['@moduleAdminCreate'], ['class' => 'btn btn-default font-body2']) ?>
+                <?= Html::a('添加模块',['@moduleAdminList'],['class' => 'btn btn-default font-body2']) ?>
+            	<?= Html::a('添加子模块',['@moduleAdminCreateChildren'],['class' => 'btn btn-default font-body2']) ?>
+            <?php endif;?>
+            </div>
+            <div class = 'col-sm-6 col-md-6'>
+                <?= $this->render('_search', ['model' => $searchModel]); ?>
+            </div>
+        </div>
+        <div class = 'grid-view table-responsive add-table-padding'>
 		<?php $form = ActiveForm::begin ([
 			'options' => [ 
 					'class' => 'form-horizontal',
@@ -41,20 +48,21 @@ $this->params['breadcrumbs'][] = $this->title;
 			]
 	    ]);
 		?>
-	    <?= GridView::widget([
+	    <?= TreeGrid::widget([
 	        'dataProvider' => $dataProvider,
-	    		'tableOptions' => ['class' => 'table table-bordered thread'],
-	    		'layout'=> '{items}<div class="text-left tooltip-demo">{pager}</div>',
-	    		'pager'=>[
-	    			//'options'=>['class'=>'hidden']//关闭自带分页
-	    			'firstPageLabel'=>"首页",
-	    			'prevPageLabel'=>'上一页',
-	    			'nextPageLabel'=>'下一页',
-	    			'lastPageLabel'=>'尾页',
-	    		],
-	       
+	        'keyColumnName' => 'id',
+	        'parentColumnName' => 'parent_id',
+	        'parentRootValue' => '0', //first parentId value
+	        'pluginOptions' => [
+// 	            'initialState' => 'collapsed',
+	        ],
+            'options' => ['class' => 'table table-hover table-border header'],
+	   
 	        'columns' => [
-	           
+	            [
+				    'label' => '模块名称', 
+				    'value' => 'module_description'
+            	],  
 	            [               
 	                'attribute' => '排序',
 	                'format' => 'raw',      
@@ -65,10 +73,9 @@ $this->params['breadcrumbs'][] = $this->title;
 		           	}
             	],
            
-				['label' => '模块名称', 'value' => 'module_description'],
 				[
 				    'class' => 'app\common\component\ActionColumn',
-				    'template' => '{update}&nbsp;&nbsp;{edit}',
+				    'template' => '{update}&nbsp;&nbsp;{edit}&nbsp;&nbsp;{delete}',
 				    'headerOptions' => ['class' => ''],
 				    'contentOptions' => ['class' => ''],
 				    'buttons' => [
@@ -76,28 +83,51 @@ $this->params['breadcrumbs'][] = $this->title;
 				            if(!isset($this->params['permList']['role']) && !in_array($this->params['requestModuleController'].'/update', $this->params['permList'])){
 				                return false;
 				            }
-				            return Html::a('更新', ['update', 'id' => $model->id],['class' => 'btn btn-info']);
+							/*更新*/
+				            return Html::a('', ['update', 'id' => $model->id],['class' => 'icon_button_css icon_new','title'=>'更新','data-toggle'=>'tooltip']);
 				        	
             	        },
             	        'edit' => function ($url,$model,$key){
             	           if(!isset($this->params['permList']['role']) && !in_array($this->params['requestModuleController'].'/update', $this->params['permList'])){
             	               return false;
             	           }
-				            return Html::a('修改', ['edit', 'id' => $model->id],['class' => 'btn btn-info']);
-            	           
+                           if($model->parent_id == 0){
+                               return Html::a('', ['edit', 'id' => $model->id],['class' => 'icon_button_view fa fa-pencil-square-o','title'=>'修改','data-toggle'=>'tooltip']);
+                                
+                           }     
+                           return Html::a('', ['update-children', 'id' => $model->id],['class' => 'icon_button_view fa fa-pencil-square-o','title'=>'修改','data-toggle'=>'tooltip']);
+                            
+            	        },
+            	        'delete' => function ($url,$model,$key){
+            	        if(!isset($this->params['permList']['role']) && !in_array($this->params['requestModuleController'].'/delete', $this->params['permList'])){
+            	            return false;
             	        }
+            	        $options = [
+            	            'data-confirm'=>false,
+            	            'data-method'=>false,
+            	            'data-request-method'=>'post',
+            	            'role'=>'modal-remote',
+            	            'data-toggle'=>'tooltip',
+            	            'data-confirm-title'=>'系统提示',
+            	            'data-delete' => false,
+            	            'data-confirm-message'=>Yii::t('yii', 'Are you sure you want to delete this item?'),
+            	        ];
+            	        return Html::a('<span class="icon_button_view fa fa-trash-o" title="删除", data-toggle="tooltip"></span>',['delete','id' => $model->id],$options);
+            	        
+            	        }
+            	        
             	   ]
             	],
 			],
 	       
 	    ]);
 	    
-	    echo Html::submitButton('排序',['class' =>  'btn btn_primary submit-btn', 'name' => 'submit-button']);
+	    echo Html::submitButton('排序',['class' =>  'btn btn-default', 'name' => 'submit-button']);
 	    ActiveForm::end();
 	    ?>
+	    </div>
         </div>
 	</div>
-</div>
 <?php $this->endBlock();?>
 <?php $this->beginBlock('renderJs')?>
 

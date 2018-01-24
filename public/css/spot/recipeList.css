@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+.recipe-list-form .module-title .module-title-adorn{
+    width: 4px;
+    height: 20px;
+    border-radius: 25px;
+    background: #76A6EF;
+    float: left;
+    margin-right: 5px;
+}
+.recipe-list-form .module-title .module-title-content{
+    font-size: 15.5px;
+    font-weight: 600;
+}
+.recipe-list-form .module-title{
+    margin-top: 20px;
+}
+.recipe-list-form .module-content{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.recipe-list-form .recipe-list-form-label{
+    padding-right: 15px;
+}
+.recipe-list-form #recipelist-high_risk .recipe-list-form-label:last-child{
+    color:red;
+}
+
+#recipelist-advicetagid label{
+    margin-right: 20px;
+    width: 180px;
+}
+#recipelist-unionspotid label,#checklist-unionspotid label,#inspect-unionspotid label{
+    width: 33%
+}
+.field-recipelist-advicetagid .title-label{
+    color: #cacfd8;
+}
+
+.recipe-list-form .recipe-list-line-1{
+    margin-top:30px;
+}
+.recipe-list-form .recipe-list-line-2{
+    margin-top:-19px;
+}
+.recipe-list-form .recipe-list-line-shelves{
+    margin-top:-25px;
+}
+
+
+
+/*
+主页样式
+*/
+.configure-clinic-name{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.form-horizontal .field-discountTagChecked,.form-horizontal .field-commonTagChecked{
+    padding-left: 0px;
+}

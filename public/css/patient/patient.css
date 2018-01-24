@@ -1,0 +1,282 @@
+ul{
+    list-style-type: none;
+}
+.basic-content-header{
+    background-color: #F6F7F9;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 25px;
+    padding-right: 15px;
+    opacity: 0.8;
+    border-top: 1px solid #E4E7EB;
+}
+.basic-left-info{
+    display: inline-block;
+    font-weight: 600;
+    color: #445064;
+
+}
+.naviList{
+    color: #76A6EF;
+    font-weight: 500;
+    font-size: 16px;
+    height:16px;
+    margin-bottom: 10px;
+}
+
+tr .recipeCotent{
+    margin: 0 auto;
+    border-bottom:1px solid  #edf1f7;
+}
+.nameCss{
+    margin: 0 auto;
+    padding-top: 5%;
+}
+.startDescription{
+    padding-top: 10px;
+}
+.endDescription{
+    padding: 12px 35px 0px 0px;
+}
+.num{
+    padding-bottom: 10px;
+}
+.reportCheck{
+    margin: 0 auto;
+    height:80px;
+    line-height: 80px;
+    text-align: right;
+    padding: 0px 12px ;
+    border-bottom:1px solid  #edf1f7;
+}
+.inspect{
+    padding-left: 0px;
+}
+.key-sign{
+    padding-left: 0px!important;
+}
+.table > tbody > tr > th,.table > tbody > tr > td{
+    border-top: none;
+}
+.table > tbody > tr.border-none > td{
+    border-bottom: none;
+}
+.table > tbody > tr > th{
+    padding-left: 67.5px;
+    word-wrap:break-word;
+}
+.table.child-assessment > tbody > tr > th{
+    padding-left: 12px !important;
+}
+.table.child-assessment {
+    border: 1px solid #f4f4f4;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+}
+.treatment-form .table > tbody > tr{
+    height: 50px;
+    line-height:50px;
+}
+.treatment-form .table > tbody > tr > th,.treatment-form .table > tbody > tr > td{
+    border-bottom:0.5px solid #E5EBF4;
+}
+.none_radius {
+    border-bottom: none;
+    border-radius: 0px !important;
+    box-shadow: 0px 0px 0px;
+    margin-bottom: 0px;
+}
+.none_radius:last-child{
+    border-bottom: 1px solid  #E5EBF4 ;
+}
+.box-detail{
+    height: 40px;
+    padding: 0 25px !important;
+    line-height: 40px;
+    /*background-color: #edf1f7;*/
+}
+.border-top{
+    border-top: 1px solid #E5EBF4 !important;
+}
+.treatment-form {
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.box-header>.box-tools{
+    /* top:0px; */
+    position: relative;
+    right: 10px;
+}
+.box-tools{
+    height: 40px;
+    line-height: 40px;
+    top:0px!important;
+}
+.btn-click{
+    height: 100%;
+}
+.detail-view{
+    font-size: 14px;
+}
+.makeup-icon{
+    background: #fff;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    color: #ff4b00;
+    padding: 3px 6px;
+    border: 1px solid #ff4b00;  
+    margin-left: 10px;
+    font-size: 10px;
+}
+.pre-custom .file-preview-initial{
+    height:100px;
+    margin-top: -3px;
+}
+.texarea-custom{
+	border-radius: 0px;
+}
+.image-upload{
+	margin-bottom: 5px !important;
+}
+.inspect-upload{
+	margin-bottom: 10px !important;
+}
+.file-preview{
+    border: none !important;
+
+}
+.file-input{
+/*    margin-top: -15px !important;
+    margin-bottom: -12px !important;*/
+}
+.file-preview-initial{
+    margin-top: 3px !important;
+}
+.skin_test{
+    color:#F86049;
+}
+.recipe-border-right{
+    border-right: 1px solid #E5EBF4;
+}
+.padding-none{
+    padding: 0px !important;
+}
+.recipe-table{
+    margin-bottom: 0px !important;
+}
+.table.detail-view > tbody > tr > td > a.view-check-buttons{
+    display: inline-block;
+    padding: 5px 9px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid #76a6ef;
+}
+ .table > tbody > tr > td.border-none{
+
+}
+.box-success > .box-detail > .box-tools > button{
+    padding-right: 0px;
+}
+.no-content {
+    border: none;
+    padding: 20px 0px 20px 10px;
+    font-size: 16px;
+    color: #55657d;
+}
+.box-detail:hover{
+    background-color: #f5f5f5;
+}
+.box-detail:active,.box-active,.box-active:hover,.box-open > .box-detail,.box-open > .box-detail:hover{
+    background-color: #EDF1F7;
+}
+.box-open{
+    margin-bottom: 4px !important;
+}
+.recipe-record-name{
+    padding-left: 12px !important;
+}
+.no-padding{
+    border: 0px;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+}
+.table:not(.recipe-form):not(.cure-form):not(.follow-table):not(.appointment-table){
+    border: 0px;
+}
+.recipe-table > tbody > tr:last-child > th,.recipe-table > tbody > tr:last-child > td{
+    border-bottom: 0px !important;
+}
+.box-active{
+    border-bottom: 0px !important;
+}
+.no-result{
+    padding-left: 18px!important;
+}
+.naviList div{
+    float: left;
+}
+.naviList .department-name{
+    max-width: 150px;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow : ellipsis;
+    white-space : nowrap;
+}
+.patient-basic .medical-record-container {
+    display: flex;
+    padding: 0 12px;
+    height: 62px;
+}
+.patient-basic .medical-record-title-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0 0 0;
+    margin-left: 5px;
+    font-size: 12px;
+}
+.patient-basic .medical-record-title-container .single-line{
+    margin-bottom: 10px;
+}
+.patient-basic .medical-record-container:hover{
+    background-color: #f5f5f5;
+}
+
+/*患者信息头部区域样式
+-------------------------------------*/
+
+.box .box-header{
+    padding:19px 19px 19px 26px;
+    border-bottom:0.5px solid #f4f4f4;
+}
+/*左边标题*/
+.box .box-header .left-title{
+    font-size: 16px;
+    line-height: 17px;
+    font-weight: normal;
+}
+
+.patient-form .outpatient-form{
+    border-top:1px solid #f4f4f4;
+}
+/* 患者信息tab */
+.nav>li>a:active, .nav>li>a:focus, .nav>li>a:hover{
+    background: none;
+}
+.treatment-form .first-chech-content{
+    word-break: break-all;
+}

@@ -13,9 +13,14 @@ class ActionColumn extends \yii\grid\ActionColumn
      * auth和 buttons一样，都包含view update delete 3个元素，且都是回调函数
      * template 是第一层控制为完全是否显示，此为第二层是否有权限显示
      * 这3个属性是可否操作，当不可操作的时候 会显示为灰色（详细见initDefaultButtons）
+     * ajaxList  判断view update delete 3个元素哪个使用ajax验证
      */
 
     public $auth=[];
+    public $ajaxList = ['delete' => true];
+    public $viewOptions = [];
+    public $updateOptions = [];
+    public $deleteOptions = [];
     public $requestModuleController;
     public $permList;
     /**
@@ -27,10 +32,38 @@ class ActionColumn extends \yii\grid\ActionColumn
         $view = Yii::$app->view;
         $this->requestModuleController = $view->params['requestModuleController'];
         $this->permList = $view->params['permList'];
+        $this->ajaxOption();
         $this->initDefaultAuth();
         $this->initDefaultButtons();
-        $this->headerOptions = empty($this->headerOptions)?['class' => 'op-header']:$this->headerOptions;
+        $this->headerOptions = $this->headerOptions == ['class' => 'action-column']?['class' => 'col-sm-2 col-md-2']:$this->headerOptions;
         $this->contentOptions = empty($this->contentOptions)?['class' => 'op-group']:$this->contentOptions;
+    }
+    public function ajaxOption(){
+        
+        if(isset($this->ajaxList['view']) && $this->ajaxList['view'] === true){
+            $this->viewOptions = [
+                'role'=>'modal-remote',
+                'data-toggle'=>'tooltip'
+            ];
+        }
+        if(isset($this->ajaxList['update']) && $this->ajaxList['update'] === true){
+            $this->updateOptions = [
+                'role'=>'modal-remote',
+                'data-toggle'=>'tooltip'
+            ];
+        }
+        if(isset($this->ajaxList['delete']) && $this->ajaxList['delete'] === true){
+            $this->deleteOptions = [
+               'data-confirm'=>false, 
+               'data-method'=>false,
+               'data-request-method'=>'post',
+               'role'=>'modal-remote',
+               'data-toggle'=>'tooltip',
+               'data-confirm-title'=>'系统提示',
+               'data-delete' => false,
+               'data-confirm-message'=>Yii::t('yii', 'Are you sure you want to delete this item?'),
+            ];
+        }
     }
 
     /**
@@ -84,8 +117,9 @@ class ActionColumn extends \yii\grid\ActionColumn
                     'title' => Yii::t('yii', 'View'),
                     'aria-label' => Yii::t('yii', 'View'),
                     'data-pjax' => '0',
-                ], $this->buttonOptions);
-                return Html::a('<span class="glyphicon glyphicon-eye-open "></span>', $url, $options);
+                ], $this->buttonOptions,$this->viewOptions);
+                /*fa-eye是查看*/
+                return Html::a('<span class="icon_button_view fa fa-eye" title="查看", data-toggle="tooltip"></span>', $url, $options);
             };
         }
         if (!isset($this->buttons['update'])) {
@@ -96,11 +130,11 @@ class ActionColumn extends \yii\grid\ActionColumn
                     return false;
                 }
                 $options = array_merge([
-                    'title' => Yii::t('yii', 'Update'),
-                    'aria-label' => Yii::t('yii', 'Update'),
+                    'title' => Yii::t('yii', '编辑'),
+                    'aria-label' => Yii::t('yii', '编辑'),
                     'data-pjax' => '0',
-                ], $this->buttonOptions);
-                return Html::a('<span class="glyphicon glyphicon-pencil gray-dark "></span>', $url, $options);
+                ], $this->buttonOptions,$this->updateOptions);
+                return Html::a('<span class="icon_button_view fa fa-pencil-square-o" title="编辑", data-toggle="tooltip"></span>', $url, $options);
             };
         }
         if (!isset($this->buttons['delete'])) {
@@ -114,10 +148,12 @@ class ActionColumn extends \yii\grid\ActionColumn
                     'title' => Yii::t('yii', 'Delete'),
                     'aria-label' => Yii::t('yii', 'Delete'),
                     'data-confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
+//                    'data-delete' => 'false', //true为普通弹框(确定按钮在左侧), false为确定按钮在右侧
+//                    'data-title' => '系统提示', //弹框的标题 默认为系统提示
                     'data-method' => 'post',
-                    'data-pjax' => '0',
-                ], $this->buttonOptions);
-                return Html::a('<span class="glyphicon glyphicon-trash "></span>', $url, $options);
+                    'data-pjax' => '1',
+                ], $this->buttonOptions,$this->deleteOptions);
+                return Html::a('<span class="icon_button_view fa fa-trash-o" title="删除", data-toggle="tooltip"></span>', $url, $options);
             };
         }
     }

@@ -1,22 +1,26 @@
 /*!
- * CityPicker v1.0.2
+ * CityPicker v1.1.0
  * https://github.com/tshi0912/citypicker
  *
  * Copyright (c) 2015-2016 Tao Shi
  * Released under the MIT license
  *
- * Date: 2016-02-29T12:11:36.477Z
+ * Date: 2016-09-09T12:11:57.119Z
  */
 
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as anonymous module.
+        console.log(333);
+        console.log(ChineseDistricts);
         define(['jquery', 'ChineseDistricts'], factory);
     } else if (typeof exports === 'object') {
         // Node / CommonJS
-        //factory(require('jquery'), require('ChineseDistricts'));
+        console.log(111);
+        factory(require('jquery'), require('ChineseDistricts'));
     } else {
         // Browser globals.
+        console.log(222);
         factory(jQuery, ChineseDistricts);
     }
 })(function ($, ChineseDistricts) {
@@ -259,7 +263,7 @@
                     });
                     $(this).trigger(EVENT_CHANGE);
                     $this.feedText();
-                    $this.feedVal();
+                    $this.feedVal(true);
                     if (last) {
                         $this.close();
                     }
@@ -356,6 +360,18 @@
             }
         },
 
+        getCode: function (count) {
+            var obj = {}, arr = [];
+            this.$textspan.find('.select-item')
+                .each(function () {
+                    var code = $(this).data('code');
+                    var count = $(this).data('count');
+                    obj[count] = code;
+                    arr.push(code);
+                });
+            return count ? obj[count] : arr.join('/');
+        },
+
         getVal: function () {
             var text = '';
             this.$dropdown.find('.city-select')
@@ -368,8 +384,11 @@
             return text;
         },
 
-        feedVal: function () {
+        feedVal: function (trigger) {
             this.$element.val(this.getVal());
+            if(trigger) {
+                this.$element.trigger('cp:updated');
+            }
         },
 
         output: function (type) {

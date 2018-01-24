@@ -1,0 +1,72 @@
+.cure-record-index .tab-content{
+    border: 1px solid #cacfdb;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-top: 12px;
+    margin-left: 8px;
+    margin-right: 24px;
+    margin-bottom: 20px;
+}
+.nav-second > li.active > a,.nav-second > li.active > a:hover,.nav-second > li.active > a:visited {
+    color: #ffffff !important;
+    background-color: #76A6EF !important;
+    font-weight: 300 !important;
+    border: 1px solid transparent !important;
+    border-bottom: 1px solid #ffffff !important;
+}
+.nav  .nav-second > li{
+    background-color: #ffffff !important;
+    float: none !important;
+    display: table-cell !important;
+    width: 1% !important;
+}
+.nav-second{
+    padding-top: 8px !important;
+    padding-left: 8px !important;
+}
+.nav-second > li{
+    padding-left: 12px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+.nav-second > li >a {
+    border: 1px solid #76A6EF !important;
+    color: #76A6EF !important;
+    border-radius: 5px !important;
+}
+.nav.nav-second>li{
+    background-color: #ffffff !important;
+    float: left !important;
+    width: 100% !important;
+    max-width: 215px !important;
+    margin-top: 12px !important;
+    text-align: center;
+}
+.nav.nav-second>li .active{
+    background-color: #76A6EF !important;
+}
+.inspectNocontent{
+    width:100%;
+    border-bottom: 0.5px solid #cacfdb;
+}
+.content-info{
+    padding:20px 20px 12px 12px;
+}
+.inspectPic{
+    background-size: 148px 178px;
+    width: 100%;
+    height: 386px;
+    background-image: url("../../img/common/no.png");
+    background-repeat: no-repeat;
+   background-position: 50%;
+}
+.noContentTips{
+    margin-top: 23%;
+    margin-left: 44%;
+}
+.btn-print{
+    min-width: 90px;
+    margin-top: 5px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}

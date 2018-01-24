@@ -36,12 +36,10 @@ class TitleSearch extends Title {
 	 */
 	public function search($params, $pageSize = 10,$where = NULL)
 	{
-		$query = Title::find();		
+		$query = Title::find()->select(['id','module_name','module_description','sort','parent_id']);		
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-        	'pagination' => [
-				'pageSize' => $pageSize
-        	],
+        	'pagination' =>false,
             'sort' => [
                 'defaultOrder' => [
                     'sort' => SORT_DESC
@@ -57,7 +55,6 @@ class TitleSearch extends Title {
 		}
 	
 		$query->andFilterWhere(['like', 'module_description', $this->module_description]);
-		$query->andWhere($where);
 		
 /* 		
 		$user = Yii::$app->user->identity->userInfo;

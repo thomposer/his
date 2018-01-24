@@ -1,0 +1,552 @@
+@CHARSET "UTF-8";
+
+.allergy-list .btn-from-delete-add{
+    margin-top: -3px;
+}
+/* .cure-record-index,.outpatient-_recordForm,.checkRecordForm,.inspectRecordForm{
+    padding-right: 25px;
+    padding-left: 25px;
+} */
+#outpatient-patient-info form{
+    margin-top: 0px!important;
+}
+.patient-form-top{
+    margin-top: 20px;
+}
+.cure-record-form{
+    margin-bottom: 20px;
+}
+.header{
+    background-color: #edf1f7;
+}
+.header th{
+    font-weight: 300;
+
+}
+.op-group img{
+    cursor: pointer;
+    width: 16px;
+}
+.check-list,.inspect-list{
+    width: 100%;
+    line-height: 40px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border: 0.5px solid #DFE0E4;
+}
+.check-name{
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 10px;
+    width: 95%;
+}
+.patient-basic{
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.basic-header{
+    height: 25px;
+    background: #edf1f7;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    padding-right: 15px;
+    border-bottom: 1px solid #E5EBF4
+}
+.basic-left-info{
+    font-weight:600;
+    color: #445064;
+}
+.basic-right-up{
+    font-weight:600;
+    color: #99A3B1;
+    float: right;
+}
+.basic-right-up a{
+    color: #99A3B1 !important;
+}
+/*.basic-right-up a:hover, a:active, a:focus{*/
+.basic-right-up a:hover, a:focus{
+    /*color: #99A3B1 !important;*/
+}
+.basic-right-up:hover{
+    cursor: pointer;
+}
+.his-pencil{
+    padding-right: 20px;
+    width: 15px;
+    height: 12px;
+    background: url('../../img/shape.png') no-repeat top;
+}
+/*.fa-trash-o{
+        width: 5px;
+        height: 5px;
+}*/
+.fa-family-trash{
+    padding-right: 20px;
+    width: 15px;
+    height: 12px;
+    background: url('../../img/trash.png') no-repeat top;
+}
+.basic-form{
+    border: 1px solid #edf1f7;
+    border-radius: 5px;
+}
+.basic-form-content{
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom:0px;
+}
+.basic-btn{
+    display: none;  
+}
+.treatment-form{
+    /*border: 1px solid #edf1f7;*/
+    border-radius: 5px;
+    margin-top: 12px;
+    margin-bottom: 30px;
+}
+.treatment-form .list{
+    font-size: 14px;
+    padding-left: 40px;
+    height:35px;
+    line-height: 35px;
+    border-top:0.5px solid #E5EBF4;
+    border-bottom:0.5px solid #E5EBF4;
+}
+
+.treatment-form .list li{
+    height:33px;
+    font-size: 14px;
+    color:#55657d;
+}
+
+.treatment-content{
+    height: 50px;
+    /*border-top: 1px solid #edf1f7;*/
+    line-height: 50px;
+}
+.treatment-form-content{
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 50px;
+}
+.treatment-folder-title{
+    background-color: #F4F5F7;
+    line-height: 30px;
+    height: 30px;
+    border-bottom: 1px solid #edf1f7;
+    border-top: 1px solid #edf1f7;
+}
+.none_radius{
+    border-bottom: 1px solid #edf1f7;
+    border-radius: 0px !important;
+    box-shadow: 0px 0px 0px;
+    margin-bottom: 0px;
+}
+
+.btn-click:hover, .btn-click:focus, .btn-click.focus{
+    color: #72AEF6 !important;
+}
+.box-detail{
+    height: 30px;
+    padding:0 15px !important;
+    line-height: 30px;
+    /*background-color:#F4F5F7 ;*/
+}
+.family-modal{
+    padding: 15px;
+}
+.basic-family-more{
+    height: 5px;
+    background: #edf1f7;
+}
+.basic-family-right-up{
+    padding-right: 15px;
+}
+.table{
+    width: 100%;
+    margin-bottom: 10px;
+}
+/* .table th{
+    background-color: #edf1f7;
+} */
+.patient-table{
+    margin-top: 30px;
+
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
+    background: #F4F5F7;
+}
+/*.naviList{
+    color: #76A6EF;
+    font-weight: 500;
+    height: 30px;
+    background-color: #edf1f7;
+    border-bottom: 1px solid #E5EBF4;
+}*/
+tr .recipeCotent{
+    margin: 0 auto;
+    border-bottom:1px solid  #edf1f7;
+}
+.nameCss{
+    margin: 0 auto;
+    padding-top: 5%;
+}
+.startDescription{
+    padding-top: 10px;
+}
+.endDescription{
+    padding: 12px 35px 0px 0px;
+}
+.num{
+    padding-bottom: 10px;
+}
+.reportCheck{
+    margin: 0 auto;
+    height:80px;
+    line-height: 80px;
+    text-align: right;
+    padding: 0px 12px ;
+    border-bottom:1px solid  #edf1f7;
+}
+.inspect{
+    padding-left: 0px;
+}
+.box-header>.box-tools{
+    top:0px;
+}
+#patient-birthtime{
+    border-radius:4px;
+    width: 100%;
+}
+#basic-family-pjax{
+    margin:20px 0px;
+}
+.family-add{
+    margin-left:20px;
+}
+form#ModalRemoteConfirmForm{
+    margin-top:0px;
+}
+.field-patient-address{
+    width: 100%;
+    position: absolute;
+    display: table;
+    border-collapse: separate;
+    padding-right: 30px;
+}
+
+.makeupBtn{
+    margin-left: 18px;
+    background: #fff;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+}
+.makeupBtn:hover,.makeupBtn:visited,.makeupBtn:active{
+    background-color: #fff;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+    opacity: 1;
+}
+/*#check-record .form-group{
+    margin-bottom: 0px!important;
+}*/
+.field-patient-iphone,.field-patient-username{
+    position: relative;
+}
+
+
+.select2-container--default.select2-container--disabled .select2-selection--single{
+    background: #F4F5F7;
+    cursor: not-allowed;
+}
+/*病历列表的样式*/
+.patient-container{
+    font-size: 12px;
+    color: #55657D;
+    padding: 12px 35px 8px 20px;
+    margin: 10px 20px;
+    border: 1px solid #CACFD8;
+    border-radius: 2px;
+    position: relative;
+}
+.patient-head-box{
+    margin-left: 10px;
+    /*float: left;*/
+    /*min-height: 55px;*/
+    /*position: relative;*/
+    width: 900px;
+}
+.patient-container .head-img{
+    width: 50px;
+    height: 50px;
+    left: 25px;
+    border-radius: 100px;
+
+
+}
+.patient-container .head-img-container{
+    width: 60px;
+    left: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #445064;
+    top:14px;
+    display: inline-block;
+}
+.patient-container .img-container{
+    position: relative;
+}
+.patient-container .patient-name-left{
+    margin-top: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+    color: #445064;
+}
+.patient-container .sex-img{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 5px;
+    bottom: 0px;
+}
+.patient-container .patient-more{
+    position: absolute;
+    right: 20px;
+    top:13px;
+}
+.patient-container .patient-more:hover{
+    color: #558DE2;
+    cursor: pointer;
+}
+.patient-user-basic{
+    font-size: 16px;
+}
+.patient-container .patient-hover:hover {
+    border-bottom: 1px solid #76a6ef;
+}
+.patient-container .patient-accept-doc{
+    font-size: 14px;
+}
+.patient-accept-doc span{
+    margin-right: 3px;
+}
+.patient-container .patient-item{
+
+    width: 90%;
+}
+.patient-container .patient-height{
+    margin-top: 10px;
+}
+.inspect-item,.check-item,.cure-item,.recipe-item,.patient-radio{
+    padding-left: 20px;
+    position: relative;
+}
+.patient-radio .patientlist:hover{
+    cursor: pointer;
+}
+.patient-container .patient-item div img{
+    position: absolute;
+    top:1px;
+    left: 0px;
+    width: 8.1px;
+    height: 10.6px;
+}
+.patient-container .patient-item div{
+    display: inline-block;
+    width: 29%;
+    margin-top: 0px;
+    height: 14px;
+    margin-right: 5%;
+    /* background: yellowgreen; */
+}
+.patient-container .patient-item div span{
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.patient-container .patient-name{
+    max-width: 100px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+.patient-footer-box .patient-basic{
+    padding: 0px!important;
+}
+
+.patient-container .no-padding{
+    border-left:none;
+    border-right:none;
+}
+.patient-container .list{
+    font-size: 14px;
+    height:42px;
+    line-height: 42px;
+    border-top:0.5px solid #E5EBF4;
+    border-bottom:0.5px solid #E5EBF4;
+}
+.patient-container .list li{
+    height:40px;
+    font-size: 14px;
+    color:#55657d;
+}
+.box{
+    padding-bottom: 1px;
+}
+.patient-container .none_radius:last-child{
+    border: none!important;
+}
+.patient-index .table-padding-right{
+    padding-right: 20px;
+}
+.patient-container .patient-hover{
+    margin-left: 10px;
+    margin-right: 5px;
+    border-bottom: 1px solid #fff;
+}
+.patient-container .spot-name{
+    max-width: 200px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+.common-span{
+    display: inline-block;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+.patient-radio{
+    margin-bottom: 10px;
+}
+.patient-radio .patientlist:last-child input{
+    margin-left: 20px;
+}
+.patient-radio div{
+    display: inline-block;
+    font-size: 14px;
+    color: #97A3B6;
+}
+.patient-radio input{
+    margin-right: 5px;
+}
+.patient-container .doctor-name,.patient-container .first-check{
+    max-width: 400px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+.patient-container .first-check{
+    max-width:30% ;
+}
+.patient-no-data{
+    padding-left: 20px;
+    padding-bottom: 16px;
+}
+
+
+.file-zoom-dialog .btn-navigate{
+    color : #1c94c4 !important;
+}
+.icon-male{
+    background: #76A6EF;
+    color: #FFF;
+    border-radius: 50%;
+    border: 1px solid #FFF;
+    padding: 4px;
+}
+.icon-female{
+    background: #FF7F7F;
+    color: #FFF;
+    border-radius: 50%;
+    border: 1px solid #FFF;
+    padding: 4px 4px 4px 5px;
+}
+.basic-form-content-allergy .field-patient-hasallergy.form-group{
+    margin-bottom: 0;
+}
+
+.basic-form-content-allergy .field-patient-hasallergy.form-group .help-block{
+    margin-top: 0; 
+    margin-bottom: 0; 
+}
+
+#patientsubmeter-childbirth_way label{
+    margin-right: 30px;
+}
+#patientsubmeter-childbirth_case label{
+    margin-right: 30px;
+}
+
+#patientsubmeter-childbirth_hearing label{
+    margin-right: 30px;
+}
+
+/*AdminLTE box-widget插件(盒子打开和关闭效果) 按钮样式*/
+button[data-widget="collapse"]{
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+/*盒子打开(下拉)状态下的样式*/
+.box.box-open{
+    border-top-color:#E5EBF4 !important;
+}
+.box.box-open>.medical-record-container{
+    background-color: #edf1f7;
+    border-left:0.5px solid #E5EBF4;
+    border-right:0.5px solid #E5EBF4;
+}
+.box.box-open>.medical-record-container:hover{
+    background-color: #edf1f7;
+}
+
+/*盒子关闭状态下的样式*/
+.box.collapsed-box>.medical-record-containe{
+    border-left:0.5px solid transparent;
+    border-right:0.5px solid transparent;
+}
+
+#patientallergy-allergy_degree>label{
+    padding-left: 15px;
+}
+
+/* title标题样式 */
+.title-item {
+    line-height: 16.5px;
+    margin: 15px 0 7.5px 0;
+}
+.item-num {
+    width: 4px;
+    height: 15px;
+    border-radius: 25px;
+    background: #76A6EF;
+    float: left;
+    margin-right: 5px;
+}
+.item-text {
+    font-size: 15.5px;
+    font-weight: 600;
+}
+
+#charge-crud-datatable-pjax .form-horizontal .form-group{
+	    margin-left: 0px !important;
+	    margin-right: 0px !important;
+}

@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+.table-hover > tbody > tr > td.info:hover, 
+.table-hover > tbody > tr > th.info:hover, 
+.table-hover > tbody > tr.info:hover > td, 
+.table-hover > tbody > tr:hover > .info, .table-hover > tbody > tr.info:hover > th{
+    background-color: #ffffff;
+}
+.table > thead > tr > td.info, 
+.table > tbody > tr > td.info, 
+.table > tfoot > tr > td.info, 
+.table > thead > tr > th.info, 
+.table > tbody > tr > th.info, 
+.table > tfoot > tr > th.info, 
+.table > thead > tr.info > td, 
+.table > tbody > tr.info > td, 
+.table > tfoot > tr.info > td, 
+.table > thead > tr.info > th, 
+.table > tbody > tr.info > th, 
+.table > tfoot > tr.info > th{
+    background-color: #ffffff;
+}
+.skip-export .table{
+    margin-bottom: 0px;
+}
+.table>tbody>tr.kv-expand-detail-row>td{
+    padding: 0px 34px;
+}
+.table > tbody > tr > td{
+    border-top:none;
+}
+.skip-export .table>tbody>tr:last-child>td{
+    border-bottom: none;
+}
+
+.kv-expanded-row td{
+    padding-left:62px;
+}
+.kv-expanded-row td:first-child{
+    padding-left:62px;
+}
+
+.kv-expand-detail-loading {
+    background-image: url('')!important;
+    background-position: right 2px center;
+    background-repeat: no-repeat;
+    cursor: wait;
+    opacity: 0.6;
+}
+
+.card-recharge-category-index .kv-expanded-row td{
+    /*padding-left:0px;*/
+}
+.card-recharge-category-index .kv-expanded-row td:first-child{
+    /*padding-left:0px;*/
+}
+.card-recharge-category-index .table>tbody>tr.kv-expand-detail-row>td{
+    /*padding: 0px 0px;*/
+}

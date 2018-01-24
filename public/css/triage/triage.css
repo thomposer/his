@@ -1,0 +1,376 @@
+@CHARSET "UTF-8";
+
+#user-sex label {
+    padding-top: 5px;
+    margin-right: 60px;
+}
+
+.form-margin {
+
+    margin-top: 30px;
+}
+
+.btn-from-delete-add {
+    color: #ffffff;
+    background-color: #76a6ef;
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    border-radius: 5px;
+    padding: 0px;
+}
+.btn-from-delete-add-top-0{
+    margin-top: 0;
+}
+
+.btn-from-delete-add-modal {
+    color: #ffffff;
+    background-color: #76a6ef;
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    border-radius: 5px;
+    padding: 0px;
+}
+
+.btn-from-delete-add i {
+    color: #ffffff;
+
+}
+
+.btn-from-delete-add:hover {
+
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.zhi {
+    padding-top: 30px;
+}
+
+.me-col-xs-1 {
+    width: 1.33333333%;
+    float: left
+}
+
+.top-bar {
+    background: #ffffff;
+    height: 70px;
+    line-height: 60px;
+    border-radius: 5px;
+}
+
+.top-bar a {
+    color: #A3ACB9;
+}
+
+.left-bar {
+    width: 45%;
+    float: left;
+    text-align: center;
+}
+
+.center-bar {
+    float: left;
+    color: #EEEFF1;
+    line-height: 70px;
+    width: 2px;
+}
+
+.cneter-bar-icon {
+    border: 1px solid #EEEFF1;
+    font-size: 30px;
+}
+
+.right-bar {
+    width: 45%;
+    float: left;
+    text-align: center;
+}
+
+.tab_triage_active {
+    background: url('../../img/triage/tab_triage.png') no-repeat 0px 0px;
+    padding-left: 35px;
+    font-size: 25px;
+    line-height: 70px;
+}
+
+.tab_triage {
+    background: url('../../img/triage/tab_triage.png') no-repeat 0px -28px;
+    padding-left: 35px;
+    font-size: 25px;
+    line-height: 70px;
+}
+
+.tab_history_active {
+    background: url('../../img/triage/tab_history.png') no-repeat 0px 0px;
+    padding-left: 35px;
+    font-size: 25px;
+    line-height: 70px;
+}
+
+.tab_history {
+    background: url('../../img/triage/tab_history.png') no-repeat 0px -28px;
+    padding-left: 35px;
+    font-size: 25px;
+    line-height: 70px;
+}
+
+.tab_triage_active a {
+    color: #88B2F2;
+}
+
+.tab_history_active a {
+    color: #88B2F2;
+}
+
+.bar-word {
+    font-size: 20px;
+}
+
+.modal-body {
+    position: relative;
+    padding: 0px;
+}
+
+.nav-tabs {
+    font-size: 14px;
+    background: #F9FAFC;
+    /*border-top: 1px solid #ddd;*/
+    border-bottom-color: #ddd;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #83AFF2;
+    cursor: default;
+    background-color: #fff;
+    border-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.nav-tabs > li > a {
+    color: #A8B0BD;
+    margin-right: 0px;
+    border-radius: 0;
+}
+
+.nav-tabs > li {
+    width: 20%;
+    text-align: center;
+    border-left: 1px solid #ddd;
+}
+
+.nav-tabs > li .avtive {
+    background-color: #88B2F2;
+}
+.modal-lg .modal-header,.modal-dialog .modal-header{
+    border-bottom:none;
+}
+
+#triageinfo-has_allergy_type label {
+    margin-right: 60px;
+}
+
+.nav > li > a:hover, .nav > li > a:active, .nav > li > a:focus {
+    background: none;
+}
+
+.tab-content {
+    padding: 3px 25px 0px 25px !important;
+}
+
+.button-center {
+    text-align: center;
+}
+
+.image-doctor {
+    width: 170px;
+    display: block;
+}
+
+.thumb-doctor {
+    display: block;
+    padding: 9px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+    background: #F4F5F7;
+}
+
+.thumb-doctor:hover {
+    opacity: 0.8;
+}
+
+.filemanager {
+    /*margin: 20px 0px 5px 13px;*/
+}
+
+#ajaxCrudModal .modal-body {
+    /*border-top:1px solid #ddd;*/
+}
+
+.text-nowrap {
+    text-overflow: ellipsis;
+    /*overflow: hidden;*/
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.J-chooseDoct:hover {
+    cursor: pointer;
+}
+
+.filemanager .thumb-doctor span {
+    display: block;
+    line-height: 18px;
+    text-align: center
+}
+
+.thumb-doctor .thmb-prev {
+    width: 120px;
+    height: 120px;
+}
+
+.doct-top-icon {
+    position: absolute;
+}
+
+.my-lable {
+    margin-top: 2px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 16px;
+}
+.clinic-name-modal{
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+}
+.active-lable {
+    color: #99B756;
+}
+.active-frequent{
+    font-size: 12px;
+    color: #FFFFFF;
+    line-height: 12px;
+    background: #FF5000;
+    border-radius: 2px;
+    padding:1px 5px;
+    margin-left: 5px;
+}
+
+.modal-footer {
+    border: none;
+}
+
+.btn-chose-room {
+    width: 70px;
+    height: 30px;
+    line-height: 18px;
+    font-size: 12px;
+}
+
+.btn-triage-default, .btn-triage-default:focus, .btn-triage-default.focus {
+    background-color: #76a6ef;
+    border-radius: 4px;
+    color: #ffffff;
+    border: none;
+}
+
+.mab-10 {
+    margin-bottom: 30px;
+}
+
+.choosedStatus {
+    color: #ffffff;
+    background-color: #95CA20;
+    text-align: center;
+    border-radius: 15px;
+    vertical-align: middle;
+    top: -1px;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    line-height: 24px;
+}
+
+.delete-left-padding {
+    margin-right: 0px !important;
+}
+
+h5 {
+    height: 15px;
+}
+#report-type > label,#report-second_department_id > label{
+    margin-left: 25px;
+}
+
+/* 选择就诊科室，服务 */
+.filemanager .second-department-report,.filemanager .type-report{
+    padding-right: 0px;
+    width : 95px;
+}
+.filemanager .report-choose-department{
+    padding-left: 0px;
+}
+.filemanager .help-block{
+
+    margin-left : 25px;
+}
+#j_doctorList .tooltip-inner{
+    word-break: break-all;
+    word-wrap: break-word;
+    background: #55657d;
+}
+#j_doctorList .tooltip-arrow {
+    border-top-color: #55657d !important;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+    padding : 8px 10px;
+}
+.col-triage-phone{
+    width : 110px;
+}
+.col-triage-time{
+    width : 140px;
+}
+.col-triage-option{
+    width: 160px;
+}
+.modal-title .doc-name{
+    font-size: 14px;
+    color: #A4AEBF;
+    line-height: 16px;
+}
+.mar{
+    padding-right: 30px!important;
+    text-align: right;
+}
+.my-row{
+    margin-bottom: 10px;
+}
+
+
+.triage-modal-imformation{
+    font-size: 16px;
+    color:black;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+
+.triage-modal-info{
+    font-size: 14px;
+    color:Gray;
+
+}

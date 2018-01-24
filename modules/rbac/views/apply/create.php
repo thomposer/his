@@ -11,6 +11,7 @@ $this->title = '添加用户';
 $this->params['breadcrumbs'][] = ['label' => 'Menus', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 $baseUrl = Yii::$app->request->baseUrl;
+$versionNumber = Yii::getAlias("@versionNumber");
 ?>
 <?php AutoLayout::begin(['viewFile' => '@app/views/layouts/layout.php'])?>
 <?php $this->beginBlock('renderCss')?>
@@ -33,7 +34,7 @@ $baseUrl = Yii::$app->request->baseUrl;
 <?php $this->endBlock()?>
 <?php $this->beginBlock('renderJs')?>
     <script type="text/javascript">
-    	require(["<?php echo $baseUrl ?>"+"/public/js/rbac/apply.js"],function(main){
+    	require(["<?php echo $baseUrl ?>"+"/public/js/rbac/apply.js?v="+'<?= $versionNumber ?>'],function(main){
     		main.init();
 		});
 		

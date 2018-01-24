@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+.title{
+    font-size:16px;
+    font-weight:normal;
+}
+.common .form-group{
+    padding:0px;
+}
+
+#on-inspect .form-group,#printLabelForm .form-group{
+    width : 100%;
+}

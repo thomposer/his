@@ -1,0 +1,13 @@
+/*覆盖插件的颜色*/
+td.kv-group-even{
+    background: #fff!important;
+}
+td.kv-grid-group {
+    background: #fff!important;
+}
+.table-hover td.kv-group-even:hover {
+    background-color: #fff!important;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+	padding: 8px;
+}

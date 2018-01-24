@@ -5,6 +5,7 @@ namespace app\modules\module\models;
 use Yii;
 use yii\db\Query;
 use app\common\Common;
+use app\common\base\BaseActiveRecord;
 /**
  * This is the model class for table "{{%menu}}".
  *
@@ -17,8 +18,10 @@ use app\common\Common;
  * @property integer $title
  * @property Title $parent
  * @property integer sort
+ * @property integer $create_time
+ * @property integer $update_time
  */
-class Menu extends \app\common\base\BaseActiveRecord
+class Menu extends BaseActiveRecord
 {
     public $module_description;//模块名称
     public static  $left_menu = array(
@@ -53,9 +56,12 @@ class Menu extends \app\common\base\BaseActiveRecord
     {
         return [
             [['menu_url', 'description', 'parent_id'], 'required'],
-            [['type', 'parent_id', 'status','role_type','sort'], 'integer'],
+            [['menu_url','description'],'unique'],
+            [['menu_url','description'],'trim'],
+            [['type', 'parent_id', 'status','role_type','sort','create_time','update_time'], 'integer'],
             [['menu_url', 'description'], 'string', 'max' => 255],
-            [['menu_url'],'match','pattern' => '/^[\/][a-zA-Z0-9\/-]{3,34}$/','message' => '格式错误，正确格式应为：/m/c/a'],// 斜线/开头，允许4-35字节，允许字母数字下划线
+            [['sort'],'default','value' => 0],
+//             [['menu_url'],'match','pattern' => '/^[\/][a-zA-Z\/_-]{3,50}$/','message' => '格式错误，正确格式应为：/m/c/a'],// 斜线/开头，允许4-35字节，允许字母数字下划线
         ];
     }
 
@@ -90,13 +96,20 @@ class Menu extends \app\common\base\BaseActiveRecord
      */
     public static function getParent($menu_url_array)
     {
-        $query = new Query();
-        $query->from(['m' => self::tableName()])->select(['t.id as title_id','t.module_description','t.module_name','m.menu_url','m.description']);
-        $query->leftJoin(['t' => Title::tableName()],'{{m}}.parent_id = {{t}}.id');
-        $query->where(['m.menu_url' => $menu_url_array,'t.status' => 1,'m.type' => 1,'m.status' => 1]);
-        $query->orderBy(['t.sort'=>SORT_DESC]);
-        $result = $query->all();   
-        return $result;
+            $data = '';
+            $query = new Query();
+            $query->from(['m' => self::tableName()])->select(['t.id as title_id','t.module_description','t.module_name','m.menu_url','m.description']);
+            $query->leftJoin(['t' => Title::tableName()],'{{m}}.parent_id = {{t}}.id');
+            $query->where(['m.menu_url' => $menu_url_array,'t.status' => 1,'m.type' => 1,'m.status' => 1]);
+            $query->orderBy(['t.sort'=>SORT_DESC]);
+            $result = $query->all();  
+            foreach ($result as $v){
+                $data[$v['title_id']]['module_description'] = $v['module_description'];
+                $data[$v['title_id']]['module_name'] = $v['module_name'];
+                unset($v['module_description']);
+                $data[$v['title_id']]['children'][] = $v;
+            }    
+        return $data;
     }
     public static function searchMenu($description){
         return self::find()->select(['menu_url'])->where(['description' => $description])->asArray()->one();

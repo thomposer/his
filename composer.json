@@ -7,8 +7,23 @@
     "yiisoft/yii2-bootstrap" : "*",
     "yiisoft/yii2-swiftmailer" : "*",
     "mdmsoft/yii2-gii" : "1.1.0",
-    "2amigos/yii2-date-picker-widget":"*"
-
+    "2amigos/yii2-date-picker-widget" : "*",
+    "2amigos/yii2-date-time-picker-widget" : "*",
+    "johnitvn/yii2-ajaxcrud" : "*",
+    "rkit/yii2-ajaxform-plugin" : "*",
+    "kartik-v/yii2-datecontrol": "*",
+    "kartik-v/yii2-widgets" : "*",
+    "kartik-v/yii2-export": "@dev",
+    "callmez/yii2-wechat-sdk": "^0.3.0",
+    "daixianceng/yii2-echarts": "*",
+    "deepziyu/yii-fast-api": "~v0.2",
+    "mongosoft/yii2-soap-server": "*",
+    "mongosoft/yii2-soap-client": "*",
+    "bedezign/yii2-audit": "^1.0",
+    "leandrogehlen/yii2-treegrid": "*",
+    "kartik-v/yii2-tabs-x": "*",
+    "yiisoft/yii2-elasticsearch": "^2.0",
+    "yiisoft/yii2-redis": "^2.0"
   },
   "require-dev" : {
     "yiisoft/yii2-codeception" : "*",
@@ -47,5 +62,11 @@
   "config" : {
     "process-timeout" : 1800
   },
-  "homepage" : "http://www.yiiframework.com/"
+  "homepage" : "http://www.yiiframework.com/",
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
 }

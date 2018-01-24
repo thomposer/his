@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+input.recipeNum{
+	display: inline;
+    width: 60%;
+}
+.recipe-form{
+	border : 0.5px solid #DFE0E4;
+}
+select.skinTestStatus,select .cure-skin-select,.curelistId{
+	    width: 120px;
+}
+.cure-skin-select ,.curelistId{
+    display: inline-block;
+    margin-left: 0px !important;
+}
+.recipeName .tooltip-inner{
+    text-align: left;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 20px;
+    max-width: 164px;
+    background: #55657d;
+}
+.recipeName .tooltip-arrow{
+    border-bottom-color: #55657d !important;
+    left: 20px !important;
+}
+.recipeName .tooltip{
+    left: 0px !important;
+    word-wrap: break-word;
+}

@@ -1,0 +1,87 @@
+/* 正畸初诊病历打印
+ ------------------------------------*/
+
+.print-vital-signs{
+  margin-top: 30px;
+}
+.teeth-orthodontics-first .teeth-container{
+  margin-top: -4px;
+}
+.teeth-orthodontics-first .teeth-container .teeth-row{
+  border-bottom:1px solid #000;
+  padding:5px 0;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+}
+.teeth-orthodontics-first .teeth-container .teeth-row .teeth-title{
+  width: 14%;
+}
+.teeth-orthodontics-first .teeth-container .teeth-row .teeth-desc{
+  width: 86%;
+}
+.teeth-orthodontics-first .title.body-sign.small-title-second{
+  border-bottom-width:4px;
+}
+.teeth-orthodontics-first .teeth-padding{
+  padding-left:0;
+}
+.teeth-orthodontics-first .teeth-detail-position{
+  width: 220px;
+  padding:8px 0;
+}
+.teeth-orthodontics-first .teeth-check-line .teeth-detail-position{
+  width:254px;
+}
+.teeth-orthodontics-first .teeth-detail-text{
+  margin-right: 10px;
+}
+.teeth-orthodontics-first .print-margin-left{
+  margin-left: 10px;
+}
+.teeth-orthodontics-first .print-face-info .print-face-info-content{
+  display: inline-block;
+  vertical-align: top;
+}
+.teeth-orthodontics-first .print-face-info{
+  display:inline-flex;
+  align-items:center;
+  width: 244px;
+}
+.teeth-orthodontics-first .print-face-info>span{
+  margin-right: 10px;
+}
+.teeth-orthodontics-first .print-sideface-info{
+  margin-left: 20px;
+}
+.inline-ver{
+   display: inline-block;
+   vertical-align: top;
+}
+.ml{
+ margin-left:15px;
+}
+.teeth-orthodontics-first .teeth-check-print .teeth-check-line{
+  width: 100%;
+}
+.teeth-orthodontics-first .teeth-line{
+  height: 30px;
+}
+.overflow{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.orthodontics-footer .date-time{
+    width: 155px;
+    vertical-align: top;
+}
+.pre-wrap{
+  white-space: pre-wrap;
+}
+.one-third{
+  width: 33.33%;
+}

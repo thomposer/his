@@ -1,0 +1,1617 @@
+/*!
+ * FullCalendar v2.2.5 Stylesheet
+ * Docs & License: http://arshaw.com/fullcalendar/
+ * (c) 2013 Adam Shaw
+ */
+
+
+.eh {
+    direction: ltr;
+    text-align: left;
+}
+.eh-outcontent{
+    background: #ffffff none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 14px;
+   /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);*/
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+}
+.eh-rtl {
+    text-align: right;
+}
+
+body .eh { /* extra precedence to overcome jqui */
+    font-size: 1em;
+}
+
+
+/* Colors
+--------------------------------------------------------------------------------------------------*/
+
+.eh-unthemed th,
+.eh-unthemed td,
+.eh-unthemed hr,
+.eh-unthemed thead,
+.eh-unthemed tbody,
+.eh-unthemed .eh-row,
+.eh-unthemed .eh-popover {
+    border-color: #ddd;
+}
+
+.eh-unthemed .eh-popover {
+    background-color: #fff;
+}
+
+.eh-unthemed hr,
+.eh-unthemed .eh-popover .eh-header {
+    background: #eee;
+}
+
+.eh-unthemed .eh-popover .eh-header .eh-close {
+    color: #666;
+}
+
+.eh-unthemed .eh-today {
+    background: #fcf8e3;
+}
+
+.eh-highlight { /* when user is selecting cells */
+    background: #bce8f1;
+    opacity: .3;
+    filter: alpha(opacity=30); /* for IE */
+}
+
+.eh-bgevent { /* default look for background events */
+    background: rgb(143, 223, 130);
+    opacity: .3;
+    filter: alpha(opacity=30); /* for IE */
+}
+
+.eh-nonbusiness { /* default look for non-business-hours areas */
+    /* will inherit .eh-bgevent's styles */
+    background: #ccc;
+}
+
+
+/* Icons (inline elements with styled text that mock arrow icons)
+--------------------------------------------------------------------------------------------------*/
+
+.eh-icon {
+    display: inline-block;
+    font-size: 2em;
+    line-height: .5em;
+    height: .5em; /* will make the total height 1em */
+    font-family: "Courier New", Courier, monospace;
+}
+
+.eh-icon-left-single-arrow:after {
+    content: "\02039";
+    font-weight: bold;
+}
+
+.eh-icon-right-single-arrow:after {
+    content: "\0203A";
+    font-weight: bold;
+}
+
+.eh-icon-left-double-arrow:after {
+    content: "\000AB";
+}
+
+.eh-icon-right-double-arrow:after {
+    content: "\000BB";
+}
+
+.eh-icon-x:after {
+    content: "\000D7";
+}
+
+
+/* Buttons (styled <button> tags, normalized to work cross-browser)
+--------------------------------------------------------------------------------------------------*/
+
+.eh button {
+    /* force height to include the border and padding */
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* dimensions */
+    margin: 0;
+    height: 2.1em;
+    padding: 0 .6em;
+
+    /* text & cursor */
+    font-size: 1em; /* normalize */
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Firefox has an annoying inner border */
+.eh button::-moz-focus-inner { margin: 0; padding: 0; }
+
+.eh-state-default { /* non-theme */
+    border: 1px solid;
+}
+
+.eh-state-default.eh-corner-left { /* non-theme */
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.eh-state-default.eh-corner-right { /* non-theme */
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* icons in buttons */
+
+.eh button .eh-icon { /* non-theme */
+    position: relative;
+    top: .05em; /* seems to be a good adjustment across browsers */
+    margin: 0 .1em;
+}
+
+/*
+  button states
+  borrowed from twitter bootstrap (http://twitter.github.com/bootstrap/)
+*/
+
+.eh-state-default {
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #333;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.eh-state-hover,
+.eh-state-down,
+.eh-state-active,
+.eh-state-disabled {
+    color: #333333;
+    background-color: #e6e6e6;
+}
+
+.eh-state-hover {
+    color: #333333;
+    text-decoration: none;
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear;
+}
+
+.eh-state-down,
+.eh-state-active {
+    background-color: #cccccc;
+    background-image: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.eh-state-disabled {
+    cursor: default;
+    background-image: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    box-shadow: none;
+}
+
+
+/* Buttons Groups
+--------------------------------------------------------------------------------------------------*/
+
+.eh-button-group {
+    display: inline-block;
+}
+
+/*
+every button that is not first in a button group should scootch over one pixel and cover the
+previous button's border...
+*/
+
+.eh .eh-button-group > * { /* extra precedence b/c buttons have margin set to zero */
+    float: left;
+
+}
+
+.eh .eh-button-group > :first-child { /* same */
+    margin-left: 0;
+}
+
+
+/* Popover
+--------------------------------------------------------------------------------------------------*/
+
+.eh-popover {
+    position: absolute;
+    box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+.eh-popover .eh-header {
+    padding: 2px 4px;
+}
+
+.eh-popover .eh-header .eh-title {
+    margin: 0 2px;
+}
+
+.eh-popover .eh-header .eh-close {
+    cursor: pointer;
+}
+
+.eh-ltr .eh-popover .eh-header .eh-title,
+.eh-rtl .eh-popover .eh-header .eh-close {
+    float: left;
+}
+
+.eh-rtl .eh-popover .eh-header .eh-title,
+.eh-ltr .eh-popover .eh-header .eh-close {
+    float: right;
+}
+
+/* unthemed */
+
+.eh-unthemed .eh-popover {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.eh-unthemed .eh-popover .eh-header .eh-close {
+    font-size: 25px;
+    margin-top: 4px;
+}
+
+/* jqui themed */
+
+.eh-popover > .ui-widget-header + .ui-widget-content {
+    border-top: 0; /* where they meet, let the header have the border */
+}
+
+
+/* Misc Reusable Components
+--------------------------------------------------------------------------------------------------*/
+
+.eh hr {
+    height: 0;
+    margin: 0;
+    padding: 0 0 5px; /* height is unreliable across browsers, so use padding */
+    border-style: solid;
+    /*border-width: 1px 0;*/
+    border-color:#EDF1F7;
+    background: #EDF1F7;
+}
+
+.eh-clear {
+    clear: both;
+}
+
+.eh-bg,
+.eh-bgevent-skeleton,
+.eh-highlight-skeleton,
+.eh-helper-skeleton {
+    /* these element should always cling to top-left/right corners */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.eh-bg {
+    bottom: 0; /* strech bg to bottom edge */
+}
+
+.eh-bg table {
+    height: 100%; /* strech bg to bottom edge */
+}
+
+
+/* Tables
+--------------------------------------------------------------------------------------------------*/
+
+.eh table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse:initial;
+    border-spacing: 0;
+    font-size: 1em; /* normalize cross-browser */
+}
+
+.eh th {
+    text-align: center;
+    background: #EDF1F7;
+    height: 40px;
+    line-height: 40px;
+}
+.eh-view-container{
+    border:1px solid #fff;
+    border-radius: 20px;
+    padding: 0 18px 18px;
+}
+.eh th,
+.eh td {
+    /*border-style: solid;
+    border-width: 1px;*/
+    padding: 0;
+    vertical-align: top;
+
+}
+.eh-widget-header{
+    background: #EDF1F7;
+}
+.eh-widget-header th{
+    border-top:0;
+    border-right:1px solid #DFE0E4;
+    font-weight: bold;
+}
+
+.eh td.eh-today {
+    border-style: double; /* overcome neighboring borders */
+}
+
+
+/* Fake Table Rows
+--------------------------------------------------------------------------------------------------*/
+
+.eh .eh-row { /* extra precedence to overcome themes w/ .ui-widget-content forcing a 1px border */
+    /* no visible border by default. but make available if need be (scrollbar width compensation) */
+    border-style: solid;
+    border-width: 0;
+    border-bottom: 0.5px solid #E5EBF4 !important;
+}
+
+.eh-row table {
+    /* don't put left/right border on anything within a fake row.
+       the outer tbody will worry about this */
+    border-left: 0 hidden transparent;
+    border-right: 0 hidden transparent;
+
+    /* no bottom borders on rows */
+    border-bottom: 0 hidden transparent; 
+}
+
+.eh-row:first-child table {
+    border-top: 0 hidden transparent; /* no top border on first row */
+}
+
+
+/* Day Row (used within the header and the DayGrid)
+--------------------------------------------------------------------------------------------------*/
+
+.eh-row {
+    position: relative;
+}
+
+.eh-row .eh-bg {
+    z-index: 1;
+}
+
+/* highlighting cells & background event skeleton */
+
+.eh-row .eh-bgevent-skeleton,
+.eh-row .eh-highlight-skeleton {
+    bottom: 0; /* stretch skeleton to bottom of row */
+}
+
+.eh-row .eh-bgevent-skeleton table,
+.eh-row .eh-highlight-skeleton table {
+    height: 100%; /* stretch skeleton to bottom of row */
+}
+
+.eh-row .eh-highlight-skeleton td,
+.eh-row .eh-bgevent-skeleton td {
+    border-color: transparent;
+}
+
+.eh-row .eh-bgevent-skeleton {
+    z-index: 2;
+
+}
+
+.eh-row .eh-highlight-skeleton {
+    z-index: 3;
+}
+
+/*
+row content (which contains day/week numbers and events) as well as "helper" (which contains
+temporary rendered events).
+*/
+
+.eh-row .eh-content-skeleton {
+    position: relative;
+    z-index: 4;
+    padding-bottom: 2px; /* matches the space above the events */
+}
+
+.eh-row .eh-helper-skeleton {
+    z-index: 5;
+}
+
+.eh-row .eh-content-skeleton td,
+.eh-row .eh-helper-skeleton td {
+    /* see-through to the background below */
+    background: none; /* in case <td>s are globally styled */
+    border-color: transparent;
+
+    /* don't put a border between events and/or the day number */
+    border-bottom: 0;
+}
+
+.eh-row .eh-content-skeleton tbody td, /* cells with events inside (so NOT the day number cell) */
+.eh-row .eh-helper-skeleton tbody td {
+    /* don't put a border between event cells */
+    border-top: 0;
+}
+
+
+/* Scrolling Container
+--------------------------------------------------------------------------------------------------*/
+
+.eh-scroller { /* this class goes on elements for guaranteed vertical scrollbars */
+    /*overflow-y: auto;*/
+    /*overflow-x: hidden;*/
+}
+
+.eh-scroller > * { /* we expect an immediate inner element */
+    position: relative; /* re-scope all positions */
+    width: 100%; /* hack to force re-sizing this inner element when scrollbars appear/disappear */
+    /*overflow: hidden; !* don't let negative margins or absolute positioning create further scroll *!*/
+}
+
+
+/* Global Event Styles
+--------------------------------------------------------------------------------------------------*/
+.eh-table-scroller{
+    overflow-x: auto;
+    overflow-y: auto;
+}
+.eh-event {
+    position: relative; /* for resize handle and other inner positioning */
+    display: block; /* make the <a> tag block */
+    font-size: .85em;
+    line-height: 1.3;
+    border-radius: 3px;
+    border: 1px solid #3a87ad; /* default BORDER color */
+    background-color: #3a87ad; /* default BACKGROUND color */
+    font-weight: normal; /* undo jqui's ui-widget-header bold */
+}
+
+/* overpower some of bootstrap's and jqui's styles on <a> tags */
+.eh-event,
+.eh-event:hover,
+.ui-widget .eh-event {
+    color: #fff; /* default TEXT color */
+    text-decoration: none; /* if <a> has an href */
+}
+
+.eh-event[href],
+.eh-event.eh-draggable {
+    cursor: pointer; /* give events with links and draggable events a hand mouse pointer */
+}
+
+.eh-not-allowed, /* causes a "warning" cursor. applied on body */
+.eh-not-allowed .eh-event { /* to override an event's custom cursor */
+    cursor: not-allowed;
+}
+
+
+/* DayGrid events
+----------------------------------------------------------------------------------------------------
+We use the full "eh-day-grid-event" class instead of using descendants because the event won't
+be a descendant of the grid when it is being dragged.
+*/
+.eh-day-grid td{
+    height:62px;
+}
+.eh-day-grid-event {
+    margin: 1px 2px 0; /* spacing between events and edges */
+    padding: 0 1px;
+}
+
+/* events that are continuing to/from another week. kill rounded corners and butt up against edge */
+
+.eh-ltr .eh-day-grid-event.eh-not-start,
+.eh-rtl .eh-day-grid-event.eh-not-end {
+    margin-left: 0;
+    border-left-width: 0;
+    padding-left: 1px; /* replace the border with padding */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.eh-ltr .eh-day-grid-event.eh-not-end,
+.eh-rtl .eh-day-grid-event.eh-not-start {
+    margin-right: 0;
+    border-right-width: 0;
+    padding-right: 1px; /* replace the border with padding */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.eh-day-grid-event > .eh-content { /* force events to be one-line tall */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.eh-day-grid-event .eh-time {
+    font-weight: bold;
+}
+
+/* resize handle (outside of eh-content, so can go outside of bounds) */
+
+.eh-day-grid-event .eh-resizer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 7px;
+}
+
+.eh-ltr .eh-day-grid-event .eh-resizer {
+    right: -3px;
+    cursor: e-resize;
+}
+
+.eh-rtl .eh-day-grid-event .eh-resizer {
+    left: -3px;
+    cursor: w-resize;
+}
+
+
+/* Event Limiting
+--------------------------------------------------------------------------------------------------*/
+
+/* "more" link that represents hidden events */
+
+a.eh-more {
+    margin: 1px 3px;
+    font-size: .85em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a.eh-more:hover {
+    text-decoration: underline;
+}
+
+.eh-limited { /* rows and cells that are hidden because of a "more" link */
+    display: none;
+}
+
+/* popover that appears when "more" link is clicked */
+
+.eh-day-grid .eh-row {
+    z-index: 1; /* make the "more" popover one higher than this */
+}
+
+.eh-more-popover {
+    z-index: 2;
+    width: 220px;
+}
+
+.eh-more-popover .eh-event-container {
+    padding: 10px;
+}
+
+/* Toolbar
+--------------------------------------------------------------------------------------------------*/
+
+.eh-toolbar {
+    text-align: center;
+    /*margin-bottom: 1em;*/
+    height:50px;
+}
+
+.eh-toolbar .eh-left {
+    float: left;
+    margin-left:1em;
+    /*margin-top: 1em;*/
+}
+.eh-toolbar button{
+    margin-top:0.8em;
+}
+.eh-toolbar .eh-right {
+    float: right;
+    /*margin-top:1em;*/
+    margin-right:1em;
+}
+.eh-toolbar-back-btn{
+    margin-top:1em;
+}
+.eh-toolbar .eh-update-button{
+    margin-top:17px;
+    background: white;
+    height: 16px;
+    padding: 0;
+    width: 16px;
+    border: 1px solid #76A6EF;
+    border-radius: 3.6px;
+    font-size: 12px;
+    color:#76A6EF;
+    line-height: 15px;
+}
+.eh-toolbar .eh-update-button:hover{
+    opacity: 0.8;
+}
+.eh-toolbar-back-btn a{
+    color:#AFB7C2;
+    font-size:1.2em;
+}
+.eh-prev-button img{
+    right:1px;
+    top: -1px;
+}
+.eh-next-button img{
+    left: 2px;
+    top: -1px;
+}
+.eh-toolbar .eh-thisweek-button{
+    background: #76a6ef none repeat scroll 0 0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0px 4px!important;
+    height: 1.5rem;
+    font-size: 0.5rem;
+    line-height: 1.5rem;
+    margin-top:16px;
+}
+.canlender-border:hover{
+    border-bottom: 1px solid #76A6EF;
+    height: 25px;
+    overflow: hidden;
+}
+.eh-toolbar .eh-update-button img{
+    width:9px;
+    position: relative;
+}
+.eh-toolbar .eh-center {
+    display: inline-block;
+}
+
+/* the things within each left/right/center section */
+.eh .eh-toolbar > * > * { /* extra precedence to override button border margins */
+    float: left;
+    margin-left: .75em;
+}
+
+/* the first thing within each left/center/right section */
+.eh .eh-toolbar > * > :first-child { /* extra precedence to override button border margins */
+    margin-left: 0;
+}
+
+/* title text */
+
+.eh-toolbar h2 {
+    margin: 0;
+    font-size:18px;
+    height:50px;
+    line-height: 50px;
+    color:#707988;
+}
+
+/* button layering (for border precedence) */
+
+.eh-toolbar button {
+    position: relative;
+}
+
+.eh-toolbar .eh-state-hover,
+.eh-toolbar .ui-state-hover {
+    z-index: 2;
+}
+
+.eh-toolbar .eh-state-down {
+    z-index: 3;
+}
+
+.eh-toolbar .eh-state-active,
+.eh-toolbar .ui-state-active {
+    z-index: 4;
+}
+
+.eh-toolbar button:focus {
+    z-index: 5;
+}
+
+
+/* View Structure
+--------------------------------------------------------------------------------------------------*/
+
+/* undo twitter bootstrap's box-sizing rules. normalizes positioning techniques */
+/* don't do this for the toolbar because we'll want bootstrap to style those buttons as some pt */
+.eh-view-container *,
+.eh-view-container *:before,
+.eh-view-container *:after {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.eh-view, /* scope positioning and z-index's for everything within the view */
+.eh-view > table { /* so dragged elements can be above the view's main element */
+    position: relative;
+    z-index: 1;
+}
+
+/* BasicView
+--------------------------------------------------------------------------------------------------*/
+
+/* day row structure */
+
+.eh-basicWeek-view .eh-content-skeleton,
+.eh-basicDay-view .eh-content-skeleton {
+    /* we are sure there are no day numbers in these views, so... */
+    padding-top: 1px; /* add a pixel to make sure there are 2px padding above events */
+    padding-bottom: 1em; /* ensure a space at bottom of cell for user selecting/clicking */
+}
+
+.eh-basic-view tbody .eh-row {
+    min-height: 4em; /* ensure that all rows are at least this tall */
+}
+
+/* a "rigid" row will take up a constant amount of height because content-skeleton is absolute */
+
+.eh-row.eh-rigid {
+    overflow: hidden;
+}
+
+.eh-row.eh-rigid .eh-content-skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/* week and day number styling */
+
+.eh-basic-view .eh-week-number,
+.eh-basic-view .eh-day-number {
+    padding: 0 2px;
+}
+
+.eh-basic-view td.eh-week-number span,
+.eh-basic-view td.eh-day-number {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.eh-basic-view .eh-week-number {
+    text-align: center;
+}
+
+.eh-basic-view .eh-week-number span {
+    /* work around the way we do column resizing and ensure a minimum width */
+    display: inline-block;
+    min-width: 1.25em;
+}
+
+.eh-ltr .eh-basic-view .eh-day-number {
+    text-align: right;
+}
+
+.eh-rtl .eh-basic-view .eh-day-number {
+    text-align: left;
+}
+
+.eh-day-number.eh-other-month {
+    opacity: 0.3;
+    filter: alpha(opacity=30); /* for IE */
+    /* opacity with small font can sometimes look too faded
+       might want to set the 'color' property instead
+       making day-numbers bold also fixes the problem */
+}
+
+/* AgendaView all-day area
+--------------------------------------------------------------------------------------------------*/
+
+.eh-agenda-view .eh-day-grid {
+    position: relative;
+    z-index: 2; /* so the "more.." popover will be over the time grid */
+}
+
+.eh-agenda-view .eh-day-grid .eh-row {
+    min-height: 3em; /* all-day section will never get shorter than this */
+}
+
+.eh-agenda-view .eh-day-grid .eh-row .eh-content-skeleton {
+    padding-top: 1px; /* add a pixel to make sure there are 2px padding above events */
+    padding-bottom: 1em; /* give space underneath events for clicking/selecting days */
+}
+
+
+/* TimeGrid axis running down the side (for both the all-day area and the slot area)
+--------------------------------------------------------------------------------------------------*/
+
+.eh .eh-axis { /* .eh to overcome default cell styles */
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.eh-ltr .eh-axis {
+    text-align: right;
+}
+
+.eh-rtl .eh-axis {
+    text-align: left;
+}
+
+.ui-widget td.eh-axis {
+    font-weight: normal; /* overcome jqui theme making it bold */
+}
+.eh-agenda-view{
+    border:1px solid #DFE0E4;
+    /*background-color: #;*/
+}
+
+/* TimeGrid Structure
+--------------------------------------------------------------------------------------------------*/
+
+.eh-time-grid-container, /* so scroll container's z-index is below all-day */
+.eh-time-grid { /* so slats/bg/content/etc positions get scoped within here */
+    position: relative;
+    z-index: 1;
+}
+
+.eh-time-grid {
+    min-height: 100%; /* so if height setting is 'auto', .eh-bg stretches to fill height */
+}
+/*.eh-time-grid tr:nth-child(2n){*/
+/*background: #EDF1F7;*/
+/*}*/
+.eh-time-grid tr:nth-child(2n) td{
+    border-right:1px solid #E5EBF4;
+    border-bottom:1px solid #E5EBF4;
+    border-top:1px solid #E5EBF4;
+}
+.eh-time-grid tr:nth-child(2n+1) td{
+    border-right: 1px solid #E5EBF4;
+}
+
+.eh-time-grid table { /* don't put outer borders on slats/bg/content/etc */
+    border: 0 hidden transparent;
+}
+
+.eh-time-grid > .eh-bg {
+    z-index: 1;
+}
+
+.eh-time-grid .eh-slats,
+.eh-time-grid > hr { /* the <hr> AgendaView injects when grid is shorter than scroller */
+    position: relative;
+    z-index: 2;
+}
+
+.eh-time-grid .eh-bgevent-skeleton,
+.eh-time-grid .eh-content-skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.eh-time-grid .eh-bgevent-skeleton {
+    z-index: 3;
+}
+
+.eh-time-grid .eh-highlight-skeleton {
+    z-index: 4;
+}
+
+.eh-time-grid .eh-content-skeleton {
+    z-index: 5;
+}
+
+.eh-time-grid .eh-helper-skeleton {
+    z-index: 6;
+}
+
+
+/* TimeGrid Slats (lines that run horizontally)
+--------------------------------------------------------------------------------------------------*/
+
+.eh-slats td {
+    height: 1.5em;
+    border-bottom: 0; /* each cell is responsible for its top border */
+}
+
+.eh-slats .eh-minor td {
+    border-top-style: dotted;
+}
+
+.eh-slats .ui-widget-content { /* for jqui theme */
+    background: none; /* see through to eh-bg */
+}
+
+
+/* TimeGrid Highlighting Slots
+--------------------------------------------------------------------------------------------------*/
+
+.eh-time-grid .eh-highlight-container { /* a div within a cell within the eh-highlight-skeleton */
+    position: relative; /* scopes the left/right of the eh-highlight to be in the column */
+}
+
+.eh-time-grid .eh-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* top and bottom will be in by JS */
+}
+
+
+/* TimeGrid Event Containment
+--------------------------------------------------------------------------------------------------*/
+
+.eh-time-grid .eh-event-container, /* a div within a cell within the eh-content-skeleton */
+.eh-time-grid .eh-bgevent-container { /* a div within a cell within the eh-bgevent-skeleton */
+    position: relative;
+}
+
+.eh-ltr .eh-time-grid .eh-event-container { /* space on the sides of events for LTR (default) */
+    margin: 0 2.5% 0 2px;
+}
+
+.eh-rtl .eh-time-grid .eh-event-container { /* space on the sides of events for RTL */
+    margin: 0 2px 0 2.5%;
+}
+
+.eh-time-grid .eh-event,
+.eh-time-grid .eh-bgevent {
+    position: absolute;
+    z-index: 1; /* scope inner z-index's */
+}
+
+.eh-time-grid .eh-bgevent {
+    /* background events always span full width */
+    left: 0;
+    right: 0;
+}
+
+
+/* TimeGrid Event Styling
+----------------------------------------------------------------------------------------------------
+We use the full "eh-time-grid-event" class instead of using descendants because the event won't
+be a descendant of the grid when it is being dragged.
+*/
+
+.eh-time-grid-event.eh-not-start { /* events that are continuing from another day */
+    /* replace space made by the top border with padding */
+    border-top-width: 0;
+    padding-top: 1px;
+
+    /* remove top rounded corners */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.eh-time-grid-event.eh-not-end {
+    /* replace space made by the top border with padding */
+    border-bottom-width: 0;
+    padding-bottom: 1px;
+
+    /* remove bottom rounded corners */
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.eh-time-grid-event {
+    overflow: hidden; /* don't let the bg flow over rounded corners */
+}
+
+.eh-time-grid-event > .eh-content { /* contains the time and title, but no bg and resizer */
+    position: relative;
+    z-index: 2; /* above the bg */
+}
+
+.eh-time-grid-event .eh-time,
+.eh-time-grid-event .eh-title {
+    padding: 0 1px;
+}
+
+.eh-time-grid-event .eh-time {
+    font-size: .85em;
+    white-space: nowrap;
+}
+
+.eh-time-grid-event .eh-bg {
+    z-index: 1;
+    background: #fff;
+    opacity: .25;
+    filter: alpha(opacity=25); /* for IE */
+}
+
+/* short mode, where time and title are on the same line */
+
+.eh-time-grid-event.eh-short .eh-content {
+    /* don't wrap to second line (now that contents will be inline) */
+    white-space: nowrap;
+}
+
+.eh-time-grid-event.eh-short .eh-time,
+.eh-time-grid-event.eh-short .eh-title {
+    /* put the time and title on the same line */
+    display: inline-block;
+    vertical-align: top;
+}
+
+.eh-time-grid-event.eh-short .eh-time span {
+    display: none; /* don't display the full time text... */
+}
+
+.eh-time-grid-event.eh-short .eh-time:before {
+    content: attr(data-start); /* ...instead, display only the start time */
+}
+
+.eh-time-grid-event.eh-short .eh-time:after {
+    content: "\000A0-\000A0"; /* seperate with a dash, wrapped in nbsp's */
+}
+
+.eh-time-grid-event.eh-short .eh-title {
+    font-size: .85em; /* make the title text the same size as the time */
+    padding: 0; /* undo padding from above */
+}
+
+/* resizer */
+
+.eh-time-grid-event .eh-resizer {
+    position: absolute;
+    z-index: 3; /* above content */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 8px;
+    overflow: hidden;
+    line-height: 8px;
+    font-size: 11px;
+    font-family: monospace;
+    text-align: center;
+    cursor: s-resize;
+}
+
+.eh-time-grid-event .eh-resizer:after {
+    content: "=";
+}
+.eh-time-grid .eh-time{
+    text-align: center;
+}
+.eh-day-grid .eh-axis{
+    text-align: center;
+}
+.eh-slats td {
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    border-collapse:collapse;
+}
+.eh-slats-td-value {
+    background: #76a6ef none repeat scroll 0 0;
+    color: #fff;
+}
+.eh-day-span {
+    width: 100%;
+    height: 31px;
+    line-height: 30px;
+    float: left;
+    text-align: center;
+    border-bottom: 1px solid #EDF1F7;
+    border-right: 1px solid #F7F9FC;
+    box-sizing: border-box;
+}
+.eh-day-span-value{
+    color:#FF4B00;
+}
+.eh-appointment-set-detail td {
+    height: 1.5em;
+    border-bottom: 0; /* each cell is responsible for its top border */
+}
+
+.eh-appointment-set-detail .eh-minor td {
+    border-top-style: dotted;
+}
+
+.eh-appointment-set-detail .ui-widget-content { /* for jqui theme */
+    background: none; /* see through to eh-bg */
+}
+.eh-appointment-set-detail td {
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+.eh-appointment-set-daily-content i{
+    padding-right:10px;
+}
+.eh-appointment-set-daily-content .eh-appointment-set-daily-add{
+    color:#76A6EF;
+    display: block;
+    height:50px;
+    line-height: 50px;
+}
+.appointment-detal{
+    height: 100% !important;
+
+}
+.eh-appointment-set-daily-add-enable{
+    cursor:pointer;
+}
+.eh-appointment-set-daily-content .eh-appointment-set-daily-add-disable{
+    color:#CACFD8;
+    cursor:no-drop;
+}
+.eh-appointment-set-daily-content .eh-appointment-set-daily-detail{
+
+}
+.eh-appointment-set-daily-detail-time{
+    /*color:#FF4B00;*/
+}
+.eh-appointment-set-daily-detail-count{
+    color:#FF4B00;
+}
+.eh-appointment-set-daily-detail{
+    position: relative;
+}
+.eh-appointment-set-daily-detail-edit-img{
+    background: url("images/btn_edit.png") no-repeat 0px 0px / 18px;
+    width:18px;
+    height:18px;
+    margin:auto 2px;
+    bottom:0;
+    top:0;
+    right:20px;
+    padding:0 10px;
+}
+.eh-appointment-pencil{
+    width:18px;
+    height:18px;
+    margin:auto 2px;
+    bottom:0;
+    top:0;
+    right:20px;
+    padding:0 10px;
+}
+.eh-appointment-set-daily-detail-edit-img-disable{
+    background: url("images/btn_edit.png") no-repeat 0px -18px / 18px;
+}
+.eh-appointment-set-daily-detail-cell{
+    text-align: left;
+}
+
+.eh-appointment-cell-left{
+    width: 45%;
+    float: left;
+}
+
+.eh-appointment-cell-right{
+    width: 55%;
+    float: left;
+}
+
+.eh-appointment-cell-btn1{
+    /*background-color: #76a6ef;*/
+    padding: 6px 5px 6px 5px;
+    color:#76a6ef;
+    border-radius: 4px;
+    font-size: 13px;
+    border-color: #76a6ef;
+    border-width: 1px;
+    border-style:solid
+}
+
+.eh-appointment-cell-btn2{
+    background-color: #76a6ef;
+    padding: 6px 3px 6px 3px;
+    color:white;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+/******************************************/
+/******************************************/
+/* schedule calendar */
+/******************************************/
+/******************************************/
+.eh-grid{
+    min-height: 100%;
+}
+.eh-grid tr:hover{
+    background: #f5f5f5;
+}
+.eh-grid-container, .eh-grid {
+    position: relative;
+    z-index: 1;
+}
+.eh-grid-container, /* so scroll container's z-index is below all-day */
+.eh-grid { /* so slats/bg/content/etc positions get scoped within here */
+    position: relative;
+    z-index: 1;
+}
+
+.eh-grid {
+    min-height: 100%; /* so if height setting is 'auto', .eh-bg stretches to fill height */
+}
+.eh-grid tr:nth-child(n) td{
+    border-right:1px solid #E9EDF3;
+    border-bottom:1px solid #E9EDF3;
+}
+/*.eh-grid tr:nth-child(2n+1) td{*/
+/*border-right:2px solid #F7F9FC;*/
+/*}*/
+
+.eh-grid table { /* don't put outer borders on slats/bg/content/etc */
+    border: 0 hidden transparent;
+}
+
+.eh-grid > .eh-bg {
+    z-index: 1;
+}
+.eh-slats tr:hover{
+    background: #f5f5f5;
+}
+.eh-grid .eh-slats,
+.eh-grid > hr { /* the <hr> AgendaView injects when grid is shorter than scroller */
+    position: relative;
+    z-index: 2;
+}
+.eh-today-highlight{
+    /*background-color: #F8FBFF;*/
+}
+.eh-title-highlight{
+    background-color: #76A6EF;
+    height: 5px;
+}
+.eh-title-normal{
+    background-color: #EDF1F7;
+    height: 5px;
+}
+.form-control{
+    width: 100%;
+}
+.eh-top{
+    margin-top:0.6em!important;
+}
+.btn-default{
+    margin-top:0px !important;
+}
+.button-width{
+    width:150px;
+}
+.btn-form{
+    margin-top: 0px !important;
+}
+.add-padding{
+    padding: 0 6px;
+}
+.btn-group-left{
+    background-color: #fff;
+    border: 1px solid #76a6ef;
+    border-radius: 4px;
+
+}
+.btn-group-left{
+    font-size:14px;
+
+
+}
+.btn-group .active a{
+    background: #76a6ef none repeat scroll 0 0 !important;
+    color: #fff !important;
+}
+.btn-group .active{
+    background: #76a6ef none repeat scroll 0 0 !important;
+    /*color: #fff !important;*/
+}
+.btn-group-right{
+    background-color: #fff;
+    border: 1px solid #76a6ef;
+    border-radius: 4px;
+    color: #76a6ef;
+    font-size:14px;
+}
+#disable{
+    position: absolute;
+    width:18px;
+    height:18px;
+    margin:auto;
+    bottom:0;
+    top:0;
+    right:20px;
+    padding:0 10px;
+}
+.font-color{
+    color:#99A3B1;
+}
+.eh-appointment-header-date{
+    width: 150px;
+}
+.eh-axis-new{
+    width: 150px;
+}
+.eh-appointment-set-daily-content-add{
+    width:210px;
+}
+.new-width{
+    width: 210px;
+}
+.no-bottom{
+    padding:0px 4px;
+}
+.eh-num{
+    background-color: #FF7B7B;
+    padding: 6px 15px;
+    color: #ffffff;
+    border-radius: 15px;
+}
+.form-group{
+    margin-bottom: 0px;
+}
+.left-radius{
+    border-radius: 15px 0px 0px 0px;
+}
+.right-radius{
+    border-radius: 0px 15px 0px 0px;
+}
+.appointment-style{
+    background-color: #ff7b7b;
+    border-radius: 15px;
+    color: #ffffff;
+    padding: 6px 15px;
+}
+.add-toolbar-padding{
+    padding:0px 4px;
+}
+.table-width{
+	width: 215px;
+}
+.eh-axis span {
+    word-break: normal;
+    width: auto;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+/* .field-appointmentsearch-second_department_id{
+    width: 200px;
+} */
+.close-appointment{
+    float: right;
+    margin-right: 1rem !important;
+    margin-top: 1rem !important;
+    background: white;
+    color: #76a6ef;
+    border:1px solid #76a6ef;
+    height: 30px;
+    line-height: 14px;
+    /*line-height: 30px;*/
+    cursor: pointer;
+}
+.close-appointment:hover{
+    border:1px solid #76a6ef;
+}
+.closeTimeClass{
+    background-color: #E5EBF4;
+    cursor: pointer;
+    opacity: 0.5;
+}
+.po-cell{
+    position: relative;
+    top: 8px;
+    float: left;
+    margin-left: 24px;
+}
+.btn-from-delete-add-top-0 {
+    margin-top: 0px;
+}
+.close_reason_input{
+    padding-left: 20px;
+}
+.parent-close{
+    position: relative;
+}
+.appointment-people-num{
+    position: absolute;
+    top:15%;
+    left: 36%;
+    z-index: 9999;
+}
+.parent-close .tooltip{
+    z-index: 9999;
+}
+
+/*表滚动*/
+.table-overflow{
+    width: 850px !important;
+    min-width: 100%;
+}
+
+/*当天边框提示*/
+.eh-today-highlight-tip{
+    border-right:0.5px solid #76a6ef !important;
+    border-left:0.5px solid #76a6ef !important;
+
+}
+.iform-mouseover{
+    font-size:0.5rem;
+}
+.border-right-none{
+    border-right-style: none!important;
+}
+
+.eh-grid tr:nth-child(n) td:last-child{
+    border-right:none;
+}
+.eh-widget-header th:last-child{
+    border-right:none;
+}
+.eh-time-grid tr:nth-child(2n+1) td:last-child{
+    border-right:none;
+}
+.eh-time-grid tr:nth-child(2n) td:last-child{
+    border-right: none;
+}
+.eh-schedule-nowDate{
+    border-left: 1px solid #E9EDF3;
+}
+
+.eh-toolbar .appointment-select-time-range{
+    margin-top: 0.8em;
+    margin:0.8em 8px 0px;
+}
+.eh-toolbar .select-time{
+    margin-top: 0.8em;
+}
+.eh-toolbar .doctor-appointment-detail{
+    margin-left: -25%;
+}
+.appointment-time-range-timepicker .datetimepicker-days table tbody tr:hover,.schedule-range-list .datetimepicker-days table tbody tr:hover{
+    background: #E5F2FF;
+    cursor: pointer;
+}
+.appointment-time-range-timepicker .datetimepicker-days table tbody td,.schedule-range-list .datetimepicker-days table tbody td{
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+.appointment-time-range-timepicker .datetimepicker-days table tbody td:hover,.schedule-range-list .datetimepicker-days table tbody td:hover{
+    background: #E5F2FF;
+}
+.appointment-time-range-timepicker .datetimepicker-days table tbody td.active,.schedule-range-list .datetimepicker-days table tbody td.active{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.appointment-time-range-timepicker .table-condensed .active,.schedule-range-list .table-condensed .active{
+    background: #76A6EF!important;
+}
+.has-appointment{
+    background-color: #E4F1FF;
+    padding: 0px!important;
+}
+.appoint-num{
+    font-size: 12px;
+    color:#97A3B6;
+    line-height: 20px;
+}
+.data-name{
+    line-height: 25px;
+}
+.thinner{
+    line-height: 30px;
+}
+.doctor-name{
+    font-weight: bold;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.eh-appointment-appoint-detail-time{
+    color:#76A6EF;
+}
+.grey{
+    color: #CACFD8;
+}
+.grey-content{
+    background-color: #F2F4F7;
+}
+.doctor-detail span{
+    display: initial;
+}
+.back-history{
+    margin-top: 12px;
+    margin-right: 15px;
+
+}
+.back-history a{
+    padding: 3.5px 8.4px;
+}
+.back-history .btn:not(.active):hover, .back-history .btn:not(.active):focus, .back-history .btn:not(.active).focus {
+    color: #72afd2;
+}
+.back-history .active{
+    opacity: 0.8;
+}
+.back-history .active:hover{
+    opacity: 1;
+}
+.eh-appointment-set-detail td{
+    position: relative;
+}
+.eh-appointment-set-detail .appointment-info-left{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 40%;
+    text-align: right;
+    height: 100%;
+    line-height: 50px;
+    padding-right: 9%;
+    color: #97A3B6;
+}
+.appointment-info-hover:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.eh-appointment-set-detail .appointment-info-right{
+    position: absolute;
+    left: 52%;
+    width: 40%;
+    text-align: left;
+    height: 100%;
+    top: 0px;
+    line-height: 50px;
+    padding-left: 8%;
+}
+.btn-custom:hover,.btn-custom:focus{
+    color:#76a6ef;
+}
+.btn-custom.active:hover,.btn-custom.active:focus{
+    color:#ffffff;
+}
+.type-name-list{
+    display: block;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #99A3B1;
+}
+
+.form-group > .scheduleset{
+    padding: 0px;
+}
+.field-scheduleset{
+    margin-top: 8px;
+    width: 100%;
+}
+.schedule-search-content{
+    margin-top: 0.8rem;
+}
+
+.eh-appointment-set-daily-content .tooltip > .tooltip-inner{
+    /*background-color: grey;*/
+    text-align: left;
+    color: white;
+}
+.empty-time{
+    border: none!important;
+    color: white!important;
+    cursor: pointer;
+    padding: 0px!important;
+    width: 166px;
+    background: white!important;
+}
+.appointment-select-time-range input::-webkit-input-placeholder {
+    font-size: 16px;
+    color: #76A6EF!important;
+ }

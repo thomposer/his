@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+
+
+#user-sex label{
+    padding-top:5px;
+    margin-right:60px;
+}
+
+.form-margin{
+
+    margin-top:30px;
+}
+.btn-from-delete-add{
+    color: #ffffff;
+    background-color: #76a6ef;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius : 5px;
+    padding: 0px;
+    margin-top: 22px;
+    margin-right: 20px;
+}
+
+.btn-from-delete-add i{
+    color: #ffffff;
+
+}
+.btn-from-delete-add:hover{
+
+    color: #ffffff;
+    opacity: 0.8;	
+}
+.zhi{
+    padding-top:30px; 
+}
+.me-col-xs-1{
+    width: 1.33333333%;
+    float: left
+}
+.modal-footer{
+    padding: 15px;
+    text-align: right;
+    border-top: none
+}
+.inspect_union>tbody>tr>td{
+    /*border: none;*/
+}
+.item_list>option{
+    width: 100px;
+}
+
+inspect_union .table > tfoot > tr > td{
+    
+}

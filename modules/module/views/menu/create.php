@@ -7,7 +7,7 @@ use app\common\AutoLayout;
 /* @var $model app\modules\module\models\Menu */
 
 $this->title = '添加菜单';
-$this->params['breadcrumbs'][] = ['label' => 'Menus', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '模块菜单', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php AutoLayout::begin(['viewFile' => '@app/views/layouts/layout.php'])?>

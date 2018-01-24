@@ -1,0 +1,55 @@
+.wording-underline{
+    text-decoration:underline;
+}
+.wording-alert{
+    color:#67758B;
+    font-size: 24px;
+    margin-left: 8px;
+}
+.box-top{
+    padding:5px 25px;
+    background-color: #ffffff;
+    margin-bottom:20px;
+    border-radius:10px;
+}
+.img-size{
+    width: 81px;
+    height: 68px;
+
+}
+.box-header span{
+    margin-left: 10px;
+}
+.alert-wording-color{
+    color: #C9CFD8;
+}
+.btn-background{
+    background-color: #76A6EF !important;
+}
+.btn-new-color{
+    background-color: #D9E4F0;
+}
+
+
+.btn-disabled-color{
+    background-color: #E6EDF5 !important;
+}
+/* .btn-form{
+    background-color: #76A6EF;
+} */
+.city-control{
+    width: 95%;
+    position: absolute;
+    display: table;
+    border-collapse: separate;
+}
+
+#spot-appointment_type label{
+    width:100%;
+}
+.field-patient-address{
+     width: 95%;
+    position: absolute;
+    display: table;
+    border-collapse: separate;
+}

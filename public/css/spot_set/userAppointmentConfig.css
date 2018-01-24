@@ -1,0 +1,53 @@
+@CHARSET "UTF-8";
+
+#appointment-config{
+	padding-left:20px;
+}
+.labelWidth{
+	float:left;
+}
+.form-horizontal .control-label{
+	padding-top:0px;
+}
+#userappointmentconfig-spot_type_id label{
+	padding-right:10px;
+}
+#userspot-status label{
+	padding-right:10px;
+}
+.widthLeft{
+	width:72px;
+}
+.field-userappointmentconfig-spot_type_id{
+	margin-bottom: 0px!important;
+}
+.notice-message{
+	padding-left: 0px!important;
+	color: #ff4b00;
+	margin-bottom: 20px;
+}
+.doctor-service-type-price{
+    display: inline-block;
+    width: 160px;
+}
+.type-price .help-block{
+    color: #ff4b00;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.type-price .help-block span,.simple-outpatient .help-block span, .type-help-block span{
+    display:none;
+}
+.simple-outpatient .help-block{
+    color: #ff4b00;
+}
+.simple-outpatient{
+    margin-left: 55px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 0px;
+}
+.type-help-block{
+    color: #ff4b00;
+    margin-top: 0px;
+}

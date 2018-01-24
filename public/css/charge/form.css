@@ -1,0 +1,597 @@
+@CHARSET "UTF-8";
+
+.title{
+    font-weight: 500;
+}
+.float{
+    float: left;
+}
+.btn-again {
+    display: none;
+}
+.refund,.create-discount,.charge-again,.update-material{
+    float: right;
+    padding: 0 10px;
+    border: 1px solid #76a6ef;
+    border-radius: 2px;
+    cursor: pointer;
+    color: #76A6EF;
+}
+.refund:hover,.create-discount:hover,.charge-again:hover{
+    background: #F5F9FE;
+}
+.refund:active,.charge-again:active{
+    background: #E3EDFC;
+}
+.create-discount {
+	margin-left:10px;
+}
+.refund-color{
+    color: #445064;
+    border: 1px solid #445064;
+    /*background-color: #edf1f7;*/
+}
+.refund-color:hover{
+    background: #F8F8F9;
+}
+.refund-color:active{
+    background: #EAECEF;
+}
+.refund img,.charge-again img{
+    margin-right: 5px;
+    margin-bottom: 2px;
+    width: 14px;
+}
+.fa-dollar{
+    margin-right: 4px;
+    border-radius: 50%;
+    background-color: #55657d;
+}
+.create-discount  .discount-dollar{
+	width: 12px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #558de2;
+	color : #ffffff;
+}
+
+.create-discount a{
+	color : #558de2;
+}
+.create-discount:hover{
+	background: #F5F9FE;
+}
+.create-discount:active{
+	background: #E3EDFC;
+}
+.update-material .material-dollar{
+	width: 12px;
+    text-align: center;
+    margin-right : 5px;
+}
+.update-material a{
+	color : #558de2;
+}
+.update-material:hover{
+	color : #558de2;
+	border: 1px solid  #558de2;
+    background: #F5F9FE;
+}
+.update-material:active{
+    background: #E3EDFC;
+}
+.patient-info{
+    margin-top: 6px;
+}
+.charge-img{
+    width: 100%;
+    border-radius: 5px;
+}
+.patient-margin{
+    padding-top: 10px;
+    margin-bottom: 36px;
+}
+.patient-img{
+    width: 105px;
+}
+.table th{
+    background-color: #edf1f7;
+}
+.table-bordered{
+    border:1px solid #edf1f7;
+}
+.save-charge{
+    width: 100%;
+    height: 60px;
+}
+.save-charge .btn{
+    width: 100%;
+    height: 60px;
+    line-height: 50px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+#chargerecord-type,#chargerecord-discount_type{
+    padding-top: 7px;
+}
+/*#chargerecord-type label:first-child{
+        margin-right: 20px;
+}*/
+#chargerecord-type label,#chargerecord-discount_type label{
+    margin-right: 15px;
+}
+.cost-bg{
+    background: url('../../img/charge/cost_bg.png');
+    background-color: #55657d;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin-bottom: 18px;
+    border-radius: 5px;
+}
+.price{
+    font-size: 52px;
+    font-weight: 500px;
+}
+.text-price{
+    position: relative;
+    top: 14px;
+}
+.price .fa-cny{
+    font-size: 24px;
+    margin-right: 10px;
+}
+.card{
+    color: #ff4b00;
+    font-size: 18px;
+    line-height: 35px;
+}
+.field-chargerecord-cash,.field-chargerecord-card,.field-chargerecord-alipay,.field-chargerecord-wechat,.recharge-card-pay{
+    display: none;
+}
+.margin{	
+    margin: 25px 0 0 0px;
+
+}
+.padding{
+    padding-bottom: 12px;
+}
+.refund-reason-color{
+    color: #FF4B00;
+}
+.right{
+    text-align: right;
+    padding-right:0px;
+}
+.selected-text{
+    font-size: 16px;
+    color: #54647d;
+    font-weight: 500;
+    padding-right: 0px;
+}
+.selected-price,.selected-text>.total-price{
+    color: #FF4B00;
+    font-size: 16px;
+    float: right;
+    border-bottom: 1px solid #edf1f7;
+    width : 150px;
+    text-align: left;
+    padding-left: 2%;
+    word-break : break-word;
+}
+.payType{
+    font-size: 16px;
+    float: right;
+    width : 150px;
+    text-align : left;
+    padding-left: 2%;
+    border-bottom: 1px solid #edf1f7;
+}
+.save-charge span{
+    margin-right: 10px;
+}
+.charge-body{
+    padding: 15px;
+}
+.patient-img-header{
+    float: left;
+    padding: 0 15px;
+}
+#ajaxCrudModal .modal-body{
+    padding: 20px 20px;
+}
+.pay-option{
+    width: 16%;
+    padding-right:0px;
+}
+.charge-record-form .form-group{
+    margin-bottom:0;
+}
+.charge-suc{
+    padding-top: 30px;
+    padding-left: 100px;
+}
+.charge_suc_img{
+    width:100px;
+    height:100px;
+    margin-left: 60px;
+}
+.field-chargerecord-out_trade_no .help-block{
+    margin-top:0px;
+    margin-bottom:0px;
+}
+.form-card{
+    margin-top: -2px;
+    margin-left: -2px;
+}
+.card-tips a{
+    padding-left: 1px;
+    padding-right: 1px;
+    font-size: 14px;
+    color: #76A6EF;
+    margin-left: 40px;
+    padding-bottom: 2px;
+    border-bottom-width: 1px;
+    border-bottom-color: #76A6EF;
+    border-bottom-style: solid;
+}
+.card-tips-header{
+    font-size: 16px;
+    color: #54647D;
+    margin-bottom: 20px;
+}
+.card-tips-list li{
+    list-style: none;
+    line-height: 24px;
+    font-size: 14px;
+}
+.card-tips-foot{
+    margin-top: 48px;
+    margin-bottom: 56px;
+    margin-left: 40px;
+}
+.btn-card{
+    width: 170px;
+    height: 40px;
+}
+.card-tips-link{
+    padding-bottom: 20px;
+}
+.form-group{
+    margin-bottom: 50px;
+}
+.discount{
+    border: 1px solid #e5e5e5;
+    padding: 20px 20px 0px 20px;
+    margin-bottom : 15px;
+}
+.discount-form{
+    margin-top : 15px;
+}
+.discountTip{
+    font-size: 12px;
+    color: #55657d;
+}
+.income{
+    margin-top: 45px;
+}
+.refundAmount{
+    margin-top: 45px;
+}
+
+/*֧����ʽUI�İ�*/
+
+#chargerecord-type .pay-type{
+    width: 70px;
+    height: 30px;
+    border: 1px solid #eee;
+    text-align: center;
+    cursor: pointer;
+    line-height: 30px;
+    margin-right: 8px;
+    border-radius: 4px;
+}
+#chargerecord-type .pay-type.active{
+    background: #76a6ef;
+    color: #fff;
+}
+.scan-code{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #eee;
+    font-size: 14px;
+    margin-right: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.scan-code.active{
+    color: #76a6ef;
+    border-color: #76a6ef;
+}
+.scan-mode-second{
+    display: none;
+}
+.field-chargerecord-alipay,.field-chargerecord-wechat,#chargerecord-wechatauthcode,#chargerecord-alipayauthcode{
+    margin-top: 10px;
+}
+#wechatPayCode,#alipayCode{
+    padding-left: 17%;
+    margin-top: 20px;
+}
+.notice{
+    color: #76a6ef;
+}
+.pay-errors{
+    /*text-align: center;*/
+}
+
+
+
+/* 会员卡支付样式 */
+.recharge-card-radio{
+    border: 1px solid #d2d6de;
+    margin : 0px !important;
+    padding: 15px 18px 3px 18px;
+}
+#recharge-card label:first-child{
+/*	width: 100%;*/
+    margin-bottom: 10px;
+}
+/*#recharge-card input{
+	margin-right: 20px;
+}*/
+/*#recharge-card label:last-child{
+	width: 100%;
+}*/
+#recharge-card .cardTypeLabel{
+	/* padding-left: 120px;
+        padding-top: 15px; */
+	width: 100%;
+    display: block;
+}
+.cardTagInfo{
+	    /* margin-left: 35px; */
+    font-size: 12px;
+    color: #55657d;
+    /* width: 85%; */
+    height: 34px;
+    word-wrap: break-word;
+    display: block;
+}
+#recharge-card .totalFee{
+	color : #ff8053;
+}
+.card-title {
+	float : left;
+	width : 85%;
+}
+.cardTypeLabel input{
+	float : left;
+}
+.recharge-card-pay .recharge-card-total-price{
+	margin-top : 20px;
+}
+.create-rebate[disabled],.create-rebate[disabled]:hover{
+	background-color : #76a6ef !important;
+	opacity : 0.5;
+}
+.patient-user > p > .charge-doctor{
+    margin-left: 40px;
+}
+
+.recharge-card-total-price .charge-card-used {
+	margin-left: -15px;
+    margin-top: 10px;
+}
+/*.card-type-first{
+	margin-top : 20px;
+}*/
+.cardTypeLabel>label{
+	width : 100%;
+}
+/* end */
+
+
+
+#createMaterialForm .field-materialcharge-id{
+	margin-bottom : 15px;
+}
+.label-checkbox{
+    line-height: 25px;
+}
+.charge-index .table .op-group a {
+    margin-right: 0px !important;
+}
+.package-charge{
+    width: 16px;
+    height: 16px;
+    color: #76a6ef;
+    margin-left: 8px;
+}
+
+#charge-form .card-type-select{
+    width: 20%;
+    margin-bottom: 0px;
+}
+#charge-form .card-type-select input{
+    margin-right: 5px;
+}
+#charge-form .package-card-service-title,#charge-form .service-card-service-title{
+    width: 71%;
+    float: left;
+}
+#charge-form .package-card-service-input,#charge-form .service-card-service-input{
+    width: 80px;
+    border-radius: 2px;
+    box-shadow: none;
+    border: 1px solid #CACFD8;
+    padding-left: 5px;
+    height: 25px;
+    outline: 0;
+}
+#charge-form .package-card-service-input:focus,#charge-form .service-card-service-input:focus{
+    border-color: #76a6ef;
+}
+
+#charge-form .package-card-service-item,#charge-form .service-card-service-item{
+    margin-bottom: 5px;
+    color: #54647D;
+}
+#charge-form .package-card-name,#charge-form .service-card-name{
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #55657D;
+}
+#charge-form .package-card-info,#charge-form .service-card-info{
+    background: #F4F5F7;
+    border-radius: 2px;
+    padding-right: 14px;
+    padding-left: 14px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #d2d6de;
+}
+#recharge-card .cardTypeLabel input{
+    margin-top: 2px;
+}
+#recharge-card .empty-tips{
+    padding-top: 15px;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+.package-card-tips-title,.service-card-tips-title{
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #445064;
+}
+.package-card-tips-content,.service-card-tips-content{
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.package-card-tips-form .help-block,.service-card-tips-form .help-block{
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+}
+.package-card-info .help-block,.service-card-info .help-block{
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+}
+.package-card-tips-form .form-group,.service-card-tips-form .form-group{
+    margin-bottom: 0px; 
+}
+#charge-form .card-content{
+    padding-top: 10px;
+}
+#charge-form .card-service-time-check-input-error, #charge-form .card-service-time-check-input-error:focus{
+    border-color: #FF5000;
+}
+#charge-form .package-card-service-input:disabled, #charge-form .service-card-service-input:disabled{
+    background: #F4F5F7;
+}
+
+/* 充值卡样式部分 */
+
+#recharge-card .recharge-card-div {
+    width: 250px;
+    height: 108px;
+    float: left;
+    border: 1px solid #CACFD8;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding-left: 14px;
+    padding-top: 4px;
+	position: relative;
+}
+
+#recharge-card .recharge-card-div:hover{
+	border: 1px solid #76A6EF;
+}
+#recharge-card .overflow-multiple{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+	line-height:17px;
+	padding-right:5px;
+}
+#recharge-card .overflow-multiple-one{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+	line-height:17px;
+	padding-right:10px;
+	word-wrap: break-word;
+}
+#recharge-card .selected-recharge-card{
+	position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+}
+#recharge-card .recharge-card-div:nth-child(even){
+	margin-right: 20px;
+}
+.recharge-card-border-color-normal{
+	border: 1px solid #76A6EF;
+}
+.recharge-card-border-color{
+	border: 1px solid #76A6EF;
+}
+#recharge-card .recharge-card-solid{
+	border-bottom: 0.5px dashed #CACFD8;
+}
+#recharge-card .recharge-total-price{
+	float: right;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+#recharge-card .recharge-card-border-color{
+	 border: 1px solid #76A6EF;
+}
+#charge-card-used,#charge-first-free{
+	margin-right : 8px;
+}
+#recharge-card .recharge-discount-price{
+    text-align: right;
+}
+
+/* 服务卡支付前提示 */
+.service-card-tips .service-card-tips-title{
+    display: inline-block;
+    vertical-align: top;
+}
+.service-card-tips  .service-card-tips-list{
+    display: inline-block;
+    vertical-align: top;
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+.service-card-tips  .service-card-tips-foot{
+    margin-top: 10px;
+}
+.service-card-tips  .service-card-tips-link a{
+    text-decoration:underline;
+}
+.service-card-tips  .service-card-tips-link a:hover{
+   color:#558DE2;
+}
+.nowrap{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* end */
+

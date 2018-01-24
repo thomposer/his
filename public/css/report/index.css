@@ -1,0 +1,20 @@
+.delete-btn{
+	margin-right: 0px !important;
+}
+.field-appointment-appointment_cancel_reason{
+	width:100%;
+}
+
+.col-phone{
+	width: 110px;
+}
+
+.col-time,.col-time-sm{
+	width: 140px;
+}
+.col-option{
+	width: 80px;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+	padding : 8px 10px;
+}

@@ -16,23 +16,18 @@ $baseUrl = Yii::$app->request->baseUrl;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <?php AppAsset::addCss($this, 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')?>
-    <!-- Ionicons -->
-    <?php AppAsset::addCss($this, 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')?>
     <!-- Theme style -->
     <?php AppAsset::addCss($this,'@web/public/dist/css/AdminLTE.min.css');?>
-    <!-- iCheck -->
-    <?php AppAsset::addCss($this,'@web/public/plugins/iCheck/square/blue.css');?>   
+    <?php AppAsset::addCss($this, '@web/public/css/user/overdue.css')?>
     <?php $this->head() ?>
 </head>
 <body class="hold-transition lockscreen">
 <?php $this->beginBody() ?>
 <!-- Automatic element centering -->
 <div class="lockscreen-wrapper">
-  <div class="lockscreen-logo">
-    该链接已失效
-  </div>
-
+   <p>
+    该页面已过期，请联系管理员重新发送密码重置邮件
+    </p>
 </div>
 
 <?php $this->endBody() ?>

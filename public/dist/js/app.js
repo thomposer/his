@@ -240,11 +240,13 @@ function _init() {
   $.AdminLTE.layout = {
     activate: function () {
       var _this = this;
-      _this.fix();
       _this.fixSidebar();
-      $(window, ".wrapper").resize(function () {
+      setTimeout(function(){
         _this.fix();
+      },1000);
+      $(window, ".wrapper").resize(function () {
         _this.fixSidebar();
+        _this.fix();
       });
     },
     fix: function () {
@@ -255,14 +257,14 @@ function _init() {
       //Set the min-height of the content and sidebar based on the
       //the height of the document.
       if ($("body").hasClass("fixed")) {
-        $(".content-wrapper, .right-side").css('min-height', window_height - $('.main-footer').outerHeight());
+        $(".content-wrapper, .content-wrapper>.content>.row, .right-side").css('min-height', window_height - $('.main-footer').outerHeight());
       } else {
         var postSetWidth;
         if (window_height >= sidebar_height) {
-          $(".content-wrapper, .right-side").css('min-height', window_height - neg);
+          $(".content-wrapper, .content-wrapper>.content>.row, .right-side").css('min-height', window_height - neg);
           postSetWidth = window_height - neg;
         } else {
-          $(".content-wrapper, .right-side").css('min-height', sidebar_height);
+          $(".content-wrapper, .content-wrapper>.content>.row, .right-side").css('min-height', sidebar_height);
           postSetWidth = sidebar_height;
         }
 
@@ -270,7 +272,7 @@ function _init() {
         var controlSidebar = $($.AdminLTE.options.controlSidebarOptions.selector);
         if (typeof controlSidebar !== "undefined") {
           if (controlSidebar.height() > postSetWidth)
-            $(".content-wrapper, .right-side").css('min-height', controlSidebar.height());
+            $(".content-wrapper, .content-wrapper>.content>.row, .right-side").css('min-height', controlSidebar.height());
         }
 
       }
@@ -298,6 +300,7 @@ function _init() {
           });
         }
       }
+      console.log($(".sidebar").height());
     }
   };
 
@@ -472,7 +475,7 @@ function _init() {
         _this._fixForFixed(sidebar);
       } else {
         //If the content height is less than the sidebar's height, force max height
-        if ($('.content-wrapper, .right-side').height() < sidebar.height()) {
+        if ($('.content-wrapper, .content-wrapper>.content>.row, .right-side').height() < sidebar.height()) {
           _this._fixForContent(sidebar);
         }
       }
@@ -520,7 +523,7 @@ function _init() {
       });
     },
     _fixForContent: function (sidebar) {
-      $(".content-wrapper, .right-side").css('min-height', sidebar.height());
+      $(".content-wrapper, .content-wrapper>.content>.row, .right-side").css('min-height', sidebar.height());
     }
   };
 

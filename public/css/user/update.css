@@ -1,0 +1,12 @@
+#user-sex label{
+    margin-right:60px;
+}
+#user-sex label input{
+    margin-right:10px;
+}
+#user-role label{
+    margin-right: 18px;
+}
+#user-role label input{
+    margin-right: 6px;
+}

@@ -1,0 +1,193 @@
+@CHARSET "UTF-8";
+
+.outpatient-create .box-body
+{
+    padding:0;
+}
+.tab-pane{
+
+}
+.nav-tabs{
+    border-bottom:none;
+}
+.nav.nav-tabs>li{
+    background-color:rgba(202,207,216,0.1);
+    float: none;
+    display: table-cell;
+    width: 1%;
+}
+.nav-tabs > li > a{
+    color: #8190a7;
+    font-weight: 300;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #f4f4f4;
+    border-radius:0px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+    color: #76a6ef;
+    font-weight: 300;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+}
+.allergy-list .btn-from-delete-add{
+    margin-top: -3px;
+}
+.cure-record-index,.outpatient-_recordForm,.checkRecordForm,.inspectRecordForm{
+    padding-right: 25px;
+    padding-left: 25px;
+}
+form{
+    margin-top: 30px;
+}
+.cure-record-form{
+    margin-bottom: 20px;
+}
+.header{
+    background-color: #edf1f7;
+}
+.header th{
+    font-weight: 300;
+
+}
+.op-group img{
+    cursor: pointer;
+    width: 16px;
+}
+.cure-record-form,.field-checkrecord-checkname,.field-inspectrecord-inspectname,.field-reciperecord-recipename{
+    display: none;
+}
+.check-list,.inspect-list{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #edf1f7;
+    padding: 0 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.check-list .op-group,.inspect-list .op-group,.cure-form .op-group,.recipe-form .op-group,td.status-column,td.status-recipe-column{
+    display: none;
+}
+.check-name{
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 95%;
+}
+.check-list>.op-group,.inspect-list>.op-group{
+    float: right;
+}
+.end-outpatient{
+    float: right;
+    margin-left: 20px;
+    color: #ffffff;
+    border-radius: 4px;
+    background: #95ca20;
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+}
+.end-outpatient:hover,.dollar-outpatient:hover{
+    color: #ffffff;
+    opacity: 0.8;
+}
+.end-outpatient img{
+    width: 12px;
+
+}
+.outpatient-update .box-header{
+    line-height: 26px;
+}
+.box-body{
+    padding: 0px;
+}
+.outpatient-check ,.outpatient-dollar{
+    margin-right: 5px;
+}
+#outpatient-patient-info{
+    left: 5px;
+}
+.btn-disabled{
+    background: #c0c8d4;
+}
+.table > tbody > tr > td{
+    border-top: none;
+}
+.header th.action-column,.header th.status-column,.header th.status-recipe-column{
+    display: none;
+}
+
+.margin-right{
+    margin-right: 14px;
+}
+.dollar-outpatient .fa-dollar{
+    width: 12px;
+    text-align: center;
+    border-radius:50%;
+    background-color:#ffffff;
+}
+.dollar-outpatient{
+    float: right;
+    margin-left: 20px;
+    color: #ffffff;
+    border-radius: 4px;
+    background: #76a6ef;
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+
+}
+
+.fill-info{
+    padding:15px 15px 0px 15px;
+}
+
+.item_title{
+    color: #76a6ef;
+    font-size: 18px;
+    font-weight:500;
+    margin-left: 515px;
+}
+
+.check-header{
+    background-color: #edf1f7;
+    margin-bottom: 0px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 14px;
+    color:#445064;
+    line-height:50px;
+    font-weight:500;
+    border-top: 1px solid #d2d6de;
+    border-left: 1px solid #d2d6de;
+    border-right: 1px solid #d2d6de;
+}
+
+.check-form{
+    margin-top: 0px;
+}
+
+.check-box{
+    position: relative;
+    border-radius: 12px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.check-texarea{
+    border-radius: 0px;
+    background-color: #ffffff !important;
+    width: 100%;
+}
+.inspect-tbody{
+    background-color: #ffffff;
+}
+#ajaxCrudModal .modal-body{
+    padding: 0px;
+}

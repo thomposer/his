@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+
+
+#user-sex label{
+    padding-top:5px;
+    margin-right:60px;
+}
+.print-check {
+    float: right;
+    margin-right: 0px!important;
+}
+.form-margin{
+    margin-top:30px;
+}
+.btn-group-left{
+    background-color: #fff;
+    border-radius: 4px;
+    color: #76a6ef;
+    border: 1px solid #76a6ef;
+}
+
+.text-price{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.hid{
+    display: none;
+}
+
+.cure-form-doc {
+    margin: 16px 0;
+}
+.pharmacy-search{
+    border-bottom: 0px solid #f4f4f4;
+    padding: 6px 20px;
+}
+.cure-record-index{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.cure-form{
+    border: 0.5px solid #DFE0E4;
+    border-radius: 0px;
+}
+
+.cure-form>thead>tr>th{
+    border-bottom: 1px solid #DFE0E4;
+}
+.cure-form>tbody>tr>td{
+    border-bottom: 1px solid #DFE0E4;
+}
+
+.shadow{
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+}
+.cure_result{
+    background: #F5F5F5;
+    cursor: not-allowed;
+}

@@ -1,0 +1,135 @@
+@CHARSET "UTF-8";
+.search-block {
+    position: absolute;
+    width: 100%;
+    max-height: auto;
+    background-color: #fff;
+    border: 1px solid #CACFD8;
+    top: 60px;
+/*    box-shadow: #ececec 2px 2px 3px;*/
+    border-radius: 0 0 5px 5px;
+    z-index: 99;
+/*  overflow-y:auto;*/
+}
+.search-block .tips {
+    padding: 10px 5px 10px 12px;
+    color: #55657d;
+    font-size: 14px;
+    border-bottom: 1px solid #ececec;
+}
+.search-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 270px;
+    overflow-y: auto;
+}
+.search-block ul li {
+    width: 100%;
+    padding: 10px 5px 10px 12px;
+    cursor: pointer;
+    color: #55657d;
+}
+.search-block ul li.active, .search-block ul li:hover {
+    background-color: #ececec;
+}
+
+.search-block .J-name-search-submit img {
+    width: 40px;
+    border-radius: 40px;
+    margin-right: 10px;
+    margin-left: 4px;
+    float: left;
+    height:40px;
+}
+.search-block ul .J-name-search-submit span:last-child {
+    display: block;
+    font-size: 10px;
+    padding-top: 4px;
+}
+.search-block ul .J-name-search-submit span {
+    padding: 0 8px 0 0;
+}
+.search-block ul .J-name-search-submit span {
+    padding: 0 8px 0 0;
+}
+.appointment-index .search-margin {
+    background: #ffffff none repeat scroll 0 0;
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #ECECEC;
+}
+.row-search-margin{
+    background: #ffffff none repeat scroll 0 0;
+    margin: 0;
+    padding: 10px 20px;
+}
+.btn-height{
+    padding:8px 15px;
+    font-size:14px;
+}
+.no-radius{
+    border-radius: 0px 0px 5px 5px;
+}
+.add-border{
+
+    border: 1px solid #F4F4F4;
+}
+.content{
+	padding: 20px;
+}
+button[type="submit"] {
+    margin-right: 0px!important;
+}
+
+.department-width{
+    width:150px;
+}
+.doctor-width{
+    width:150px;
+}
+.popup-width{
+    width:120px;
+}
+.appointment-index .search-margin .font-body2{
+	margin-right:15px;
+}
+
+.field-patient-address{
+    width: 100%;
+    padding-right: 30px;
+    position: absolute;
+    display: table;
+    border-collapse: separate;
+}
+.custom{
+    border-bottom-width: 0px;
+}
+.box-header span {
+    margin-left: 10px;
+}
+/*定义滚动条宽度和背景色*/
+.search-block ul::-webkit-scrollbar{
+    width: 10px;
+    background-color: #f5f5f5;
+}
+/*定义滚动条的轨道，内阴影及圆角*/
+.search-block ul::-webkit-scrollbar-track{
+    background-color: #f5f5f5;
+}
+/*定义滑块，内阴影及圆角*/
+.search-block ul::-webkit-scrollbar-thumb{
+    background-color: #ccc;
+}
+.tooltip > .tooltip-inner {background-color: #54647D; color: #ffffff;}
+
+.field-appointment-appointment_cancel_reason{
+    width:100%;
+}
+.no-padding-right{
+    padding-right: 0px;
+}
+
+.J-search-info{
+    padding-left: 55px;
+}

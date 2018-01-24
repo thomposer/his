@@ -21,9 +21,9 @@ use yii\helpers\ArrayHelper;
  * @property AuthItemChild[] $authItemChildren
  * @property AuthItemChild[] $authItemChildren0
  */
-class PermissionForm extends ItemForm
+class PermissionForm extends Item
 {
-     
+    public $spotCode;
     public function init() {
        parent::init();
        $this->type = \yii\rbac\Item::TYPE_PERMISSION;
@@ -32,8 +32,8 @@ class PermissionForm extends ItemForm
         
         $parentRule = parent::rules();
         $permRule =  [
-            [['name'],'match','pattern' => '/^[\/][a-zA-Z0-9\/-]{3,34}$/','message' => '格式错误，正确格式应为：/m/c/a'],// 斜线/开头，允许4-35字节，允许字母数字下划线
-                
+           // [['name'],'match','pattern' => '/^[\/][a-zA-Z\/_-]{3,50}$/','message' => '格式错误，正确格式应为：/m/c/a'],// 斜线/开头，允许4-50字节，允许字母数字下划线
+            [['name'],'unique','message'=>'该权限名称已经被占用'],                
         ];
         return ArrayHelper::merge($parentRule, $permRule);
     }
@@ -52,8 +52,17 @@ class PermissionForm extends ItemForm
             'updated_at' => '更新时间',
             'category' => '分类名称',
             'parentName' => '所属分类',
+            'spotId' => '机构名称'
             
         ];
+    }
+    
+    public function beforeSave($insert){
+        if ($insert) {
+            $this->created_at = time();
+        }
+        $this->updated_at = time();
+        return parent::beforeSave($insert);
     }
     
 }

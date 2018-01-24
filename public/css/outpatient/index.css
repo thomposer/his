@@ -1,0 +1,32 @@
+.title_p {
+    display: inline-block;
+    line-height: 16.5px;
+    margin-bottom: -13px;
+}
+
+.circle_span {
+    width: 4px;
+    height: 15px;
+    border-radius: 4px;
+    background: #76A6EF;
+    float: left;
+    margin-right: 5px;
+}
+
+.title_span {
+    font-size: 15.5px;
+    font-weight: 600;
+}
+.outpatient-index-notice{
+    padding-left: 0px!important;
+    line-height: 29px;
+    color: #FF4B00;
+    display: inline-block;
+    margin-left: 20px;
+}
+.outpatient-index-notice .bolder{
+    font-weight: bolder;
+}
+/* .table .op-group a{
+	margin-right : 0px;	
+} */

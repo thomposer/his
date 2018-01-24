@@ -21,19 +21,30 @@ use yii\helpers\ArrayHelper;
  * @property AuthItemChild[] $authItemChildren
  * @property AuthItemChild[] $authItemChildren0
  */
-class RoleForm extends ItemForm
+class RoleForm extends Item
 {
     public function init() {
        parent::init();
        $this->type = \yii\rbac\Item::TYPE_ROLE;
     }
+    
     public function rules(){
         
         $parentRule = parent::rules();
-        $roleRule =  [
-            [['name'],'match','pattern' => '/^[a-zA-Z][a-zA-Z0-9_\/]{3,34}$/','message' => '必须以字母开头，不能输入中文'],//字母开头，允许4-35字节，允许字母数字下划线
+        $roleRule =  [           
+            [['child'],'required'],
+            [['data','description'],'trim'],
+            ['description','string', 'max' => 20],
+            ['data','string','max' => '200'],
+            ['description','validateDescription','on' => 'onlyRole']
         ];
         return ArrayHelper::merge($parentRule, $roleRule);
+    }
+    public function scenarios(){
+        
+        $parent = parent::scenarios();
+        $parent['onlyRole'] = ['name','description','data','created_at','updated_at'];
+        return $parent;
     }
     /**
      * @inheritdoc
@@ -42,16 +53,40 @@ class RoleForm extends ItemForm
     {
         
         return [
-            'name' => '角色名称',
+            'name' => '角色简称',
             'type' => '类型',
-            'description' => '描述',
+            'description' => '角色名称',
             'rule_name' => '权限规则',
-            'data' => '内容',
+            'data' => '描述',
             'created_at' => '创建时间',
             'updated_at' => '更新时间',
-            'child' => '权限管理',
+            'child' => '权限列表',
             
         ];
     }
-    
+    public function validateDescription($attribute){
+        if ($this->isNewRecord) {
+            
+            if ($this->checkDuplicate($attribute, $this->$attribute)) {
+                $this->addError($attribute, '该角色名称已存在');
+            }
+        } else {
+            $oldDescription = $this->getOldAttribute($attribute);
+            if ($oldDescription != $this->$attribute) {
+                $hasRecord = $this->checkDuplicate($attribute, $this->$attribute);
+                if ($hasRecord) {
+                    $this->addError($attribute,'该角色名称已存在');
+                }
+            }
+        }
+    }
+    protected function checkDuplicate($attribute, $params) {
+        $parentSpotCode = Yii::$app->cache->get(Yii::getAlias('@parentSpotCode').$_COOKIE['spotId'].Yii::$app->user->identity->id);
+        $hasRecord = RoleForm::find()->select(['name'])->where([$attribute => $this->$attribute])->andWhere(['like','name',$parentSpotCode.'_roles_%',false])->asArray()->limit(1)->one();
+        if ($hasRecord) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -1,0 +1,149 @@
+.row-title{
+    margin-left: 0px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+.rebate-btn{
+    margin-top: 23px;
+    width: 65px;
+}
+/*
+设置打印电话的样式
+*/
+.spot-config-tel{
+
+    color:#97A3B6;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: -20px;
+}
+/*
+设置预览按钮样式
+*/
+.spot-config-viewImg{
+    position: absolute;
+    margin-top:30px;
+    margin-left: -20px;
+
+}
+
+.spot-config-underline >a:hover{
+    text-decoration: underline;
+}
+
+/*
+设置预览小按钮的样式
+*/
+.spot-config-viewIcon{
+
+    margin-left: 5px;
+    width: 14px;
+    height:14px;
+}
+
+#crop-avatar{
+    /*width: 150px;*/
+    margin-top:-10px;
+}
+/*
+设置logo删除样式
+*/
+.spot-config-ImgDel{
+    float: left;
+    width:50px;
+    margin-top:-24px;
+    color:grey;
+    margin-left: 100px;
+
+}
+/*
+设置logo删除样式
+*/
+.conf-img-delImg {
+    line-height:12px;
+    height:24px;
+    background-color: white;
+    border: 1px solid grey;
+    color:grey;
+}
+/*
+设置logo删除按钮鼠标放入样式
+*/
+
+.conf-img-delImg:hover{
+    background-color: #F7F8F9;
+    color:grey;
+}
+/*
+设置logo删除按钮鼠标按下样式
+*/
+.conf-img-delImg:active{
+    background-color: #EAECEF;
+    color:grey;
+    outline: 0 !important;
+    border: 1px solid grey !important;
+}
+
+
+
+/*
+设置logo上传样式
+*/
+.spot-config-UpImg{
+    float: left;
+    height:24px;
+    line-height:12px;
+    width: 80px;
+   margin-left: 1px;
+    /*border: 1px solid #76a6ef;*/
+    /*color:#76a6ef;*/
+}
+/*
+设置logo上传鼠标放入样式
+*/
+/*.spot-config-UpImg:hover{*/
+
+    /*background-color: #F5F9FE;*/
+    /*color:#76a6ef;*/
+/*}*/
+/*
+设置logo上传鼠标点击样式
+*/
+/*.spot-config-UpImg:active{*/
+
+    /*background-color: #E3EDFC;*/
+    /*color:#76a6ef;*/
+/*}*/
+/*
+设置打印诊所名称、电话、模板距离top的长度
+*/
+.row-title-buttom{
+    margin-top:20px;
+
+}
+/*
+设置logo边缘角度
+*/
+.conf-img-show{
+    border-radius: 4px !important;
+}
+
+.spot-config-update .logo-config{
+    background-color: #F7F9FB;
+    padding: 20px 0 0 0px;
+    margin-left: 0px;
+}
+#spotconfig-logo_shape > label{
+    margin-right: 40px;
+}
+
+#spotconfig-logo_shape > label > input{
+    margin-right: 5px;
+}
+.avatar-view{
+    width:100% !important;
+}
+.conf-img-show{
+    height: 120px;
+}
+

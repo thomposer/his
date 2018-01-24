@@ -14,10 +14,14 @@ use Yii;
  * @property AuthItem $parent0
  * @property AuthItem $child0
  */
-class ItemChildForm extends \app\core\Base\BaseActiveRecord
+class ItemChildForm extends \app\common\Base\BaseActiveRecord
 {
     
-
+    public static function tableName(){
+        
+        return '{{%auth_item_child}}';
+    }
+    
     /**
      * @inheritdoc
      */

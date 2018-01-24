@@ -43,7 +43,7 @@ class MenuSearch extends Menu
      *
      * @return ActiveDataProvider
      */
-    public function search($params,$pageSize = 10,$where = NULL)
+    public function search($params,$pageSize = 20,$where = NULL)
     {
         $query = new ActiveQuery(Menu::className());
         $query->from(['m' => Menu::tableName()]);
@@ -52,12 +52,18 @@ class MenuSearch extends Menu
             'query' => $query,
             'pagination' => [
                 'pageSize' => $pageSize
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_ASC,
+                ],
+                'attributes' => ['id']
             ]
         ]);
 
-        $this->load($params);
+        
 
-        if (!$this->validate()) {
+        if ($this->load($params) && !$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
             return $dataProvider;
@@ -70,8 +76,8 @@ class MenuSearch extends Menu
             'm.status' => $this->status,
         ]);
 
-        $query->andFilterWhere(['like', 'm.menu_url', $this->menu_url])
-            ->andFilterWhere(['like', 'm.description', $this->description]);
+        $query->andFilterWhere(['like', 'm.menu_url', trim($this->menu_url)])
+            ->andFilterWhere(['like', 'm.description', trim($this->description)]);
 
         return $dataProvider;
     }

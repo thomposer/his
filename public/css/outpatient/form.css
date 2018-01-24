@@ -1,0 +1,1879 @@
+@CHARSET "UTF-8";
+
+.outpatient-create .box-body {
+    padding: 0;
+}
+
+.print-check {
+    float: right;
+}
+
+.nav-tabs {
+    border-bottom: none !important ;
+}
+
+.nav.nav-tabs > li {
+    background-color: rgba(202, 207, 216, 0.1);
+    float: none;
+    display: table-cell;    
+    width: 1%;
+    padding: 10px 0px;
+}
+
+.nav-tabs > li > a {
+    color: #8190a7;
+    font-weight: 300;
+    text-align: center;
+    border: none !important;
+    padding: 0px !important;
+    border-left: 1px solid #f4f4f4;
+    border-radius: 0px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.outpatient-tab li a {
+    height: 20px;
+    border-bottom: none;
+    border-left: 0.5px solid #E1E4E8 !important;
+    padding: 0px;
+}
+
+.outpatient-tab li:first-child > a {
+    border-left: none !important;
+}
+
+.outpatient-tab li {
+    padding: 10px 0px;
+    border-bottom: 0.5px solid #F4F4F4 !important;
+}
+
+.outpatient-tab .active {
+    background-color: #FFFFFF !important;
+    border-bottom: none !important;
+    border-right: 0.5px solid #F4F4F4;
+    border-left: 0.5px solid #F4F4F4;
+}
+
+.outpatient-tab .active + li > a {
+    border-left: none;
+    border-right: none;
+}
+
+.outpatient-tab .active a {
+    border-left: none !important;
+}
+
+.outpatient-tab > li > a:hover {
+    background: none !important;
+}
+
+/*完善信息弹窗*/
+#progressWizard li a {
+    height: 20px;
+    border-bottom: none;
+    border-left: 0.5px solid #E1E4E8 !important;
+    padding: 0px;
+}
+
+#progressWizard li :first-child > a {
+    border-left: none;
+}
+
+#progressWizard li {
+    padding: 10px 0px;
+    border-bottom: 0.5px solid #F4F4F4;
+}
+
+#progressWizard .nav-tabs .active {
+    background-color: #FFFFFF !important;
+    border-bottom: none;
+    border-right: 0.5px solid #F4F4F4;
+    border-left: 0.5px solid #F4F4F4;
+}
+
+#progressWizard .active + li > a {
+    border-left: none;
+    border-right: none;
+}
+
+#progressWizard li.active a {
+    border-left: none !important;
+
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: transparent !important;
+}
+
+#report .active > a {
+    color: #FFFFFF;
+    background: #76A6EF;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #76a6ef !important;
+    font-weight: 300;
+    border: none !important;
+    border-bottom: 1px solid #ffffff;
+
+}
+
+.nav.nav-second > li {
+    float: none !important;
+    max-width: 212px !important;
+    display: inline-block;
+}
+
+.allergy-list .btn-from-delete-add {
+    margin-top: -3px;
+}
+
+.cure-record-index, .outpatient-_recordForm, .checkRecordForm, .inspectRecordForm {
+    padding-right: 25px;
+    padding-left: 25px;
+    position: relative;
+}
+
+form {
+    margin-top: 30px;
+}
+
+.cure-record-form {
+    margin-bottom: 20px;
+}
+
+.header {
+    background-color: #edf1f7;
+}
+
+.header th {
+    font-weight: 300;
+
+}
+
+.op-group img {
+    cursor: pointer;
+    width: 16px;
+}
+
+.cure-record-form, .field-checkrecord-checkname, .field-inspectrecord-inspectname, .field-reciperecord-recipename ,.field-materialrecord-materialname,
+.field-consumablesrecord-consumablesname{
+    display: none;
+}
+
+.check-content .check-list, .inspect-content .inspect-list,.first-check-list,.popup-first-check-list{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #edf1f7;
+    padding: 0 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.first-check-list .op-group, .check-form .op-group, .inspect-list .op-group, .cure-form .op-group, .recipe-form .op-group, td.status-recipe-column ,.material-form .op-group,.consumables-form .op-group{
+
+    display: none;
+}
+
+.check-name {
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: 22 nowrap;
+    width: 95%;
+}
+
+.popup-first-check-list .op-group,.first-check-list .op-group{
+    float: right;
+}
+
+.end-outpatient {
+    float: right;
+    margin-left: 20px;
+    color: #ffffff;
+    border-radius: 4px;
+    background: #95ca20;
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+}
+
+.end-outpatient:hover, .dollar-outpatient:hover {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.select-package {
+    float: right;
+    margin-left: 20px;
+    color: #76a6ef;
+    border-radius: 4px;
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+    border: 1px solid #76a6ef;
+    background-color: transparent;
+}
+.select-package:hover, .select-package:focus, .select-package:active{
+    color: #76a6ef;
+    opacity: 0.8;
+}
+
+.end-outpatient img {
+    width: 12px;
+
+}
+
+.outpatient-update .box-header {
+    line-height: 26px;
+}
+
+.box-body {
+    padding: 0px !important;
+}
+
+.outpatient-check, .outpatient-dollar {
+    margin-right: 5px;
+}
+
+#outpatient-patient-info {
+    left: 5px;
+}
+
+.btn-disabled {
+    background: #c0c8d4;
+}
+
+.table > tbody > tr > td {
+    border-top: none;
+}
+
+.header th.action-column{
+    display: none;
+}
+
+.margin-right {
+    margin-right: 14px;
+}
+
+.dollar-outpatient .fa-dollar {
+    width: 12px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.dollar-outpatient {
+    float: right;
+    margin-left: 20px;
+    color: #ffffff;
+    border-radius: 4px;
+    background: #76a6ef;
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+
+}
+
+.fill-info {
+    padding: 15px 15px 0px 15px;
+}
+
+.item_title {
+    color: #76a6ef;
+    font-size: 18px;
+    font-weight: 500;
+    /*margin-left: 40%;*/
+}
+
+.check-header {
+    background-color: #edf1f7;
+    margin-bottom: 0px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #445064;
+    line-height: 50px;
+    font-weight: 500;
+    border-top: 1px solid #d2d6de;
+    border-left: 1px solid #d2d6de;
+    border-right: 1px solid #d2d6de;
+}
+
+.check-form {
+    margin-top: 0px;
+}
+
+.check-box {
+    position: relative;
+    border-radius: 12px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.check-texarea {
+    border-radius: 0px !important;
+    background-color: #ffffff !important;
+    width: 100%;
+}
+
+.inspect-tbody {
+    background-color: #ffffff;
+}
+
+.case-template-select {
+    margin-right: -18px;
+    width: 100%;
+}
+
+.patient-basic {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+#ajaxCrudModal .patient-basic {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.basic-form {
+    border: 1px solid #edf1f7;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.basic-form-content {
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.basic-header {
+    height: 25px;
+    background: #edf1f7;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+
+.basic-right-up {
+    font-weight: 600;
+    color: #99A3B1;
+    float: right;
+    /*margin-top: 14px;*/
+}
+
+.edit_button > button {
+    width: 90px;
+    margin-right: 0px;
+}
+
+.case_template_none {
+    display: none;
+}
+
+.case_template_none > .field-triageinfo-template {
+    margin-top: 15px;
+    margin-right: -16px;
+}
+
+.case_template > .field-triageinfo-template {
+    margin-top: 15px;
+    margin-right: -16px;
+}
+
+/*.edit_button>button{
+    margin-top: 15px;
+    background-color: #ffffff;
+}*/
+.inspect-report, .checkform {
+    margin-top: 10px;
+}
+
+/*.input-group-addon{
+    display:none;
+}*/
+#triageinfo-morbiditydate {
+    border-radius: 4px;
+}
+
+.form-control {
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.recipe-form .header {
+    border: none;
+}
+
+.checkform .form-control {
+    border-radius: 0px;
+}
+
+.btn-case-template {
+    background-color: #8190a7;
+    border-radius: 4px;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-case-template:hover {
+    opacity: 0.8;
+    color: #ffffff;
+    border: none;
+}
+
+.no-content {
+    border: none;
+    padding: 20px 0px 20px 12px;
+    font-size: 16px;
+    color: #55657d;
+}
+
+.usr-row {
+    margin-left: 18px;
+}
+
+.rebate-foot {
+    padding-top: 40px;
+    padding-left: 14px;
+    padding-bottom: 47px;
+}
+
+.rebate-foot-bottom {
+    padding: 5px 27px 20px 111px;
+    width: 100%;
+}
+
+.btn-rebate {
+    background-color: #8190a7;
+    border-radius: 4px;
+    color: #ffffff;
+    border: none;
+}
+
+.td-field {
+    border-bottom: solid 1px;
+    width: 74%;
+    display: inline-block;
+    text-align: center;
+}
+
+.rebate-table {
+    width: 96%;
+    max-width: 100%;
+    margin-left: 23px;
+}
+
+.charge-table > tbody > tr > td, .charge-table > tbody > tr > th {
+    border-bottom: none;
+    border-top: none;
+}
+
+.charge-table > tbody > tr > th {
+    padding: 9px 21px;
+    width: 180px;
+    font-weight: bold;
+}
+
+.charge-table > thead > tr > th {
+    border-bottom: 0.25px solid #000000;
+}
+
+.small-title-second {
+    font-weight: bold;
+    font-size: 8px;
+    display: inline-block;
+    width: 96%;
+    margin-left: 21px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #000000;
+}
+
+.rebate-write {
+    width: 50%;
+    float: left;
+}
+
+.rebate-write {
+    width: 50%;
+    float: left;
+}
+
+.rebate-table > tbody > tr > td {
+    width: 33%;
+}
+
+.recipe-table {
+    /*width: 96%;*/
+    max-width: 100%;
+    /*margin-left: 23px;*/
+}
+
+.inspect-list .tooltip-inner {
+    max-width: 600px;
+    background: #55657d;
+    /*    margin-top: 2px;*/
+    line-height: 13px;
+    text-align: left;
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 2px;
+}
+
+.inspect-list .tooltip {
+    left: 25px !important;
+}
+
+.inspect-list .tooltip-arrow {
+    /*display: none !important;*/
+    /*    margin-top: 2px;*/
+    left: 20px !important;
+    border-bottom-color: #55657d !important;
+}
+
+.check-name span {
+    cursor: pointer;
+}
+
+.check-form,.inspect-form,.cure-form, .recipe-form ,.material-form, .consumables-form{
+    border: 0.5px solid #DFE0E4;
+}
+
+.recipe-question {
+    width: 16px;
+    height: 16px;
+    color: #76a6ef;
+    margin-left: 8px;
+}
+
+.recipe-question:hover {
+    cursor: pointer;
+}
+
+.table > tbody > tr.recipeNameTd {
+    border-top: 6px solid #EDF1F7;
+}
+
+.table > tbody > tr.recipeNameTd:first-child {
+    border-top: none;
+}
+
+select.skinTestStatus {
+    margin-left: 60px;
+    width: 90px;
+}
+
+.skinTestContent {
+    margin-left: 60px;
+}
+
+.recipeNum {
+    width: 70px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.recipeName {
+    color: #76A6EF;
+}
+
+.recipeName .tooltip-inner,.material-form .tooltip-inner, .consumables-form .tooltip-inner{
+    text-align: left;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 20px;
+    max-width: 164px;
+    background: #55657d;
+}
+
+.recipeName .tooltip-arrow,.material-form  .tooltip-arrow, .consumables-form .tooltip-arrow{
+    border-bottom-color: #55657d !important;
+    left: 20px !important;
+}
+
+.recipeName .tooltip,.material-form .tooltip,.consumables-form .tooltip {
+    left: 0px !important;
+    word-wrap: break-word;
+}
+
+/* 表单标题的样式 */
+.title-patient-div {
+    margin-top: 25px;
+    /*  margin-bottom: 14px; */
+}
+
+.titleP {
+    float: left;
+    line-height: 16.5px;
+}
+
+.circleSpan {
+    width: 4px;
+    height: 15px;
+    border-radius: 25px;
+    background: #76A6EF;
+    float: left;
+    margin-right: 5px;
+}
+
+.titleSpan {
+    font-size: 15.5px;
+    font-weight: 600;
+}
+
+.testYears {
+    width: 62px;
+    float: left;
+}
+
+/* .childLine{
+        float:left;
+        width: 79%;
+    height: 18px;
+    border-bottom: 0.5px solid #d2d6de;
+} */
+.labelWidth {
+    float: left;
+    width: 90px;
+}
+
+.angle-icon {
+    height: 18px;
+    line-height: 18px;
+}
+
+.check-close {
+    background: #ffffff;
+    border: 1px solid #d2d6de;
+    color: #445064 !important;
+}
+
+.check-close:hover {
+    background: #ffffff;
+    border: 1px solid #d2d6de;
+    color: #445064 !important;
+}
+
+.titleLabel {
+    float: left;
+    width: 150px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.asqTitle {
+    float: left;
+    width: 130px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.titleLabelAssessment {
+    float: left;
+    width: 125px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* .childLineAssessment{
+        float:left;
+        width: 82%;
+    height: 18px;
+    border-bottom: 0.5px solid #d2d6de;
+} */
+
+.titleLabelAssessment > .control-label, .asqTitle > .control-label, .titleLabel > .control-label {
+    font-weight: 600;
+}
+
+.check-padding-left {
+    padding-left: 15px;
+}
+
+.widthLeft {
+    float: left;
+    width: 80px;
+}
+
+.widthRightError {
+    float: left;
+    width: 78%;
+}
+
+#childForm {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#checkSelect {
+    margin-right: 10px;
+}
+
+.childFormButton {
+    margin-left: 12px;
+}
+
+.field-childexaminationassessment-evaluation_type_result .childInput,
+.field-childexaminationinfo-inspect_content .childInput,
+.field-childexaminationassessment-evaluation_diagnosis .childInput,
+.field-childexaminationassessment-evaluation_guidance .childInput{
+    width: 99%;
+}
+
+#reciperecord-name > label, #inspect-oninspect > label, #check-check > label,#materialrecord-name > label,#inspectrecord-id > label,#cure-cure > label,
+#consumablesrecord-name > label{
+    width: 100%;
+}
+
+.inspect-application-print > form, .check-application-print > form {
+    margin-top: 0 !important;
+}
+
+.form-horizontal .form-group {
+    margin-left: 0 !important;
+}
+#childexaminationgrowth-result,.childInput{
+    line-height: 36px;
+}
+.add-padding{
+    padding-right: 5px;
+}
+
+.field-childexaminationbasic-bregmatic .labelWidth{
+
+    width : 60px;
+}
+.field-childexaminationgrowth-remark .labelWidth,
+.field-childexaminationbasic-jaundice .labelWidth,
+.field-childexaminationcheck-appearance_remark .labelWidth,
+.field-childexaminationcheck-skin_remark .labelWidth,
+.field-childexaminationcheck-headface_remark .labelWidth,
+.field-childexaminationcheck-headface_remark .labelWidth,
+.field-childexaminationcheck-eye_remark .labelWidth,
+.field-childexaminationcheck-ear_remark .labelWidth,
+.field-childexaminationcheck-nose_remark .labelWidth,
+.field-childexaminationcheck-throat_remark .labelWidth,
+.field-childexaminationcheck-tooth_remark .labelWidth,
+.field-childexaminationcheck-chest_remark .labelWidth,
+.field-childexaminationcheck-bellows_remark .labelWidth,
+.field-childexaminationcheck-cardiovascular_remark .labelWidth,
+.field-childexaminationcheck-belly_remark .labelWidth,
+.field-childexaminationcheck-genitals_remark .labelWidth,
+.field-childexaminationcheck-back_remark .labelWidth,
+.field-childexaminationcheck-limb_remark .labelWidth,
+.field-childexaminationcheck-nerve_remark .labelWidth{
+    width : 40px;
+}
+.print-check-print{
+    min-width: 90px;
+    margin-top: 15px;
+    margin-right: 20px!important;
+    margin-bottom: 30px!important;
+}
+.cure-skin-select{
+    display: inline-block;
+    width: inherit;
+    margin-left: 0px !important;
+}
+
+.has-error .radio-inline {
+    color: #55657d !important;
+}
+.case_template{
+    display: inline-block;
+}
+
+.recipe-template-sel,.inspect-template-sel,.cure-template-sel,.check-template-sel{
+    font-size: 13px;
+    position: absolute;
+    top: 32px;
+    left: 0px;
+    min-width: 200px;
+    z-index: 99;
+    border-style:solid;
+
+    border-width: 1px;
+    /*border-top-width: 0px;*/
+    border-color: lightgrey;
+}
+
+#recipe-template-select-ui,#inspect-template-select-ui,#cure-template-select-ui,#check-template-select-ui{
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    width: 200px;
+    height: 33px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    font-size: 0px;
+    display: none;
+}
+.recipe-template-desc,.inspect-template-desc,.cure-template-desc,.check-template-desc{
+    font-size: 13px;
+    padding-left: 8px;
+    padding-right: 8px;
+    line-height: 35px;
+    cursor:pointer;
+}
+
+.recipe-template-select-container,.inspect-template-select-container,.cure-template-select-container,.check-template-select-container{
+    position:relative;
+}
+
+.recipe-template-sel ul,.inspect-template-sel ul,.cure-template-sel ul,.check-template-sel ul{
+    margin-bottom: 0px;
+}
+
+.recipe-template-arrow,.inspect-template-arrow,.cure-template-arrow,.check-template-arrow{
+    float: right;
+    top:10px;
+}
+.skin-test-status{
+    margin-bottom: 0px!important;
+}
+.node-recipe-template-select{
+    word-break: break-all;
+}
+
+
+.outpatient-dentalRecordForm .tooth-position,#orthodonticsFirstRecord .tooth-position{
+    position: relative;
+    width: 255px;
+    height: 110px;
+    float: left;
+    margin-right: 2%;
+    /*cursor: pointer;*/
+}
+#orthodonticsFirstRecord .tooth-position{
+    margin-bottom: 15px;
+}
+.outpatient-dentalRecordForm .left-top,#orthodonticsFirstRecord .left-top{
+    width:50%;
+    height: 50%;
+    float: left;
+    border-bottom: 1px solid #d2d6de;
+    border-right: 1px solid #d2d6de;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.outpatient-dentalRecordForm .right-top,#orthodonticsFirstRecord .right-top{
+    width:50%;
+    height: 50%;
+    float: left;
+    border-bottom: 1px solid #ccc;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.outpatient-dentalRecordForm .left-bottom,#orthodonticsFirstRecord .left-bottom{
+    width:50%;
+    height: 50%;
+    float: left;
+    border-right: 1px solid #d2d6de;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.outpatient-dentalRecordForm .right-bottom,#orthodonticsFirstRecord .right-bottom{
+    width:50%;
+    height: 50%;
+    float: left;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.outpatient-dentalRecordForm .dentail-content{
+    height: 154px;
+   width:60%;
+   float: left;
+   margin-right: 2%;
+}
+.outpatient-dentalRecordForm .add-booth{
+   width:10%;
+   float: left;
+   margin-top: 65px;
+}
+.outpatient-dentalRecordForm .dental-check-content{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.outpatient-dentalRecordForm .add-booth .add-booth-button{
+    display: inline-block;
+    padding: 5px 10px 4px 10px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+}
+.outpatient-dentalRecordForm .add-booth .add-booth-button:hover{
+    color: #76a6ef;
+    opacity: 0.8;
+}
+.outpatient-dentalRecordForm .dental-check{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.outpatient-dentalRecordForm .dental-line{
+    width: 100%;
+    border-bottom: 1.2px dashed #d2d6de;;
+}
+.outpatient-dentalRecordForm .field-advice{
+    margin-top: 10px;
+}
+.outpatient-dentalRecordForm .field-recordType .recordType-labelWidth{
+    float: left;
+}
+.outpatient-dentalRecordForm .record-type-add-padding{
+    padding-right: 15px;
+}
+.outpatient-dentalRecordForm .basic-form{
+/*    border:none;*/
+}
+.outpatient-dentalRecordForm .dental-check-title,#orthodonticsFirstRecord .dental-check-title{
+    color: #76a6ef;
+    cursor:pointer;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+.outpatient-dentalRecordForm .dental-check-title:hover,.outpatient-dentalRecordForm .dental-check-title:focus,
+#orthodonticsFirstRecord .dental-check-title:hover,#orthodonticsFirstRecord .dental-check-title:focus{
+    text-decoration:underline
+}
+.outpatient-dentalRecordForm .dental-check-input,#orthodonticsFirstRecord .dental-check-input{
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding-left: 5px;
+    width: 100%;
+}
+.outpatient-dentalRecordForm .dental-check-input:focus,#orthodonticsFirstRecord .dental-check-input:focus{
+    border-color: #76a6ef;
+    box-shadow: none;
+    outline: 0;
+}
+.outpatient-dentalRecordForm .dental-check-input-error,.outpatient-dentalRecordForm .dental-check-input-error:focus,
+#orthodonticsFirstRecord .dental-check-input-error,#orthodonticsFirstRecord .dental-check-input-error:focus{
+    border: 1px solid #FF5000;
+}
+.outpatient-dentalRecordForm .left-top-text,.outpatient-dentalRecordForm .right-top-text,
+#orthodonticsFirstRecord .left-top-text,#orthodonticsFirstRecord .right-top-text{
+    display: inline-block;
+    margin-top: 20px;
+}
+.outpatient-dentalRecordForm .dental-check-btn-cancel,.outpatient-dentalRecordForm .dental-check-btn-commit,
+#orthodonticsFirstRecord .dental-check-btn-cancel,#orthodonticsFirstRecord .dental-check-btn-commit{
+    line-height: 1.5;
+    margin-top: 0px;
+    margin-bottom: 0px!important;
+}
+.outpatient-dentalRecordForm .dental-check-tips{
+    float: right;
+    margin-right: 50px;
+    font-size: 16px;
+}
+.outpatient-dentalRecordForm .dental-check .tooltip-inner{
+    text-align: left;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 20px;
+    background: #55657d;
+    max-width: none;
+}
+.outpatient-dentalRecordForm .dental-check .tooltip-arrow {
+    border-top-color: #55657d !important;
+}
+.outpatient-dentalRecordForm .dental-check .tooltip{
+    margin-right: 10px;
+}
+.skinTestTr td{
+    border: none;
+}
+/*初步诊断*/
+#popup-check-code-sel,#CheckCodeSel{
+    margin-bottom: 15px;
+}
+
+.first_check_none{
+    display: none;
+}
+
+.first-check-input-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-check-left{
+    flex: 0 0 100px;
+}
+
+.popup-first-check-custom,.first-check-custom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-first-check-box,.first-check-box{
+    flex: 1 0 50%;
+}
+
+.btn-first-check{
+    margin-left: 10px;
+    flex: 0 0 80px;
+    height: 34px;
+}
+.popup-btn-first-check{
+    margin-left: 10px;
+    flex: 0 0 34px;
+    height: 34px;
+}
+#first-check-weight{
+    margin-top: 0px;
+}
+
+
+.first-check-right{
+    padding-left: 10px;
+    flex: 1 0 50%;
+}
+
+.popup-btn-first-check,.btn-first-check{
+    outline:none;
+}
+
+.popup-first-check-error,.first-check-error{
+    padding-top: 3px;
+    color: #ff4b00;
+}
+
+/*牙齿弹窗*/
+.tooth-position .box-container{
+    position: absolute;
+    top: 50%;
+    left: -30%;
+    width: 840px;
+    background: #55657D;
+    border-radius: 6px;
+    z-index: 1;
+    box-shadow: 0 0 20px 0 rgba(85,101,125,0.40);
+}
+.tooth-position .box-top{
+    height: 50px;
+    background: white;
+    padding: 0px 20px;
+    border-radius: 6px 6px 0px 0px ;
+}
+.tooth-position .close{
+    line-height: 50px;
+    outline:none;
+}
+.tooth-position .tab-panel,.tooth-position .tab-total{
+    border: 1px solid #76A6EF;
+    color: #76A6EF;
+    padding: 2px 15px;
+    display: inline-block;
+    margin-top: 13px;
+    cursor: pointer;
+    /* margin: auto 0; */
+}
+.margin-more{
+    margin-left: 10px;
+}
+.tooth-position .active{
+    background: #76A6EF!important;
+    color: white!important;
+}
+.tooth-position .teeth-content{
+    float: left;
+    width: 50%;
+    height: 193px;
+    padding: 15px;
+}
+.tooth-position .box-content-left-top{
+    border-right: 2px solid #CACFD8;
+    border-bottom: 2px solid #CACFD8;
+}
+
+.tooth-position .box-content-right-top{
+
+    border-bottom: 2px solid #CACFD8;
+}
+.tooth-position .box-content-left-bottom{
+
+    border-right: 2px solid #CACFD8;
+}
+.tooth-position .box-content-left-bottom{
+
+}
+.box-content-left-top .teeth-box,.box-content-right-top .teeth-box{
+    padding: 16px 0px 10px 0px;
+}
+.box-content-left-bottom .teeth-box,.box-content-right-bottom .teeth-box{
+    padding: 10px 0px;
+}
+.tooth-position img{
+    width: 100%;
+}
+.tooth-position .teeth-value{
+    width: 36px;
+    height: 24px;
+    background: #FFFFFF;
+    border-radius: 2px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #55657D;
+}
+.tooth-position .teeth-value:hover{
+    background: #E5F2FF!important;
+}
+.teeth-box{
+    width: 48.5px;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+}
+.teeth-box:hover{
+    border: 1px solid #6687B9;
+}
+.box-content .active{
+    background: #fff!important;
+}
+.tooth-position .blue{
+    background: #76A6EF!important;
+    color: white!important;
+}
+.tooth-position .box-footer-teeth{
+    background: #fff;
+    /*text-align: center;*/
+    border-radius: 0px 0px 6px 6px;
+}
+.box-footer-teeth .btn-form{
+    margin-right: 0px!important;
+    margin-bottom: 15px!important;
+}
+.box-footer-teeth .btn-save{
+    margin-left: 10px!important;
+}
+/* 牙齿精灵图 */
+.sprite-teeth{
+   height: 118px;
+   background-repeat: no-repeat;
+}
+
+.add-cure-idea-button,.add-check-inspect-button{
+    display: inline-block;
+    padding: 3px 10px 3px 10px;
+    font-size: 12px;
+    font-weight: normal;
+    /*line-height: 1.42857143;*/
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+    float: right;
+    margin-bottom: 4px;
+    height: 24px;
+}
+.add-cure-idea-button:hover,.add-check-inspect-button:hover{
+    background-color: #F2F4F7;
+    color: #76a6ef;
+    /*opacity:0.15;*/
+}
+.add-cure-idea-button:focus,.add-check-inspect-button:hover{
+    background-color: #F2F4F7;
+    color: #76a6ef;
+    /*opacity:0.6;*/
+}
+.field-cure_idea >.cure_idea_label,.field-examination_check > .examination_check_label{
+    margin-top: 3px;
+}
+
+
+.outpatient-_childForm .percentage-label-width{
+    width:115px;
+}
+
+.outpatient-_childForm .field-childexaminationinfo-sleep div label,
+.outpatient-_childForm .field-childexaminationinfo-shit div label,
+.outpatient-_childForm .field-childexaminationinfo-pee div label,
+.outpatient-_childForm .field-childexaminationinfo-visula_check div label,
+.outpatient-_childForm .field-childexaminationinfo-hearing_check div label,
+.outpatient-_childForm .field-childexaminationinfo-feeding_patterns div label,
+.outpatient-_childForm .field-childexaminationinfo-substitutes div label
+{
+    padding-top: 25px;
+}
+.outpatient-_childForm .field-childexaminationinfo-feeding_num div label,
+.outpatient-_childForm .field-childexaminationinfo-dietary_supplement div label
+{
+    padding-top: 15px;
+}
+.outpatient-_childForm .growth-evaluation .form-group,
+.outpatient-_childForm .sleep-defecation .form-group,
+.outpatient-_childForm .vision-hearing .form-group,
+.outpatient-_childForm .nutrition-diet .form-group
+{
+    margin-bottom: 0px;
+}
+
+.outpatient-_childForm .checkContent .form-group,
+.outpatient-_childForm .asq-3 .form-group
+{
+    margin-bottom: 0px;
+}
+.outpatient-_childForm .growth-evaluation .form-group,
+.outpatient-_childForm .asq-3 .form-group
+{
+    margin-bottom: -10px;
+}
+
+.field-outpatientrelation-hasallergy > label,.field-dentalhistory-hasallergy > label, .field-childexaminationgrowth-hasallergy > label,
+.field-orthodonticsreturnvisitrecord-hasallergy > label{
+    float: left;
+    margin-right: 40px;
+}
+#outpatientrelation-hasallergy > label,#dentalhistory-hasallergy > label, #childexaminationgrowth-hasallergy > label,
+#orthodonticsreturnvisitrecord-hasallergy > label{
+    margin-left: 10px;
+}
+
+#allergyoutpatient-allergy_degree > label{
+    margin-left: 20px;
+}
+.allergy-delete,.allergy-add{
+    margin-top: 0;
+}
+.outpatient-_childForm .field-childexaminationassessment-evaluation_type_result .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationinfo-inspect_content .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationassessment-evaluation_guidance .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-appearance_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-skin_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-headface_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-eye_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-ear_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-nose_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-throat_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-tooth_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-chest_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-bellows_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-cardiovascular_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-belly_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-genitals_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-back_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-limb_remark .childForm-input-error-tips,
+.outpatient-_childForm .field-childexaminationcheck-nerve_remark .childForm-input-error-tips
+{
+    width: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+.btn-disalbed-custom[disabled],.btn-disalbed-custom[disabled]:hover,.btn-disalbed-custom[disabled]:focus,.btn-disalbed-custom[disabled]:active{
+    background: #CACFD8;
+    font-size: 14px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+/*AdminLTE box-widget插件(盒子打开和关闭效果) 按钮样式*/
+button[data-widget="collapse"]{
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+/*盒子打开(下拉)状态下的样式*/
+.box.box-open{
+    border-top-color:#E5EBF4 !important;
+}
+.box.box-open>.medical-record-container{
+    background-color: #edf1f7;
+    border-left:0.5px solid #E5EBF4;
+    border-right:0.5px solid #E5EBF4;
+}
+.box.box-open>.medical-record-container:hover{
+    background-color: #edf1f7;
+}
+
+/*盒子关闭状态下的样式*/
+.box.collapsed-box>.medical-record-container{
+    border-left:0.5px solid transparent;
+    border-right:0.5px solid transparent;
+}
+
+.treatment-form .list{
+    font-size: 14px;
+    padding-left: 40px;
+    height:35px;
+    line-height: 35px;
+    border-top:0.5px solid #E5EBF4;
+    border-bottom:0.5px solid #E5EBF4;
+}
+.treatment-form .box-body{
+    border-left:0.5px solid #E5EBF4;
+    border-right:0.5px solid #E5EBF4;
+}
+.treatment-form .list li{
+    height:33px;
+    font-size: 14px;
+    color:#55657d;
+}
+
+.select-package-form .package-list .tooltip-inner{
+    text-align: left;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 20px;
+    width: 400px;
+    background: #55657d;
+    max-width: none;
+}
+.select-package-form .package-list .tooltip-arrow {
+    border-right-color: #55657d !important;
+}
+.select-package-form .package-list-span{
+    display: block;
+    width: 10px;
+}
+.select-package-form .package-list .tooltip-inner p{
+    margin: 0px;
+    padding-left: 20px;
+}
+.outpatient-view .tooltip-inner{
+    text-align: left;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 20px;
+    width: 400px;
+    background: #55657d;
+    max-width: none;
+}
+.outpatient-view .tooltip-arrow {
+    border-right-color: #55657d !important;
+}
+.outpatient-view .package-list-span{
+    display: block;
+    width: 10px;
+}
+.outpatient-view .tooltip-inner p{
+    margin: 0px;
+    padding-left: 20px;
+}
+.dollar-outpatient:focus,.dollar-outpatient:active{
+    color: #ffffff;
+}
+
+/*选择打印牙位图的样式*/
+
+.teeth-print .title{
+    font-size: 16px;
+    font-weight: normal;
+}
+.teeth-print-list label{
+    display: block;
+    padding-left: 20px;
+}
+.modal-footer .form-group{
+    margin-bottom: 15px;
+}
+/*禁用态的btn样式*/
+ .btn-teeth-confirm[disabled]{
+    background-color: #EFF0F3;
+    color: #CACFD8;
+}
+.btn-teeth-confirm[disabled]:hover{
+    background-color: #EFF0F3;
+    color: #CACFD8;
+}
+.margin-top-0{
+    margin-top: 0;
+}
+.check-hide{
+    display: none;
+}
+.field-firstcheck-check_degree label{
+    margin-right: 4%;
+}
+.inspect-form td.op-group{
+    display: none;
+}
+.inspect-form td.op-group{
+    display: none;
+}
+.outpatient-dentalRecordForm .tooth-sysc-top{
+    margin-top: 12px;
+}
+.tooth-sysc-top > .tooth-sysc{
+    vertical-align: top;
+    margin-right: 8px;
+}
+#childForm .allergy-form{
+    margin-top: 10px;
+    margin-left: 6px;
+    margin-bottom: 20px;
+}
+#childForm .allergy-form .field-childexaminationgrowth-hasallergy .add-padding{
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+#childForm .allergy-form .allergy-content .add-padding{
+    padding-right: 0px;
+}
+#childForm .allergy-form .form-group, #childForm .child-form-first-check-form .form-group{
+    margin-bottom: 0px;
+    margin-right: 0px !important; 
+}
+#childForm .child-form-first-check-form{
+    margin-left: 6px !important;
+}
+#childForm .allergy-form .form-group{
+    margin-bottom: 0px;
+}
+
+#dental-history #dental-template{
+    display: inline-block;
+}
+#inspectrecord-backinspectid > label{
+    display: block;
+}
+    
+#orthodonticsReturnvisitForm .allergy-form{
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+#field-orthodonticsreturnvisitrecord-hasallergy{
+    margin-bottom: 0px;
+}
+.allergy-form .has-allergy-label label{
+	margin-right:20px;
+}
+/* 正畸样式 */
+#orthodonticsFirstRecord .orthodontics-title-help-block{
+	color:#ff4b00;
+	font-size:14px;
+	font-weight:normal;
+}
+#orthodonticsReturnvisitForm textarea{
+    overflow-x: hidden;
+}
+#orthodonticsReturnvisitForm .basic-form{
+    border: none;
+}
+
+#orthodonticsFirstRecord .inline-label-input{
+	
+	float:left;
+}
+#orthodonticsfirstrecord-bad_habits,
+#orthodonticsfirstrecord-feed
+{
+    margin-left:20px;
+}
+#orthodonticsfirstrecord-bad_habits label,
+#orthodonticsfirstrecord-bad_habits_abnormal label,
+#orthodonticsfirstrecord-feed label
+{
+    width: 80px;
+}
+#orthodonticsFirstRecord .radio-checkbox-margin{
+	margin-left:20px;
+}
+#orthodonticsFirstRecord .mandibular-movement-div .field-orthodonticsfirstrecord-mouth_open>.help-block {
+    width: 200px;
+}
+.field-orthodonticsfirstrecord-bad_habits_abnormal{
+    display: inline-block;
+    margin-left: 22px;
+}
+#orthodonticsFirstRecord .field-orthodonticsfirstrecord-bad_habits_abnormal_other{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: -5px;
+    width: 225px;
+}
+#orthodonticsFirstRecord .radio-checkbox-margin label{
+	margin-right:18px;
+}
+#orthodonticsFirstRecord  .bad-habits-abnormal-div{
+	margin-left:59px;
+}
+#orthodonticsFirstRecord .inline-text-input-width{
+	width:80%;
+}
+#orthodonticsFirstRecord .inline-text-input-width-label{
+	line-height: 34px;
+	width:77px;
+	text-align:right;
+}
+.field-orthodonticsfirstrecordfeatures-second_features .second-features-label{
+	width:80px;
+}
+.field-orthodonticsfirstrecordfeatures-second_features #orthodonticsfirstrecordfeatures-second_features{
+    margin-left: 17px;
+}
+#orthodonticsFirstRecord .frontal-title{
+	width: 25px;
+    display: inline-block;
+    margin-left: 9px;
+	font-size: 15.5px;
+    font-weight: 600;
+}
+#orthodonticsFirstRecord .frontal-header-title{
+    width: 65px;
+    display: inline-block;
+    margin-left: 22px;
+    font-size: 15.5px;
+    font-weight: 600;
+}
+#orthodonticsFirstRecord .label-name-width{
+    width: 42px;
+    display: inline-block;
+	text-align:right;
+}
+.label-name-width-77{
+    width: 77px;
+}
+
+.orthodonticsfirstrecord-mandibular_movement_abnormal{
+    margin-left: -5px;
+}
+#orthodonticsfirstrecordfeatures-frontal_type label,
+#orthodonticsfirstrecordfeatures-symmetry label,
+#orthodonticsfirstrecordfeatures-abit label,
+#orthodonticsfirstrecordfeatures-face label,
+#orthodonticsfirstrecordfeatures-smile label,
+#orthodonticsfirstrecordfeatures-upper_lip label,
+#orthodonticsfirstrecordfeatures-lower_lip label,
+#orthodonticsFirstRecord .radio-checkbox-width label,
+#orthodonticsfirstrecordexamination-overbite_anterior_teeth label,
+#orthodonticsfirstrecordexamination-overbite_posterior_teeth label,
+#orthodonticsfirstrecordexamination-cover_anterior_teeth label,
+#orthodonticsfirstrecordexamination-cover_posterior_teeth label,
+#orthodonticsfirstrecordexamination-left_canine label,
+#orthodonticsfirstrecordexamination-right_canine label,
+#orthodonticsfirstrecordexamination-left_molar label,
+#orthodonticsfirstrecordexamination-right_molar label,
+#orthodonticsfirstrecordexamination-midline_teeth label,
+#orthodonticsfirstrecordexamination-midline label,
+#orthodonticsfirstrecordfeatures-second_features label,
+#orthodonticsfirstrecord-oral_function label,
+#orthodonticsfirstrecord-mandibular_movement label,
+#orthodonticsfirstrecord-mouth_open label,
+#orthodonticsfirstrecord-left_temporomandibular_joint label,
+#orthodonticsfirstrecord-right_temporomandibular_joint label,
+#orthodonticsfirstrecord-oral_function_abnormal label,
+#orthodonticsfirstrecord-left_temporomandibular_joint_abnormal label,
+#orthodonticsfirstrecord-right_temporomandibular_joint_abnormal label,
+#orthodonticsfirstrecordexamination-overbite_anterior_teeth_abnormal label,
+#orthodonticsfirstrecordexamination-overbite_posterior_teeth_abnormal label,
+#orthodonticsfirstrecordexamination-cover_anterior_teeth_abnormal label,
+#orthodonticsfirstrecordexamination-cover_posterior_teeth_abnormal label
+{
+	width:120px;
+	display:inline-block;
+	
+}    
+#orthodonticsFirstRecord .other-need-remark{
+    float: left;
+    margin-bottom: -9px;
+}
+#orthodonticsFirstRecord .other-remark{
+	float: left;
+    width: 24%;
+	padding-top:3px;
+}
+#orthodonticsFirstRecord .field-orthodonticsfirstrecordfeatures-smile,.field-orthodonticsfirstrecordfeatures-smile_other{
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+#orthodonticsFirstRecord .field-orthodonticsfirstrecordfeatures-smile_other{
+    margin-left: -60px;
+    margin-top: 5px;
+}
+#orthodonticsFirstRecord .mandibular-movement-div{
+	width:370px;
+	float:left;
+	margin-left:15px;
+}
+#orthodonticsFirstRecord .temporomandibular-joint-abnormal-div{
+	margin-left:5px;
+}
+#orthodonticsFirstRecord .field-orthodonticsfirstrecord-right_temporomandibular_joint_abnormal,
+#orthodonticsFirstRecord .field-orthodonticsfirstrecord-left_temporomandibular_joint_abnormal{
+	width:520px;
+	float:left;
+	padding-top: 8px;
+}
+#orthodonticsFirstRecord #orthodonticsfirstrecord-right_temporomandibular_joint_abnormal_other,
+#orthodonticsFirstRecord #orthodonticsfirstrecord-left_temporomandibular_joint_abnormal_other,
+#orthodonticsFirstRecord #orthodonticsfirstrecordexamination-overbite_posterior_teeth_other,
+#orthodonticsFirstRecord #orthodonticsfirstrecordexamination-overbite_anterior_teeth_other{
+	width:250px;
+    display: inline-block;
+    vertical-align:middle;
+    margin-left: -100px;
+}
+#orthodonticsfirstrecord-left_temporomandibular_joint_abnormal,
+#orthodonticsfirstrecord-right_temporomandibular_joint_abnormal{
+    margin-left: 74px !important;
+}
+#orthodonticsFirstRecord .label-name-width-70 {
+    width: 70px;
+    display: inline-block;
+}
+#orthodonticsFirstRecord .field-orthodonticsfirstrecordexamination-overbite_posterior_teeth_abnormal,
+#orthodonticsFirstRecord .field-orthodonticsfirstrecordexamination-overbite_anterior_teeth_abnormal{
+	width:550px;
+	float:left;
+	padding-top:8px;
+}
+#orthodonticsFirstRecord #orthodonticsfirstrecordexamination-overbite_posterior_teeth_abnormal,
+#orthodonticsFirstRecord #orthodonticsfirstrecordexamination-overbite_anterior_teeth_abnormal,
+#orthodonticsFirstRecord #orthodonticsfirstrecordexamination-cover_anterior_teeth_abnormal,
+#orthodonticsFirstRecord #orthodonticsfirstrecordexamination-cover_posterior_teeth_abnormal{
+	margin-left: 70px;
+}
+#orthodonticsFirstRecord #orthodonticsfirstrecordmodelcheck-transversal_curve{
+	margin-left: 20px;
+    padding-top: 6px;
+}
+#orthodonticsFirstRecord .other-remark-teeth-check{
+	width:400px;
+}
+#orthodonticsfirstrecord-mandibular_movement label:last-child,
+#orthodonticsfirstrecord-mouth_open label:last-child,
+#orthodonticsfirstrecord-left_temporomandibular_joint label:last-child,
+#orthodonticsfirstrecord-right_temporomandibular_joint label:last-child
+{
+    margin-right: 0px !important;
+}
+
+#orthodonticsFirstRecord .field-orthodonticsfirstrecord-oral_function label.inline-label-input,
+#orthodonticsFirstRecord .field-orthodonticsfirstrecord-mandibular_movement label.inline-label-input,
+#orthodonticsFirstRecord .field-orthodonticsfirstrecord-mouth_open label.inline-label-input,
+#orthodonticsFirstRecord .field-orthodonticsfirstrecord-left_temporomandibular_joint label.inline-label-input,
+#orthodonticsFirstRecord .field-orthodonticsfirstrecord-right_temporomandibular_joint label.inline-label-input
+{
+    margin-left: 13px;
+}
+#orthodonticsFirstRecord .field-orthodonticsfirstrecord-mandibular_movement .help-block,
+#orthodonticsFirstRecord .field-orthodonticsfirstrecord-mouth_open .help-block{
+	margin-left:80px;
+}
+#orthodonticsFirstRecord .field-orthodonticsfirstrecord-mouth_open label.inline-label-input,
+.field-orthodonticsfirstrecord-left_temporomandibular_joint label.inline-label-input,
+.field-orthodonticsfirstrecord-right_temporomandibular_joint label.inline-label-input{
+    width: 61px;
+}
+
+.field-orthodonticsfirstrecordexamination-midline_teeth .help-block,
+.field-orthodonticsfirstrecordexamination-midline .help-block{
+	margin-left: 65px;
+    float: left;
+}
+#orthodonticsFirstRecord .margin-midline-teeth{
+	margin-top: 7px;
+}
+#orthodonticsFirstRecord .margin-midline-teeth .help-block,
+.field-orthodonticsfirstrecordexamination-midline_teeth_value .help-block{
+    margin: 0;
+}
+#orthodonticsfirstrecordteethcheck-other_remark{
+	margin-top:8px;
+    height: 110px;
+    margin-left: 5px;
+}
+.has-success .form-control {
+    border-color: #d2d6de !important;
+    color: #55657d;
+}
+.has-success .form-control {
+    border-color: #00a65a;
+    box-shadow: none;
+}
+.form-group.field-orthodonticsfirstrecord-mandibular_movement_abnormal,
+.form-group.field-orthodonticsfirstrecord-mouth_open_abnormal,
+.form-group.field-orthodonticsfirstrecordexamination-midline_teeth_value,
+.form-group.field-orthodonticsfirstrecordexamination-midline_value,
+.form-group.field-orthodonticsfirstrecord-left_temporomandibular_joint_abnormal,
+.form-group.field-orthodonticsfirstrecord-right_temporomandibular_joint_abnormal,
+.form-group.field-orthodonticsfirstrecord-left_temporomandibular_joint_abnormal_other,
+.form-group.field-orthodonticsfirstrecord-right_temporomandibular_joint_abnormal_other,
+.form-group.field-orthodonticsfirstrecord-oral_function_abnormal,
+.form-group.field-orthodonticsfirstrecord-bad_habits_abnormal,
+.form-group.field-orthodonticsfirstrecord-bad_habits_abnormal_other,
+.form-group.field-orthodonticsfirstrecordexamination-overbite_anterior_teeth_abnormal,
+.form-group.field-orthodonticsfirstrecordexamination-overbite_posterior_teeth_abnormal
+{
+    margin-bottom: 0;
+}
+/*正畸样式end */
+
+
+/* 过敏史样式优化 */
+.allergy-form .form-group.field-dentalhistory-hasallergy{
+    margin-bottom: 0;
+}
+.field-dentalhistory-hasallergy .help-block{
+    margin: 0;
+}
+.allergy-form .form-group.field-outpatientrelation-hasallergy{
+    margin-bottom: 0;
+}
+.field-outpatientrelation-hasallergy .help-block{
+    margin: 0;
+}
+.allergy-form .control-label{
+    padding-top: 0;
+}
+.allergy-form .select-allery{
+    padding-right: 0;
+}
+.allergy-form .select-allery .field-allergyoutpatient-type{
+    padding-left: 10px;
+}
+.allergy-form .allery-input{
+    padding-right: 10px;
+}
+.field-orthodonticsfirstrecord-hasallergy{
+    margin-bottom: 0;
+}
+.field-orthodonticsfirstrecord-hasallergy .help-block{
+    margin: 0;
+}
+#orthodonticsfirstrecord-hasallergy{
+    display: inline-block;
+    margin-left: 45px;
+    vertical-align: middle;
+    padding-top: 5px;
+}
+.tooth-sysc-top > .dental-error-info{
+    color: rgb(255, 80, 0);;
+}
+.has-dental-disease-label >label{
+    margin-left: 20px;
+}
+/*.teeth-selected-label{*/
+    /*float: left;*/
+/*}*/
+.teeth-selected-label >label{
+    margin-left: 30px;
+}
+.teeth-selected-label{
+    padding: 20px 0px 0px 30px;
+}
+.teeth-selected-button{
+    text-align: center;
+}
+
+.dental-check-content .has-dental-disease{
+    position: absolute;
+    display: none;
+    left: 0px;
+    bottom: 0px;
+    padding-top: 14px;
+    clear: both;
+}
+.has-dental-disease .dental-disease-to-select{
+    display: inline-block;
+    vertical-align: middle;
+}
+.has-dental-disease .dental-disease-select{
+    width: 170px;
+    margin-left:11px;
+}
+.has-dental-disease .dental-disease-select-content{
+    display: inline-block
+}
+.dental-check-content .dental-disease-show{
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    padding-top: 10px;
+     margin-left: 80px;
+    clear: both;
+}
+.dental-check .help-block-dental-show{
+     margin-top: -5px;
+     margin-bottom: 10px;
+     color: #FF5000;
+ }
+ .teeth-selected-label .help-block-dental-show{
+     margin-top: 10px;
+ }
+.dental-disease-window{
+    width:305px;
+    margin-left:11px;
+}
+
+.field-patientrecord-price> label{
+    float: left;
+    line-height: 30px;
+    margin-right: 15px;
+}
+.field-patientrecord-type_description >label{
+    float: left;
+    line-height: 30px;
+    margin-right: 15px;
+
+}
+.field-patientrecord-fee_remarks >label{
+    float: left;
+    line-height: 30px;
+    margin-right: 15px;
+    text-align: right;
+    width:126px;
+
+}
+#patientrecord-price,#patientrecord-type_description,#patientrecord-fee_remarks{
+    width: 70%;
+}
+.btn-fixed{
+    position: fixed;
+    bottom: 300px;
+    right: 28px;
+}
+.field-patientrecord-price > .help-block {
+    margin-left: 142px;
+
+}
+
+
+.triage-modal-imformation{
+    font-size: 16px;
+    color:black;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+
+.triage-modal-info{
+    font-size: 14px;
+    color:Gray;
+
+
+}

@@ -6,6 +6,9 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\modules\behavior\models\BehaviorRecord;
+use yii\db\ActiveQuery;
+use app\modules\user\models\User;
+use app\modules\spot\models\Spot;
 
 /**
  * BehaviorRecordSearch represents the model behind the search form about `app\modules\behavior\models\BehaviorRecord`.
@@ -19,7 +22,8 @@ class BehaviorRecordSearch extends BehaviorRecord
     {
         return [
             [['id'], 'integer'],
-            [['user_id', 'ip', 'spot', 'module', 'action', 'data', 'operation_time'], 'safe'],
+            [['username', 'ip', 'spot_id', 'module', 'action', 'data', 'operation_time'], 'trim'],
+            [['user_id', 'ip', 'spot_id', 'module', 'action', 'data', 'operation_time'], 'safe'],
         ];
     }
 
@@ -41,13 +45,20 @@ class BehaviorRecordSearch extends BehaviorRecord
      */
     public function search($params, $pageSize = 10)
     {
-        $query = BehaviorRecord::find();
-
+        $query = new ActiveQuery(BehaviorRecord::className());
+        $query->from(['a' => BehaviorRecord::tableName()]);
+        $query->select(['a.id','a.ip','a.module','a.action','a.operation_time','b.username','c.spot_name','a.data']);
+        $query->leftJoin(['b' => User::tableName()],'{{a}}.user_id = {{b}}.id');
+        $query->leftJoin(['c' => Spot::tableName()],'{{a}}.spot_id = {{c}}.id');
         $dataProvider = new ActiveDataProvider([
+            'db' => Yii::$app->get('db'),
             'query' => $query,
-        	'pagination' => ['pageSize' => $pageSize]
+        	'pagination' => ['pageSize' => $pageSize],
+            'sort' => [
+                'attributes' => ['operation_time']
+            ]
         ]);
-
+    
         $this->load($params);
 
         if (!$this->validate()) {
@@ -58,17 +69,17 @@ class BehaviorRecordSearch extends BehaviorRecord
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'operation_time' => $this->operation_time,
+            'a.operation_time' => $this->operation_time,
+            'a.spot_id' => $this->spot_id
         ]);
 
-        $query->andFilterWhere(['like', 'user_id', $this->user_id])
-            ->andFilterWhere(['like', 'ip', $this->ip])
-            ->andFilterWhere(['like', 'spot', $this->spot])
-            ->andFilterWhere(['like', 'module', $this->module])
-            ->andFilterWhere(['like', 'action', $this->action])
-            ->andFilterWhere(['like', 'data', $this->data]);
+        $query->andFilterWhere(['like', 'b.username', trim($this->username)])
+            ->andFilterWhere(['like', 'a.ip', trim($this->ip)])
+            ->andFilterWhere(['like', 'a.module', trim($this->module)])
+            ->andFilterWhere(['like', 'a.action', trim($this->action)])
+            ->andFilterWhere(['like', 'a.data', trim($this->data)]);
         
-        $query->addOrderBy(['operation_time' => SORT_DESC]);
+        $query->addOrderBy(['a.operation_time' => SORT_DESC]);
 
         return $dataProvider;
     }

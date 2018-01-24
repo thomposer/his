@@ -18,8 +18,9 @@ use app\common\AutoLayout;
 
 $this->title = <?= $generator->generateString('Update {modelClass}: ', ['modelClass' => Inflector::camel2words(StringHelper::basename($generator->modelClass))]) ?> . ' ' . $model-><?= $generator->getNameAttribute() ?>;
 $this->params['breadcrumbs'][] = ['label' => <?= $generator->generateString(Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass)))) ?>, 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model-><?= $generator->getNameAttribute() ?>, 'url' => ['view', <?= $urlParams ?>]];
+/* $this->params['breadcrumbs'][] = ['label' => $model-><?= $generator->getNameAttribute() ?>, 'url' => ['view', <?= $urlParams ?>]]; */
 $this->params['breadcrumbs'][] = <?= $generator->generateString('Update') ?>;
+$baseUrl = Yii::$app->request->baseUrl;
 ?>
 <?= "<?php "?> AutoLayout::begin(['viewFile' => '@app/views/layouts/layout.php'])?>
 <?= "<?php "?> $this->beginBlock('renderCss')?>
@@ -28,8 +29,11 @@ $this->params['breadcrumbs'][] = <?= $generator->generateString('Update') ?>;
 <?= "<?php "?> $this->beginBlock('content')?>
 <div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-update col-xs-12">
     <div class = "box">
+    <div class="box-header with-border">
+      <span class = 'left-title'><?= "<?= " ?>Html::encode($this->title) ?></span>
+      <?= "<?= " ?> Html::a(Html::img($baseUrl.'/public/img/common/icon_back.png').'返回',['index'],['class' => 'right-cancel second-cancel','data-pjax' => 0]) ?>      
+    </div>
         <div class = "box-body">
-            <h2><?= "<?= " ?>Html::encode($this->title) ?></h2>
         
             <?= "<?= " ?>$this->render('_form', [
                 'model' => $model,

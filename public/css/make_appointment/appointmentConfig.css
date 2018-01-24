@@ -1,0 +1,188 @@
+.me-col-xs-1{
+    /*height: 60px;*/
+    float:left;
+}
+.clinic-shift-time{
+
+}
+.zhi-cell{
+    position: relative;
+    top: 8px;
+}
+.zhi{
+    /*padding-top: 7px;*/
+    position: relative;
+    top: 30px;
+}
+.modal-footer .btn + .btn{
+
+    margin-bottom: 20px;
+}
+.modal-footer{
+    text-align:center;
+}
+
+.doctor-confing {
+    margin-left: 27px;
+}
+
+.doctor-form{
+    padding: 17px 26px 0px 26px;
+}
+
+.box-form{
+    border-radius: 0px !important;
+}
+
+.eh-appointmet-doctor{
+    vertical-align: top !important;
+    height: 33.3%;
+}
+
+.eh-appointment-doctor-date{
+    width: 50px;
+}
+
+.eh-appointment-doctor-span{
+    margin-left: 59px;
+}
+
+.eh-slats td {
+    height: 16px;
+}
+
+.iform-docto{
+    height: 100%;
+    line-height: 100%;
+}
+.iform-doctor_appoint{
+    height: 16px ;
+    background-color: #e4f1ff;
+}
+
+.doctor-pencil{
+    height: 6px !important;
+}
+
+.doctor-eh-slats tr:hover{
+    background:#FFFFFF !important;
+}
+
+.add-style{
+    height: 48px !important;
+
+}
+
+.appointment-add{
+    background-color: #f2f4f7;
+}
+.appointment-index .padding-left{
+    padding-left:10px;
+}
+
+.department-width{
+    width:150px;
+}
+.doctor-width{
+    width:150px;
+}
+.doctor_time_label .tooltip-inner{
+    width: 230px !important;
+    max-width: 230px !important;
+    background: #55657d;
+    line-height: 18px;
+    text-align: left;
+    padding: 12px;
+}
+.doctor_time_label .tooltip-arrow{
+    /*display: none !important;*/
+    border-right-color: #55657d !important;
+}
+.tooltip > .tooltip-inner {background-color: #54647D; color: #333333;}
+.datetimepicker table tr td span:hover.active,.datetimepicker table tr td span:hover,
+.datetimepicker table tr td span.active:hover.active{
+    color: #fff;
+    background: #76a6ef;
+}
+.datetimepicker table tr td span.active.active,.datetimepicker table tr td span.active:active
+{
+    color: #55657d;
+    background:#E5F2FF;
+    text-shadow:none;
+}
+.datetimepicker thead tr:first-child th:hover{
+    background: none;
+}.iform-docto:hover{
+    background: #76A6EF!important;
+    color: white;
+}
+#schedule_grid .eh-appointment-set-daily-content .eh-appointment-set-daily-add{
+    height:50px;
+    line-height: 50px;
+}
+#setAppointment .modal-dialog{
+    margin-bottom: 150px;
+}
+#setSchedule .modal-dialog{
+    margin-bottom: 150px;
+}
+.border-none{
+    border-top:none!important;
+    border-bottom:none!important;
+}
+.canAppoint{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.appointment-index{
+    overflow-y:hidden;
+}
+.appointment-index .eh-appointmet-doctor{
+    font-size: 0px;
+}
+.appointment-index .eh-time{
+    height: 48px;
+
+}
+
+.use-appointment-template-box{
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    padding: 5px 8px 5px 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #76A6EF;
+    color: #76A6EF;
+    border-radius: 4px;
+}
+
+.modal-open-appointment-template{
+    overflow-y: hidden;
+}
+
+.modal-open-appointment-time-config{
+    overflow-y: hidden;
+}
+
+.serve-type-tr label{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    padding-right: 10px;
+}
+.schedule-conf-title{
+    margin-bottom:5px;
+}
+.scheduel-conf{
+    text-decoration: underline;
+    margin-top: 5px;
+    display: block;
+}
+.scheduel-conf:hover,.scheduel-conf:visited{
+    text-decoration: underline;
+}
+body{
+    padding-right: 0 !important;
+}

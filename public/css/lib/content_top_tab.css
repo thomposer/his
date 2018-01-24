@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+
+
+.top-bar{
+    background: #ffffff;
+    height: 70px;
+    line-height: 60px;
+    border-radius : 5px;
+    /*margin-bottom:  10px;*/
+}
+.top-bar a{
+    color: #A3ACB9;
+}
+
+.left-bar{
+    width: 45%;
+    float: left;
+    text-align: center;
+}
+.center-bar{
+    float: left;
+    color: #EEEFF1;
+    line-height: 70px;
+    width: 2px;
+}
+.cneter-bar-icon{
+    border: 1px solid #EEEFF1;
+    font-size: 30px;
+}
+.right-bar{
+    width: 45%;
+    float: left;
+    text-align: center;
+}
+.tab_triage_active{
+    background:url('../../img/triage/tab_triage.png') no-repeat 0px 0px;
+    padding-left: 35px;
+    font-size: 25px;
+    line-height: 70px;
+}
+.tab_triage{
+    background:url('../../img/triage/tab_triage.png') no-repeat 0px -28px;
+    padding-left: 35px;
+    font-size: 25px;
+    line-height: 70px;
+}
+.tab_history_active{
+    background:url('../../img/triage/tab_history.png') no-repeat 0px 0px;
+    padding-left: 35px;
+    font-size: 25px;
+    line-height: 70px;
+}
+.tab_history{
+    background:url('../../img/triage/tab_history.png') no-repeat 0px -28px;
+    padding-left: 35px;
+    font-size: 25px;
+    line-height: 70px;
+}
+.tab_triage_active a{
+    color: #88B2F2;
+}
+.tab_history_active a{
+    color: #88B2F2;
+}
+.bar-word{
+    font-size: 20px;
+}

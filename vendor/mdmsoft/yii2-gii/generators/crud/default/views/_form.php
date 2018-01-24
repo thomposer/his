@@ -23,7 +23,7 @@ use app\common\AutoLayout;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-form col-md-6">
+<div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-form col-md-8">
 
     <?= "<?php " ?>$form = ActiveForm::begin(); ?>
 
@@ -33,8 +33,8 @@ use app\common\AutoLayout;
     }
 } ?>
     <div class="form-group">
-        <?= "<?= " ?>Html::submitButton($model->isNewRecord ? <?= $generator->generateString('添加') ?> : <?= $generator->generateString('修改') ?>, ['class' => 'btn btn-success']) ?>
-        <?= "<?= " ?>Html::a(<?= $generator->generateString("返回列表") ?>,['index'],['class' => 'btn btn-primary']) ?>
+        <?= "<?= " ?>Html::a(<?= $generator->generateString("取消") ?>,['index'],['class' => 'btn btn-cancel btn-form second-cancel']) ?>
+        <?= "<?= " ?>Html::submitButton(<?= $generator->generateString('保存') ?>, ['class' => 'btn btn-default btn-form']) ?>
     </div>
 
     <?= "<?php " ?>ActiveForm::end(); ?>

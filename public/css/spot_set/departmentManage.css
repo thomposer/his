@@ -1,0 +1,12 @@
+.table>tbody>tr.kv-expand-detail-row>td{
+    padding: 0px 0px;
+}
+.kv-expanded-row td:first-child{
+    padding-left:95px;
+}
+.second-department-subclass > tbody >tr > td > a{
+    margin-right: 10px;
+}
+.department-manage-index .kv-grid-table{
+    border: 1px solid #E5EBF4;
+}

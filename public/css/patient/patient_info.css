@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+/**
+ * @desc 患者信息的样式表
+ * @author zongyuanluo
+ * @date 2017-09-20
+ */
+
+/* 整个外部盒子样式 */
+.patient-info{
+  padding:11px 20px 24px 6px;
+  font-size: 12px;
+}
+.patient-info p{
+  margin-bottom:3px;
+  color:#55657d;
+}
+.patient-info p:last-child{
+  margin-bottom: 0;
+}
+
+/* 左边头像和信息样式 */
+.basic-info{
+  height: 55px;
+  border-right:0.5px solid #CACFD8;
+}
+#crop-avatar{
+  height: 55px;
+  position: relative;
+}
+#crop-avatar .avatar-view{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.basic-info-show{
+  display: inline-block;
+  vertical-align: top;
+}
+.basic-info-name{
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow : ellipsis;
+  white-space : nowrap;
+}
+.basic-info-name span{
+  font-size: 12px;
+  background: #D5EAA6;
+  border-radius: 2px;
+  color: #577F00;
+  padding: 3px;
+  margin-left: 10px;
+  vertical-align: top;
+}
+
+/* 上传图像的蒙层 */
+.upload-text{
+  display: none;
+  color:#fff;
+  text-align: center;
+  line-height: 55px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color:#111;
+}
+#crop-avatar .avatar-view:hover .upload-text{
+  display: inline-block;
+  opacity:.5;
+}
+/* 性别小图标 */
+.sex-icon{
+  position: absolute;
+  bottom: 0;
+  left:36px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px !important;
+  border:1px solid #fff;
+  border-radius:10px;
+  color:#fff;
+  background-color: #fff;
+}
+.sex-icon-female{
+  background-color: #FF7F7F;
+}
+.sex-icon-male{
+  background-color: #76A6EF;
+}
+/* 过敏史样式 */
+.allergy-label{
+  display: inline-block;
+  vertical-align: top;
+}
+.allergy-content{
+  display: inline-block;
+}
+.allergy-text{
+  font-size: 12px;
+  color:#ff5000;
+  display: inline-block;
+  vertical-align: top;
+  max-width:520px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 生长曲线按钮 */
+.grow-line{
+  position: relative;
+  height: 50px;
+  
+}
+.grow-line a:hover{
+  background-color:#f5f9fe;
+}
+.grow-line a:active{
+  background-color:#e3edfc;
+}
+.grow-line a{
+  color:#76a6ef;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #76a6ef;
+}

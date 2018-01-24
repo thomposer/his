@@ -1,0 +1,241 @@
+.basic-content-header{
+    background-color: #f4f5f7;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+    opacity: 0.8;
+}
+.basic-left-info{
+    display: inline-block;
+    font-weight:600;
+    color: #445064;
+    line-height: 10px;
+
+}
+.naviList{
+    color: #76A6EF;
+    font-weight: 500;
+    height: 40px;
+    line-height:40px;
+}
+tr .recipeCotent{
+    margin: 0 auto;
+    border-bottom:1px solid  #edf1f7;
+}
+.nameCss{
+    margin: 0 auto;
+    padding-top: 5%;
+}
+.startDescription{
+    padding-top: 10px;
+}
+.endDescription{
+    padding: 12px 35px 0px 0px;
+}
+.num{
+    padding-bottom: 10px;
+}
+.reportCheck{
+    margin: 0 auto;
+    height:80px;
+    line-height: 80px;
+    text-align: right;
+    padding: 0px 12px ;
+    border-bottom:1px solid  #edf1f7;
+}
+.inspect{
+    padding-left: 0px;
+}
+.table > tbody > tr > th,.table > tbody > tr > td{
+    border-top: none;
+}
+.table > tbody > tr > th{
+    padding-left: 40px;
+    width:25%;
+}
+.table > tbody > tr{
+    height: 50px;
+    line-height:50px;
+}
+.none_radius {
+    border-bottom: 1px solid #edf1f7;
+    border-radius: 0px !important;
+    box-shadow: 0px 0px 0px;
+    margin-bottom: 0px;
+}
+.box-detail{
+    height:40px !important;
+    padding: 0 15px !important;
+    line-height: 40px;
+    background-color: #edf1f7;
+}
+.treatment-form {
+    border: 1px solid #edf1f7;
+    border-radius: 5px;
+    margin-top: 12px;
+    margin-bottom: 30px;
+}
+.box-header>.box-tools{
+    top:0px;
+    position: relative;
+    right: 10px;
+}
+.ump-create-case{
+    margin: 20px 0px 20px 6px;
+}
+.makeup-type-form{
+    margin:20px 30px; 
+}
+.header-edit{
+    float: right; 
+    color: #76a6ef;
+}
+.header-edit-fa {
+    font-weight: 900;
+}
+.box-detail{
+    height: 40px;
+    padding: 0 15px !important;
+    line-height: 40px;
+    background-color: #edf1f7;
+}
+
+.header-edit-top{
+    position: absolute !important;
+    right: 15px !important;
+}
+.btn-default[disabled]{
+    background-color: #76a6ef;
+    border-color: #76a6ef;
+}
+.btn-default[disabled]:active, .btn-default[disabled]:hover {
+    background-color: #76a6ef;
+}
+.outpatient-header-edit{
+    margin-right: 5px;
+    float: right; 
+    color: #76a6ef;
+}
+.modal-body .ump-reception {
+    margin: -15px -30px;
+}
+.ump-reception .tab-content{
+    padding: 10px;
+}
+.button-center{
+    text-align: center;
+}
+.btn-mt25{
+    margin-top: 25px;
+}
+.check-name-top{
+    border-bottom: 0.5px solid #DFE0E4;
+    background-color: #edf1f7;
+}
+.inspect-list #grid{
+    margin: 10px 10px 0px 10px;
+}
+.check-list #grid{
+    margin: 10px;
+}
+.btn-custom {
+    margin-bottom: 9px !important;
+    margin-top: 0px !important;
+}
+#ptab1{
+    margin-top: -15px;
+}
+#btn-custom{
+    margin-right:10px !important;
+}
+.ump-reception .cure-record-form{
+    margin-bottom:0px;
+}
+button[type="submit"] {
+    margin-right: 20px!important;
+}
+#ajaxCrudModal .form-group .btn-form{
+    margin: 20px 10px 20px 10px !important;
+}
+.button-center btn-form{
+    margin-right: 20px!important;
+}
+.check-content .header {
+    background-color: #edf1f7;
+    margin-bottom: 0px;
+    height: 50px;
+    margin-top: 0px;
+    font-size: 14px;
+    color: #445064;
+    line-height: 50px;
+    font-weight: 500;
+    border-top: 1px solid #d2d6de;
+    border-left: 1px solid #d2d6de;
+    border-right: 1px solid #d2d6de;
+    border-bottom: 1px solid #d2d6de;
+}
+
+.check-content .form-control {
+    border-radius: 0px;
+}
+.file-initial-thumbs{
+    margin-top: -12px;
+}
+.pre-custom .kv-file-content{
+    width: 148px;
+    height: 94px;
+    line-height: 94px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 6px;
+    background-color: #4A4A4A;
+    font-size: 0px;
+}
+.makeup-file-header{
+    padding-left: 30px;
+    font-size: 14px;
+    padding-bottom: 15px;
+}
+.image-upload{
+    padding: 0px 20px;
+}
+.file-drop-zone-title{
+    padding:0px !important;
+}
+.file-preview{
+    border: none !important;
+}
+.makeup-none{
+  margin-top: 11px;
+}
+.inspectRecordForm{
+    padding: 0px 10px;
+}
+.cure-record-index{
+     padding: 0px 10px;
+}
+#ajaxCrudModal .makeup-outpatient .form-group .btn-form {
+    margin: 10px 10px 10px 10px !important;
+}
+#ajaxCrudModal .makeup-outpatient-check .form-group .btn-form {
+    margin: 18px 10px 5px 10px !important;
+}
+#ajaxCrudModal .form-group .makeup-signsdata {
+     margin: 0px 10px 10px 10px !important; 
+}
+.basic-btn .btn-form{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+.table > tbody > tr.recipeNameTd{
+	border-top : 6px solid #EDF1F7;
+}
+.table > tbody > tr.recipeNameTd:first-child{
+	border-top : none;
+}
+#patient-birthtime {
+/*     border-top-right-radius: 0;
+     border-bottom-right-radius: 0;*/
+     width: 100%; 
+}

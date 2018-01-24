@@ -10,9 +10,11 @@ use app\common\base\BaseController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
-use yii\base\Object;
-use app\common\Common;
 use yii\helpers\Url;
+use yii\web\Response;
+use app\modules\user\models\User;
+use yii\db\Query;
+use app\modules\spot\models\Spot;
 
 /**
  * MenuController implements the CRUD actions for Menu model.
@@ -28,6 +30,7 @@ class MenuController extends BaseController
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['post'],
+                    'flush' => ['post']
                 ],
             ],
         ];
@@ -43,8 +46,7 @@ class MenuController extends BaseController
     {
         $searchModel = new MenuSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$this->pageSize);
-        $titleList = (new Title())->selectAll();
-        
+        $titleList = Title::selectAll();
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -79,7 +81,8 @@ class MenuController extends BaseController
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $model->sort = time();
             $model->save();
-            return $this->redirect(['view', 'id' => $model->id]);
+            Yii::$app->getSession()->setFlash('success','保存成功');
+            return $this->redirect(['index']);
         }
         $titleList = Title::selectAll();
         return $this->render('create', [
@@ -100,7 +103,8 @@ class MenuController extends BaseController
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view','id' => $model->id]);
+            Yii::$app->getSession()->setFlash('success','保存成功');
+            return $this->redirect(['index']);
         }
 
         $titleList = Title::selectAll();
@@ -119,8 +123,22 @@ class MenuController extends BaseController
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-        Common::showInfo("删除成功");
+        $request = Yii::$app->request;
+        if($request->isAjax){
+        
+            /*
+             *   Process for ajax request
+             */
+            $this->findModel($id)->delete();
+            
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ['forceClose'=>true,'forceReload'=>'#crud-datatable-pjax'];
+        }else{
+            /*
+             *   Process for non-ajax request
+             */
+            return $this->redirect(['index']);
+        }
     }
     
     public function actionSearch(){
@@ -132,6 +150,32 @@ class MenuController extends BaseController
         }
         $absolute_url = Url::to([$menu_url['menu_url']]);
         return $this->redirect($absolute_url);
+    }
+    public function actionFlush(){
+//         $result = Yii::$app->cache->flush();
+        /* 获取系统所有的用户id以及对应机构id */
+        $query = new Query();
+        $query->from(['a' => User::tableName()]);
+        $query->select(['a.id','b.spot']);
+        $query->leftJoin(['b' => Spot::tableName()],'{{a}}.spot_id = {{b}}.id');
+        $userList = $query->all();
+        
+        if(!empty($userList)){
+            foreach ($userList as $v){
+                //获取该机构下用户所属所有诊所列表的key值
+                $spotListCache = Yii::getAlias('@spotList') . $v['spot'] . '_' . $v['id'];
+                $commonRoleMenuCache = Yii::getAlias('@commonRoleMenu') . $v['id'] . '_' . $v['spot']; //普通用户菜单url缓存key
+                $commonAllPermCache = Yii::getAlias('@commonAllPerm') . $v['id'] . '_' . $v['spot']; //普通用户全部权限列表缓存key
+                Yii::$app->cache->delete($spotListCache);//消除用户所属诊所列表的缓存
+                Yii::$app->cache->delete($commonRoleMenuCache);//消除普通用户菜单url缓存
+                Yii::$app->cache->delete($commonAllPermCache);//消除普通用户全部权限列表缓存
+                
+            }
+        }
+        Yii::$app->db->schema->refresh();
+        Yii::$app->cache->delete(Yii::getAlias('@systemMenu'));
+        Yii::$app->getSession()->setFlash('success','清除缓存成功');
+        $this->redirect(Url::to(['@moduleMenuIndex']));
     }
     /**
      * Finds the Menu model based on its primary key value.

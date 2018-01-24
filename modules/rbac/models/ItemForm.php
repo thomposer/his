@@ -23,17 +23,15 @@ use app\common\base\BaseActiveRecord;
 class ItemForm extends BaseActiveRecord
 {
 
-    public $name;
-    public $type;
-    public $description;
-    public $rule_name;
-    public $data;
-    public $created_at;
-    public $updated_at;
     public $child;
     public $category;
     public $parentName;
-    public $isNewRecord = TRUE;
+//     public $isNewRecord = TRUE;
+    
+    public static function tableName(){
+        
+        return '{{%auth_item}}';
+    }
     /**
      * @inheritdoc
      */
@@ -44,7 +42,7 @@ class ItemForm extends BaseActiveRecord
             [['name', 'type','parentName','category','description'], 'trim'],
             [['type', 'created_at', 'updated_at'], 'integer'],
             [['description', 'data','category','parentName'], 'string'],
-            [['name', 'rule_name'], 'string', 'max' => 35,'min' => 4, 'tooLong' => '请输入长度为4-35个字符','tooShort' => '请输入长度为4-35个字符'],
+            [['name', 'rule_name'], 'string', 'max' => 50,'min' => 4, 'tooLong' => '请输入长度为4-50个字符','tooShort' => '请输入长度为4-50个字符'],
             [['child'],'safe']
         ];
     }

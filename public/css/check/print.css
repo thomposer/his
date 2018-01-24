@@ -1,0 +1,1305 @@
+/*@media print {*/
+
+@CHARSET "UTF-8";
+/* feature */
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.tc {
+    text-align: center;
+}
+
+.tr {
+    text-align: right;
+}
+
+.tl {
+    text-align: left;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+/* IE < 8 */
+.font-0px {
+    font-size: 0;
+}
+
+.font-5rem {
+    font-size: 0.5rem !important;
+}
+
+.font-3rem {
+    font-size: 0.3rem !important;
+}
+
+.font-14px {
+    font-size: 14px;
+}
+
+.font-16px {
+    font-size: 16px;
+}
+
+.width-15 {
+    width: 15%;
+}
+
+.width-20 {
+    width: 20%;
+}
+
+.width-30 {
+    width: 30%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.width-75 {
+    width: 75%;
+}
+
+.line {
+    width: 100%;
+    height: 5px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.add-margin-bottom-5 {
+    margin-bottom: 5px;
+}
+
+.add-margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+.add-margin-top-10 {
+    margin-top: 10px;
+}
+
+.add-margin-top-20 {
+    margin-top: 20px;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+/*打印css*/
+.my-show .fill-info {
+    padding: 0px !important;
+}
+
+.my-show .rebate-title {
+    text-align: center;
+    font-size: 24px;
+    color: #000000;
+    margin-top: -30px;
+    float: left;
+    width: 100%;
+}
+
+.my-show .small-title {
+    font-size: 8px;
+    color: #000000;
+    font-weight: bolder;
+}
+
+.my-show .rebate-table {
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    margin-top: 10px;
+    margin-left: 0px !important;
+}
+
+.my-show .inspect-table > tbody > tr > td {
+    word-break: break-all;
+    padding: 9px 0px 9px 5px !important;
+}
+
+.my-show .inspect-table > tbody > tr.recipe-top > td {
+    word-break: break-all;
+    padding: 5px 0px 5px 5px !important;
+}
+
+.my-show .inspect-table > thead > tr > th {
+    padding: 9px 0px 9px 5px !important;
+
+
+}
+
+.my-show .foot-left {
+    padding-bottom: 0px;
+}
+
+.my-show .foot-text {
+    font-size: 15px;
+}
+
+.my-show .rebate-pay {
+    text-align: left;
+    float: left;
+}
+
+.my-show .clinic-img {
+    width: 60px;
+    height: 60px;
+}
+.clinic-img-long{
+    width: 180px !important;
+    height: 60px !important;
+}
+
+.my-show .rebate-date {
+    text-align: right;
+    font-size: 8px;
+    color: #000000;
+    display: inline-block;
+    float: right;
+}
+
+.my-show .rebate-foot-bottom {
+    width: 100%;
+    padding: 0px !important;
+    position: relative;
+    min-height: 60px;
+}
+
+.my-show .btm-rebate {
+    padding: 53px;
+}
+
+.my-show .td-field {
+    border-bottom: solid 1px;
+    width: 76%;
+    display: inline-block;
+    text-align: center;
+}
+
+.my-show .rebate-margin {
+    margin-bottom: 10px;
+}
+
+.my-show .charge-table-first .child-table-first th {
+    background-color: #FFFFFF;
+}
+
+.my-show .charge-table-first th {
+    background-color: #FFFFFF;
+}
+
+.my-show .charge-table .child-table > tbody > tr > td {
+    border-bottom: none;
+    border-top: none;
+    word-break: break-all;
+    padding: 0px 0px 8px;
+    vertical-align: initial !important;
+    font-size: 0.6rem;
+}
+
+.my-show .child-table {
+    border: 1px solid #bababa;
+    padding: 0 !important;
+    width: 100%;
+}
+
+.my-show .charge-table > thead > tr > th {
+    border-bottom: 0.25px solid #000000;
+
+}
+
+.my-show .rebate-type {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.my-show .rebate-print .table > thead > tr > th {
+    padding: 10px 0px !important;
+}
+
+.my-show .rebate-foot-second {
+    height: 25px;
+    margin-top: 10px;
+}
+
+.my-show .rebate-write {
+    width: 50%;
+    display: inline-block;
+}
+
+.rebate-write-new {
+    width: 33.3%;
+    display: inline-block;
+}
+
+.my-show .rebate-bottom {
+    width: 32.9%;
+    display: inline-block;
+}
+
+.my-show .rebate-write-two {
+    width: 50%;
+    float: left;
+    height: 100%;
+}
+
+.my-show .charge-table-first {
+    padding: 0px;
+    overflow-y: visible;
+}
+
+.my-show .check-new {
+    margin: 30px 0px 30px 0px;
+    background: #EFEFEF;
+    border-radius: 5px;
+    padding: 6px;
+}
+.my-show .check-new-none {
+    margin: 30px 0 0 0;
+    padding: 6px;
+}
+
+.my-show .print-content {
+    margin: 0px 15px;
+    width: 96%;
+    word-break: break-all;
+}
+
+.my-show .note {
+    text-align: left;
+}
+
+#print_show_none {
+    display: none;
+}
+
+#print_view {
+    font-size: 0.5rem;
+    padding: 0.7rem;
+    line-height: 1.6rem;
+    font-size: 0;
+}
+
+.print_label_l {
+    width: 3rem;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.print_label_r {
+    display: inline-block;
+    font-size: 1rem;
+    margin-left: 0.3rem;
+}
+
+.text-overflow {
+    width: 75%;
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    white-space: nowrap; /* 不换行 */
+    vertical-align: bottom;
+}
+
+.ver-bottom {
+    vertical-align: bottom;
+}
+
+.total_column_four_part {
+    width: 22%;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.basic-column, .summary_column {
+    width: 50%;
+    display: inline-block;
+    font-size: 0px;
+}
+
+.summary_column {
+    margin-left: 15px;
+}
+
+.bregmatic_column_value, .jaundice_column_value, .basic_value, .bisac-summary {
+    display: inline-block;
+    font-size: 0.5rem;
+    text-align: left;
+    width: 36%;
+    vertical-align: bottom;
+    word-wrap: break-word;
+    border-bottom: solid 1px;
+}
+
+.total_column_two_part > .basic_value {
+    width: 90% !important;
+    padding-left: 5px;
+}
+#print_view {
+    font-size: 0.5rem;
+    padding: 0.7rem;
+    line-height: 1.6rem;
+    font-size: 0;
+}
+
+.print_label_l {
+    width: 3rem;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.print_label_r {
+    display: inline-block;
+    font-size: 1rem;
+    margin-left: 0.3rem;
+}
+
+.text-overflow {
+    width: 75%;
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    white-space: nowrap; /* 不换行 */
+    vertical-align: bottom;
+}
+
+.ver-bottom {
+    vertical-align: bottom;
+}
+
+.total_column_four_part {
+    width: 22%;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.basic-column, .summary_column {
+    width: 50%;
+    display: inline-block;
+    font-size: 0px;
+}
+
+.summary_column {
+    margin-left: 15px;
+}
+
+.bregmatic_column_value, .jaundice_column_value, .basic_value, .bisac-summary {
+    display: inline-block;
+    font-size: 0.5rem;
+    text-align: left;
+    width: 36%;
+    vertical-align: bottom;
+    word-wrap: break-word;
+    border-bottom: solid 1px;
+}
+
+.total_column_two_part > .basic_value {
+    width: 90% !important;
+    padding-left: 5px;
+
+}
+
+.my-show .print-main-contnet-outpatient {
+    min-height: 830px;
+}
+
+.my-show .hid {
+    display: none;
+}
+
+.my-show .charge-table {
+    table-layout: fixed;
+}
+
+.my-show .btn-readonly {
+    background-color: #76a6ef !important;
+}
+
+.my-show .foot-text {
+    font-size: 15px;
+}
+
+.my-show .second-title {
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 22px;
+    color: #000000;
+}
+
+.my-show .print-bottom {
+    padding-top: 20px;
+    margin-left: 15px;
+}
+
+.my-show .charge-table > tbody > tr > th {
+    width: 19%;
+    padding: 0px 0px 8px 0px;
+    vertical-align: initial !important;
+    font-size: 0.6rem;
+}
+
+.my-show .print-table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.my-show .print-main-contnet .print-table td {
+    padding-top: 0px;
+    border: none;
+}
+
+.my-show .charge-table td {
+    padding-top: 0px !important;
+}
+
+.my-show .tow-line {
+    display: inline-block;
+    width: 100%;
+    height: 22px;
+}
+
+.my-show .outpatient-bottom {
+    margin-left: 15px;
+}
+
+.my-show .patientid {
+    padding: 15px 15px 0px 15px;
+
+}
+
+.my-show {
+    padding: 10px 50px 0px;
+}
+
+.my-show .small-title-second {
+    font-weight: bold;
+    font-size: 0.3rem;
+    display: inline-block;
+    width: 100%;
+    margin-left: 0px !important;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 8px;
+}
+
+.my-show .small-title-third {
+    font-size: 0.3rem;
+    color: #000000;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.my-show .tow-line-buttom {
+    border-top: 1px solid;
+    font-size: 0px;
+    width: 100%;
+    margin-left: 0px;
+}
+
+.my-show #record-print {
+    min-height: 750px;
+}
+
+.my-show .rebate-foot-bottom-second {
+    padding: 2px 0px 0px 0px;
+    width: 100%;
+    border-top: 1px solid;
+}
+
+.my-show .fill-info-buttom {
+    position: relative;
+    bottom: 0px;
+    float: left;
+    width: 100%;
+}
+
+.my-show .total-column {
+    width: 25%;
+    display: inline-block;
+}
+.my-show .total-column-small {
+    width: 20%;
+    display: inline-block;
+}
+
+.my-show .total-column-three-part {
+    width: 33.3%;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.my-show .column-name {
+    font-size: 0.5rem;
+    color: #000000;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+.my-show .column-value {
+    display: inline-block;
+    font-size: 0.5rem;
+    text-align: left;
+    width: 70%;
+    vertical-align: bottom;
+    word-wrap: break-word;
+    border-bottom: solid 1px;
+    padding-left: 2%;
+}
+.my-show .column-value-small {
+    display: inline-block;
+    font-size: 0.5rem;
+    text-align: left;
+    width:60%;
+    vertical-align: bottom;
+    word-wrap: break-word;
+    border-bottom: solid 1px;
+    padding-left: 2%;
+}
+
+.my-show .three-wording-line-width {
+    width: 74% !important;
+}
+
+.my-show .four-wording-line-width {
+    width: 55% !important;
+}
+
+.my-show .five-wording-line-width {
+    width: 57% !important;
+}
+
+.my-show .six-wording-line-width {
+    width: 81% !important;
+
+}
+
+.my-show .line-margin-top {
+    margin-top: 15px;
+}
+
+.my-show .body-sign {
+    margin-top: 10px;
+}
+
+.my-show .children-sign {
+    border: 1px solid #999999;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 3px 15px;
+    position: absolute;
+    right: 0px;
+    top: 1.5rem;
+}
+
+.my-show .double-underline {
+    height: 4px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    MARGIN-BOTTOM: 8PX;
+}
+
+.my-show .add-padding-bottom {
+    padding-bottom: 6px;
+}
+
+.my-show .drunk-title-big-size {
+    font-size: 0.4rem;
+    color: #666666;
+}
+
+.my-show .border {
+    border: 1px solid #999999 !important;
+}
+
+.my-show .allergy {
+    margin-top: 6px !important;
+    margin-bottom: 0px !important;
+}
+
+.my-show .my-show .total-price {
+    text-align: left;
+    float: right;
+    width: 33.3%;
+}
+
+.my-show .doc-sign {
+    text-align: left;
+    float: right;
+    width: 33.3%;
+    margin-bottom: 10px;
+}
+.my-show .doc-sign-total{
+    float: right;
+    width: 33.3%;
+    margin-bottom: 10px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.my-show .total-price-content {
+    border: 1px solid #999999;
+    display: inline-block;
+    border-radius: 2px;
+    padding: 2px 3%;
+}
+
+.x {
+    border: solid 1px red;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: transparent;
+}
+
+.x:before {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-bottom: 100px solid red;
+    border-left: 100px solid transparent;
+    content: "";
+}
+
+.x:after {
+    position: absolute;
+    left: 1px;
+    right: 0;
+    top: 1px;
+    bottom: 0;
+    border-bottom: 99px solid white;
+    border-left: 99px solid transparent;
+    content: "";
+}
+
+.my-show .img-line-img {
+    width: 100%;
+    max-height: 140px;
+    height: 10%;
+}
+
+.my-show .foot-bottom {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
+
+.my-show .rebate-print .charge-table tbody td {
+    padding: 10px;
+}
+
+/*治疗*/
+.my-show .patient-user {
+    font-size: 0px;
+}
+
+.my-show .min-height-controll {
+    min-height: 450px;
+}
+
+/*收费*/
+.my-show .rebate-foot {
+    margin-bottom: 8px;
+}
+
+.my-show .block-right {
+    display: inline-block;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 25%;
+}
+
+.my-show .charge-bottom {
+    display: inline-block;
+}
+
+.my-show .add-padding-round {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.my-show .charge-block-margin-top {
+    margin-top: 40px !important;
+}
+
+.my-show .charge-item-block-margin-top {
+    margin-top: 15px !important;
+}
+
+.my-show .code-part {
+    border-right: 0.5px solid #E6E6E6;
+    padding-right: 10px;
+    margin-right: 10px;
+
+}
+
+/*影像学*/
+/*检查所见行高*/
+.my-show .patient-info-block-top {
+    margin-top: 27px;
+}
+
+/*处方*/
+.my-show .recipe-top {
+    border-top: 0.25px solid #E0E0E0;
+}
+.my-show #non-recipe-top td{
+    padding-top:0px !important;
+}
+
+.my-show .non-recipe-top {
+    border-top: none;
+}
+.my-show .non-recipe-top td{
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.my-show .recipe-top td {
+    border-top: none !important;
+    border-bottom: none !important;
+    word-wrap:break-word;
+    padding-bottom: 0px;
+}
+.my-show .total-price {
+    text-align: left;
+    float: right;
+    width: 33.3%;
+}
+.my-show .recipe-font-weight{
+    font-weight: bold;
+}
+/*标签打印*/
+#print-show-none {
+    display: none;
+}
+
+#print-view {
+    font-size: 0.5rem;
+    padding: 0.8rem 1rem 0.7rem 1rem;
+    line-height: 1.6rem;
+    font-size: 0;
+}
+
+.print-label-l {
+    width: 3rem;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.print-label-r {
+    display: inline-block;
+    font-size: 1rem;
+    margin-left: 0.3rem;
+}
+
+.text-overflow {
+    width: 75%;
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    white-space: nowrap; /* 不换行 */
+    vertical-align: bottom;
+}
+
+.ver-bottom {
+    vertical-align: bottom;
+}
+
+.basic-column, .summary-column {
+    width: 50%;
+    display: inline-block;
+    font-size: 0px;
+}
+.basic-column-small{
+    width: 45%;
+    display: inline-block;
+    font-size: 0px;
+}
+.basic-column-large{
+    width: 55%;
+    display: inline-block;
+    font-size: 0px;
+}
+
+.summary-column {
+    margin-left: 15px;
+}
+
+.basic-value, .basic-summary {
+    display: inline-block;
+    font-size: 0.5rem;
+    text-align: left;
+    width: 36%;
+    vertical-align: bottom;
+    word-wrap: break-word;
+    border-bottom: solid 1px;
+}
+
+.total-column-two-part > .basic-value {
+    width: 90% !important;
+    padding-left: 5px;
+
+}
+
+.summary {
+    float: left;
+    border-bottom: none !important;
+    width: 90% !important;
+}
+
+.basic-summary {
+    word-break: break-all;
+    width: 94%;
+    margin-left: -8px !important;
+    border-bottom: none !important;
+}
+
+.basic-column > .bisac-sign,.basic-column-small > .bisac-sign,.basic-column-large > .bisac-sign {
+    border-bottom: none !important;
+}
+
+.child-growth-assesment {
+    border-bottom: none !important
+}
+
+.table-border thead {
+    background-color: #EDF1F7;
+}
+
+.child-table > thead > tr > th {
+    background-color: #ededed !important;
+    width: 49%;
+    line-height: 12px;
+    font-size: 1.2rem;
+}
+
+.child-table > tbody > tr > td {
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+    font-size: 1rem;
+}
+
+.table-right {
+    margin-left: 14px;
+}
+
+.font-clear {
+    font-size: 0px;
+}
+
+.child-patient-number {
+    margin-bottom: 0px;
+}
+
+.child-growth-assesment {
+    margin-bottom: -3px;
+}
+
+.child-check {
+    margin-bottom: -1px !important;
+}
+
+.assesment {
+    margin-bottom: -2px;
+    margin-top: 0px;
+}
+
+.total-column-two-part {
+    margin-top: -15px;
+}
+
+.child-basic {
+    margin-top: 6px;
+}
+
+.assesment-top {
+    margin-top: 25px;
+}
+
+.basic-value .summary {
+    width: 100% !important;
+}
+
+.basic-summary-content {
+    float: left;
+}
+
+.other-evaluation-break {
+    word-break: break-all;
+}
+
+.child-examination-print {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+
+/**药房处方医嘱打印***/
+.recipe_top  .pharmacy-description,.recipe_top .pharmacy-remark{
+    float: left;
+    word-break: break-all;
+}
+
+/**实验室检查申请单打印***/
+/**影像学检查打印***/
+.inspectprint tbody tr{
+    border-bottom:1px solid #E5EBF4!important;
+}
+#inspect-record .btn-inspect-application,#check-record .btn-check-application {
+    float: right;
+}
+.inspect-application-print .inspect-item-name,.inspect-application-print .inspect-item-fee ,.check-application-print .check-item-name,.check-application-print .check-item-fee {
+    font-weight: bold;
+    font-size: 0.3rem;
+    display: inline-block;
+    margin-left: 0px !important;
+}
+.inspect-application-print  .inspect-item-name,.check-application-print  .check-item-name{
+    width:72% !important;
+}
+.check-application-print .check-item-fee{
+    width:28% !important;
+}
+.inspect-application-print .inspect-item-fee{
+    width:16.3% !important;
+}
+.inspect-application-print .inspect-application-time,.check-application-print .check-application-time{
+    text-align: right;
+}
+.inspect-application-print .inspect-application-info,.check-application-print .check-application-info{
+    border-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+.inspect-application-print table > tbody > tr > td,.check-application-print table > tbody > tr > td{
+    padding-left: 0 !important;
+}
+/*护理记录*/
+.margin-bottom-0{
+    margin-bottom:0px;
+}
+.add-margin-bottom-8{
+    margin-bottom: 8px;
+}
+.add-padding-bottom-8{
+    padding-bottom:8px;
+}
+.add-margin-top-30{
+    margin-top:30px;
+}
+.my-show-new .nursinng-print-table > thead > tr > th{
+    background-color: #ededed !important;
+    line-height: 12px;
+    font-size: 1.2rem;
+    padding-bottom: 8px !important;
+    padding-top: 8px !important;
+}
+.my-show-new .nursinng-print-table{
+    border: 1px solid #bababa;
+    padding: 0 !important;
+    width: 100%;
+    border-collapse:collapse !important;
+}
+.my-show-new .nursinng-print-table > tbody > tr{
+    border-bottom: 1px solid #E5EBF4;
+}
+.my-show-new .nursinng-print-table > tbody > tr > td{
+    padding-bottom: 8px !important;
+    padding-top: 8px !important;
+    font-size: 1rem;
+    word-break: break-all;
+    border: 0px !important;
+}
+.no-bottom-border{
+    border-bottom:none !important;
+}
+
+
+/*@media print {*/
+/*标本管理打印标签*/
+.print-specimen{
+    font-size:1rem;
+    height: 2.8cm;
+    width: 5cm;
+    page-break-after: always;
+    margin-left:  0.2cm;
+    margin-top: 0.2cm;
+    padding-right: 0.2cm;
+    position: relative;
+    /*word-break:break-all;*/
+    overflow: hidden;
+    line-height: 1rem;
+    page-break-after: always;
+}
+.print-label-left{
+    width:70%;
+    height: 100%;
+    font-size: 1rem;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.print-label-right{
+    width: 30%;
+    height: 100%;
+    float: right;
+    font-size: 1rem;
+}
+.print-specimen-hr{
+    height: 0.1rem;
+    /*background: #343434;*/
+    border-bottom: 0.1rem solid #676767;
+    margin: 0.2rem 0;
+}
+.print-specimen #barcode{
+    /*    height: 1cm;*/
+    width: 80%;
+    margin-left: -1%;
+}
+.print-specimen-type{
+    /*    padding-top: 0.1cm;
+        padding-bottom: 0.1cm;*/
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -webkit-transform-origin:0.7rem 0.7rem;
+    -o-transform:rotate(90deg);
+    float: left;
+    background: #000;
+    width: 3cm;
+    text-align:center;
+}
+.print-specimen-num{
+    font-size: 1.5rem;
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -webkit-transform-origin:3.3rem 1.2rem;
+    -o-transform:rotate(90deg);
+    float: left;
+    /*margin-left: 70%;*/
+    text-align: center;
+    width: 2.8cm;
+}
+.print-specimen-num-date{
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -webkit-transform-origin:1.9rem 0.9rem;
+    -o-transform:rotate(90deg);
+    float: left;
+    /*margin-left: 70%;*/
+    text-align: center;
+    width: 2.8cm;
+}
+.specimen-clearfix{
+    clear: both;
+}
+
+.print-specimen-color{
+    border: 0.05rem solid #000;
+    padding: 0.3rem 0.3rem;
+    border-radius:50%;
+}
+.text-ver{
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -webkit-transform-origin:1rem 1rem;
+    -o-transform:rotate(90deg);
+    text-align: center;
+    display: inline-block;
+}
+.specimen-t{
+    line-height: 1.2rem;
+    word-break:break-all;
+}
+.print-specimen-item span{
+    overflow: hidden;
+}
+.print-table tbody td{
+    border: none;
+}
+.inspect-print .check-new,.check-print .check-new,.cure-print .check-new,.recipe-print .check-new,.my-show .check-new{
+    overflow: hidden !important;
+}
+
+/*牙齿病例打印*/
+.teeth-title{
+    width: 11%;
+    font-weight: 900;
+    padding: 8px 0px 0px 0px;
+    font-size: 0.6rem;
+}
+.teeth-container .no-padding{
+    padding-top:0px!important;
+}
+/*.desc-padding:first-of-type{*/
+/*padding-top:3px;*/
+/*}*/
+#teeth-print .small-title-second{
+    margin-bottom: 0px!important;
+}
+.teeth-desc{
+    width: 89%;
+    position: relative;
+    font-size: 0.6rem;
+    word-break:break-all;
+
+}
+.teeth-padding{
+    padding: 4px 0px 4px 250px;
+    min-height: 57px;
+    display: flex;
+    align-items: center;
+}
+.desc-padding{
+    padding: 9px 0px 0px 0px;
+}
+.underline-dashed{
+    border-bottom: 1px dashed #d2d6de;
+}
+.teeth-row .underline-dashed:last-of-type{
+    border-bottom:none;
+}
+.teeth-desc-left{
+    width: 235px;
+    position: absolute;
+    top:50%;
+    left:0px;
+    -webkit-transform: translateX(0%) translateY(-50%);
+    padding:8px 0px;
+    /*height: 100%;*/
+}
+.teeth-desc-right{
+    width: 100%;
+    /*margin:auto 0px;*/
+    word-break:break-all;
+}
+.teeth-top-left,.teeth-top-right,.teeth-bottom-left,.teeth-bottom-right{
+    width: 50%;
+    height: 20px;
+    /*background: red;*/
+}
+
+.teeth-top-left{
+    border-bottom: 1px solid #d2d6de;
+    border-right: 1px solid #d2d6de;
+    padding-right: 4px;
+    padding-bottom: 4px;
+}
+.teeth-top-right{
+    border-bottom: 1px solid #d2d6de;
+    padding-left: 4px;
+    padding-bottom: 4px;
+}
+.teeth-bottom-left{
+    border-right: 1px solid #d2d6de;
+    padding-right: 4px;
+    padding-top: 4px;
+}
+.teeth-bottom-right{
+    padding-left: 4px;
+    padding-top: 4px;
+}
+.teeth-container{
+    min-height: 600px;
+    padding-top: 2px;
+}
+
+
+/*儿童保健档案优化打印*/
+
+.rebate-title.child-month{
+    margin-top: -20px;
+}
+table tbody .td-bd-r{
+    border-right: 1px solid #E5EBF4;
+}
+.child-table .wh-30{
+    width: 30%;
+}
+.child-table .wh-70{
+    width: 70%;
+}
+.inspect-first-check-print{
+    font-weight: normal;
+    word-break: break-all;
+}
+#inspect-application-print .print-table > tbody >tr > td{
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.charge-table-first > .inspect-table > tbody > tr:last-child > td {
+    border: 0px;
+}
+.child-print-diagnosis-time{
+    margin-top: 15px;
+    font-size: 0.5rem;
+    color: #000000;
+}
+.child-print-allergy{
+    margin-top: 15px;
+    font-size: 0.5rem;
+    color: #000000;
+}
+.child-print-allergy-title{
+    float: left;
+    width: 10%;
+}
+.child-print-allergy-content{
+    float: left;
+}
+@media print {
+    .page-break{
+        page-break-after: always;
+    }
+}
+.orthodontics-print .top-title{
+	text-align: center;
+	margin-bottom: 0px;
+}
+.orthodontics-print .top-spotname{
+    text-align: center;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 30px;
+    margin-top: -30px;
+}
+.orthodontics-print .vital-signs{
+	margin-top:20px;
+}
+.orthodontics-print .charge-table > tbody > tr > th{
+    font-weight: bold;
+    border-bottom: none;
+    border-top: none;
+}

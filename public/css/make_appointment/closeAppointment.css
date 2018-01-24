@@ -1,0 +1,51 @@
+.date{
+    width:210px ;
+}
+.close-appointment{
+
+}
+.col-sm-3-custom {
+    width: 328px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+#closeAppointmentForm{
+    margin-left: -10px;
+    margin-right: -5px;
+}
+.col-sm-2-custom {
+    width: 80px;
+    margin-right: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+#closeAppointmentForm .po-cell{
+    margin-left: 18px;
+}
+#closeAppointmentForm .clinic-add{
+    margin-right:0px;
+}
+#closeAppointmentForm input::-webkit-input-placeholder {
+color: #ccc !important /* WebKit browsers /
+}
+#closeAppointmentForm input:-moz-placeholder {
+color: #ccc !important / Mozilla Firefox 4 to 18 /
+}
+#closeAppointmentForm input::-moz-placeholder {
+color: #ccc !important / Mozilla Firefox 19+ /
+}
+#closeAppointmentForm input:-ms-input-placeholder {
+color: #ccc !important / Internet Explorer 10+ */
+}
+#closeAppointmentForm .bootstrap-timepicker input::-webkit-input-placeholder {
+color: #55657d !important /* WebKit browsers /
+}
+#closeAppointmentForm .bootstrap-timepicker input:-moz-placeholder {
+color: #55657d !important / Mozilla Firefox 4 to 18 /
+}
+#closeAppointmentForm .bootstrap-timepicker input::-moz-placeholder {
+color: #55657d !important / Mozilla Firefox 19+ /
+}
+#closeAppointmentForm .bootstrap-timepicker input:-ms-input-placeholder {
+color: #55657d !important / Internet Explorer 10+ */
+}

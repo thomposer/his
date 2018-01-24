@@ -1,0 +1,214 @@
+@CHARSET "UTF-8";
+
+#alipayCode,#wechatPayCode{
+	text-align: center;
+    width: 100%;
+}
+#cardflow-f_pay_type label{
+	margin-right : 15px;
+}
+
+#cardflow-type .pay-type{
+    width: 70px;
+    height: 30px;
+    border: 1px solid #eee;
+    text-align: center;
+    cursor: pointer;
+    line-height: 30px;
+    margin-right: 6px;
+    border-radius: 4px;
+}
+#cardflow-type .pay-type.active{
+    background: #76a6ef;
+    color: #fff;
+}
+.scan-code{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #eee;
+    font-size: 14px;
+    margin-right: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.scan-code.active{
+    color: #76a6ef;
+    border-color: #76a6ef;
+}
+.scan-mode-second{
+    display: none;
+}
+.field-order-wechat-content,.field-order-alipay-content{
+    padding-top: 10px;
+}
+.notice{
+    color: #76a6ef;
+}
+/* 会员卡tab支付部分样式 */
+.recharge-card-pay .cardTypeLabel{
+    width: 100%;
+    display: block;
+}
+.recharge-card-pay .cardTypeLabel label:first-child{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.recharge-card-pay .cardTypeLabel label{
+    width: 100%;
+}
+.recharge-card-pay .cardTypeLabel label input{
+    float: left;
+    margin-right: 20px;
+}
+.recharge-card-pay .cardTypeLabel label .card-title{
+    float: left;
+    width: 85%;
+}
+
+.recharge-card-total-price .charge-card-used {
+    margin-left: -15px;
+    margin-top: 10px;
+}
+
+.create-rebate[disabled], .create-rebate[disabled]:hover {
+    background-color: #76a6ef !important;
+    opacity: 0.5;
+}
+/* 充值卡样式部分 */
+
+#recharge-card .recharge-card-div {
+    width: 242px;
+    height: 108px;
+    float: left;
+    border: 1px solid #CACFD8;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding-left: 14px;
+    padding-top: 4px;
+	position: relative;
+	margin-right:20px;
+}
+
+#recharge-card .recharge-card-div:hover{
+	border: 1px solid #76A6EF;
+}
+#recharge-card .overflow-multiple{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+	line-height:17px;
+	font-size: 12px;
+    color: #55657d;
+    padding-right: 5px;
+	height: 34px;
+	word-wrap: break-word;
+}
+#recharge-card .overflow-multiple-one{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+	line-height:17px;
+	padding-right:10px;
+	word-wrap: break-word;
+}
+#recharge-card .selected-recharge-card{
+	position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+}
+
+.recharge-card-border-color-normal{
+	border: 1px solid #76A6EF;
+}
+#recharge-card .recharge-card-border-color{
+	border: 1px solid #76A6EF;
+}
+.form-horizontal-payment .recharge-card-solid{
+	border-bottom: 0.5px dashed #CACFD8;
+}
+.form-horizontal-payment .recharge-total-price{
+	float: right;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.form-horizontal-payment .recharge-card-pay{
+	display: block;
+    border: 1px solid #d2d6de;
+    float: left;
+    margin-left: 15px;
+	width: 96%;
+}
+#recharge-card{
+    padding-left: 25px;
+    width: 100%;
+    display: block;
+    padding-top: 18px;
+}
+.form-horizontal-payment .recharge-card-type{
+	margin-left: 105px;
+	margin-right:18px;
+}
+.recharge-card-radio > p{
+	margin-left: 25px;
+    padding-top: 20px;
+}
+.recharge-card-total-price{
+	padding: 0 25px;
+}
+#charge-card-used{
+	margin-right: 8px;
+}
+#recharge-card .totalFee{
+	color : #ff8053;
+}
+.recharge-total-price .recharge-discount-price{
+    text-align: right;
+}
+/* 会员卡充值中实际应付的样式 */
+.recharge-banner-wrapper{
+    padding: 0 15px;
+}
+.recharge-banner{
+    background: url('../../img/charge/bg_coat@1x.png');
+    background-color: #97A3B6;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin-bottom: 18px;
+    border-radius: 5px;
+}
+.recharge-banner .price{
+    font-size: 52px;
+    font-weight: 500px;
+}
+.recharge-banner .text-price{
+    position: relative;
+    top: 14px;
+    margin-bottom: 6px;
+}
+.recharge-banner .price .fa-cny{
+    font-size: 24px;
+    margin-right: 10px;
+}
+.chargerecord-cash-wrapper{
+    padding-bottom: 10px;
+    margin-top: -2px;
+}
+.step-wrapper{
+    padding: 0 15px;
+}
+.prn{
+    padding-right: 0;
+}
+/* end */
+

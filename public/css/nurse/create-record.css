@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+
+.show-hide-btn-nurse{
+	width: 100%;
+    background-color: #fff;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+    opacity: 1;
+    margin-top: 25px;
+}
+.show-hide-btn-nurse:hover{
+    background-color: #fff;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+}

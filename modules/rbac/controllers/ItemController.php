@@ -22,7 +22,7 @@ class ItemController extends BaseController
         if($currentSpot){           
             $session->set('currentSpot',$currentSpot);           
         }
-        $this->wxcode = $session->get('currentSpot')?$session->get('currentSpot'):$session->get('spot');
+        $this->wxcode = $session->get('currentSpot')?$session->get('currentSpot'):$_COOKIE['spot'];
     }
     public function behaviors(){
         

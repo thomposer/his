@@ -10,10 +10,12 @@
     display: block;
     outline: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    border-bottom: 1px solid #ccc;
+    border: 1px solid #ccc;
     background-color: #fff;
     color: #ccc;
+    border-radius: 5px;
     cursor: pointer;
+    padding-left: 5px;
 }
 
 .city-picker-span > .placeholder {
@@ -27,13 +29,13 @@
     width: 10px;
     margin-top: -3px;
     height: 5px;
-    background: url(../images/drop-arrow.png) -10px -25px no-repeat;
+/*    background: url(../images/drop-arrow.png) -10px -25px no-repeat;*/
 }
 
-.city-picker-span.focus,
+/*.city-picker-span.focus,
 .city-picker-span.open {
     border-bottom-color: #46A4FF;
-}
+}*/
 
 .city-picker-span.open > .arrow {
     background-position: -10px -10px;
@@ -50,7 +52,7 @@
 }
 
 .city-picker-dropdown {
-    /*position: absolute;*/
+    position: relative;
     width: 315px;
     left: -9999px;
     top: -9999px;
@@ -158,4 +160,32 @@
     background-color: #46A4FF;
     color: #fff;
     border-radius: 2px;
+}
+
+.city-select a:hover, .city-select a:focus{
+    background-color: #46A4FF;
+    color: #fff;
+    border-radius: 2px;
+}.city-select a.active {
+    background-color: rgba(118,166,255,0.1);
+    border-radius: 2px;
+    color: #76A6FF;
+}
+.city-select a,.city-select dt{
+    color: #8190A7;
+}
+.city-select-wrap{
+    box-shadow:none;
+    border: 1px solid #CACFD8 ;
+}
+.city-select-tab{
+    color: #8190A7;
+    background-color: #E9EFF6;
+    border-bottom: 1px solid #CACFD8;
+}
+.city-select-tab > a{
+    color: #8190A7;
+}
+.city-select-tab > a.active{
+    color: #76A6FF;
 }

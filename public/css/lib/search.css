@@ -2,25 +2,106 @@
 
 
 .form-horizontal .form-group{
-	margin-left: -65px;
-    margin-bottom: 15px;
+    margin-left: 0px ;
+    padding: 0 0 0 10px;
+    margin-right:0px ;
+    margin-bottom: 0px;
     float: left;
-    width: 360px;
 }
- .applySearch-button{
- 	
-	margin-bottom:15px;
+.form-horizontal .form-group:first-child{
+    padding:0px;
 }
- 
-.search{
-	margin-left: -14px;
-	float:left;
-	margin-bottom:15px;
-}
-.user-search .form-inline {
-	margin-bottom: 15px;
+.applySearch-button{
+
+    margin-bottom:15px;
 }
 
-.form-horizontal .search_button{
-	width : 125px;
+.search-default{
+    padding-top: 10px;
+    float:left;
+    color: #445064;
+    font-size: 12px;
+}
+
+.form-control{
+    height: 32px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.user-search .form-inline {
+    margin-bottom: 15px;
+}
+.search-margin{
+    padding: 10px 20px;
+    /* margin-bottom: 10px; */
+}
+.search-margin .font-body2{
+    padding:8px 15px;
+}
+/* button[type=submit]{
+        margin-right: 10px;
+} */
+.pharmacy-search{
+    padding: 10px 0px 10px 0px;
+    border-bottom: 1px solid #f4f4f4;
+
+}
+.btn-group-left{
+    background-color: #fff;
+    border-radius: 4px;
+    color: #76a6ef;
+    border: 1px solid #76a6ef;
+}
+.btn-group-middle,.btn-group-center{
+    background: #fff;
+    border: 1px solid #76a6ef !important;
+    color: #76a6ef;
+}
+.btn-group-right{
+    background-color: #fff;
+    border-radius: 4px ;
+    color: #76a6ef !important;
+    border: 1px solid #76a6ef !important;
+}
+.green{
+    color : #95ca20;
+}
+.red{
+    color: #ff4b00;
+}
+.grey{
+    color:#cacfd8
+}
+.btn-group .active a{
+    background: #76a6ef;
+    color: #fff !important;
+}
+.btn-group .active {
+    background: #76a6ef;
+    color: #fff !important;
+}
+.pharmacy-search{
+    padding: 6px 15px;
+    position: relative;
+    border-radius: 3px;
+    /*background: #ffffff;*/
+    /*margin-bottom: 20px;*/
+    width: 100%;
+}
+#check-check label,#cure-cure label,#inspect-oninspect label,#pharmacyrecord-recipelist label{
+    width:100%;
+}
+
+.drop-down-box{
+    width: 155px;
+}
+.margin-r-15{
+    margin-right: 15px;
+}
+/* 文字显示成一行，多余文字... */
+.hidden-ellipsis{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

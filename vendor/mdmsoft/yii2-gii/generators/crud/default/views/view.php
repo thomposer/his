@@ -20,6 +20,7 @@ use app\common\AutoLayout;
 $this->title = $model-><?= $generator->getNameAttribute() ?>;
 $this->params['breadcrumbs'][] = ['label' => <?= $generator->generateString(Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass)))) ?>, 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$baseUrl = Yii::$app->request->baseUrl;
 ?>
 <?= "<?php "?> AutoLayout::begin(['viewFile' => '@app/views/layouts/layout.php'])?>
 <?= "<?php "?> $this->beginBlock('renderCss')?>
@@ -29,25 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-view col-xs-12">
     <div class = "box">
+      <div class="box-header with-border">
+      <span class = 'left-title'><?= " <?= "?> Html::encode($this->title) ?></span>
+      <?= " <?= "?>Html::a(Html::img($baseUrl.'/public/img/common/icon_back.png').'返回',['index'],['class' => 'right-cancel','data-pjax' => 0]) ?>
+     </div>
         <div class = "box-body">  
-            <h2><?= "<?= " ?>Html::encode($this->title) ?></h2>
-        
-            <p>
-            <?= "<?php "?>if(in_array($this->params['requestModuleController'].'/update', $this->params['permList'])):?>
-                <?= "<?= " ?>Html::a(<?= $generator->generateString('修改') ?>, ['update', <?= $urlParams ?>], ['class' => 'btn btn-success']) ?>
-            <?= "<?php "?>endif; ?>
-            <?= "<?php "?>if(in_array($this->params['requestModuleController'].'/delete', $this->params['permList'])):?>
-                <?= "<?= " ?>Html::a(<?= $generator->generateString('删除') ?>, ['delete', <?= $urlParams ?>], [
-                    'class' => 'btn btn-danger',
-                    'data' => [
-                        'confirm' => <?= $generator->generateString('你确定要删除此项吗?') ?>,
-                        'method' => 'post',
-                    ],
-                ]) ?>
-            <?= "<?php "?>endif; ?>
-                <?= "<?= " ?>Html::a(<?= $generator->generateString('返回列表') ?>,['index'],['class' => 'btn btn-primary'])?>
-            </p>
-
     <?= "<?= " ?>DetailView::widget([
         'model' => $model,
         'attributes' => [

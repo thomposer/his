@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+.modal-footer .form-group{
+	text-align:right;
+}
+.modal-footer .form-group .btn-form{
+	margin-right:30px !important;
+}

@@ -8,6 +8,7 @@ use yii\helpers\Url;
 /* @var $form yii\widgets\ActiveForm */
 AppAsset::register($this);
 $baseUrl = Yii::$app->request->baseUrl;
+$versionNumber = Yii::getAlias("@versionNumber");
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -93,7 +94,7 @@ $baseUrl = Yii::$app->request->baseUrl;
             'plugins' : 'public/plugins'
         }
     });
-    require(["<?php echo $baseUrl ?>"+"/public/js/user/login.js"],function(main){
+    require(["<?php echo $baseUrl ?>"+"/public/js/user/login.js?v="+ '<?= $versionNumber ?>'],function(main){
     	main.init();
 	});
     </script>

@@ -1,0 +1,49 @@
+.mediaFile-upload {
+    border: 1px solid #ddd;
+}
+.mediaFile-upload .pre-custom{
+    border: none;
+}
+.mediaFile-upload .file-drop-zone-title{
+    padding-top:0px;
+}
+.mediaFile-upload .input-group-btn-custom{
+    padding-left:20px;
+    padding-bottom:20px;
+    padding-top: 10px;
+}
+.medical-upload-custom .pre-custom{
+    border:none;
+}
+.medical-upload-custom .file-input{
+    border-left:1px solid #ddd;
+    border-right:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.medical-upload-custom .file-drop-zone-title{
+    padding:0px;
+}
+.medical-upload-custom .input-group-btn-custom{
+    padding-left:20px;
+}
+.medical-upload-custom .pre-custom .file-preview-frame{
+    margin-top: 10px !important;
+    margin-bottom: 0px !important;
+    
+}
+.medical-upload-custom .input-group-btn-custom{
+    padding-bottom: 10px;
+    padding-left:10px;
+}
+.medical-upload-custom .file-preview{
+    padding-bottom: 0px;
+}
+.no-click{
+    cursor: no-drop !important;
+}
+.header-custom{
+    margin-top:0px !important;
+
+}

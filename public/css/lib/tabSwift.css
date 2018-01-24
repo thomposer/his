@@ -1,0 +1,22 @@
+.list{
+    padding-left: 17px;
+    margin-bottom: 0px;
+    background-color: #F6F7F9;
+
+    line-height: 40px;
+
+}
+.list li{
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    margin-right: 40px;
+    cursor:pointer;
+    color:#ADB3BC;
+}
+.current,.list li:hover{
+    border-bottom-color: #5091f9!important;
+    color: #5091f9!important;
+}
+.current-active{
+    display: block;
+}

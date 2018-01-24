@@ -32,8 +32,8 @@ $baseUrl = Yii::$app->request->baseUrl;
         'prompt' => '请选择角色'
     ]) ?>   
    <div class="form-group search_button">
-    <?= Html::submitButton('查询', ['class' => 'btn btn-primary btn-submit']) ?>
-    <?= Html::a('重置',Url::to(['@rbacApplyIndex']), ['class' => 'btn btn-default']) ?>
+    <?= Html::submitButton('查询', ['class' => 'btn btn-primary btn-submit delete-btn']) ?>
+<!--    --><?//= Html::a('重置',Url::to(['@rbacApplyIndex']), ['class' => 'btn btn-default']) ?>
    </div>
 
     <?php ActiveForm::end(); ?>

@@ -42,10 +42,9 @@ class DatePicker extends InputWidget
     public function init()
     {
         parent::init();
-
         if ($this->inline) {
             $this->options['readonly'] = 'readonly';
-            Html::addCssClass($this->options, 'text-center');
+            Html::addCssClass($this->options, 'text-left');
         }
         if ($this->size) {
             Html::addCssClass($this->options, 'input-' . $this->size);

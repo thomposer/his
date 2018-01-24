@@ -1,0 +1,100 @@
+@CHARSET "UTF-8";
+#inspect .print-check {
+    float: right;
+    margin-right: 0px!important;
+}
+#user-sex label{
+    padding-top:5px;
+    margin-right:60px;
+}
+
+.form-margin{
+    margin-top:30px;
+}
+.btn-group-left{
+    background-color: #fff;
+    border-radius: 4px;
+    color: #76a6ef;
+    border: 1px solid #76a6ef;
+}
+
+#cure-cure label{
+    padding: 15px 75px 15px 0px;
+}
+.text-price{
+    font-size: 16px;
+    font-weight: 700;
+}
+#inspect-oninspect label{
+	width:100%;
+}
+.hid{
+    display: none;
+}
+
+.cure-form-doc {
+    margin: 16px 0;
+}
+
+.fill-info{
+    padding:15px 15px 0px 15px;
+}
+
+.item_title{
+   color: #76a6ef;
+   font-size: 15px;
+   font-weight:500;
+}
+.pharmacy-search{
+    border-bottom: 0px solid #f4f4f4;
+    padding: 6px 20px;
+}
+
+.inspect-record{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.cure-form{
+    border: 0.5px solid #DFE0E4;
+    border-radius: 0px;
+}
+
+.cure-form>thead>tr>th{
+    border-bottom: 1px solid #DFE0E4;
+}
+.cure-form>tbody>tr>td{
+    border-bottom: 1px solid #DFE0E4;
+}
+
+.shadow{
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+}
+.inspect-record-index .header {
+    background-color: #edf1f7;
+    margin-bottom: 0px;
+    height: 50px;
+    font-size: 14px;
+    color: #445064;
+    line-height: 50px;
+    font-weight: 500;
+    border-top: 1px solid #d2d6de;
+    border-left: 1px solid #d2d6de;
+    border-right: 1px solid #d2d6de;
+    border-bottom: 1px solid #d2d6de
+}
+.pre-custom .file-drop-zone{
+    border:none;
+}
+.text-custom{
+    background-color:#ffffff;
+}
+.file-caption-main .kv-fileinput-caption{
+    display:none;
+}
+.pre-custom .file-drop-zone{
+    border:none;
+}
+.print-label{
+    float: right;
+}

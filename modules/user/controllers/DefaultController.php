@@ -6,8 +6,8 @@ use yii\web\Controller;
 
 class DefaultController extends Controller
 {
-    public function actions()
-    {
+
+    public function actions() {
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -15,12 +15,14 @@ class DefaultController extends Controller
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],           
+            ],
         ];
     }
-    
-    public function actionIndex(){
-        
+
+    public function actionIndex() {
+
+
         return $this->render('index');
     }
+
 }

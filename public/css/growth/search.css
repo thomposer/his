@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+
+
+ .applySearch-button{
+ 	
+	margin-bottom:15px;
+}
+ 
+.search-default{
+	padding-top: 10px;
+	float:left;
+	color: #445064;
+	font-size: 12px;
+}
+
+
+.user-search .form-inline {
+	margin-bottom: 15px;
+}
+.search-margin{
+	padding: 10px 20px;
+	/* margin-bottom: 10px; */
+}
+.search-margin .font-body2{
+	padding:8px 15px;
+}
+/* button[type=submit]{
+	margin-right: 10px;
+} */
+.pharmacy-search{
+	padding: 10px 0px 10px 0px;
+    border-bottom: 1px solid #f4f4f4;
+
+}
+.btn-group-left{
+    background-color: #fff;
+    border-radius: 4px;
+    color: #76a6ef;
+    border: 1px solid #76a6ef;
+}
+.btn-group-middle,.btn-group-center{
+    background: #fff;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+}
+.btn-group-right{
+    background-color: #fff;
+    border-radius: 4px;
+    color: #76a6ef;
+    border: 1px solid #76a6ef;
+}
+.green{
+	color : #95ca20;
+}
+.red{
+    color: #ff4b00;
+}
+.btn-group .active a{
+    background: #76a6ef;
+    color: #fff;
+}
+.btn-group .active {
+    background: #76a6ef;
+    color: #fff;
+}
+.pharmacy-search{
+    padding: 6px 15px;
+    position: relative;
+    border-radius: 3px;
+    /*background: #ffffff;*/
+    /*margin-bottom: 20px;*/
+    width: 100%;
+}
+#check-check label,#cure-cure label,#inspect-oninspect label{
+	width:100%;
+}

@@ -1,0 +1,78 @@
+@CHARSET "UTF-8";
+
+
+#user-sex label{
+	margin-right: 60px;
+}
+
+.form-margin{
+	
+	margin-top:30px;
+}
+.btn-from-delete-add{
+	color: #ffffff;
+	background-color: #76a6ef;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius : 5px;
+	padding: 0px;
+	margin-top: 22px;
+	margin-right: 20px;
+}
+
+.btn-from-delete-add i{
+	color: #ffffff;
+	
+}
+.btn-from-delete-add:hover{
+
+	color: #ffffff;
+	opacity: 0.8;	
+}
+.btn-default[disabled]:hover,.btn-default[disabled]{
+	background-color:#76a6ef;
+	opacity: 0.65;
+}
+#user-role label {
+	margin-right: 18px;
+}
+#user-role label input {
+	margin-right: 6px;
+}
+.title_child_div{
+	margin-top: 60px;
+	margin-bottom: 30.5px
+}
+.title_patient_div{
+	margin-bottom: 27px;
+	margin-left: -30px;
+	margin-top: 9px;
+}
+.title_family_div{
+	margin-top: 60px;
+}
+.title_p{
+	float: left;
+	line-height: 16.5px;
+	margin-bottom: -13px;
+}
+.circle_span{
+	width: 4px;
+	height: 15px;
+	border-radius: 4px;
+	background: #76A6EF;
+	float: left;
+	margin-right: 5px;
+}
+.title_span{
+	font-size: 15.5px;
+	font-weight: 600;
+}
+.other_div{
+	margin-top:25px;
+	display:none
+}
+.upload-head{
+	margin-top: -8px;
+}

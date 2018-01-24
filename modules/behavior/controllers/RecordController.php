@@ -12,6 +12,9 @@ use app\modules\spot\models\Spot;
 use app\modules\module\models\Title;
 use yii\helpers\ArrayHelper;
 use app\modules\module\models\Menu;
+use app\common\Common;
+use yii\web\Response;
+use app\modules\user\models\User;
 
 /**
  * RecordController implements the CRUD actions for BehaviorRecord model.
@@ -40,8 +43,8 @@ class RecordController extends BaseController
         $searchModel = new BehaviorRecordSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $this->pageSize);
         
-		$spots = Spot::find()->select(['spot', 'spot_name'])->asArray()->all();
-		$spotList = ArrayHelper::map($spots, 'spot', 'spot_name');
+		$spots = Spot::find()->select(['id', 'spot_name'])->asArray()->all();
+		$spotList = ArrayHelper::map($spots, 'id', 'spot_name');
 		
 		$modules = Title::find()->select(['module_name', 'module_description'])->all();
 		$moduleList = ArrayHelper::map($modules, 'module_name', 'module_description');
@@ -75,20 +78,22 @@ class RecordController extends BaseController
      */
     public function actionView($id)
     {
-    	$spots = Spot::find()->select(['spot', 'spot_name'])->asArray()->all();
-    	$spotList = ArrayHelper::map($spots, 'spot', 'spot_name');
+    	$spots = Spot::find()->select(['id', 'spot_name'])->asArray()->all();
+    	$spotList = ArrayHelper::map($spots, 'id', 'spot_name');
     	
     	$modules = Title::find()->select(['module_name', 'module_description'])->all();
     	$moduleList = ArrayHelper::map($modules, 'module_name', 'module_description');
     	
     	$actions = Menu::find()->select(['menu_url', 'description'])->asArray()->all();
     	$actionList = ArrayHelper::map($actions, 'menu_url',  'description');
-    	
+    	$model = $this->findModel($id);
+    	$username = User::find()->select(['username'])->where(['id' => $model->user_id])->asArray()->one();
         return $this->render('view', [
             'model' => $this->findModel($id),
         	'spotList' => $spotList,
         	'moduleList' => $moduleList,
         	'actionList' => $actionList,
+            'username' => $username['username']
         ]);
     }
 
@@ -104,24 +109,54 @@ class RecordController extends BaseController
         if (($model = BehaviorRecord::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException('你所请求的页面不存在.');
         }
     }
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
+        $request = Yii::$app->request;
+        if($request->isAjax){
+        
+            /*
+             *   Process for ajax request
+             */
+            $this->findModel($id)->delete();
+            
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ['forceClose'=>true,'forceReload'=>'#crud-datatable-pjax'];
+        }else{
+            /*
+             *   Process for non-ajax request
+             */
+            return $this->redirect(['index']);
+        }
     }   
     /**
      * 批量删除一个月前的记录
      */
-    public function actionDeletemonth()
+    public function actionDeleteMonth()
     {
+        $request = Yii::$app->request;
+        if($request->isAjax){
         
-    	$lastMonth = date('Y-m-j H:i:s', mktime(0, 0, 0, date('m')-1, date('d'), date('Y')));
-    	BehaviorRecord::deleteAll('operation_time < :lastMonth', [':lastMonth' => $lastMonth]);
-    	$this->redirect(['index']);
+            /*
+             *   Process for ajax request
+             */
+            $lastMonth = mktime(0, 0, 0, date('m')-1, date('d'), date('Y'));
+            $db = Yii::$app->recordDb;
+            $db->createCommand()->delete(BehaviorRecord::tableName(),'operation_time < :lastMonth', [':lastMonth' => $lastMonth])->execute();
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ['forceClose'=>true,'forceReload'=>'#crud-datatable-pjax'];
+        }else{
+            /*
+             *   Process for non-ajax request
+             */
+            return $this->redirect(['index']);
+        }
+    	
+//     	BehaviorRecord::deleteAll('operation_time < :lastMonth', [':lastMonth' => $lastMonth]);
+//         Yii::$app->getSession()->setFlash('success','删除成功');
+//     	return $this->redirect(['index']);
     }
     
 }

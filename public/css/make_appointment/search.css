@@ -1,0 +1,59 @@
+.appointment-search .display{
+    float: left;
+}
+.appointment-search .form-group{
+    padding-left: 0px!important;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.appointment-search .form-group input,.appointment-search .form-group select{
+    width: 116px;
+    height: 28px;
+    font-size: 12px!important;
+    padding: 3px 8px;
+}
+.appointment-search .form-group .input-group-addon{
+    padding:0px 12px;
+}
+.appointment-search .search-default{
+    padding-top: 6px;
+}
+.appointment-search .btn-default{
+    padding:4px 12px;
+}
+.appointment-search .search_button{
+    float: right;
+    top: 0px;
+    width: 147px;
+    display: inline-block;
+    margin: 0px!important;
+}
+.appointment-search .search-middle{
+    width: 770px;
+    display: inline-block;
+}
+.appointment-search .more{
+    display: inline-block;
+    color: #76A6EF;
+}
+.appointment-search .more a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+.appointment-search .more-word{
+    margin-left: 20px;
+}
+.field-appointmentsearch-second_department_id,.field-appointmentsearch-status,.field-appointmentsearch-appointment_operator{
+    margin-bottom: 0px!important;
+    display:none;
+}
+.appointment-search .lower{
+    margin-bottom: 0px!important;
+}
+.appointment-index .row-search-margin{
+    padding: 14px 20px 10px!important;
+}
+.field-appointmentsearch-appointment_end_time{
+    margin-left: 10px!important;
+}

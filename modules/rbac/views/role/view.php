@@ -1,33 +1,59 @@
-    <?php
+<?php
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use app\common\AutoLayout;
 /* @var $this yii\web\View */
-/* @var $model app\modules\rbac\models\Role */
+/* @var $model app\modules\rbac\models\Item */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Roles', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Items', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="role-view">
+<?php  AutoLayout::begin(['viewFile' => '@app/views/layouts/layout.php'])?>
+<?php  $this->beginBlock('renderCss')?>
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<?php  $this->endBlock();?>
+<?php  $this->beginBlock('content')?>
 
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->item_name], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->name], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-    <ul>
-        <?php foreach ($rolepermission as $p):?>
+<div class="item-view col-xs-12">
+    <div class = "box">
+        <div class = "box-body">  
+            <h2><?= Html::encode($this->title) ?></h2>
         
-        <li><?php echo $p->name;?></li>
-        <?php endforeach; ?>
-    </ul>
+            <p>
+            <?php if(in_array($this->params['requestModuleController'].'/update', $this->params['permList'])):?>
+                <?= Html::a('修改', ['update', 'id' => $model->name], ['class' => 'btn btn-success']) ?>
+            <?php endif; ?>
+            <?php if(in_array($this->params['requestModuleController'].'/delete', $this->params['permList'])):?>
+                <?= Html::a('删除', ['delete', 'id' => $model->name], [
+                    'class' => 'btn btn-danger',
+                    'data' => [
+                        'confirm' => '你确定要删除此项吗?',
+                        'method' => 'post',
+                    ],
+                ]) ?>
+            <?php endif; ?>
+                <?= Html::a('返回列表',['index'],['class' => 'btn btn-primary'])?>
+            </p>
+
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            'name',
+            'type',
+            'description:ntext',
+            'rule_name',
+            'data:ntext',
+            'created_at',
+            'updated_at',
+        ],
+    ]) ?>
+        </div>
+    </div>
 </div>
+<?php  $this->endBlock()?>
+<?php  $this->beginBlock('renderJs')?>
+
+<?php  $this->endBlock()?>
+<?php  AutoLayout::end()?>

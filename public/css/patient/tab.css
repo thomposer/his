@@ -1,0 +1,129 @@
+.inspect-check-upload-form{
+    margin-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+.inspect-check-upload-form .col-xs-12{
+    padding-left:0px;
+    padding-right: 10px;
+}
+.inspect-check-upload-ul{
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.check-header,.inspect-header{
+    background-color: #edf1f7;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    height: 50px;
+    font-size: 14px;
+    color: #445064;
+    line-height: 50px;
+    font-weight: 500;
+    border-top: 1px solid #d2d6de;
+    border-left: 1px solid #d2d6de;
+    border-right: 1px solid #d2d6de;
+}
+.inspect-check-upload-form .pre-custom{
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+}
+.inspect-check-upload-form .btn-upload-action-custom{
+    width : 100px;
+    height: 32px;
+}
+.inspect-check-upload-ul li {
+    background-color: #ffffff !important;
+    font-weight: 500;
+    width: auto !important;
+    margin-right: 10px;
+    float: left !important;
+    margin-bottom: 10px;
+}
+.inspect-check-upload-ul > li.active > a{
+    background-color: #76a6ef !important;
+    color:#ffffff !important;
+    border: 1px solid #76a6ef;
+}
+.inspect-check-upload-ul > li.active > a:hover{
+    background-color: #76a6ef !important;
+    color:#ffffff !important;
+    border: 1px solid #76a6ef;
+}
+.inspect-check-upload-ul > li > a:hover{
+    background-color: #ffffff !important;
+    color:#76a6ef !important;
+    border: 1px solid #76a6ef;
+}
+.inspect-check-upload-ul > li.active > a:focus{
+    background-color: #76a6ef !important;
+    color:#ffffff !important;
+    font-weight: 500;
+    border: 1px solid #76a6ef;
+}
+.inspect-check-upload-ul > li > a{
+    color: #76a6ef;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid #76a6ef;
+}
+.inspect-check-upload-form .input-group-btn-custom{
+    padding-top: 18px;
+    padding-left: 10px;
+    padding-bottom:20px;
+}
+.inspect-check-upload-form .file-caption-main{
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.inspect-check-upload-form .pre-custom{
+    border-bottom: none;
+}
+.inspect-check-upload-form .pre-custom .file-upload-indicator{
+    display:none;
+}
+.inspect-check-upload-form .pre-custom .text-success {
+    color: #95CA20;
+    margin-left: 5px;
+    font-size: 20px;
+}
+.inspect-check-upload-form .pre-custom .icon_button_view_red{
+   margin-left:5px;
+}
+.kv-file-download{
+    display:none;
+}
+.inspect-check-upload-form .pre-custom .file-preview-frame{
+    display:block;
+    height:190px !important;
+}
+.inspect-check-upload-form .pre-custom .file-drop-zone-title{
+    padding:27px 10px;
+}
+.modal-footer .form-group{
+    padding:20px;
+}
+.modal-footer .form-group .btn-cancel{
+    margin-right:0px;
+}
+.im-custom{
+    border-left: 1px solid #ddd !important;
+    border-right: 1px solid #ddd !important;
+}
+.im-upload{
+    margin-right:10px;
+}
+.im-upload .file-preview-frame{
+    margin-top: 10px !important;
+    margin-left: 10px !important;
+    margin-bottom: 0px !important;
+    margin-right:0px!important;
+
+}
+.file-preview-frame{
+    padding:0px;
+}

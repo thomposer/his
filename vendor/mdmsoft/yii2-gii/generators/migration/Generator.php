@@ -12,6 +12,7 @@ use yii\db\Connection;
 use yii\db\Schema;
 use yii\gii\CodeFile;
 use yii\db\Expression;
+use yii\base\Object;
 
 /**
  * This generator will generate one or multiple ActiveRecord classes for the specified database table.
@@ -143,7 +144,8 @@ class Generator extends \yii\gii\Generator
     {
         return array_merge(parent::stickyAttributes(), ['migrationPath', 'db', 'generateRelations', 'useTablePrefix']);
     }
-
+    
+    
     /**
      * @inheritdoc
      */
@@ -169,7 +171,7 @@ class Generator extends \yii\gii\Generator
             ];
         }
         
-        $migrationName = 'm'.$this->migrationTime.'_'.$this->migrationName;
+        $migrationName = 'his_'.$this->migrationTime.'_'.$this->migrationName;
         $file = rtrim(Yii::getAlias($this->migrationPath), '/')."/{$migrationName}.php";
         $files = new CodeFile($file, $this->render('migration.php', [
                 'tables' => $this->reorderTables($tables, $relations),
@@ -177,7 +179,7 @@ class Generator extends \yii\gii\Generator
         ]));
         return [$files];
     }
-
+    
     protected function reorderTables($tables, $relations)
     {
         $depencies = $orders = $result = [];
@@ -241,7 +243,7 @@ class Generator extends \yii\gii\Generator
             return [$column->dbType, ''];
         }
     }
-
+    
     /**
      * Generates validation rules for the specified table.
      * @param \yii\db\TableSchema $table the table schema
@@ -259,10 +261,14 @@ class Generator extends \yii\gii\Generator
             }
             list($type, $extra) = $this->getSchemaType($column);
             $quote = "'";
+            if($column->unsigned){
+                $extra .= ' UNSIGNED ';
+            }
+            
             if (!$column->allowNull) {
                 $extra .= ' NOT NULL';
             }
-
+            
             if ($column->defaultValue !== null) {
                 $extra .= ' DEFAULT ';
                 if ($column->defaultValue instanceof Expression || is_numeric($column->defaultValue)) {
@@ -276,7 +282,7 @@ class Generator extends \yii\gii\Generator
                 $extra .= " COMMENT '{$column->comment}' ";
                 $quote = '"';                
             }
-
+            
             if (!empty($extra)) {
                 $type = "$type . {$quote}$extra{$quote}";
             }

@@ -1,0 +1,62 @@
+@charset "utf-8";
+.box-body{
+    padding: 0 !important;
+}
+.nav-tabs{
+    border-bottom:none !important ;
+	border-top :1px solid #f4f4f4;
+}
+.nav.nav-tabs>li{
+    background-color:rgba(202,207,216,0.2); 
+    float: none;
+    display: table-cell; 
+    width: 1%; 
+}
+.nav.second-tabs>li{
+    background-color:rgba(202,207,216,0.2); 
+    float: left;
+    display: block; 
+	width:25%;
+}
+.second-tabs{
+	background-color:rgba(202,207,216,0.2); 
+}
+.nav-tabs > li > a{
+    color: #8190a7;
+    font-weight: 300;
+    text-align: center;
+    border: none !important;
+    padding: 0px !important;
+    border-left: 0.5px solid #E1E4E8 !important;
+    border-radius:0px;
+    height: 20px !important;
+    overflow: hidden;
+
+}
+.nav-tabs > li{
+    padding: 10px 0px;
+    border-bottom:0.5px solid #F4F4F4;
+}
+
+.nav-tabs > li:first-child > a{
+    border-left: none;
+}
+.nav-tabs > .active{
+    background-color: #FFFFFF !important;
+    border-bottom: none;
+    border-right: 0.5px solid #F4F4F4;
+    border-left: 0.5px solid #F4F4F4;
+}
+.nav-tabs > .active + li >a{
+    border-left: none;
+    border-right: none;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+    color: #76a6ef !important;
+    font-weight: 500 !important;
+    border: none !important;
+    border-bottom: 1px solid #ffffff !important;
+}
+#medicineItem .modal-body{
+	padding:0px;
+}

@@ -1,0 +1,126 @@
+.module-title {
+    margin-top: 20px;
+}
+.module-title-adorn {
+    width: 4px;
+    height: 20px;
+    border-radius: 25px;
+    background: #76A6EF;
+    float: left;
+    margin-right: 5px;
+}
+.module-title-content {
+    font-size: 15.5px;
+    font-weight: 600;
+}
+
+.update-package-card{
+    float: right;
+    padding: 0 10px;
+    border: 1px solid #76a6ef;
+    border-radius: 2px;
+    cursor: pointer;
+    color: #76A6EF;
+    margin-top:20px;
+}
+.update-package-card a{
+    color: #558de2;
+}
+.update-package-card:hover{
+    background: #F5F9FE;
+}
+.package-card-flow-list{
+    border: 1px solid #F5F6F7;
+    padding: 8px 10px;
+    width: 90%;
+    background-color: #F5F6F7;
+    margin-top: 7px;
+}
+
+/* .flow-record{
+    margin-top: 40px;
+} */
+#card-flow-table{
+    padding: 5px 0;
+}
+.other-operation{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.other-operation .btn-registration{
+    background-color: #fff;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+    opacity: 1;
+}
+#package-card-record-form .package-card-info{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+#package-card-record-form .package-card-name{
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #55657D;
+}
+#package-card-record-form .package-card-service-title{
+    width: 70%;
+    float: left;
+    padding-top: 2px;
+}
+#package-card-record-form .package-card-service-input{
+    width: 80px;
+    border-radius: 2px;
+    box-shadow: none;
+    border: 1px solid #CACFD8;
+    padding-left: 5px;
+    height: 25px;
+    outline: 0;
+}
+#package-card-record-form .package-card-service-item{
+    margin-bottom: 5px;
+    color: #54647D;
+}
+#package-card-record-form .service-name-disabled{
+    color: #97A3B6;
+}
+#package-card-record-form .package-card-content .help-block{
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+}
+#package-card-record-form .package-card-content .package-card-service-input:focus{
+    border-color: #76a6ef;
+}
+#package-card-record-form .package-card-service-time-check-input-error, #package-card-record-form .package-card-service-time-check-input-error:focus{
+    border-color: #FF5000 !important;
+}
+#package-card-record-form .package-card-service-input:disabled{
+    background: #F4F5F7;
+}
+.card-check-btn[disabled], .card-check-btn[disabled]:hover {
+    background-color: #76a6ef !important;
+    opacity: 0.5;
+}
+.package-card-tips-title{
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #445064;
+}
+.package-card-tips-content{
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+/* 弹窗modal调整 */
+#ajaxCrudModal .modal-body {
+    padding: 10px 25px 20px 25px;
+}
+#select2-membershippackagecard-package_card_id-container{
+    padding-left: 0;
+}

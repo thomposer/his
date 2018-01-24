@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+
+.lockscreen-wrapper {
+    max-width: 500px;
+    margin: auto;
+	
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    height: 240px;
+    font-size: 18px;
+    color: #445064;
+    background: white;
+    border-radius: 5px;
+}
+.lockscreen{
+	background: url('../../img/common/bg_select.jpg') repeat;
+}
+.lockscreen-wrapper p {
+	
+	    margin-top: 100px;
+}

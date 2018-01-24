@@ -5,10 +5,9 @@ use app\common\AutoLayout;
 /* @var $this yii\web\View */
 /* @var $model app\modules\module\models\Menu */
 
-$this->title = '更新模板菜单: ' . ' ' . $model->description;
-$this->params['breadcrumbs'][] = ['label' => 'Menus', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = '编辑菜单';
+$this->params['breadcrumbs'][] = ['label' => '模块菜单', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php AutoLayout::begin(['viewFile' => '@app/views/layouts/layout.php'])?>
 <?php $this->beginBlock('renderCss')?>

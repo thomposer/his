@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+
+.btn-group-left{
+    background-color: #fff;
+    border-radius: 4px;
+    color: #76a6ef;
+    border: 1px solid #76a6ef;
+}
+
+.shadow{
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+}
+.board-record-index .header {
+    background-color: #edf1f7;
+    margin-bottom: 0px;
+    height: 50px;
+    font-size: 14px;
+    color: #445064;
+    line-height: 50px;
+    font-weight: 500;
+    border-top: 1px solid #d2d6de;
+    border-left: 1px solid #d2d6de;
+    border-right: 1px solid #d2d6de;
+    border-bottom: 1px solid #d2d6de
+}
+.pre-custom .file-drop-zone{
+    border:none;
+}
+.text-custom{
+    background-color:#ffffff;
+}
+.file-caption-main .kv-fileinput-caption{
+    display:none;
+}
+.pre-custom .file-drop-zone{
+    border:none;
+}
+.file_property .help-block{
+    margin-top: -10px;
+    margin-left: 20px;
+}
+.board-save{
+    margin-left: 20px;
+}

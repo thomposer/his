@@ -1,0 +1,165 @@
+@CHARSET "UTF-8";
+
+/*_modal.php*/
+.modal-body {
+    position: relative !important;
+    padding: 0px !important;
+}
+.tab-content-modal {
+    padding: 3px 25px 0px 25px;
+}
+.button-center {
+    text-align: center;
+}
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: none;  
+}
+.btn-from-delete-add-modal {
+    color: #ffffff;
+    background-color: #76a6ef;
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    border-radius: 5px;
+    padding: 0px;
+}
+
+
+/*_examinationAssessment.php*/
+.blood_type_supplement{
+    height: 50px;
+    line-height: 83px;
+}
+.asq-item{
+    line-height:16.5px;
+    margin: 15px 0 15px 0;
+}
+.item-num{
+    width: 4px;
+    height: 15px;
+    border-radius: 25px;
+    background: #76A6EF;
+    float: left;
+    margin-right: 5px;
+}
+.item-text{
+    font-size: 15.5px;
+    font-weight: 600;
+}
+.assessmentAge{
+    margin-bottom:10px;
+    padding-bottom: 13px;
+}
+
+/*_healthEducation.phg*/
+
+.health-edu-right-row{
+    position: relative;
+}
+
+.health-edu-right-delete{
+    position: absolute;
+    right: 15px;
+}
+
+.health-edu-right-delete a {
+    color: #99A3B1 !important;
+}
+.health-edu-item{
+    margin-top: 30px; 
+}
+.add-health-education{
+    margin-bottom: -5px!important;
+    margin-top: 10px!important;
+    padding: 8px 15px!important;
+}
+#progressWizard form{
+    margin-top: 0px!important;
+}
+
+.consume-padding {
+    padding: 0px;
+}
+
+.add-margin-left {
+    margin-left: 30px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.change-padding {
+    padding: 25px 15px !important;
+}
+
+.nursing-record-index {
+    padding: 0px 0px 11px !important
+}
+.nursing-record-index .font-body2{
+    padding:8px 15px!important;
+}
+.add-line {
+    width: 100%;
+    border-top: 1px solid #F4F4F4;
+}
+
+.fit-content {
+    padding: 20px 30px;
+}
+
+.record-container {
+    margin: 10px 0px 15px 0px;
+}
+
+.nursing-content {
+    background-color: #F4F5F7;
+    border: none;
+    padding: 5px;
+    width: 100%;
+    min-height: 120px;
+}
+.fit-content .close-btn-style {
+    margin-right: 0px!important;
+}
+.nursing-record-index .header{
+    background: none;
+}
+#j_tabForm_2 .labelWidth {
+    float: left;
+    width: 83px;
+}
+.add-line-height{
+    line-height: 39px;
+}
+.add-line-height label {
+    padding-right: 5%;
+}
+#j_tabForm_2  .form-group{
+    float: none!important;
+    margin-left: 0px;
+    padding: 0 0 0 10px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+.field-childexaminationassessment-evaluation_type_result  .childInput{
+    width: 100%!important;
+}
+#childexaminationassessment-score{
+    width: 55%;
+}
+.field-childexaminationassessment-score .widthLeft{
+    width: 70px;
+}
+.field-childexaminationassessment-score .widthRightError{
+    width: 62%;
+}
+/* 过敏史样式优化 */
+.btn-from-delete-add{
+    margin-top: 0;
+}
+#progressWizard .allergy-line .allery-input{
+    padding-left: 0;
+}

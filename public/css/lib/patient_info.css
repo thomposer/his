@@ -1,0 +1,110 @@
+
+.default-patient{
+	width: 100%;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+}
+.patient-name{
+	color: #76a6ef;
+	margin:20px 0px 0px 0px;
+}
+.patient-buttons{
+	margin-top: 16px;
+	margin-bottom: 20px;
+}
+.patient-buttons .row{
+
+	text-align: center;
+}
+.patient-buttons a{
+	border-radius: 4px;
+	border: 1px solid #76a6ef;
+}
+
+.patient-info{
+	width: 100%;
+}
+.box-p{
+	padding: 0px 20px;
+	margin: 0 0 2px;
+}
+.info{
+	color: #8190a7;
+	font-size: 12px;
+	word-break : break-all;
+}
+.block{
+	display: inline-block;
+}
+.patient-buttons a{
+	display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    background-image: none;
+}
+@media (min-width: 992px){
+	.col-md-10 {
+	    width: 80%;
+	}
+}
+.col-xs-10{
+	width: 80% !important;
+}
+.patient-buttons a:hover,.patient-buttons a:focus{
+	color: #76a6ef;
+	opacity: 0.8;
+}
+#outpatient-patient-info{
+	background: #ffffff;
+    border-radius: 4px;
+    margin-left: 15px;
+    margin-right: 5px;
+
+}
+.left-btn{
+	margin-right: 15px;
+}
+.patient_title{
+	background-color: #EDF1F7;
+	/*height: 50px;*/
+}
+.title-div{
+	padding: 5px 0px 6px 20px;
+	color: #99A3B1;
+	font-size: 12px;
+}
+.basic-info{
+	margin-bottom: 20px;
+}
+.body-info{
+	margin-bottom: 16px;
+}
+
+/* 新用户标识样式 */
+.avatar-view .patient-card-text-overflow{
+    margin: 0 auto;
+    /*width: 250px;*/
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    white-space: nowrap; /* 不换行 */
+    vertical-align: bottom;
+    display:table; margin:auto;
+}
+.avatar-view .patient-card-text-overflow span{
+    width: 5px;
+    height: 5px;
+    font-size: 12px;
+    background: #D5EAA6;
+    border-radius: 2px;
+    color: #577F00;
+    padding: 3px;
+    margin-left: 10px;
+}

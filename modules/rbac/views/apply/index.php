@@ -26,9 +26,6 @@ $baseUrl = Yii::$app->request->baseUrl;
       <?php if(isset($this->params['permList']['role'])||in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>            
         <?= Html::a('添加用户', ['create'], ['class' => 'btn btn-success']) ?>
       <?php endif;?>
-      <?php if(isset($this->params['permList']['role'])||in_array($this->params['requestModuleController'].'/register', $this->params['permList'])):?>            
-        <?= Html::a('注册用户',['register'],['class' => 'btn btn-success']) ?>
-      <?php endif;?>
   </p>
   <div class = "box">
     <div class = "box-body">
@@ -39,10 +36,11 @@ $baseUrl = Yii::$app->request->baseUrl;
         'tableOptions' => ['class' => 'table table-bordered table-hover'],
         'pager'=>[
              //'options'=>['class'=>'hidden']//关闭自带分页
-             'firstPageLabel'=>"首页",
-             'prevPageLabel'=>'上一页',
-             'nextPageLabel'=>'下一页',
-             'lastPageLabel'=>'尾页',
+            
+            'firstPageLabel' => Yii::getAlias('@firstPageLabel'),
+            'prevPageLabel' => Yii::getAlias('@prevPageLabel'),
+            'nextPageLabel' => Yii::getAlias('@nextPageLabel'),
+            'lastPageLabel' => Yii::getAlias('@lastPageLabel'),
          ],
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
@@ -67,7 +65,7 @@ $baseUrl = Yii::$app->request->baseUrl;
                 'template' => '{update} {delete}{reply}',  
                 'buttons' => [
                     'reply' => function($url,$model,$key){
-                        $redirect_url = Yii::getAlias('@userIndexReset');
+                        $redirect_url = Yii::getAlias('@userManageReset');
                         if(!isset($this->params['permList']['role']) && !in_array($redirect_url, $this->params['permList'])){
                             return false;
                         }

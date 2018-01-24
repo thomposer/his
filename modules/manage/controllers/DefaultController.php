@@ -4,10 +4,12 @@ namespace app\modules\manage\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use app\common\base\AutoLoginFilter;
 use yii\web\Controller;
 use app\modules\spot\models\Spot;
-use yii\helpers\VarDumper;
+use yii\db\Query;
+use app\modules\user\models\UserSpot;
+use yii\helpers\Url;
+use app\common\Common;
 /**
  * 公众号管理平台入口，提供站点选择
  * @author zesonliu
@@ -24,10 +26,7 @@ class DefaultController extends Controller
     public function behaviors() {
 	  
 		return [
-			// 自动OA登录过滤器
-//  			'autologin' => [
-//  				'class' => AutoLoginFilter::className(),
-//  			],
+
 			'access' => [
 				'class' => AccessControl::className(),
 				'rules' => [
@@ -41,53 +40,50 @@ class DefaultController extends Controller
 			],
 		];
 	}
-	public function beforeAction($action){
-	    
-	    return parent::beforeAction($action);
-	    
-	}
     
     public function actionIndex()
     {
-        $data = '';
+        $data['spot'] = '';
         $where = '';
         $list = '';
-        $userId = Yii::$app->user->identity->user_id;
-        $allowSpot = $this->manager->getAssignments($userId);
-        $systemRole = Yii::getAlias('@systemRole');
-        if($allowSpot){
-            foreach ($allowSpot as $v){
-               switch (true){
-                   case $v->roleName === $systemRole : 
-                       $where = 1;
-                       break;
-//                    case strstr($v->roleName, $spotPrefix) != false :
-//                        $data['spot'][] = trim(str_replace($spotPrefix, '', $v->roleName));
-//                        break;     
-                   default:
-                       $spotName = explode('_', $v->roleName)[0];
-                       $data['spot'][$spotName] = $spotName;
-                       break;
-                       
-               }
+        $spotList = '';
+        $cache = Yii::$app->cache;
+        $userInfo = Yii::$app->user->identity;
+        $userId = $userInfo->id;
+        if(isset($_COOKIE['spotId'])){
+            return $this->redirect(Url::to(['@manageIndex']));
+        }
+        //获取该机构下用户所属所有诊所列表，并缓存
+        $parentSpotId = $_COOKIE['parentSpotId'];
+        if(!$parentSpotId){
+            Common::logout();
+            return $this->redirect(Url::to(['@userIndexLogin']));
+        }
+        $list = (new Spot())->getCacheSpotList();
+        $spotInfo = Spot::find()->select(['id','spot','spot_name','icon_url'])->where(['id' => $parentSpotId])->asArray()->one();
+        if(!$list){
+            //若没有机构没有诊所，则直接进入机构
+            $expireTime = Yii::getAlias('@loginSessionExpireTime');
+            if($_COOKIE['rememberMe'] == 1){
+                $expireTime = Yii::getAlias('@loginCookieExpireTime');
             }
+            setcookie('spotId',$parentSpotId,time()+$expireTime,'/',null,null);//诊所id
+            $cacheSuffix = $parentSpotId.$userInfo->id;
+            
+            $cache->set(Yii::getAlias('@parentSpotCode').$cacheSuffix,$spotInfo['spot'],$expireTime);//机构代码
+            $cache->set(Yii::getAlias('@parentSpotName').$cacheSuffix,$spotInfo['spot_name'],$expireTime);//机构名称
+            
+            $cache->set(Yii::getAlias('@spot').$cacheSuffix,$spotInfo['spot'],$expireTime);//诊所代码
+            $cache->set(Yii::getAlias('@spotName').$cacheSuffix,$spotInfo['spot_name'],$expireTime);//诊所名称
+            $cache->set(Yii::getAlias('@spotIcon').$cacheSuffix, $spotInfo['icon_url'],$expireTime);//诊所logo
+            
+            
+            $this->redirect(Url::to(['@manageIndex']));
+            return;
         }
-        $where = $where?$where:$data;
-        if($where){
-            $list = Spot::find()
-    		->select(['id', 'spot', 'spot_name'])
-    		->where($where)
-    		->asArray()
-    		->all();
-        }
-        $session = Yii::$app->session;
-    	$session->set('spot_id','');//站点id
-		$session->set('spot','');//站点简称
-		$session->set('spot_name','');//站点名称
-		return $this->render('index', [ 'list' => $list ]);
-    }
-    public function actionMessage(){
+        setcookie('spotId','',Yii::getAlias('@loginCookieExpireTime'),'/',null,null);//诊所id
         
-       return $this->render('message');
+    	return $this->render('index', [ 'list' => $list,'spotInfo' => $spotInfo,'username' => $userInfo->username]);
     }
+    
 }

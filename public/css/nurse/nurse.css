@@ -1,0 +1,346 @@
+.basic-header{
+    height: 25px;
+    background: #ffffff;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    padding-right: 15px;
+    border-radius:5px 5px 0px 0px;
+    border-bottom:1px solid #CFD4DC;
+    color:#445064;
+    font-weight:500;
+}
+.basic-left-info{
+    color: #445064;
+    font-weight:400;
+    font-size:16px;
+}
+.none_radius{
+    border-radius:0px !important;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+.nurse-index{
+    padding:10px 10px 0px 10px!important;
+}
+.margin-right{
+    margin-right:6px!important;
+}
+.box-body{
+    padding: 10px 10px 0px 10px !important;
+}
+
+.nurse-table{
+    border: 1px solid #E5EBF4;
+    border-radius: 0px;
+}
+
+.nurse-table>thead>tr>th{
+    border-bottom: 1px solid #DFE0E4;
+}
+.nurse-table>tbody>tr>td{
+    border-bottom: 1px solid #DFE0E4;
+}
+
+.shadow{
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+}
+/*覆盖插件的颜色*/
+.nurse-index td.kv-group-even {
+    background-color: #ffffff!important;
+}
+.nurse-index .table-hover td.kv-group-even:hover {
+    background-color: #fff!important;
+}
+.nurse-index td.kv-group-odd {
+    background-color: #ffffff!important;
+}
+.nurse-index .table-hover td.kv-group-odd:hover{
+    background-color: #ffffff!important;
+}
+.table > tbody > tr > .appointment-remark{
+    text-overflow : ellipsis;
+    white-space : nowrap;
+    overflow : hidden;
+}
+#crud-datatable-pjax > .box > .nurse-appointment,.nurse-index > .box > .nurse-appointment {
+    background: #edf1f7;
+    color: #54647D;
+    font-size: 14px;
+    height: 36px;
+    padding: 8px 0px 8px 10px;
+    /* border-bottom: 1px solid #CACFD8; */
+    font-weight: bold;
+    border: 1px solid #CACFD8;
+    border-bottom:none;
+}
+#nurse-appointment > thead > tr > th,#nurse-report > thead >tr >th{
+    background: #F6F7F9 !important;
+}
+.box > .nurse-appointment > .appointment-num{
+    color: #FF7B7B;;
+}
+.row > .nurse-title{
+    font-size: 16px;
+    color: #445064;
+    font-weight: bold;
+    text-align: center;
+}
+.nurse-search-padding{
+    padding: 0 !important;
+}
+.focus-doc{
+    padding: 7px 10px;
+    border: 1px solid #CACFD8;
+    color: #76A6EF;
+    margin-right: -5px;
+}
+.focus-doc i{
+    margin-left: 5px;
+    color: #76A6EF;
+}
+.doc-info{
+    padding: 0px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.doc-info label{
+    float: left;
+    list-style-type:none;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #CACFD8;
+    border-radius: 2px;
+    padding: 0px 9px;
+    text-overflow : ellipsis;
+    white-space : nowrap;
+    overflow : hidden;
+    margin-right: 10px;
+}
+.doc-info label:hover{
+    border: 1px solid #76A6EF!important;
+}
+.doc-info  input{
+    float: left;
+    margin-top: 9px;
+    margin-right: 5px;
+}
+.doc-info li span{
+    float: left;
+}
+.doc-info .form-group{
+    padding: 0px;
+}
+.doc-info .cover{
+    position: absolute;
+    width: 124px;
+    height: 12px;
+    top: -12px;
+    right: -0.8px;
+    /*background: red;*/
+    border-right: 1px solid #CACFD8;
+    border-bottom: none;
+    border-left: 1px solid #CACFD8;
+    background: white;
+}
+/*.doc-info .cover-bottom{*/
+    /*background: white!important;*/
+    /*top: -12px;*/
+/*}*/
+.choice-doc-form{
+    width: 100%;
+    /*border: 1px solid #CACFD8;*/
+    /*box-shadow: 0 6px 11px 3px rgba(202,207,216,0.26);*/
+    padding: 0px;
+}
+.choice-doc-form-after{
+    border: 1px solid #CACFD8;
+    box-shadow: 0 6px 11px 3px rgba(202,207,216,0.26);
+    padding: 10px!important;
+}
+.cursor{
+    cursor:pointer;
+}
+.circle{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 11px;
+    margin-right: 5px;
+}
+.circle-has-schedule{
+    background: #95CA20;
+}
+.circle-not-schedule{
+    background: #F2F4F7;
+}
+.doctor-name{
+    /*display: inline-block;*/
+    /*width: 42px;*/
+    /*overflow: hidden;*/
+}
+.circle-seleted{
+    background: white;
+}
+.doc-selected{
+    background: #76A6EF;
+    color:white;
+    border: 1px solid #76A6EF!important;
+}
+.doc-info-form a {
+    display: inline-block;
+}
+.button-width {
+    width: 150px;
+}
+.eh-update-button {
+    border: 0 none;
+    height: 16px;
+    width: 16px;
+    line-height: 14px;
+    border:1px solid #76A6EF;
+    border-radius:4px;
+    padding: 0;
+    text-indent:2px;
+    display: inline-block;
+}
+.eh-update-button:hover{
+    opacity: 0.8;
+}
+.eh-thisweek-button {
+    background: #76a6ef none repeat scroll 0 0;
+    color: #fff;
+    margin-left: 5px;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 4px !important;
+    height: 1.5rem;
+    font-size: 12px;
+    line-height: 1.5rem;
+    margin-top:16px;
+}
+.eh-thisweek-button:hover{
+    color:#fff;
+}
+.eh-update-button img {
+    width: 9px;
+    position: relative;
+}
+.eh-prev-button img {
+    right: -6px;
+    top: 1px;
+}
+.eh-next-button img {
+    left: 10px;
+    top: 2px;
+}
+.doc-info-form-display a{
+    width: 80px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.btn-default[disabled]{
+    background: #BAD2F7;
+    color: #FFFFFF;
+}
+.btn-default[disabled]:hover{
+    background: #BAD2F7;
+    color: #FFFFFF;
+}
+.field-appointment-appointment_cancel_reason{
+    width:100%;
+}
+#nurse-report > tbody > tr > .op-group > a,#nurse-appointment > tbody > tr > .op-group > a{
+    /*    margin-right: 0px;
+        color: #99a3b1;*/
+}
+#nurse-report  > tbody > tr > .op-group > .nurse-a:hover,#nurse-appointment  > tbody > tr > .op-group > .nurse-a:hover {
+    /*    color:#76A6EF;
+        text-decoration:underline*/
+}
+#print-show-none{
+    display: none;
+}
+.modal-header {
+    padding: 15px;
+    /*border-bottom: 1px solid #e5e5e5;*/
+}
+.nurse-index .table .op-group a{
+    margin-right: 0px !important;
+}
+.non-specialist-medical-record .charge-table > tbody > tr > td,.non-specialist-medical-record .charge-table > tbody > tr > th {
+    border-bottom: none !important;
+    border-top: none !important;
+}
+
+.non-specialist-medical-record .charge-table > tbody > tr > th {
+    padding: 9px 21px;
+    width: 180px;
+    font-weight: bold;
+}
+
+.non-specialist-medical-record .charge-table > thead > tr > th {
+    border-bottom: 0.25px solid #000000;
+}
+
+/* 方便门诊按钮 */
+.create-record-btn {
+    height: 25px;
+    line-height: 25px;
+    padding-top: 0px !important;
+    margin-left: -5px;
+    border-radius: 2px;
+	background: #fff;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+}
+.create-record-btn:hover{
+	background-color: #fff;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+    opacity: 1;
+}
+/* 日期时间选择器样式
+-------------------------*/
+.nurse-datepicker-wrapper{
+    vertical-align: middle;
+    margin-left: 10px;
+    display: inline-block;
+}
+.nurse-datepicker{
+    width: 126px;
+    margin-right: 5px;
+    display:inline-block;
+    vertical-align: middle;
+}
+.nurse-datepicker input{
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 0px;
+    height: 20px;
+    width:100%;
+    background: white;
+    font-size: 16px;
+    color:#76a6ef !important;
+}
+.nurse-datepicker input:hover{
+    text-decoration: underline;
+}
+.datepicker table tr td.active.day{
+    background-color: #76A6EF!important;
+}
+.datepicker .datepicker-days table tr td.day:hover, .datepicker table tr td.day.focused{
+    background-color: #E5F2FF;
+}
+#nursesearch-nursedate[readonly]{
+    background-color: #fff !important;
+}
+
+@media screen and (max-width: 1200px) {
+   .table-responsive{
+    overflow-y: visible;
+   }
+}

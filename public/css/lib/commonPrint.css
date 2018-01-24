@@ -1,0 +1,635 @@
+@media print {
+    /*抽出的独立css*/
+    .fl {
+        float: left;
+    }
+
+    .fr {
+        float: right;
+    }
+
+    .tc {
+        text-align: center;
+    }
+
+    .tr {
+        text-align: right;
+    }
+
+    .tl {
+        text-align: left;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    .clearfix:after {
+        clear: both;
+    }
+
+    .clearfix {
+        zoom: 1;
+    }
+
+    /* IE < 8 */
+    .font-0px {
+        font-size: 0;
+    }
+
+    .font-5rem {
+        font-size: 0.5rem !important;
+    }
+
+    .font-3rem {
+        font-size: 0.3rem !important;
+    }
+
+    .font-14px {
+        font-size: 14px;
+    }
+
+    .font-16px {
+        font-size: 16px;
+    }
+
+    .width-15 {
+        width: 15%;
+    }
+
+    .width-20 {
+        width: 20%;
+    }
+
+    .width-30 {
+        width: 30%;
+    }
+
+    .width-50 {
+        width: 50%;
+    }
+
+    .width-75 {
+        width: 75%;
+    }
+
+    .line {
+        width: 100%;
+        height: 5px;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+    }
+
+    .add-margin-bottom-5 {
+        margin-bottom: 5px;
+    }
+
+    .add-margin-bottom-20 {
+        margin-bottom: 20px;
+    }
+
+    .add-margin-top-10 {
+        margin-top: 10px;
+    }
+
+    .line-margin-top {
+        margin-top: 15px;
+    }
+
+    .add-margin-top-20 {
+        margin-top: 20px;
+    }
+
+    .add-margin-top-50 {
+        margin-top: 50px;
+    }
+
+    .display-inline-block {
+        display: inline-block;
+    }
+
+    .position-relative {
+        position: relative;
+    }
+
+    /*打印布局CSS*/
+    .my-show-new {
+        padding: 10px 50px 0px;
+    }
+
+    .my-show-new .fill-info {
+        padding: 0px !important;
+    }
+
+    .my-show-new .print-check {
+        float: right;
+        margin-right: 0px;
+    }
+
+    .my-show-new .rebate-title {
+        text-align: center;
+        font-size: 24px;
+        color: #000000;
+        margin-top: -30px;
+        float: left;
+        width: 100%;
+    }
+
+    .my-show-new .small-title {
+        font-size: 8px;
+        color: #000000;
+        font-weight: bolder;
+    }
+
+    .my-show-new .rebate-table {
+        width: 100%;
+        max-width: 100%;
+        table-layout: fixed;
+        margin-top: 10px;
+        margin-left: 0px !important;
+    }
+
+    .my-show-new .inspect-table > tbody > tr > td {
+        padding: 9px 20px 9px 0px !important;
+    }
+
+    .my-show-new .inspect-table > thead > tr > th {
+        padding: 9px 0px !important;
+
+    }
+
+    .my-show-new .foot-left {
+        padding-bottom: 0px;
+    }
+
+    .my-show-new .foot-text {
+        font-size: 15px;
+    }
+
+    .my-show-new .rebate-pay {
+        text-align: left;
+        float: left;
+    }
+
+    .my-show-new .clinic-img {
+        width: 60px;
+        height: 60px;
+    }
+    .clinic-img-A5{
+        width: 45px;
+        height: 45px;
+    }
+    .my-show-new .rebate-date {
+        text-align: right;
+        font-size: 8px;
+        color: #000000;
+        display: inline-block;
+        float: right;
+    }
+
+    .my-show-new .rebate-foot-bottom {
+        width: 100%;
+        padding: 0px !important;
+        position: relative;
+        min-height: 60px;
+    }
+
+    .my-show-new .btm-rebate {
+        padding: 53px;
+    }
+
+    .my-show-new .td-field {
+        border-bottom: solid 1px;
+        width: 76%;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .my-show-new .rebate-margin {
+        margin-bottom: 10px;
+    }
+
+    .my-show-new .charge-table-first th {
+        background-color: #FFFFFF;
+    }
+
+    .my-show-new .charge-table > tbody > tr > td {
+        border-bottom: none;
+        border-top: none;
+        word-break: break-all;
+        padding: 0px 0px 8px;
+        vertical-align: initial !important;
+        font-size: 0.6rem;
+    }
+
+    .my-show-new .charge-table > thead > tr > th {
+        border-bottom: 0.25px solid #000000;
+
+    }
+
+    .my-show-new .rebate-type {
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        display: inline-block;
+    }
+
+    .my-show-new .rebate-print .table > thead > tr > th {
+        padding: 10px 0px !important;
+
+    }
+
+    .my-show-new .rebate-foot-second {
+        height: 25px;
+        margin-top: 10px;
+    }
+
+    .my-show-new .rebate-write {
+        width: 50%;
+        display: inline-block;
+    }
+
+    .my-show-new .rebate-write-new {
+        width: 33.3%;
+        display: inline-block;
+    }
+
+    .my-show-new .rebate-bottom {
+        width: 32.9%;
+        display: inline-block;
+    }
+
+    .my-show-new .rebate-write-two {
+        width: 50%;
+        float: left;
+        height: 100%;
+    }
+
+    .my-show-new .charge-table-first {
+        padding: 0px;
+        overflow-y: visible;
+    }
+
+    .my-show-new .check-new {
+        margin: 30px 0px 30px 0px;
+        background: #EFEFEF;
+        border-radius: 5px;
+        padding: 6px;
+    }
+
+    .my-show-new .print-content {
+        margin: 0px 15px;
+        width: 96%;
+        word-break: break-all;
+    }
+
+    .my-show-new .note {
+        text-align: left;
+    }
+
+    .my-show-new .print-main-contnet {
+        min-width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .my-show-new .print-main-contnet-outpatient {
+        min-height: 830px;
+    }
+
+    .my-show-new .hid {
+        display: none;
+    }
+
+    .my-show-new .charge-table {
+        table-layout: fixed;
+    }
+
+    .my-show-new .btn-readonly {
+        background-color: #76a6ef !important;
+    }
+
+    .my-show-new .foot-text {
+        font-size: 15px;
+    }
+
+    .my-show-new .second-title {
+        font-weight: bold;
+        font-size: 18px;
+        padding-left: 22px;
+        color: #000000;
+    }
+
+    .my-show-new .print-bottom {
+        padding-top: 20px;
+        margin-left: 15px;
+    }
+
+    .my-show-new .charge-table > tbody > tr > th {
+        width: 19%;
+        padding: 0px 0px 8px 0px;
+        vertical-align: initial !important;
+        font-size: 0.6rem;
+    }
+
+    .my-show-new .print-table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .my-show-new .tow-line {
+        display: inline-block;
+        width: 100%;
+        height: 22px;
+    }
+
+    .my-show-new .outpatient-bottom {
+        margin-left: 15px;
+    }
+
+    .my-show-new .patientid {
+        padding: 15px 15px 0px 15px;
+
+    }
+
+    .my-show-new .small-title-second {
+        font-weight: bold;
+        font-size: 0.3rem;
+        display: inline-block;
+        width: 100%;
+        margin-left: 0px !important;
+        border-bottom: 1px solid #000000;
+    }
+
+    .my-show-new .small-title-third {
+        font-size: 0.3rem;
+        color: #000000;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    .my-show-new .tow-line-buttom {
+        border-top: 1px solid;
+        font-size: 0px;
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .my-show-new #record-print {
+        min-height: 750px;
+    }
+
+    .my-show-new .rebate-foot-bottom-second {
+        padding: 2px 0px 0px 0px;
+        width: 100%;
+        border-top: 1px solid;
+    }
+
+    .my-show-new .fill-info-buttom {
+        position: relative;
+        bottom: 0px;
+        float: left;
+        width: 100%;
+    }
+
+    .my-show-new .total-column {
+        width: 25%;
+        display: inline-block;
+    }
+
+    .my-show-new .total-column-three-part {
+        width: 33.3%;
+        display: inline-block;
+        font-size: 14px;
+    }
+
+    .my-show-new .column-name {
+        font-size: 0.5rem;
+        color: #000000;
+        display: inline-block;
+        vertical-align: middle;
+
+    }
+
+    .my-show-new .column-value {
+        display: inline-block;
+        font-size: 0.5rem;
+        text-align: left;
+        width: 70%;
+        vertical-align: bottom;
+        word-wrap: break-word;
+        border-bottom: solid 1px;
+        padding-left: 2%;
+    }
+
+    .my-show-new .three-wording-line-width {
+        width: 74% !important;
+    }
+
+    .my-show-new .four-wording-line-width {
+        width: 55% !important;
+    }
+
+    .my-show-new  .five-wording-line-width {
+        width: 57% !important;
+    }
+
+    .my-show-new .six-wording-line-width {
+        width: 81% !important;
+
+    }
+
+    .my-show-new .body-sign {
+        margin-top: 10px;
+    }
+
+    .my-show-new .children-sign {
+        border: 1px solid #999999;
+        border-radius: 5px;
+        display: inline-block;
+        padding: 3px 15px;
+        position: absolute;
+        right: 0px;
+        top: 1.5rem;
+    }
+
+    .my-show-new .double-underline {
+        height: 4px;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        MARGIN-BOTTOM: 8PX;
+    }
+
+    .my-show-new .add-padding-bottom {
+        padding-bottom: 6px;
+    }
+
+    .my-show-new .drunk-title-big-size {
+        font-size: 0.4rem;
+    }
+
+    .my-show-new .border {
+        border: 1px solid #999999 !important;
+    }
+
+    .my-show-new .allergy {
+        margin-top: 6px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .my-show-new .total-price {
+        text-align: left;
+        float: right;
+        width: 33.3%;
+    }
+
+    .my-show-new .doc-sign {
+        text-align: left;
+        float: right;
+        width: 33.3%;
+        margin-bottom: 10px;
+    }
+
+    .my-show-new .total-price-content {
+        border: 1px solid #999999;
+        display: inline-block;
+        border-radius: 2px;
+        padding: 2px 3%;
+    }
+
+    .x {
+        border: solid 1px red;
+        width: 100px;
+        height: 100px;
+        position: relative;
+        background-color: transparent;
+    }
+
+    .x:before {
+        position: absolute;
+        top: 0px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        border-bottom: 100px solid red;
+        border-left: 100px solid transparent;
+        content: "";
+    }
+
+    .x:after {
+        position: absolute;
+        left: 1px;
+        right: 0;
+        top: 1px;
+        bottom: 0;
+        border-bottom: 99px solid white;
+        border-left: 99px solid transparent;
+        content: "";
+    }
+
+    .my-show-new .img-line-img {
+        width: 100%;
+        max-height: 140px;
+        height: 20%;
+    }
+
+    .my-show-new .foot-bottom {
+        position: relative;
+        bottom: 0px;
+        width: 100%;
+    }
+
+    .my-show-new .rebate-print .charge-table tbody td {
+        padding: 10px;
+    }
+
+    .clinic-img-long{
+        width: 180px !important;
+        height: 60px !important;
+    }
+    .clinic-img-long-A5{
+        width: 135px !important;
+        height: 45px !important;
+    }
+
+    /*打印时其他隐藏 仅适用于window.print() 不适用于JQprint插件*/
+    .wrapper,.modal-dialog,.yii-debug-toolbar,#show_tips_box{
+        display: none!important;
+    }
+    .common-print-container{
+        display: block!important;
+    }
+    .page-break{
+        page-break-after: always;
+    }
+
+   /**********************
+   * A5处方打印
+   **********************/
+  .A5-print{
+    padding: 0; 
+    font-size: 12px;
+  }
+  .A5-print .total-column-three-part{
+    font-size: 12px;
+  }
+  .overflow-ellipsis{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+  .A5-print-table{
+    margin-bottom: 0;
+  }
+  .A5-print-table>tbody>tr>td{
+    padding:5px;
+    vertical-align: top;
+    border:none;
+  }
+  .A5-print-table>tbody>tr{
+    padding:7px 0;
+  }
+  .A5-print .border-bottom{
+    border-bottom: 1px solid #000;
+  }
+  .A5-print .fill-info{
+    padding-bottom:8px !important;
+  }
+  .A5-print .small-title-third{
+    padding-top:6px;
+    padding-bottom: 8px;
+  }
+  .A5-print-line{
+    height: 4px;
+  }
+  .A5-print .empty-print{
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    margin-top: -5px;
+    border-top:1px solid #000;
+    padding-left: 6px;
+    padding-top: 5px;
+  }
+  .word-break{
+    word-break: break-all;
+  }
+  .column-text{
+    vertical-align: top;
+    display: inline-block;
+  }
+  .A5-print .drug-price{
+    display: inline-block;
+    width: 40%;
+  }
+  .A5-print .drug-price .column-value{
+    width: 46%;
+  }
+  .A5-print .skin-test-type{
+    padding-left: 47px;
+  }
+}

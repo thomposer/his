@@ -1,0 +1,90 @@
+.card-recharge-category-index .table-responsive{
+    padding: 0 10px 1px;
+}
+.card-recharge-category-index .kv-grid-table{
+    border: 1px solid #E5EBF4;
+}
+.service-content{
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+.service-content .feeDiscount{
+	line-height : 30px;
+}
+.card-recharge-category-view-content{
+    padding: 30px;
+}
+.category-operation-btn{
+    margin-top: 25px;
+}
+.card-manage-group-view-edit{
+    position: absolute;
+    right: 30px;
+}
+.card-view-btn {
+    color: #99A3B1 !important;
+    background: #edf1f7;
+    border-radius: 100px;
+    width: 70px;
+    height: 24px;
+    padding: 4px 7px;
+}
+.card-manage-group-view-edit i{
+    vertical-align: middle;
+}
+.btn-card-group{
+    background: #fff;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+    margin-right: 20px;
+}
+.btn-card-group:hover, .btn-card-group:visited, .btn-card-group:active {
+    background-color: #fff;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+    opacity: 1;
+}
+
+
+
+/*卡种*/
+.card-manage-group-view-service-content{
+    margin: 15px 0px 20px 0px;
+}
+.card-manage-category-view-edit {
+    position: absolute;
+    right: 30px;
+    top:68px;
+}
+#cardrechargecategory-f_auto_upgrade >  label{
+    display: block;
+}
+#cardrechargecategory-f_upgrade_amount.form-control{
+    display: inline-block;
+    width: 65%;
+}
+
+
+#card-category input.form-control{
+	height : 34px;
+	border-radius : 4px;
+	font-size : 14px;
+}
+.service-content .form-control{
+	display : inline;
+	width : 92%;
+}
+.f_level{
+    font-size: 12px;
+    color: #A4ADBA;
+}
+
+.service-card-discount{
+    margin-top:20px;
+}
+
+.field-cardrechargecategory-f_upgrade_amount{
+
+    margin-left: -10px;
+}

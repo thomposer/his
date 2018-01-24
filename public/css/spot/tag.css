@@ -1,0 +1,37 @@
+.description-div{
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 6px;
+}
+.description-span{
+    margin-left: 8px
+}
+.tag-update > .tag-bg {
+    background-color: #ffffff !important;
+    border-radius: 6px 6px 0px 0px !important;
+}
+.tag-content {
+    padding: 0 10px 0px;
+    border-radius: 0px;
+}
+.tag-view .delete_gap{
+    box-shadow: none;
+}
+.tag-view{
+    background-color: #ffffff;
+}
+.tag-orders{
+    padding-left: 20px;
+}
+.operation{
+    margin-right: 0px;
+    color: #99a3b1
+}
+.btn-tag-from-update{
+    padding: 0 10px;
+    border: 1px solid #76a6ef;
+    border-radius: 2px;
+    cursor: pointer;
+    color: #76A6EF;
+    background-color: #fff;
+}

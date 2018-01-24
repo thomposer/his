@@ -1,0 +1,22 @@
+define(function () {
+    return ''
+        + '<tr class="{{parentClass}}">'
+        + ''
+        +   '<td>{{name}}</td>'
+        + ''
+        +   '<td>{{price}}</td>'
+        + ''
+        +   '<td></td>'
+        + ''
+        +   '<td class="op-group" style="display: table-cell;">'
+        + ''
+        +     '<input type="hidden" class="form-control" name="{{deleted}}" value="">'
+        + ''
+        +     '<input type="hidden" class="form-control" name="{{inputName}}" value="{{list}}">'
+        + ''
+        +     '<img src="{{baseUrl}}/public/img/common/delete.png" alt="">'
+        + ''
+        +   '</td>'
+        + ''
+        + '</tr>';
+});

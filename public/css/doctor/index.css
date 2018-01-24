@@ -1,0 +1,234 @@
+@CHARSET "UTF-8";
+
+
+.today-job{
+    /*height: 130px;*/
+    /*width: 250px;*/
+    background:  #fff;
+    border-radius: 4px;
+    padding-top: 20px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+}
+.doctor-h2{
+    font-size: 16px;
+    color: #76a6ef;
+}
+.today-ren{
+    overflow: hidden;
+    margin-top: -4px;
+}
+.today-left{
+    width:50%;
+    float:left;
+}
+.today-right{
+    width:50%;
+    float:left;
+}
+.doctor-yijiezhen{
+    color: #76a7ef;
+    font-size: 48px;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+.doctor-yijiezhen-text{
+    color: #8190a7;
+    font-size: 14px;
+}
+
+.doctor-search-right{
+    padding-left:15px;
+    background:  #fff;
+    border-radius: 4px;
+    padding-top: 20px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+    overflow: hidden;
+}
+.huanzhe{
+    color: #55657d;
+    font-size: 16px;
+}
+.search-input{
+    border: none;
+    height: 48px;
+    border-radius: 4px;
+    float: left;
+    width: 100%;
+    color: #55657d;
+}
+.search-input-div{
+    border-radius: 4px 0px 0px 4px;
+    width: 93%;
+    height:  50px;
+    border: 1px solid #CACFD8;
+    float: left;
+}
+.search-btn{
+    height: 50px;
+    width: 7%;
+    background: #76A6EF;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+}
+.doctor-search-btn{
+    padding-right: 12px;
+    padding-top: 22px;
+}
+.icon_search{
+    float: left;
+    line-height: 50px;
+    padding-left: 10px;
+    padding-right: 7px;
+    color: #BFC8D4
+}
+.icon_search>img{
+    vertical-align: middle;
+}
+.search-input-input{
+    float: left;
+    width: 90%;
+}
+.search-input-input>input:focus{
+    outline:none;
+}
+.search-doctor{
+    padding-bottom: 12px;
+    overflow: hidden;
+}
+
+
+.eh th{
+    background: #fff;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+.eh-widget-header th{
+    border-right: 1px solid #E6E9ED;
+}
+.eh-view-container{
+    margin-bottom: 1em;
+    /*margin-right: 1em;*/
+    padding: 0 12px 12px 12px;
+}
+.eh table{
+    table-layout: fixed;
+    border-spacing: 0;
+    font-size: 1em;
+}
+.eh-unthemed th, .eh-unthemed td, .eh-unthemed hr, .eh-unthemed thead, .eh-unthemed tbody, .eh-unthemed .eh-row, .eh-unthemed .eh-popover{
+    border-color: #E6E9ED
+}
+.eh-view{
+    margin-bottom: 0;
+}
+.eh-view tbody{
+    border: 1px solid #EDF1F7;
+}
+.table-header{
+    background: #EDF1F7 !important;
+    width: 90px;
+}
+.appointment-table-header{
+    background: #EDF1F7 !important;
+
+}
+.eh .eh-axis{
+    vertical-align: middle;
+    padding: 0 0px;
+    white-space: nowrap;
+}
+/*.eh-grid tr:nth-child(2n+1) td{*/
+    /*border-right: 1px solid #EDF1F7 !important;*/
+/*}*/
+.eh-grid-container{
+    border-radius: 0px;
+}
+.seat{
+    height: 20px;
+}
+.thumb-doctor{
+    display: block;
+    padding: 9px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+    background: #F4F5F7;
+}
+.text-nowrap{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+}
+.filemanager .thumb-doctor span {
+    display: block;
+    line-height: 18px;
+    height: 18px;
+    text-align: center;
+}
+.image-doctor label{
+    cursor: pointer;
+}
+.serarch-right{
+    padding-left: 6px;
+}
+.doctor-box{
+    margin-top: 20px;
+    border-radius: 4px;
+}
+.today-bg{
+    background: #F8FBFF !important;
+    /*opacity: 0.5*/
+}
+.table-header .eh-title-normal{
+    background-color: #EDF1F7;
+}
+.eh-title-normal{
+    background-color: #ffffff;
+}
+.eh-title-normal-appoint{
+    background-color: #EDF1F7;
+    height: 5px;
+}
+.today-bg .eh-title-normal{
+    background-color: #F8FBFF;
+}
+.eh-row{
+    border-right-width: 0px !important;
+}
+.no-bottom{
+    padding:0 0px;
+}
+input::-webkit-input-placeholder { /* WebKit browsers */
+color: #COC8D4 !important;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+color: #COC8D4 !important;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+color: #COC8D4 !important;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+color: #COC8D4 !important;
+}
+.eh-agenda-view{
+	border:0px;
+}
+.eh-agenda-view {
+    border: 1px solid #DFE0E4!important;
+}
+.eh-grid tr:nth-child(n) td{
+    border-bottom: none;
+}

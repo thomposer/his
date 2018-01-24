@@ -1,0 +1,69 @@
+#patient-birthtime{
+    /*        border-radius: 4px;
+            width: 108.7%;*/
+}
+.patient-card{
+    padding: 20px;
+    border: 1px solid #CACFD8;
+    font-size: 14px;
+    line-height: 22px;
+    position: relative;
+    cursor: pointer;
+}
+.patient-card:hover{
+    border: 1px solid #76A6EF;
+}
+.patient-card .patient-info a{
+    color: #76a6ef;
+}
+.patient-card .patient-number{
+    font-size: 15px;
+}
+.patient-card img{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 9%;
+}
+.patient-card .patient-icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(../../img/report/icon_select_nomal.png);
+    width: 8%;
+    height: 33%;
+    background-size: 100%;
+}
+.patient-card.active .patient-icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(../../img/report/icon_select_yes.png);
+    width: 8%;
+    height: 33%;
+    background-size: 100%;
+}
+.btn-default[disabled]{
+    background-color:#76a6ef;
+    border-color: #76a6ef;
+}
+.btn-default[disabled]:active,.btn-default[disabled]:hover{
+    background-color:#76a6ef;
+}
+.list-empty{
+    height: 15px;
+}
+
+.tooltip-inner{
+    text-align: left;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 20px;
+    background: #55657d;
+    width:180px;
+    max-width: none;
+}
+
+.tooltip-arrow {
+    border-right-color: #55657d !important;
+}

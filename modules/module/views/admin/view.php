@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	   <div class = "box">
         <div class = "box-body"> 
 	    <p>
-	        <?= Html::a('继续添加', ['create'], ['class' => 'btn btn-success']) ?>
+	        <?= Html::a('继续添加', ['create'], ['class' => 'btn btn-default']) ?>
 	    </p>
 		
 		<p style="padding-top:20px;">模块</p>
@@ -57,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	</div>
 </div>
 <?php $this->endBlock();?>
-<?php $this->beginBlock('render')?>
+<?php $this->beginBlock('renderJs')?>
 <?php $this->endBlock();?>
 <?php AutoLayout::end();?>
 

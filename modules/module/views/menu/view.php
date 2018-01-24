@@ -8,7 +8,7 @@ use yii\helpers\Url;
 /* @var $model app\modules\module\models\Menu */
 
 $this->title ='菜单信息详情';
-$this->params['breadcrumbs'][] = ['label' => 'Menus', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '模块菜单', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 $baseUrl = Yii::$app->request->baseUrl;
 ?>
@@ -18,23 +18,11 @@ $baseUrl = Yii::$app->request->baseUrl;
 <?php $this->beginBlock('content')?>
 <div class="main_bd col-xs-12">
     <div class = "box">
+      <div class="box-header with-border">
+      <span class = 'left-title'><?= Html::encode($this->title) ?></span>
+      <?= Html::a(Html::img($baseUrl.'/public/img/common/icon_back.png').'返回',Yii::$app->request->referrer,['class' => 'right-cancel']) ?>
+     </div>
        <div class = "box-body">
-       <p class="button-group">
-        <?php  if(isset($this->params['permList']['role']) || in_array($this->params['requestModuleController'].'/update', $this->params['permList'])):?>
-            <?= Html::a('修改', ['update', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
-        <?php endif;?>
-        <?php  if(isset($this->params['permList']['role']) || in_array($this->params['requestModuleController'].'/delete', $this->params['permList'])):?>
-            <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-                    'class' => 'btn btn-danger',
-                    'data' => [
-                        'confirm' => '你确定要删除此项吗?',
-                        'method' => 'post',
-                    ],
-                ]) ?>
-        <?php endif;?>
-        <?= Html::a('返回列表', ['index'], ['class' => 'btn btn-primary']) ?>
-       </p>
-
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [

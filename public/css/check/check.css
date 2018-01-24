@@ -1,0 +1,114 @@
+@CHARSET "UTF-8";
+
+#user-sex label{
+    padding-top:5px;
+    margin-right:60px;
+}
+.print-check {
+    float: right;
+    margin-right: 0px!important;
+}
+.print-record{
+    float: right;
+    margin-right: 20px!important;
+}
+.form-margin{
+    margin-top:30px;
+}
+.btn-group-left{
+    background-color: #fff;
+    border-radius: 4px;
+    color: #76a6ef;
+    border: 1px solid #76a6ef;
+}
+
+#cure-cure label{
+    padding: 15px 75px 15px 0px;
+}
+.text-price{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.hid{
+    display: none;
+}
+
+.cure-form-doc {
+    margin: 16px 0;
+}
+
+.fill-info{
+    padding:15px 15px 0px 15px;
+}
+
+.item_title{
+    color: #76a6ef;
+    font-size: 15px;
+    font-weight:500;
+}
+
+.check-record-index .header{
+    background-color: #edf1f7;
+    margin-bottom: 0px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 14px;
+    color:#445064;
+    line-height:50px;
+    font-weight:500;
+    border-top: 1px solid #d2d6de;
+    border-left: 1px solid #d2d6de;
+    border-right: 1px solid #d2d6de;
+    border-bottom: 1px solid #d2d6de
+}
+.check-record-index .form-control{
+    border-radius:0px;
+}
+.box{
+    box-shadow:0 0px 0px rgba(0, 0, 0, 0.1);
+}
+.check-record-index .form-control[disabled],.check-record-index .form-control[readonly],.check-record-index fieldset[disabled] .form-control{
+    background-color:#ffffff;
+}
+.form-control:focus{
+    border-color:#d2d6de;
+}
+
+.check-index-form .form-group,.check-index-form .help-block{
+    margin-bottom:0px;
+}
+
+.check-record{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.file-preview  .file-drop-zone{
+    border:none;
+}
+.file-input-ajax-new .file-preview{
+    border-radius:0px;
+}
+.file-preview .close{
+    /* display:none */
+}
+.text-info{
+    color:#ffffff;
+}
+.btn-default > i {
+    margin-right:0px;
+    padding: 2px;
+}
+.file-caption-main .kv-fileinput-caption{
+    display:none;
+}
+.image-upload .header{
+    margin-top:0px;
+}
+.check_box{
+    margin-bottom: 0px !important;
+}
+.pre-custom .file-preview-initial{
+    height:100px;
+}

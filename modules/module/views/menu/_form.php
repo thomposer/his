@@ -16,18 +16,18 @@ use app\modules\module\models\Menu;
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
     
     <?= $form->field($model, 'menu_url')->textInput(['maxlength' => true]) ?>
-
+    
     <?= $form->field($model, 'type')->dropDownList(Menu::$left_menu) ?>
-
-    <?= $form->field($model, 'parent_id')->dropDownList(ArrayHelper::map($titleList, 'id','module_description')) ?>
+    <?= $form->field($model, 'parent_id')->dropDownList(ArrayHelper::map($titleList, 'id','module_description','data')) ?>
 
     <?= $form->field($model, 'status')->dropDownList(Menu::$menu_status) ?>
     
     <?= $form->field($model, 'role_type')->dropDownList(Menu::$role_type) ?>
-
+    
+    <?= $form->field($model, 'sort')->textInput() ?>
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? '添加' : '修改', ['class' => 'btn btn-success']) ?>
-         <?= Html::a('返回列表', ['@moduleMenuIndex'], ['class' => 'btn btn-primary'])?>
+        <?= Html::a('取消', ['@moduleMenuIndex'], ['class' => 'btn btn-cancel'])?>
+        <?= Html::submitButton($model->isNewRecord ? '新增' : '保存', ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -1,0 +1,311 @@
+.category-history-top-bar {
+    margin: 30px 0 30px 15px;
+    position: relative;
+    padding-left: 330px;
+    padding-right: 30px;
+}
+
+.category-history-top-card {
+    width: 300px;
+    height: 170px;
+    background: url(https://t.s.easyhin.com/uploads/2017-03-14/477580674735201703141546201574.png) no-repeat;
+    border-radius: 5px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.category-history-top-card > .easyhin-card {
+    padding-top: 20px;
+}
+
+.category-history-top-card > .easyhin-card-category {
+    font-size: 34px;
+    color: #55657d;
+    padding-top: 20px;
+}
+
+.category-history-top-card > .text-overflow {
+    width: 273px;
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    white-space: nowrap; /* 不换行 */
+    vertical-align: bottom;
+}
+
+.history-top-left {
+    position: absolute;
+    width: 300px;
+    left: 0;
+}
+
+.history-top-right {
+    height: 170px;
+    /*margin-left: -5%;*/
+}
+
+.category-history-top-card > .easyhin-card-id {
+    position: absolute;
+    bottom: 20px;
+}
+
+/*.category-history-top-bar .category-history-service-title{*/
+/*font-size: 18px;*/
+/*}*/
+.category-history-top-bar .card-desc {
+    margin-top: 10px;
+}
+
+.change-card-category {
+    position: absolute;
+    bottom: 0px;
+}
+
+.card-history-title {
+    padding: 20px 35px 10px 30px;
+}
+
+.card-history-title-hr {
+    height: 20px;
+    width: 100%;
+    display: flex;
+}
+
+.card-history-title-hr > .text {
+    width: 105px;
+    float: left;
+    font-size: 16px;
+}
+
+.card-history-title-hr > .title-line {
+    height: 50%;
+    border-bottom: 1px solid #cacfd8;
+    float: left;
+    flex: 1;
+}
+
+.modal-body .category-history-form {
+    padding-left: 0 !important;
+    position: relative;
+}
+
+.card-service-container {
+    position: absolute;
+    width: 400px;
+    height: 230px;
+    background: #eee;
+    right: 0;
+    top: 0;
+    margin-top: 20px;
+    padding: 12px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.search-margin-flow .flow-operation {
+    margin: 15px 0 0px 0px;
+    line-height: 25px;
+}
+
+.flow-operation .btn-register {
+    background-color: #76a6ef;
+    border-radius: 4px;
+    color: #ffffff;
+    margin-top: 5px;
+}
+
+.flow-operation .fee_int {
+    font-size: 30px;
+    color: #54647d;
+}
+
+.flow-operation .fee_point {
+    color: #54647d;
+}
+
+.card-service-desc {
+    margin-top: 10px;
+}
+
+.flow-operation .amount-color {
+    color: #99a3b1;
+}
+
+.service-desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+/*交易弹窗*/
+.expect-amount-text {
+    color: #99a3b1;
+}
+
+.donation-amount-checkbox {
+    margin-left: 5px;
+}
+
+.btn-hollow {
+    border-radius: 4px;
+    color: #ffffff;
+    margin-top: 5px;
+    margin-left: 15px;
+    background-color: #fff;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+    opacity: 1;
+}
+
+.btn-hollow:hover, .btn-hollow:active, .btn-hollow:visited {
+    background-color: #fff;
+    border: 1px solid #76a6ef;
+    color: #76a6ef;
+    opacity: 1;
+}
+
+.search-margin-flow {
+    padding: 10px 20px;
+}
+
+/*充值弹窗*/
+.pay-option {
+    width: 23%;
+    padding-right: 0px;
+    line-height: 35px;
+}
+.order-upgrade-area-record .pay-option {
+    width: 10%;
+    padding-right: 0px;
+    padding-left: 0;
+    line-height: 35px;
+}
+
+.card-recharge-form, #cardflow-f_record_type {
+    /*padding-top: 7px;*/
+}
+
+#cardflow-f_record_type label {
+    margin-right: 15px;
+}
+
+.category-history-index > .recharge-bg, .card-recharge-update > .recharge-bg, .card-recharge-index > .recharge-bg {
+    background-color: #ffffff !important;
+    border-radius: 6px 6px 0px 0px !important;
+}
+
+.card-recharge-update .top-bar, .recharge-bg, .card-recharge-index .top-bar, .category-history-index .top-bar {
+    border-radius: 0px !important;
+}
+
+.card {
+    color: #ff4b00;
+    font-size: 18px;
+    line-height: 35px;
+}
+
+.field-cardflow-f_income, .field-order-card, .field-order-alipay, .field-order-wechat {
+    display: none;
+    height: 35px;
+}
+
+#ajaxCrudModal .modal-body {
+    padding: 10px 10px 20px 10px;
+}
+
+#cardflow-f_pay_type {
+    line-height: 35px;
+}
+
+.field-order-isdonation > .pay-option {
+    width: 0;
+}
+
+.field-order-isdonation .col-sm-9 {
+    padding-left: 0;
+}
+
+.line-h {
+    line-height: 35px;
+}
+
+.payment-upgrade {
+    padding-right: 10px;
+}
+
+.payment-upgrade-card {
+    color: #ff4b00;
+}
+
+.payment-upgrade-card-gray {
+    color: #99a3b1;
+}
+
+.card-recharge-form-pay .help-block {
+    margin-left: -15px;
+}
+
+.field-order-is-upgrade {
+    line-height: 35px;
+}
+
+.order-upgrade-area {
+    margin-top: 25px;
+}
+
+.field-cardflow-isupgrade {
+    line-height: 35px;
+}
+
+.btn-recharge-content {
+    margin-bottom: 20px;
+}
+
+.card-updown {
+    background-color: #fff !important;
+    border: 0 solid #CACFD8;
+    box-shadow: 0px 6px 14px -4px #8190a7; /*opera或ie9*/
+    border-radius: 6px !important;
+}
+
+.padd-bot-0 {
+    margin-bottom: 0px;
+}
+
+.select2-results ul {
+    padding-bottom: 5px;
+}
+.view-trade-log{
+    color: #76A6EF;
+    text-decoration: underline;
+}
+.card-total-discount-price{
+    margin: 0px 21px 0px 20px;
+    background: #edf1f7;
+    color: #54647D;
+    font-size: 14px;
+    height: 36px;
+    padding: 8px 0px 8px 10px;
+    /*border-bottom: 1px solid #CACFD8;*/
+    font-weight: bold;
+    border: 1px solid #CACFD8;
+}
+#card-flow-table > table > thead > tr > th{
+    background: #F6F7F9 !important;
+}
+.subscribe-btn{
+    color:#A0ABBD;
+    border: 1px solid #A0ABBD!important;
+}
+.subscribe-btn:hover{
+    background: #f2f4f7!important;
+    color: #A0ABBD!important;
+    /*border: 1px solid #667489!important;*/
+}
+.notice-msg{
+    color:#A0ABBD;
+    margin-top: 10px;
+
+}

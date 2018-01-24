@@ -6,6 +6,9 @@ use app\common\AutoLayout;
 use yii\helpers\Url;
 use app\modules\module\models\Menu;
 use app\assets\AppAsset;
+use yii\widgets\Pjax;
+use johnitvn\ajaxcrud\CrudAsset;
+CrudAsset::register($this);
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\module\models\search\MenuSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -19,29 +22,51 @@ $baseUrl = Yii::$app->request->baseUrl;
 <?php $this->endBlock();?>
 <?php $this->beginBlock('content')?>
 <div class="menu-index col-xs-12">
-    <?php  if(isset($this->params['permList']['role'])||in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>
-    <p class = "applySearch-button">
-        <?php echo  Html::a('添加菜单', ['@moduleMenuCreate'], ['class' => 'btn btn-success']) ?>
-    </p>
-    <?php endif;?>
+   <?php Pjax::begin(['id' => 'crud-datatable-pjax'])?>    
     <div class = "box">
-    <div class = "box-body">
-    <?php  echo $this->render('_search', ['model' => $searchModel,'titleList' => $titleList]); ?>
-    
+     <div class = 'row search-margin'>
+        <div class = 'col-sm-3 col-md-3'>
+            <?php  if(isset($this->params['permList']['role'])||in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>
+            <?php echo  Html::a('<i class="fa fa-plus"></i>新增', ['@moduleMenuCreate'], ['class' => 'btn btn-default font-body2','data-pjax' => 0]) ?>
+            <?php endif;?>
+            <?php  if(isset($this->params['permList']['role'])||in_array($this->params['requestModuleController'].'/create', $this->params['permList'])):?>
+            <?php echo Html::a('清除缓存',['@moduleMenuFlush'],[
+                'class' => 'btn btn-delete font-body2',
+                'data' => [
+                    'confirm' => '你确定要清除缓存吗?',
+                    'method' => 'post',
+                ],
+                
+            ])?>
+            <?php endif;?>
+        </div>
+        <div class = 'col-sm-9 col-md-9'>
+         <?php  echo $this->render('_search', ['model' => $searchModel,'titleList' => $titleList]); ?>
+        </div>
+    </div>    
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'tableOptions' => ['class' => ' table table-hover table-bordered'],
-        'layout'=> '{items}<div class="text-right tooltip-demo">{pager}</div>',
+        'options' => ['class' => 'grid-view table-responsive add-table-padding'],
+        'tableOptions' => ['class' => 'table table-hover table-border header'],
+        'sorter' => ['attributes' => ['id','type']],
+        'layout'=> '{items}<div class="text-right">{pager}</div>',
         'pager'=>[
-            'firstPageLabel'=>"首页",
-            'prevPageLabel'=>'上一页',
-            'nextPageLabel'=>'下一页',
-            'lastPageLabel'=>'尾页',
+            
+            'firstPageLabel' => Yii::getAlias('@firstPageLabel'),
+            'prevPageLabel' => Yii::getAlias('@prevPageLabel'),
+            'nextPageLabel' => Yii::getAlias('@nextPageLabel'),
+            'lastPageLabel' => Yii::getAlias('@lastPageLabel'),
         ],
         'columns' => [    
             'id',
-            'description',
-            'menu_url',
+            [
+                'attribute' => 'description',
+                'headerOptions' => ['class' => 'col-sm-2 col-md-2']
+            ],
+            [
+                'attribute' => 'menu_url',
+                'headerOptions' => ['class' => 'col-sm-3 col-md-3']
+            ],
             [
             'attribute' => 'parent_id',
             'value' => function ($searchModel){
@@ -70,9 +95,11 @@ $baseUrl = Yii::$app->request->baseUrl;
             ],
     ]
     ]); ?>
-        </div>
     </div>
+    <?php Pjax::end()?>
+    
 </div>
+
 <?php $this->endBlock();?>
 <?php $this->beginBlock('renderJs')?>
 

@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+#appointment-birthday{
+	
+	text-align:left;
+}
+.field-appointment-username,.field-appointment-iphone{
+	position:relative;
+}
+.box-header span {
+    margin-left: 10px;
+}

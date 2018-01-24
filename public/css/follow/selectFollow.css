@@ -1,0 +1,96 @@
+.search-default{
+    padding-top: 5px;
+    float: left;
+    color: #445064;
+    font-size: 12px;
+    display: inline-block !important;
+}
+
+.form-horizontal .form-group {
+    margin-left: 0px;
+    padding: 0 0 0 10px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    float: left;
+}
+.follow-search .form-control {
+    height: 30px;
+    width: 116px !important;
+    border-radius: 2px;
+    font-size: 12px;
+    display: inline;
+    padding: 4px 8px;
+}
+
+@media screen and (max-width: 1600px) {
+    .search-default{
+        height: 41px !important;
+    }
+    .form-horizontal .form-group {
+        margin-bottom: 10px;
+    }
+}
+.form-link{
+    margin-left: 4px !important;
+    margin-top: 4px;
+    float: left;
+}
+.field-followsearch-follow_end_time{
+    padding: 0 0 0 4px !important;
+}
+.btn-follow-search{
+    padding: 4px 12px !important;
+}
+
+
+.message-info{
+    color: #76a6ef;
+    text-align: center;
+}
+.message-info .transform-x{
+    -moz-transform:scaleX(-1);
+    -webkit-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+    /*IE*/
+    filter:FlipH;
+    margin-right: 5px;
+}
+.user-title{
+    color: #97A3B6;
+    margin-left: 5px;
+}
+.send-btn{
+    padding-top:  10px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+.modal-footer .form-group{
+    text-align: right;
+}
+
+.label-green{
+    background-color: #F7FBEE;
+}
+/* 随访筛选搜索样式 */
+.follow-search .more{
+    display: inline-block;
+    color: #76A6EF;
+    cursor: pointer;
+}
+.follow-search .more .more-word{
+    margin-left: 20px;
+}
+.follow-search .more .more-word:hover{
+    text-decoration: underline;
+}
+.follow-search-date{
+    float: left;
+    display: inline-block;
+    vertical-align: middle;
+}
+.follow-search-line{
+    margin-top: 10px;
+    margin-left: 45px;
+    display: inline-block;
+}
